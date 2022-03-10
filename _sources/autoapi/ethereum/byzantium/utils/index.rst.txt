@@ -1,0 +1,30 @@
+:mod:`ethereum.byzantium.utils`
+===============================
+
+.. py:module:: ethereum.byzantium.utils
+
+Byzantium Utility Functions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. contents:: Table of Contents
+    :backlinks: none
+    :local:
+
+Introduction
+------------
+
+Utility functions used in this spurious dragon version of specification.
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   address/index.rst
+   hexadecimal/index.rst
+   json/index.rst
+   message/index.rst
+
+
