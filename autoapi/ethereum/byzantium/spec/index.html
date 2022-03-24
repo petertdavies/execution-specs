@@ -326,7 +326,7 @@
 <span class="sig-name descname"><span class="pre">EMPTY_OMMER_HASH</span></span><a class="headerlink" href="#ethereum.byzantium.spec.EMPTY_OMMER_HASH" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EMPTY_OMMER_HASH</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">([]))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EMPTY_OMMER_HASH</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">([]))</span>
 </pre></div>
 </div>
 </section>
@@ -410,9 +410,7 @@ block number.</p>
     <span class="c1"># We are computing the hash only for the most recent block and not for</span>
     <span class="c1"># the rest of the blocks as they have successors which have the hash of</span>
     <span class="c1"># the current block as parent hash.</span>
-    <span class="n">most_recent_block_hash</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span>
-        <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">recent_blocks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="n">most_recent_block_hash</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">recent_blocks</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">header</span><span class="p">))</span>
     <span class="n">recent_block_hashes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">most_recent_block_hash</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">recent_block_hashes</span>
@@ -487,15 +485,16 @@ block number.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_header</span><span class="p">(</span><span class="n">header</span><span class="p">:</span> <span class="n">Header</span><span class="p">,</span> <span class="n">parent_header</span><span class="p">:</span> <span class="n">Header</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">parent_has_ommers</span> <span class="o">=</span> <span class="n">parent_header</span><span class="o">.</span><span class="n">ommers_hash</span> <span class="o">!=</span> <span class="n">EMPTY_OMMER_HASH</span>
     <span class="n">block_difficulty</span> <span class="o">=</span> <span class="n">calculate_block_difficulty</span><span class="p">(</span>
-        <span class="n">parent_header</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
+        <span class="n">header</span><span class="o">.</span><span class="n">number</span><span class="p">,</span>
         <span class="n">header</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
         <span class="n">parent_header</span><span class="o">.</span><span class="n">timestamp</span><span class="p">,</span>
         <span class="n">parent_header</span><span class="o">.</span><span class="n">difficulty</span><span class="p">,</span>
-        <span class="n">parent_header</span><span class="o">.</span><span class="n">ommers_hash</span><span class="p">,</span>
+        <span class="n">parent_has_ommers</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="n">block_parent_hash</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">parent_header</span><span class="p">))</span>
+    <span class="n">block_parent_hash</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">parent_header</span><span class="p">))</span>
 
     <span class="n">ensure</span><span class="p">(</span><span class="n">header</span><span class="o">.</span><span class="n">parent_hash</span> <span class="o">==</span> <span class="n">block_parent_hash</span><span class="p">)</span>
     <span class="n">ensure</span><span class="p">(</span><span class="n">header</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">==</span> <span class="n">block_difficulty</span><span class="p">)</span>
@@ -679,7 +678,7 @@ block.</p></li>
             <span class="n">receipts_trie</span><span class="p">,</span>
             <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span>
             <span class="n">Receipt</span><span class="p">(</span>
-                <span class="n">post_state</span><span class="o">=</span><span class="n">Bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">has_erred</span> <span class="k">else</span> <span class="n">Bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01</span><span class="s2">&quot;</span><span class="p">),</span>
+                <span class="n">succeeded</span><span class="o">=</span><span class="ow">not</span> <span class="n">has_erred</span><span class="p">,</span>
                 <span class="n">cumulative_gas_used</span><span class="o">=</span><span class="p">(</span><span class="n">block_gas_limit</span> <span class="o">-</span> <span class="n">gas_available</span><span class="p">),</span>
                 <span class="n">bloom</span><span class="o">=</span><span class="n">logs_bloom</span><span class="p">(</span><span class="n">logs</span><span class="p">),</span>
                 <span class="n">logs</span><span class="o">=</span><span class="n">logs</span><span class="p">,</span>
@@ -985,15 +984,13 @@ execution is instantiated.</p>
     <span class="n">ensure</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;</span> <span class="n">s</span> <span class="ow">and</span> <span class="n">s</span> <span class="o">&lt;=</span> <span class="n">SECP256K1N</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">27</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">28</span><span class="p">:</span>
-        <span class="n">public_key</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">secp256k1_recover</span><span class="p">(</span>
-            <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">27</span><span class="p">,</span> <span class="n">signing_hash_pre155</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">public_key</span> <span class="o">=</span> <span class="n">secp256k1_recover</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">27</span><span class="p">,</span> <span class="n">signing_hash_pre155</span><span class="p">(</span><span class="n">tx</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">ensure</span><span class="p">(</span><span class="n">v</span> <span class="o">==</span> <span class="mi">35</span> <span class="o">+</span> <span class="n">CHAIN_ID</span> <span class="o">*</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">36</span> <span class="o">+</span> <span class="n">CHAIN_ID</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">public_key</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">secp256k1_recover</span><span class="p">(</span>
+        <span class="n">public_key</span> <span class="o">=</span> <span class="n">secp256k1_recover</span><span class="p">(</span>
             <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">35</span> <span class="o">-</span> <span class="n">CHAIN_ID</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">signing_hash_155</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
         <span class="p">)</span>
-    <span class="k">return</span> <span class="n">Address</span><span class="p">(</span><span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">public_key</span><span class="p">)[</span><span class="mi">12</span><span class="p">:</span><span class="mi">32</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">Address</span><span class="p">(</span><span class="n">keccak256</span><span class="p">(</span><span class="n">public_key</span><span class="p">)[</span><span class="mi">12</span><span class="p">:</span><span class="mi">32</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
@@ -1017,7 +1014,7 @@ execution is instantiated.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash_pre155</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span>
         <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
             <span class="p">(</span>
                 <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span>
@@ -1052,7 +1049,7 @@ execution is instantiated.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash_155</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span>
         <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
             <span class="p">(</span>
                 <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span>
@@ -1090,7 +1087,7 @@ execution is instantiated.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_header_hash</span><span class="p">(</span><span class="n">header</span><span class="p">:</span> <span class="n">Header</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">header</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -1164,16 +1161,16 @@ execution is instantiated.</p>
 <h4>calculate_block_difficulty<a class="headerlink" href="#calculate-block-difficulty" title="Permalink to this headline">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.byzantium.spec.calculate_block_difficulty">
-<span class="sig-name descname"><span class="pre">calculate_block_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent_block_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_timestamp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_difficulty</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_ommers_hash</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ethereum.byzantium.eth_types.Hash32</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.byzantium.spec.calculate_block_difficulty" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">calculate_block_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_timestamp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_timestamp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_difficulty</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_has_ommers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.byzantium.spec.calculate_block_difficulty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes difficulty of a block using its header and parent header.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>parent_block_number</strong> – Block number of the parent block.</p></li>
-<li><p><strong>timestamp</strong> – Timestamp of the block.</p></li>
+<li><p><strong>block_number</strong> – Block number of the block.</p></li>
+<li><p><strong>block_timestamp</strong> – Timestamp of the block.</p></li>
 <li><p><strong>parent_timestamp</strong> – Timestamp of the parent block.</p></li>
 <li><p><strong>parent_difficulty</strong> – difficulty of the parent block.</p></li>
-<li><p><strong>parent_ommers_hash</strong> – hash of parents ommers.</p></li>
+<li><p><strong>parent_has_ommers</strong> – does the parent have ommers.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -1186,18 +1183,18 @@ execution is instantiated.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_block_difficulty</span><span class="p">(</span>
-    <span class="n">parent_block_number</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
-    <span class="n">timestamp</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
+    <span class="n">block_number</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
+    <span class="n">block_timestamp</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
     <span class="n">parent_timestamp</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
     <span class="n">parent_difficulty</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
-    <span class="n">parent_ommers_hash</span><span class="p">:</span> <span class="n">Hash32</span><span class="p">,</span>
+    <span class="n">parent_has_ommers</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
-    <span class="n">has_ommers</span> <span class="o">=</span> <span class="n">parent_ommers_hash</span> <span class="o">!=</span> <span class="n">EMPTY_OMMER_HASH</span>
     <span class="n">offset</span> <span class="o">=</span> <span class="p">(</span>
         <span class="nb">int</span><span class="p">(</span><span class="n">parent_difficulty</span><span class="p">)</span>
         <span class="o">//</span> <span class="mi">2048</span>
         <span class="o">*</span> <span class="nb">max</span><span class="p">(</span>
-            <span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">has_ommers</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">timestamp</span> <span class="o">-</span> <span class="n">parent_timestamp</span><span class="p">)</span> <span class="o">//</span> <span class="mi">9</span><span class="p">,</span>
+            <span class="p">(</span><span class="mi">2</span> <span class="k">if</span> <span class="n">parent_has_ommers</span> <span class="k">else</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">block_timestamp</span> <span class="o">-</span> <span class="n">parent_timestamp</span><span class="p">)</span> <span class="o">//</span> <span class="mi">9</span><span class="p">,</span>
             <span class="o">-</span><span class="mi">99</span><span class="p">,</span>
         <span class="p">)</span>
     <span class="p">)</span>
@@ -1207,9 +1204,7 @@ execution is instantiated.</p>
     <span class="c1"># bomb has no effect prior to block 200000 we pretend it existed from</span>
     <span class="c1"># genesis.</span>
     <span class="c1"># See https://github.com/ethereum/go-ethereum/pull/1588</span>
-    <span class="n">num_bomb_periods</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">parent_block_number</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">BOMB_DELAY_BLOCKS</span><span class="p">)</span> <span class="o">//</span> <span class="mi">100000</span>
-    <span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
+    <span class="n">num_bomb_periods</span> <span class="o">=</span> <span class="p">((</span><span class="nb">int</span><span class="p">(</span><span class="n">block_number</span><span class="p">)</span> <span class="o">-</span> <span class="n">BOMB_DELAY_BLOCKS</span><span class="p">)</span> <span class="o">//</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
     <span class="k">if</span> <span class="n">num_bomb_periods</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span>
             <span class="nb">max</span><span class="p">(</span><span class="n">difficulty</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">**</span> <span class="n">num_bomb_periods</span><span class="p">,</span> <span class="n">GENESIS_DIFFICULTY</span><span class="p">)</span>
@@ -1248,6 +1243,7 @@ execution is instantiated.</p>
 <li class="toctree-l4 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>

@@ -69,7 +69,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/interpreter.py
    :language: python
-   :lines: 53-53
+   :lines: 54-54
 
 
 MAX_CODE_SIZE
@@ -83,7 +83,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/interpreter.py
    :language: python
-   :lines: 54-54
+   :lines: 55-55
 
 
 RIPEMD160_ADDRESS
@@ -97,7 +97,7 @@ RIPEMD160_ADDRESS
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/interpreter.py
    :language: python
-   :lines: 55-55
+   :lines: 56-56
 
 
 MessageCallOutput

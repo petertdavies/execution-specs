@@ -1,0 +1,479 @@
+:mod:`ethereum.crypto.finite_field`
+===================================
+
+.. py:module:: ethereum.crypto.finite_field
+
+Finite Fields
+^^^^^^^^^^^^^
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.crypto.finite_field.Field
+   ethereum.crypto.finite_field.PrimeField
+   ethereum.crypto.finite_field.GaloisField
+
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.crypto.finite_field.F
+   ethereum.crypto.finite_field.T
+   ethereum.crypto.finite_field.U
+
+
+Module Details
+---------------
+
+F
+~
+
+
+
+.. py:data:: F
+
+   
+
+.. undocinclude:: /../src/ethereum/crypto/finite_field.py
+   :language: python
+   :lines: 14-14
+
+
+Field
+~~~~~
+
+
+A type protocol for defining fields.
+
+
+.. class:: Field
+
+   Bases: :py:obj:`typing_extensions.Protocol`
+
+   
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   .. py:method:: zero(cls: Type[F]) -> F
+      :classmethod:
+
+
+   .. py:method:: from_int(cls: Type[F], n: int) -> F
+      :classmethod:
+
+
+   .. py:method:: __radd__(self: F, left: F) -> F
+
+
+   .. py:method:: __add__(self: F, right: F) -> F
+
+
+   .. py:method:: __iadd__(self: F, right: F) -> F
+
+
+   .. py:method:: __sub__(self: F, right: F) -> F
+
+
+   .. py:method:: __rsub__(self: F, left: F) -> F
+
+
+   .. py:method:: __mul__(self: F, right: F) -> F
+
+
+   .. py:method:: __rmul__(self: F, left: F) -> F
+
+
+   .. py:method:: __imul__(self: F, right: F) -> F
+
+
+   .. py:method:: __pow__(self: F, exponent: int) -> F
+
+
+   .. py:method:: __ipow__(self: F, right: int) -> F
+
+
+   .. py:method:: __neg__(self: F) -> F
+
+
+   .. py:method:: __truediv__(self: F, right: F) -> F
+
+
+
+
+T
+~
+
+
+
+.. py:data:: T
+
+   
+
+.. undocinclude:: /../src/ethereum/crypto/finite_field.py
+   :language: python
+   :lines: 69-69
+
+
+PrimeField
+~~~~~~~~~~
+
+
+Superclass for integers modulo a prime. Not intended to be used
+directly, but rather to be subclassed.
+
+
+.. class:: PrimeField
+
+
+   Bases: :py:obj:`int`, :py:obj:`Field`
+
+   
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   
+
+   .. py:attribute:: PRIME
+      :annotation: :int
+
+      
+
+   
+
+   .. py:attribute:: __floordiv__
+      
+
+      
+
+   
+
+   .. py:attribute:: __rfloordiv__
+      
+
+      
+
+   
+
+   .. py:attribute:: __ifloordiv__
+      
+
+      
+
+   
+
+   .. py:attribute:: __divmod__
+      
+
+      
+
+   
+
+   .. py:attribute:: __rdivmod__
+      
+
+      
+
+   
+
+   .. py:attribute:: __rpow__
+      
+
+      
+
+   
+
+   .. py:attribute:: __and__
+      
+
+      
+
+   
+
+   .. py:attribute:: __or__
+      
+
+      
+
+   
+
+   .. py:attribute:: __xor__
+      
+
+      
+
+   
+
+   .. py:attribute:: __rxor__
+      
+
+      
+
+   
+
+   .. py:attribute:: __ixor__
+      
+
+      
+
+   
+
+   .. py:attribute:: __rshift__
+      
+
+      
+
+   
+
+   .. py:attribute:: __lshift__
+      
+
+      
+
+   
+
+   .. py:attribute:: __irshift__
+      
+
+      
+
+   
+
+   .. py:attribute:: __ilshift__
+      
+
+      
+
+   .. py:method:: from_be_bytes(cls: Type[T], buffer: ethereum.base_types.Bytes) -> T
+      :classmethod:
+
+      Converts a sequence of bytes into a element of the field.
+      :param buffer: Bytes to decode.
+
+      :returns: **self** -- Unsigned integer decoded from `buffer`.
+      :rtype: `T`
+
+
+   .. py:method:: zero(cls: Type[T]) -> T
+      :classmethod:
+
+
+   .. py:method:: from_int(cls: Type[T], n: int) -> T
+      :classmethod:
+
+
+   .. py:method:: __radd__(self: T, left: T) -> T
+
+      Return value+self.
+
+
+   .. py:method:: __add__(self: T, right: T) -> T
+
+      Return self+value.
+
+
+   .. py:method:: __iadd__(self: T, right: T) -> T
+
+
+   .. py:method:: __sub__(self: T, right: T) -> T
+
+      Return self-value.
+
+
+   .. py:method:: __rsub__(self: T, left: T) -> T
+
+      Return value-self.
+
+
+   .. py:method:: __mul__(self: T, right: T) -> T
+
+      Return self*value.
+
+
+   .. py:method:: __rmul__(self: T, left: T) -> T
+
+      Return value*self.
+
+
+   .. py:method:: __imul__(self: T, right: T) -> T
+
+
+   .. py:method:: __pow__(self: T, exponent: int) -> T
+
+      Return pow(self, value, mod).
+
+
+   .. py:method:: __ipow__(self: T, right: int) -> T
+
+
+   .. py:method:: __neg__(self: T) -> T
+
+      -self
+
+
+   .. py:method:: __truediv__(self: T, right: T) -> T
+
+      Return self/value.
+
+
+   .. py:method:: multiplicative_inverse(self: T) -> T
+
+
+   .. py:method:: to_be_bytes32(self) -> ethereum.base_types.Bytes32
+
+      Converts this arbitrarily sized unsigned integer into its big endian
+      representation with exactly 32 bytes.
+      :returns: **big_endian** -- Big endian (most significant bits first) representation.
+      :rtype: `Bytes32`
+
+
+
+
+U
+~
+
+
+
+.. py:data:: U
+
+   
+
+.. undocinclude:: /../src/ethereum/crypto/finite_field.py
+   :language: python
+   :lines: 191-191
+
+
+GaloisField
+~~~~~~~~~~~
+
+
+Superclass for defining finite fields. Not intended to be used
+directly, but rather to be subclassed.
+
+Fields are represented as `F_p[x]/(x^n + ...)` where the `MODULUS` is a
+tuple of the non-leading coefficients of the defining polynomial. For
+example `x^3 + 2x^2 + 3x + 4` is `(2, 3, 4)`.
+
+In practice the polynomial is likely to be be sparse and you should overload
+the `__mul__()` function to take advantage of this fact.
+
+
+.. class:: GaloisField
+
+
+   Bases: :py:obj:`tuple`, :py:obj:`Field`
+
+   
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   
+
+   .. py:attribute:: PRIME
+      :annotation: :int
+
+      
+
+   
+
+   .. py:attribute:: MODULUS
+      :annotation: :Tuple[int, Ellipsis]
+
+      
+
+   .. py:method:: zero(cls: Type[U]) -> U
+      :classmethod:
+
+
+   .. py:method:: from_int(cls: Type[U], n: int) -> U
+      :classmethod:
+
+
+   .. py:method:: __add__(self: U, right: U) -> U
+
+      Return self+value.
+
+
+   .. py:method:: __radd__(self: U, left: U) -> U
+
+
+   .. py:method:: __iadd__(self: U, right: U) -> U
+
+
+   .. py:method:: __sub__(self: U, right: U) -> U
+
+
+   .. py:method:: __rsub__(self: U, left: U) -> U
+
+
+   .. py:method:: __mul__(self: U, right: U) -> U
+
+      Return self*value.
+
+
+   .. py:method:: __rmul__(self: U, left: U) -> U
+
+      Return value*self.
+
+
+   .. py:method:: __imul__(self: U, right: U) -> U
+
+
+   .. py:method:: __truediv__(self: U, right: U) -> U
+
+
+   .. py:method:: __neg__(self: U) -> U
+
+
+   .. py:method:: scalar_mul(self: U, x: int) -> U
+
+      Multiply a field element by a integer. This is faster than using
+      `from_int()` and field multiplication.
+
+
+   .. py:method:: deg(self: U) -> int
+
+      This is a support function for `multiplicative_inverse()`.
+
+
+   .. py:method:: multiplicative_inverse(self: U) -> U
+
+      Calculate the multiplicative inverse. Uses the Euclidian algorithm.
+
+
+   .. py:method:: __pow__(self: U, exponent: int) -> U
+
+
+   .. py:method:: calculate_frobenius_coefficients(cls: Type[U]) -> Tuple[U, Ellipsis]
+      :classmethod:
+
+      Calculate the coefficients needed by `frobenius()`.
+
+
+   .. py:method:: frobenius(self: U) -> U
+
+      Returns `self ** p`. This function is known as the Frobenius
+      endomorphism and has many special mathematical properties. In
+      particular it is extremely cheap to compute compared to other
+      exponentiations.
+
+
+

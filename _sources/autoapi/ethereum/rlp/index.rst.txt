@@ -64,7 +64,7 @@ RLP
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 26-26
+   :lines: 25-25
 
 
 encode
@@ -187,7 +187,7 @@ T
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 176-176
+   :lines: 180-180
 
 
 decode_to
@@ -337,7 +337,7 @@ rlp_hash
 ~~~~~~~~
 
 
-.. function:: rlp_hash(data: RLP) -> ethereum.crypto.Hash32
+.. function:: rlp_hash(data: RLP) -> ethereum.crypto.hash.Hash32
    :noindexentry:
 
    Obtain the keccak-256 hash of the rlp encoding of the passed in data.

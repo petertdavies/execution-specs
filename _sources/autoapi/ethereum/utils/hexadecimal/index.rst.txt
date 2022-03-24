@@ -172,7 +172,7 @@ hex_to_hash
 ~~~~~~~~~~~
 
 
-.. function:: hex_to_hash(hex_string: str) -> ethereum.crypto.Hash32
+.. function:: hex_to_hash(hex_string: str) -> ethereum.crypto.hash.Hash32
    :noindexentry:
 
    Convert hex string to hash32 (32 bytes).

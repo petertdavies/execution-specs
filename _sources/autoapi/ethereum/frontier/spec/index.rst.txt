@@ -81,7 +81,7 @@ BLOCK_REWARD
 
 .. undocinclude:: /../src/ethereum/frontier/spec.py
    :language: python
-   :lines: 54-54
+   :lines: 55-55
 
 
 GAS_LIMIT_ADJUSTMENT_FACTOR
@@ -95,7 +95,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 .. undocinclude:: /../src/ethereum/frontier/spec.py
    :language: python
-   :lines: 55-55
+   :lines: 56-56
 
 
 GAS_LIMIT_MINIMUM
@@ -109,7 +109,7 @@ GAS_LIMIT_MINIMUM
 
 .. undocinclude:: /../src/ethereum/frontier/spec.py
    :language: python
-   :lines: 56-56
+   :lines: 57-57
 
 
 GENESIS_DIFFICULTY
@@ -123,7 +123,7 @@ GENESIS_DIFFICULTY
 
 .. undocinclude:: /../src/ethereum/frontier/spec.py
    :language: python
-   :lines: 57-57
+   :lines: 58-58
 
 
 MAX_OMMER_DEPTH
@@ -137,7 +137,7 @@ MAX_OMMER_DEPTH
 
 .. undocinclude:: /../src/ethereum/frontier/spec.py
    :language: python
-   :lines: 58-58
+   :lines: 59-59
 
 
 BlockChain
@@ -558,13 +558,13 @@ calculate_block_difficulty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_block_difficulty(number: ethereum.base_types.Uint, timestamp: ethereum.base_types.U256, parent_timestamp: ethereum.base_types.U256, parent_difficulty: ethereum.base_types.Uint) -> ethereum.base_types.Uint
+.. function:: calculate_block_difficulty(block_number: ethereum.base_types.Uint, block_timestamp: ethereum.base_types.U256, parent_timestamp: ethereum.base_types.U256, parent_difficulty: ethereum.base_types.Uint) -> ethereum.base_types.Uint
    :noindexentry:
 
    Computes difficulty of a block using its header and parent header.
 
-   :param number: Block number of the block.
-   :param timestamp: Timestamp of the block.
+   :param block_number: Block number of the block.
+   :param block_timestamp: Timestamp of the block.
    :param parent_timestamp: Timestamp of the parent block.
    :param parent_difficulty: difficulty of the parent block.
 

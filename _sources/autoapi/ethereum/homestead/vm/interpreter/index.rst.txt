@@ -66,7 +66,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/homestead/vm/interpreter.py
    :language: python
-   :lines: 48-48
+   :lines: 49-49
 
 
 MessageCallOutput

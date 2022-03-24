@@ -1,0 +1,571 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ethereum.crypto.alt_bn128 &#8212; Ethereum Specification  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ethereum.crypto.elliptic_curve" href="../elliptic_curve/index.html" />
+    <link rel="prev" title="ethereum.crypto" href="../index.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+<div id="disclaimer">
+    The documentation tools are undergoing heavy development and may introduce
+    subtle bugs while rendering, especially in hard fork comparisons. Until this
+    warning is removed, <em>always</em> double check against the
+    <a href="https://github.com/ethereum/execution-specs/">original source</a>.
+</div>
+
+
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-ethereum.crypto.alt_bn128">
+<span id="ethereum-crypto-alt-bn128"></span><h1><a class="reference internal" href="#module-ethereum.crypto.alt_bn128" title="ethereum.crypto.alt_bn128"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.alt_bn128</span></code></a><a class="headerlink" href="#module-ethereum.crypto.alt_bn128" title="Permalink to this headline">¶</a></h1>
+<section id="the-alt-bn128-curve">
+<h2>The alt_bn128 curve<a class="headerlink" href="#the-alt-bn128-curve" title="Permalink to this headline">¶</a></h2>
+<section id="module-contents">
+<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF" title="ethereum.crypto.alt_bn128.BNF"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNF</span></code></a></p></td>
+<td><p>The prime field over which the alt_bn128 curve is defined.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP" title="ethereum.crypto.alt_bn128.BNP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNP</span></code></a></p></td>
+<td><p>The alt_bn128 curve.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF2" title="ethereum.crypto.alt_bn128.BNF2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNF2</span></code></a></p></td>
+<td><p><cite>BNF</cite> extended with a square root of 1 (<cite>i</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP2" title="ethereum.crypto.alt_bn128.BNP2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNP2</span></code></a></p></td>
+<td><p>A twist of <cite>BNP</cite>. This is actually the same curve as <cite>BNP</cite> under a change</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNF12</span></code></a></p></td>
+<td><p><cite>BNF2</cite> extended by adding a 6th root of <cite>9 + i</cite> called <cite>w</cite> (omega).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BNP12</span></code></a></p></td>
+<td><p>The same curve as <cite>BNP</cite>, but defined over the larger field. This curve has</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.bnf2_to_bnf12" title="ethereum.crypto.alt_bn128.bnf2_to_bnf12"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bnf2_to_bnf12</span></code></a></p></td>
+<td><p>Lift a field element in <cite>BNF2</cite> to <cite>BNF12</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.bnp_to_bnp12" title="ethereum.crypto.alt_bn128.bnp_to_bnp12"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bnp_to_bnp12</span></code></a></p></td>
+<td><p>Lift a point from <cite>BNP</cite> to <cite>BNP12</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.twist" title="ethereum.crypto.alt_bn128.twist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">twist</span></code></a></p></td>
+<td><p>Apply to twist to change variables from the curve <cite>BNP2</cite> to <cite>BNP12</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.linefunc" title="ethereum.crypto.alt_bn128.linefunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linefunc</span></code></a></p></td>
+<td><p>Evaluate the function defining the line between points <cite>p1</cite> and <cite>p2</cite> at the</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.miller_loop" title="ethereum.crypto.alt_bn128.miller_loop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">miller_loop</span></code></a></p></td>
+<td><p>The core of the pairing algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.pairing" title="ethereum.crypto.alt_bn128.pairing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairing</span></code></a></p></td>
+<td><p>Compute the pairing of <cite>q</cite> and <cite>p</cite>.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.ALT_BN128_PRIME" title="ethereum.crypto.alt_bn128.ALT_BN128_PRIME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALT_BN128_PRIME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER" title="ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALT_BN128_CURVE_ORDER</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT" title="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATE_PAIRING_COUNT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS" title="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATE_PAIRING_COUNT_BITS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.i" title="ethereum.crypto.alt_bn128.i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.w" title="ethereum.crypto.alt_bn128.w"><code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="module-details">
+<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline">¶</a></h3>
+<section id="alt-bn128-prime">
+<h4>ALT_BN128_PRIME<a class="headerlink" href="#alt-bn128-prime" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ALT_BN128_PRIME">
+<span class="sig-name descname"><span class="pre">ALT_BN128_PRIME</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ALT_BN128_PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALT_BN128_PRIME</span> <span class="o">=</span> <span class="mi">21888242871839275222246405745257275088696311157297823662689037894645226208583</span>  <span class="c1"># noqa: E501</span>
+</pre></div>
+</div>
+</section>
+<section id="alt-bn128-curve-order">
+<h4>ALT_BN128_CURVE_ORDER<a class="headerlink" href="#alt-bn128-curve-order" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER">
+<span class="sig-name descname"><span class="pre">ALT_BN128_CURVE_ORDER</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALT_BN128_CURVE_ORDER</span> <span class="o">=</span> <span class="mi">21888242871839275222246405745257275088548364400416034343698204186575808495617</span>  <span class="c1"># noqa: E501</span>
+</pre></div>
+</div>
+</section>
+<section id="ate-pairing-count">
+<h4>ATE_PAIRING_COUNT<a class="headerlink" href="#ate-pairing-count" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT">
+<span class="sig-name descname"><span class="pre">ATE_PAIRING_COUNT</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ATE_PAIRING_COUNT</span> <span class="o">=</span> <span class="mi">29793968203157093289</span>
+</pre></div>
+</div>
+</section>
+<section id="ate-pairing-count-bits">
+<h4>ATE_PAIRING_COUNT_BITS<a class="headerlink" href="#ate-pairing-count-bits" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS">
+<span class="sig-name descname"><span class="pre">ATE_PAIRING_COUNT_BITS</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ATE_PAIRING_COUNT_BITS</span> <span class="o">=</span> <span class="mi">63</span>
+</pre></div>
+</div>
+</section>
+<section id="bnf">
+<h4>BNF<a class="headerlink" href="#bnf" title="Permalink to this headline">¶</a></h4>
+<p>The prime field over which the alt_bn128 curve is defined.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNF</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../finite_field/index.html#ethereum.crypto.finite_field.PrimeField" title="ethereum.crypto.finite_field.PrimeField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.finite_field.PrimeField</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF.PRIME">
+<span class="sig-name descname"><span class="pre">PRIME</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF.PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bnp">
+<h4>BNP<a class="headerlink" href="#bnp" title="Permalink to this headline">¶</a></h4>
+<p>The alt_bn128 curve.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../elliptic_curve/index.html#ethereum.crypto.elliptic_curve.EllipticCurve" title="ethereum.crypto.elliptic_curve.EllipticCurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve.EllipticCurve</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP.FIELD">
+<span class="sig-name descname"><span class="pre">FIELD</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP.FIELD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP.A">
+<span class="sig-name descname"><span class="pre">A</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP.B">
+<span class="sig-name descname"><span class="pre">B</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP.B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bnf2">
+<h4>BNF2<a class="headerlink" href="#bnf2" title="Permalink to this headline">¶</a></h4>
+<p><cite>BNF</cite> extended with a square root of 1 (<cite>i</cite>).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNF2</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../finite_field/index.html#ethereum.crypto.finite_field.GaloisField" title="ethereum.crypto.finite_field.GaloisField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.finite_field.GaloisField</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2.PRIME">
+<span class="sig-name descname"><span class="pre">PRIME</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2.PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2.MODULUS">
+<span class="sig-name descname"><span class="pre">MODULUS</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">0]</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2.MODULUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2.i">
+<span class="sig-name descname"><span class="pre">i</span></span><em class="property"> <span class="pre">:BNF2</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="i">
+<h4>i<a class="headerlink" href="#i" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.i">
+<span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF2</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">BNF2</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="bnp2">
+<h4>BNP2<a class="headerlink" href="#bnp2" title="Permalink to this headline">¶</a></h4>
+<p>A twist of <cite>BNP</cite>. This is actually the same curve as <cite>BNP</cite> under a change
+of variable, but that change of variable is only possible over the larger
+field <cite>BNP12</cite>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP2">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNP2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../elliptic_curve/index.html#ethereum.crypto.elliptic_curve.EllipticCurve" title="ethereum.crypto.elliptic_curve.EllipticCurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve.EllipticCurve</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP2.FIELD">
+<span class="sig-name descname"><span class="pre">FIELD</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP2.FIELD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP2.A">
+<span class="sig-name descname"><span class="pre">A</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP2.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP2.B">
+<span class="sig-name descname"><span class="pre">B</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP2.B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bnf12">
+<h4>BNF12<a class="headerlink" href="#bnf12" title="Permalink to this headline">¶</a></h4>
+<p><cite>BNF2</cite> extended by adding a 6th root of <cite>9 + i</cite> called <cite>w</cite> (omega).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNF12</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../finite_field/index.html#ethereum.crypto.finite_field.GaloisField" title="ethereum.crypto.finite_field.GaloisField"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.finite_field.GaloisField</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.PRIME">
+<span class="sig-name descname"><span class="pre">PRIME</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.PRIME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.MODULUS">
+<span class="sig-name descname"><span class="pre">MODULUS</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.MODULUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.w">
+<span class="sig-name descname"><span class="pre">w</span></span><em class="property"> <span class="pre">:BNF12</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.__mul__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplication special cased for BNF12.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="w">
+<h4>w<a class="headerlink" href="#w" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.w">
+<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF12</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">BNF12</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="bnp12">
+<h4>BNP12<a class="headerlink" href="#bnp12" title="Permalink to this headline">¶</a></h4>
+<p>The same curve as <cite>BNP</cite>, but defined over the larger field. This curve has
+both subgroups of order <cite>ALT_BN128_CURVE_ORDER</cite> and allows pairings to be
+computed.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP12">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BNP12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">F</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../elliptic_curve/index.html#ethereum.crypto.elliptic_curve.EllipticCurve" title="ethereum.crypto.elliptic_curve.EllipticCurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve.EllipticCurve</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP12.FIELD">
+<span class="sig-name descname"><span class="pre">FIELD</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP12.FIELD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP12.A">
+<span class="sig-name descname"><span class="pre">A</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP12.A" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP12.B">
+<span class="sig-name descname"><span class="pre">B</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNP12.B" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="bnf2-to-bnf12">
+<h4>bnf2_to_bnf12<a class="headerlink" href="#bnf2-to-bnf12" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.bnf2_to_bnf12">
+<span class="sig-name descname"><span class="pre">bnf2_to_bnf12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF2" title="ethereum.crypto.alt_bn128.BNF2"><span class="pre">BNF2</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.bnf2_to_bnf12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lift a field element in <cite>BNF2</cite> to <cite>BNF12</cite>.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bnf2_to_bnf12</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">BNF2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNF12</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="n">BNF12</span><span class="o">.</span><span class="n">i_plus_9</span> <span class="o">-</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="bnp-to-bnp12">
+<h4>bnp_to_bnp12<a class="headerlink" href="#bnp-to-bnp12" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.bnp_to_bnp12">
+<span class="sig-name descname"><span class="pre">bnp_to_bnp12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP" title="ethereum.crypto.alt_bn128.BNP"><span class="pre">BNP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.bnp_to_bnp12" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lift a point from <cite>BNP</cite> to <cite>BNP12</cite>.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bnp_to_bnp12</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">BNP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNP12</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">BNP12</span><span class="p">(</span><span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">)),</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</section>
+<section id="twist">
+<h4>twist<a class="headerlink" href="#twist" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.twist">
+<span class="sig-name descname"><span class="pre">twist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP2" title="ethereum.crypto.alt_bn128.BNP2"><span class="pre">BNP2</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.twist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply to twist to change variables from the curve <cite>BNP2</cite> to <cite>BNP12</cite>.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">twist</span><span class="p">(</span><span class="n">p</span><span class="p">:</span> <span class="n">BNP2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNP12</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">BNP12</span><span class="p">(</span>
+        <span class="n">bnf2_to_bnf12</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">BNF12</span><span class="o">.</span><span class="n">w</span> <span class="o">**</span> <span class="mi">2</span><span class="p">),</span>
+        <span class="n">bnf2_to_bnf12</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">BNF12</span><span class="o">.</span><span class="n">w</span> <span class="o">**</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="linefunc">
+<h4>linefunc<a class="headerlink" href="#linefunc" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.linefunc">
+<span class="sig-name descname"><span class="pre">linefunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.linefunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate the function defining the line between points <cite>p1</cite> and <cite>p2</cite> at the
+point <cite>t</cite>. The mathematical significance of this function is that is has
+divisor <cite>(p1) + (p2) + (p1 + p2) - 3(O)</cite>.</p>
+<p>Note: Abstract mathematical presentations of Miller’s algorithm often
+specify the divisor <cite>(p1) + (p2) - (p1 + p2) - (O)</cite>. This turns out not to
+matter.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">linefunc</span><span class="p">(</span><span class="n">p1</span><span class="p">:</span> <span class="n">BNP12</span><span class="p">,</span> <span class="n">p2</span><span class="p">:</span> <span class="n">BNP12</span><span class="p">,</span> <span class="n">t</span><span class="p">:</span> <span class="n">BNP12</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNF12</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">!=</span> <span class="n">p2</span><span class="o">.</span><span class="n">x</span><span class="p">:</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">lam</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">p2</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+        <span class="n">lam</span> <span class="o">=</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">lam</span> <span class="o">*</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">t</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p1</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</section>
+<section id="miller-loop">
+<h4>miller_loop<a class="headerlink" href="#miller-loop" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.miller_loop">
+<span class="sig-name descname"><span class="pre">miller_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.miller_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>The core of the pairing algorithm.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">miller_loop</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">BNP12</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">BNP12</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNF12</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="n">BNP12</span><span class="o">.</span><span class="n">point_at_infinity</span><span class="p">()</span> <span class="ow">or</span> <span class="n">q</span> <span class="o">==</span> <span class="n">BNP12</span><span class="o">.</span><span class="n">point_at_infinity</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">q</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">from_int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ATE_PAIRING_COUNT_BITS</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">f</span> <span class="o">*</span> <span class="n">linefunc</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">double</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ATE_PAIRING_COUNT</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">i</span><span class="p">):</span>
+            <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">linefunc</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">q</span>
+    <span class="k">assert</span> <span class="n">r</span> <span class="o">==</span> <span class="n">q</span><span class="o">.</span><span class="n">mul_by</span><span class="p">(</span><span class="n">ATE_PAIRING_COUNT</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">q1</span> <span class="o">=</span> <span class="n">BNP12</span><span class="p">(</span><span class="n">q</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">frobenius</span><span class="p">(),</span> <span class="n">q</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">frobenius</span><span class="p">())</span>
+    <span class="n">nq2</span> <span class="o">=</span> <span class="n">BNP12</span><span class="p">(</span><span class="n">q1</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">frobenius</span><span class="p">(),</span> <span class="o">-</span><span class="n">q1</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">frobenius</span><span class="p">())</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">linefunc</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">q1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">q1</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span> <span class="o">*</span> <span class="n">linefunc</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">nq2</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">f</span> <span class="o">**</span> <span class="p">((</span><span class="n">ALT_BN128_PRIME</span> <span class="o">**</span> <span class="mi">12</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="n">ALT_BN128_CURVE_ORDER</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pairing">
+<h4>pairing<a class="headerlink" href="#pairing" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.pairing">
+<span class="sig-name descname"><span class="pre">pairing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP2" title="ethereum.crypto.alt_bn128.BNP2"><span class="pre">BNP2</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP" title="ethereum.crypto.alt_bn128.BNP"><span class="pre">BNP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.pairing" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the pairing of <cite>q</cite> and <cite>p</cite>.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pairing</span><span class="p">(</span><span class="n">q</span><span class="p">:</span> <span class="n">BNP2</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="n">BNP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNF12</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">miller_loop</span><span class="p">(</span><span class="n">twist</span><span class="p">(</span><span class="n">q</span><span class="p">),</span> <span class="n">bnp_to_bnp12</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Ethereum Specification</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#ethereum-specification">Ethereum Specification</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#package-details">Package Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Comparisons:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../diffs/index.html">Comparisons</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">API Reference</a><ul>
+  <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
+  <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a><ul>
+      <li>Previous: <a href="../index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a></li>
+      <li>Next: <a href="../elliptic_curve/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve</span></code></a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Ethereum.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/autoapi/ethereum/crypto/alt_bn128/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

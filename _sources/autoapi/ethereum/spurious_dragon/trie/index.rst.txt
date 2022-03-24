@@ -78,7 +78,7 @@ EMPTY_TRIE_ROOT
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/trie.py
    :language: python
-   :lines: 60-62
+   :lines: 61-63
 
 
 Node
@@ -92,7 +92,7 @@ Node
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/trie.py
    :language: python
-   :lines: 66-66
+   :lines: 67-67
 
 
 K
@@ -106,7 +106,7 @@ K
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/trie.py
    :language: python
-   :lines: 67-67
+   :lines: 68-68
 
 
 V
@@ -120,7 +120,7 @@ V
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/trie.py
    :language: python
-   :lines: 68-76
+   :lines: 69-77
 
 
 LeafNode
@@ -209,7 +209,7 @@ InternalNode
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/trie.py
    :language: python
-   :lines: 107-107
+   :lines: 108-108
 
 
 encode_internal_node

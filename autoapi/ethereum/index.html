@@ -82,6 +82,13 @@
 <li class="toctree-l2"><a class="reference internal" href="byzantium/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.trie</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="crypto/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto/alt_bn128/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.alt_bn128</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/elliptic_curve/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/finite_field/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.finite_field</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/hash/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.hash</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="dao_fork/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dao_fork/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils</span></code></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils.address</span></code></a></li>
@@ -225,7 +232,6 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="base_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.base_types</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="crypto/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="ethash/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.ethash</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="rlp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.rlp</span></code></a></li>
 </ul>
@@ -233,6 +239,40 @@
 </section>
 <section id="package-contents">
 <h3>Package Contents<a class="headerlink" href="#package-contents" title="Permalink to this headline">¶</a></h3>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.evm_trace" title="ethereum.evm_trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">evm_trace</span></code></a></p></td>
+<td><p>Placeholder for an evm trace function. The spec does not trace evm by</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.__version__" title="ethereum.__version__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__version__</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.EVM_RECURSION_LIMIT" title="ethereum.EVM_RECURSION_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EVM_RECURSION_LIMIT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="package-details">
+<h3>Package Details<a class="headerlink" href="#package-details" title="Permalink to this headline">¶</a></h3>
 <section id="version">
 <h4>__version__<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h4>
 <dl class="py data">
@@ -252,6 +292,20 @@
 <dd></dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">EVM_RECURSION_LIMIT</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</section>
+<section id="evm-trace">
+<h4>evm_trace<a class="headerlink" href="#evm-trace" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.evm_trace">
+<span class="sig-name descname"><span class="pre">evm_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.evm_trace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Placeholder for an evm trace function. The spec does not trace evm by
+default. EVM tracing will be injected if the user requests it.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">op</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">pass</span>
 </pre></div>
 </div>
 </section>
@@ -284,6 +338,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>

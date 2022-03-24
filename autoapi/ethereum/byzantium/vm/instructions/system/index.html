@@ -619,7 +619,7 @@ but persisting the current values for sender.</p>
     <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child_evm</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">child_evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
         <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">Revert</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child_evm</span><span class="o">.</span><span class="n">error</span><span class="p">,</span> <span class="n">Revert</span><span class="p">):</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span> <span class="o">=</span> <span class="n">child_evm</span><span class="o">.</span><span class="n">output</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
@@ -796,6 +796,7 @@ and also has the ability to return a reason</p>
 <li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>

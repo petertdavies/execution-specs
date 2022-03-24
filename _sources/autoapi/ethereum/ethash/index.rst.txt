@@ -270,7 +270,7 @@ generate_seed
 ~~~~~~~~~~~~~
 
 
-.. function:: generate_seed(block_number: ethereum.base_types.Uint) -> ethereum.crypto.Hash32
+.. function:: generate_seed(block_number: ethereum.base_types.Uint) -> ethereum.crypto.hash.Hash32
    :noindexentry:
 
    Obtain the cache generation seed for the block identified by
@@ -364,7 +364,7 @@ generate_dataset_item
 ~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: generate_dataset_item(cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], index: ethereum.base_types.Uint) -> ethereum.crypto.Hash64
+.. function:: generate_dataset_item(cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], index: ethereum.base_types.Uint) -> ethereum.crypto.hash.Hash64
    :noindexentry:
 
    Generate a particular dataset item 0-indexed by `index` using `cache`.
@@ -389,7 +389,7 @@ generate_dataset
 ~~~~~~~~~~~~~~~~
 
 
-.. function:: generate_dataset(block_number: ethereum.base_types.Uint) -> Tuple[ethereum.crypto.Hash64, Ellipsis]
+.. function:: generate_dataset(block_number: ethereum.base_types.Uint) -> Tuple[ethereum.crypto.hash.Hash64, Ellipsis]
    :noindexentry:
 
    Generate the full dataset for the block identified by `block_number`.
@@ -413,7 +413,7 @@ hashimoto
 ~~~~~~~~~
 
 
-.. function:: hashimoto(header_hash: ethereum.crypto.Hash32, nonce: ethereum.base_types.Bytes8, dataset_size: ethereum.base_types.Uint, fetch_dataset_item: Callable[[ethereum.base_types.Uint], Tuple[ethereum.base_types.Uint32, Ellipsis]]) -> Tuple[bytes, ethereum.crypto.Hash32]
+.. function:: hashimoto(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, dataset_size: ethereum.base_types.Uint, fetch_dataset_item: Callable[[ethereum.base_types.Uint], Tuple[ethereum.base_types.Uint32, Ellipsis]]) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
    :noindexentry:
 
    Obtain the mix digest and the final value for a header, by aggregating
@@ -440,7 +440,7 @@ hashimoto_light
 ~~~~~~~~~~~~~~~
 
 
-.. function:: hashimoto_light(header_hash: ethereum.crypto.Hash32, nonce: ethereum.base_types.Bytes8, cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], dataset_size: ethereum.base_types.Uint) -> Tuple[bytes, ethereum.crypto.Hash32]
+.. function:: hashimoto_light(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], dataset_size: ethereum.base_types.Uint) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
    :noindexentry:
 
    Run the hashimoto algorithm by generating dataset item using the cache

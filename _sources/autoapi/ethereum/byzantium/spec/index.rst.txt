@@ -84,7 +84,7 @@ BLOCK_REWARD
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 57-57
+   :lines: 58-58
 
 
 GAS_LIMIT_ADJUSTMENT_FACTOR
@@ -98,7 +98,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 58-58
+   :lines: 59-59
 
 
 GAS_LIMIT_MINIMUM
@@ -112,7 +112,7 @@ GAS_LIMIT_MINIMUM
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 59-59
+   :lines: 60-60
 
 
 GENESIS_DIFFICULTY
@@ -126,7 +126,7 @@ GENESIS_DIFFICULTY
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 60-60
+   :lines: 61-61
 
 
 MAX_OMMER_DEPTH
@@ -140,7 +140,7 @@ MAX_OMMER_DEPTH
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 61-61
+   :lines: 62-62
 
 
 BOMB_DELAY_BLOCKS
@@ -154,7 +154,7 @@ BOMB_DELAY_BLOCKS
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 62-62
+   :lines: 63-63
 
 
 EMPTY_OMMER_HASH
@@ -168,7 +168,7 @@ EMPTY_OMMER_HASH
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 63-63
+   :lines: 64-64
 
 
 BlockChain
@@ -610,16 +610,16 @@ calculate_block_difficulty
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_block_difficulty(parent_block_number: ethereum.base_types.Uint, timestamp: ethereum.base_types.U256, parent_timestamp: ethereum.base_types.U256, parent_difficulty: ethereum.base_types.Uint, parent_ommers_hash: ethereum.byzantium.eth_types.Hash32) -> ethereum.base_types.Uint
+.. function:: calculate_block_difficulty(block_number: ethereum.base_types.Uint, block_timestamp: ethereum.base_types.U256, parent_timestamp: ethereum.base_types.U256, parent_difficulty: ethereum.base_types.Uint, parent_has_ommers: bool) -> ethereum.base_types.Uint
    :noindexentry:
 
    Computes difficulty of a block using its header and parent header.
 
-   :param parent_block_number: Block number of the parent block.
-   :param timestamp: Timestamp of the block.
+   :param block_number: Block number of the block.
+   :param block_timestamp: Timestamp of the block.
    :param parent_timestamp: Timestamp of the parent block.
    :param parent_difficulty: difficulty of the parent block.
-   :param parent_ommers_hash: hash of parents ommers.
+   :param parent_has_ommers: does the parent have ommers.
 
    :returns: **difficulty** -- Computed difficulty for a block.
    :rtype: `ethereum.base_types.Uint`

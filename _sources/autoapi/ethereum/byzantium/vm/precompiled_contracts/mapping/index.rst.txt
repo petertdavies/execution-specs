@@ -31,5 +31,5 @@ PRE_COMPILED_CONTRACTS
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/precompiled_contracts/mapping.py
    :language: python
-   :lines: 23-27
+   :lines: 25-33
 

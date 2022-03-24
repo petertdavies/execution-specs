@@ -18,7 +18,7 @@
     <script src="../../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="ethereum.dao_fork" href="../../dao_fork/index.html" />
+    <link rel="next" title="ethereum.crypto" href="../../crypto/index.html" />
     <link rel="prev" title="ethereum.byzantium.state" href="../state/index.html" />
    
   <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
@@ -394,7 +394,7 @@ which is encoded to <cite>b””</cite>.</p>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">unencoded</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">encoded</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -665,7 +665,7 @@ hashes the keys (if <cite>secured == True</cite>) and encodes all the nodes.</p>
         <span class="n">key</span><span class="p">:</span> <span class="n">Bytes</span>
         <span class="k">if</span> <span class="n">trie</span><span class="o">.</span><span class="n">secured</span><span class="p">:</span>
             <span class="c1"># &quot;secure&quot; tries hash keys once before construction</span>
-            <span class="n">key</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">preimage</span><span class="p">)</span>
+            <span class="n">key</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">preimage</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">key</span> <span class="o">=</span> <span class="n">preimage</span>
         <span class="n">mapped</span><span class="p">[</span><span class="n">bytes_to_nibble_list</span><span class="p">(</span><span class="n">key</span><span class="p">)]</span> <span class="o">=</span> <span class="n">encoded_value</span>
@@ -705,7 +705,7 @@ hashes the keys (if <cite>secured == True</cite>) and encodes all the nodes.</p>
 
     <span class="n">root_node</span> <span class="o">=</span> <span class="n">encode_internal_node</span><span class="p">(</span><span class="n">patricialize</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)))</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">root_node</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">root_node</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">root_node</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">root_node</span><span class="p">,</span> <span class="n">Bytes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">Root</span><span class="p">(</span><span class="n">root_node</span><span class="p">)</span>
@@ -822,6 +822,7 @@ memoization of the tree structure and hashes.</p>
 <li class="toctree-l4 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>
@@ -842,7 +843,7 @@ memoization of the tree structure and hashes.</p>
   <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
   <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium</span></code></a><ul>
       <li>Previous: <a href="../state/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.state</span></code></a></li>
-      <li>Next: <a href="../../dao_fork/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork</span></code></a></li>
+      <li>Next: <a href="../../crypto/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a></li>
   </ul></li>
   </ul></li>
   </ul></li>

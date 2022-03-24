@@ -78,7 +78,7 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: block_hashes
-      :annotation: :List[ethereum.crypto.Hash32]
+      :annotation: :List[ethereum.crypto.hash.Hash32]
 
       
 

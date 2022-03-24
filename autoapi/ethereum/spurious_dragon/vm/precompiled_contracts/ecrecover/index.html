@@ -159,12 +159,12 @@ the address to output.</p>
         <span class="k">return</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">public_key</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">secp256k1_recover</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">27</span><span class="p">,</span> <span class="n">message_hash</span><span class="p">)</span>
+        <span class="n">public_key</span> <span class="o">=</span> <span class="n">secp256k1_recover</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span> <span class="o">-</span> <span class="mi">27</span><span class="p">,</span> <span class="n">message_hash</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
         <span class="c1"># unable to extract public key</span>
         <span class="k">return</span>
 
-    <span class="n">address</span> <span class="o">=</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">public_key</span><span class="p">)[</span><span class="mi">12</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">public_key</span><span class="p">)[</span><span class="mi">12</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span>
     <span class="n">padded_address</span> <span class="o">=</span> <span class="n">left_pad_zero_bytes</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
     <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">padded_address</span>
 </pre></div>
@@ -199,6 +199,7 @@ the address to output.</p>
 <li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>

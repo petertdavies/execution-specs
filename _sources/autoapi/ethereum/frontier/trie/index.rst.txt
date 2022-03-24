@@ -78,7 +78,7 @@ EMPTY_TRIE_ROOT
 
 .. undocinclude:: /../src/ethereum/frontier/trie.py
    :language: python
-   :lines: 59-61
+   :lines: 60-62
 
 
 Node
@@ -92,7 +92,7 @@ Node
 
 .. undocinclude:: /../src/ethereum/frontier/trie.py
    :language: python
-   :lines: 65-65
+   :lines: 66-66
 
 
 K
@@ -106,7 +106,7 @@ K
 
 .. undocinclude:: /../src/ethereum/frontier/trie.py
    :language: python
-   :lines: 66-66
+   :lines: 67-67
 
 
 V
@@ -120,7 +120,7 @@ V
 
 .. undocinclude:: /../src/ethereum/frontier/trie.py
    :language: python
-   :lines: 67-75
+   :lines: 68-76
 
 
 LeafNode
@@ -209,7 +209,7 @@ InternalNode
 
 .. undocinclude:: /../src/ethereum/frontier/trie.py
    :language: python
-   :lines: 106-106
+   :lines: 107-107
 
 
 encode_internal_node

@@ -310,14 +310,14 @@ Header portion of a block on the chain.
    
 
    .. py:attribute:: parent_hash
-      :annotation: :ethereum.crypto.Hash32
+      :annotation: :ethereum.crypto.hash.Hash32
 
       
 
    
 
    .. py:attribute:: ommers_hash
-      :annotation: :ethereum.crypto.Hash32
+      :annotation: :ethereum.crypto.hash.Hash32
 
       
 
@@ -465,7 +465,7 @@ Data record produced during the execution of a transaction.
    
 
    .. py:attribute:: topics
-      :annotation: :Tuple[ethereum.crypto.Hash32, Ellipsis]
+      :annotation: :Tuple[ethereum.crypto.hash.Hash32, Ellipsis]
 
       
 

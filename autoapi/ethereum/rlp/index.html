@@ -227,6 +227,11 @@ objects.</p>
         <span class="k">return</span> <span class="n">encode</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">to_be_bytes</span><span class="p">())</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">encode_bytes</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">raw_data</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">encode_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">encode_bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">encode_sequence</span><span class="p">(</span><span class="n">raw_data</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">is_dataclass</span><span class="p">(</span><span class="n">raw_data</span><span class="p">):</span>
@@ -454,6 +459,13 @@ a <cite>Bytes</cite> subclass, a dataclass, <cite>Uint</cite>, <cite>U256</cite>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
                 <span class="s2">&quot;RLP Decoding to type </span><span class="si">{}</span><span class="s2"> is not supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
             <span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">raw_rlp</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01</span><span class="s2">&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+        <span class="k">elif</span> <span class="n">raw_rlp</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Cannot decode </span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">,</span> <span class="bp">cls</span><span class="p">))</span>
     <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Bytes</span><span class="p">):</span>
         <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">raw_rlp</span>
@@ -689,7 +701,7 @@ data.</p>
 <h4>rlp_hash<a class="headerlink" href="#rlp-hash" title="Permalink to this headline">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.rlp.rlp_hash">
-<span class="sig-name descname"><span class="pre">rlp_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.rlp.RLP" title="ethereum.rlp.RLP"><span class="pre">RLP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../crypto/index.html#ethereum.crypto.Hash32" title="ethereum.crypto.Hash32"><span class="pre">ethereum.crypto.Hash32</span></a><a class="headerlink" href="#ethereum.rlp.rlp_hash" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">rlp_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.rlp.RLP" title="ethereum.rlp.RLP"><span class="pre">RLP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../crypto/hash/index.html#ethereum.crypto.hash.Hash32" title="ethereum.crypto.hash.Hash32"><span class="pre">ethereum.crypto.hash.Hash32</span></a><a class="headerlink" href="#ethereum.rlp.rlp_hash" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtain the keccak-256 hash of the rlp encoding of the passed in data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -705,7 +717,7 @@ data.</p>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rlp_hash</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">RLP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">crypto</span><span class="o">.</span><span class="n">keccak256</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -738,6 +750,7 @@ data.</p>
 <li class="toctree-l4"><a class="reference internal" href="../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4 current"><a class="reference internal" href="../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>

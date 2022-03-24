@@ -23,9 +23,11 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 
+   alt_bn128/index.rst
    ecrecover/index.rst
    identity/index.rst
    mapping/index.rst
+   modexp/index.rst
    ripemd160/index.rst
    sha256/index.rst
 

@@ -433,6 +433,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     <span class="k">try</span><span class="p">:</span>
 
         <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span> <span class="ow">in</span> <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">:</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">)</span>
             <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">evm</span>
 
@@ -442,6 +443,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">InvalidOpcode</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">pc</span><span class="p">])</span>
 
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
             <span class="n">op_implementation</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
 
     <span class="k">except</span> <span class="p">(</span>
@@ -592,6 +594,7 @@ message call.</p>
 <li class="toctree-l4 current"><a class="reference internal" href="../../../index.html#subpackages">Subpackages</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../index.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../index.html#package-details">Package Details</a></li>
 </ul>
 </li>
 </ul>
