@@ -49,7 +49,6 @@ Functions
    ethereum.tangerine_whistle.spec.recover_sender
    ethereum.tangerine_whistle.spec.signing_hash
    ethereum.tangerine_whistle.spec.compute_header_hash
-   ethereum.tangerine_whistle.spec.get_block_header_by_hash
    ethereum.tangerine_whistle.spec.check_gas_limit
    ethereum.tangerine_whistle.spec.calculate_block_difficulty
 
@@ -81,7 +80,7 @@ BLOCK_REWARD
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
-   :lines: 56-56
+   :lines: 57-57
 
 
 GAS_LIMIT_ADJUSTMENT_FACTOR
@@ -95,7 +94,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
-   :lines: 57-57
+   :lines: 58-58
 
 
 GAS_LIMIT_MINIMUM
@@ -109,7 +108,7 @@ GAS_LIMIT_MINIMUM
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
-   :lines: 58-58
+   :lines: 59-59
 
 
 GENESIS_DIFFICULTY
@@ -123,7 +122,7 @@ GENESIS_DIFFICULTY
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
-   :lines: 59-59
+   :lines: 60-60
 
 
 MAX_OMMER_DEPTH
@@ -137,7 +136,7 @@ MAX_OMMER_DEPTH
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
-   :lines: 60-60
+   :lines: 61-61
 
 
 BlockChain
@@ -509,28 +508,6 @@ compute_header_hash
 .. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
    :language: python
    :pyobject: compute_header_hash
-
-get_block_header_by_hash
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: get_block_header_by_hash(hash: ethereum.tangerine_whistle.eth_types.Hash32, chain: BlockChain) -> ethereum.tangerine_whistle.eth_types.Header
-   :noindexentry:
-
-   Fetches the block header with the corresponding hash.
-
-   :param hash: Hash of the header of interest.
-   :param chain: History and current state.
-
-   :returns: **Header** -- Block header found by its hash.
-   :rtype: `ethereum.eth_types.Header`
-
-
-
-
-.. undocinclude:: /../src/ethereum/tangerine_whistle/spec.py
-   :language: python
-   :pyobject: get_block_header_by_hash
 
 check_gas_limit
 ~~~~~~~~~~~~~~~

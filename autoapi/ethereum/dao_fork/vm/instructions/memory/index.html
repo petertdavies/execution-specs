@@ -209,7 +209,7 @@ insufficient to store the word.</p>
     <span class="n">start_position</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
     <span class="c1"># make sure that value doesn&#39;t exceed 1 byte</span>
-    <span class="n">normalized_bytes_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="o">&amp;</span> <span class="n">U8_MAX_VALUE</span><span class="p">)</span><span class="o">.</span><span class="n">to_be_bytes</span><span class="p">()</span>
+    <span class="n">normalized_bytes_value</span> <span class="o">=</span> <span class="p">(</span><span class="n">value</span> <span class="o">&amp;</span> <span class="n">U8_MAX_VALUE</span><span class="p">)</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span><span class="p">)</span>
 
     <span class="n">memory_extend_gas_cost</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">start_position</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>

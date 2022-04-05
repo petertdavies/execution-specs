@@ -261,7 +261,7 @@ EMPTY_ACCOUNT
 
 .. undocinclude:: /../src/ethereum/frontier/eth_types.py
    :language: python
-   :lines: 72-75
+   :lines: 72-76
 
 
 encode_account

@@ -39,7 +39,6 @@ Functions
    ethereum.dao_fork.vm.interpreter.process_message
    ethereum.dao_fork.vm.interpreter.execute_code
    ethereum.dao_fork.vm.interpreter.collect_accounts_to_delete
-   ethereum.dao_fork.vm.interpreter.collect_logs
    ethereum.dao_fork.vm.interpreter.calculate_gas_refund
 
 
@@ -66,7 +65,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/dao_fork/vm/interpreter.py
    :language: python
-   :lines: 49-49
+   :lines: 45-45
 
 
 MessageCallOutput
@@ -234,28 +233,6 @@ collect_accounts_to_delete
 .. undocinclude:: /../src/ethereum/dao_fork/vm/interpreter.py
    :language: python
    :pyobject: collect_accounts_to_delete
-
-collect_logs
-~~~~~~~~~~~~
-
-
-.. function:: collect_logs(evm: ethereum.dao_fork.vm.Evm) -> Tuple[ethereum.dao_fork.eth_types.Log, Ellipsis]
-   :noindexentry:
-
-   Collects all the logs emitted while executing the message call.
-
-   :param evm: The current EVM frame.
-
-   :returns: **logs** -- returns all the logs that were emitted while executing the
-             message call.
-   :rtype: `tuple`
-
-
-
-
-.. undocinclude:: /../src/ethereum/dao_fork/vm/interpreter.py
-   :language: python
-   :pyobject: collect_logs
 
 calculate_gas_refund
 ~~~~~~~~~~~~~~~~~~~~

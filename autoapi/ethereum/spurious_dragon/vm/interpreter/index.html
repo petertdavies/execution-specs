@@ -109,8 +109,7 @@
 <li><p><a class="reference internal" href="#execute-code" id="id14">execute_code</a></p></li>
 <li><p><a class="reference internal" href="#collect-touched-accounts" id="id15">collect_touched_accounts</a></p></li>
 <li><p><a class="reference internal" href="#collect-accounts-to-delete" id="id16">collect_accounts_to_delete</a></p></li>
-<li><p><a class="reference internal" href="#collect-logs" id="id17">collect_logs</a></p></li>
-<li><p><a class="reference internal" href="#calculate-gas-refund" id="id18">calculate_gas_refund</a></p></li>
+<li><p><a class="reference internal" href="#calculate-gas-refund" id="id17">calculate_gas_refund</a></p></li>
 </ul>
 </li>
 </ul>
@@ -161,10 +160,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.vm.interpreter.collect_accounts_to_delete" title="ethereum.spurious_dragon.vm.interpreter.collect_accounts_to_delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_accounts_to_delete</span></code></a></p></td>
 <td><p>Collects all the accounts that were marked for deletion by the</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.vm.interpreter.collect_logs" title="ethereum.spurious_dragon.vm.interpreter.collect_logs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_logs</span></code></a></p></td>
-<td><p>Collects all the logs emitted while executing the message call.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.vm.interpreter.calculate_gas_refund" title="ethereum.spurious_dragon.vm.interpreter.calculate_gas_refund"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_gas_refund</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.vm.interpreter.calculate_gas_refund" title="ethereum.spurious_dragon.vm.interpreter.calculate_gas_refund"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_gas_refund</span></code></a></p></td>
 <td><p>Adds up the gas that was refunded in each execution frame during the</p></td>
 </tr>
 </tbody>
@@ -324,7 +320,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
         <span class="n">gas_left</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span>
         <span class="n">refund_counter</span><span class="o">=</span><span class="n">refund_counter</span><span class="p">,</span>
-        <span class="n">logs</span><span class="o">=</span><span class="n">collect_logs</span><span class="p">(</span><span class="n">evm</span><span class="p">),</span>
+        <span class="n">logs</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">logs</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="k">else</span> <span class="p">(),</span>
         <span class="n">accounts_to_delete</span><span class="o">=</span><span class="n">accounts_to_delete</span><span class="p">,</span>
         <span class="n">touched_accounts</span><span class="o">=</span><span class="n">collect_touched_accounts</span><span class="p">(</span><span class="n">evm</span><span class="p">),</span>
         <span class="n">has_erred</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">,</span>
@@ -366,7 +362,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
         <span class="k">try</span><span class="p">:</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">contract_code_gas</span><span class="p">)</span>
             <span class="n">ensure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">contract_code</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">MAX_CODE_SIZE</span><span class="p">,</span> <span class="n">OutOfGasError</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">OutOfGasError</span><span class="p">:</span>
+        <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
             <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
@@ -491,24 +487,10 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
             <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
             <span class="n">op_implementation</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
 
-    <span class="k">except</span> <span class="p">(</span>
-        <span class="n">OutOfGasError</span><span class="p">,</span>
-        <span class="n">InvalidOpcode</span><span class="p">,</span>
-        <span class="n">InvalidJumpDestError</span><span class="p">,</span>
-        <span class="n">InsufficientFunds</span><span class="p">,</span>
-        <span class="n">StackOverflowError</span><span class="p">,</span>
-        <span class="n">StackUnderflowError</span><span class="p">,</span>
-        <span class="n">StackDepthLimitError</span><span class="p">,</span>
-    <span class="p">):</span>
+    <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">except</span> <span class="p">(</span>
-        <span class="n">EnsureError</span><span class="p">,</span>
-        <span class="ne">ValueError</span><span class="p">,</span>
-    <span class="p">):</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">finally</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">evm</span>
+    <span class="k">return</span> <span class="n">evm</span>
 </pre></div>
 </div>
 </section>
@@ -604,39 +586,6 @@ See also: <a class="reference external" href="https://github.com/ethereum/EIPs/i
             <span class="n">chain</span><span class="p">(</span>
                 <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
                 <span class="o">*</span><span class="p">(</span><span class="n">collect_accounts_to_delete</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">),</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="collect-logs">
-<h4>collect_logs<a class="headerlink" href="#collect-logs" title="Permalink to this headline">¶</a></h4>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.collect_logs">
-<span class="sig-name descname"><span class="pre">collect_logs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../index.html#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><span class="pre">ethereum.spurious_dragon.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../eth_types/index.html#ethereum.spurious_dragon.eth_types.Log" title="ethereum.spurious_dragon.eth_types.Log"><span class="pre">ethereum.spurious_dragon.eth_types.Log</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Ellipsis</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.collect_logs" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collects all the logs emitted while executing the message call.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>logs</strong> – returns all the logs that were emitted while executing the
-message call.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>tuple</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_logs</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Log</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
-            <span class="n">chain</span><span class="p">(</span>
-                <span class="n">evm</span><span class="o">.</span><span class="n">logs</span><span class="p">,</span>
-                <span class="o">*</span><span class="p">(</span><span class="n">collect_logs</span><span class="p">(</span><span class="n">child_evm</span><span class="p">)</span> <span class="k">for</span> <span class="n">child_evm</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">),</span>
             <span class="p">)</span>
         <span class="p">)</span>
 </pre></div>

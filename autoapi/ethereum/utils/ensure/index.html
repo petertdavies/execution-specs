@@ -62,8 +62,7 @@
 </li>
 <li><p><a class="reference internal" href="#module-details" id="id4">Module Details</a></p>
 <ul>
-<li><p><a class="reference internal" href="#ensureerror" id="id5">EnsureError</a></p></li>
-<li><p><a class="reference internal" href="#ensure" id="id6">ensure</a></p></li>
+<li><p><a class="reference internal" href="#ensure" id="id5">ensure</a></p></li>
 </ul>
 </li>
 </ul>
@@ -91,39 +90,29 @@
 </section>
 <section id="module-details">
 <h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline">¶</a></h3>
-<section id="ensureerror">
-<h4>EnsureError<a class="headerlink" href="#ensureerror" title="Permalink to this headline">¶</a></h4>
-<p>Represents a failed check.</p>
-<dl class="py exception">
-<dt class="sig sig-object py" id="ethereum.utils.ensure.EnsureError">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">EnsureError</span></span><a class="headerlink" href="#ethereum.utils.ensure.EnsureError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-</section>
 <section id="ensure">
 <h4>ensure<a class="headerlink" href="#ensure" title="Permalink to this headline">¶</a></h4>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.utils.ensure.ensure">
-<span class="sig-name descname"><span class="pre">ensure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception_class</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Exception</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">EnsureError</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.utils.ensure.ensure" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">ensure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">BaseException</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">BaseException</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.utils.ensure.ensure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Does nothing if <cite>value</cite> is truthy, otherwise raises the exception returned
 by <cite>exception_class</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> – Value that should be true.</p></li>
-<li><p><strong>exception_class</strong> – Constructor for the exception to raise.</p></li>
+<li><p><strong>exception</strong> – Constructor for the exception to raise.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ensure</span><span class="p">(</span>
-    <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">exception_class</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[],</span> <span class="ne">Exception</span><span class="p">]</span> <span class="o">=</span> <span class="n">EnsureError</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="ne">BaseException</span><span class="p">],</span> <span class="ne">BaseException</span><span class="p">]</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
         <span class="k">return</span>
-    <span class="k">raise</span> <span class="n">exception_class</span><span class="p">()</span>
+    <span class="k">raise</span> <span class="n">exception</span>
 </pre></div>
 </div>
 </section>

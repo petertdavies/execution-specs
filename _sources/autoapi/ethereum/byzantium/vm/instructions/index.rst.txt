@@ -1023,5 +1023,5 @@ op_implementation
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/__init__.py
    :language: python
-   :lines: 203-337
+   :lines: 203-338
 

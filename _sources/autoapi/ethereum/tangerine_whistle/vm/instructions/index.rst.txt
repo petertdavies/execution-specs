@@ -995,5 +995,5 @@ op_implementation
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/vm/instructions/__init__.py
    :language: python
-   :lines: 199-329
+   :lines: 199-330
 

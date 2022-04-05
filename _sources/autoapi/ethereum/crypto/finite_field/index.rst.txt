@@ -355,7 +355,7 @@ U
 
 .. undocinclude:: /../src/ethereum/crypto/finite_field.py
    :language: python
-   :lines: 191-191
+   :lines: 192-192
 
 
 GaloisField

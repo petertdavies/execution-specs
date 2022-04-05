@@ -657,7 +657,7 @@ False otherwise.</p>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 
     <span class="k">def</span> <span class="nf">reduce_sender_balance</span><span class="p">(</span><span class="n">sender</span><span class="p">:</span> <span class="n">Account</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">sender</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">amount</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">sender</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">amount</span><span class="p">,</span> <span class="ne">AssertionError</span><span class="p">)</span>
         <span class="n">sender</span><span class="o">.</span><span class="n">balance</span> <span class="o">-=</span> <span class="n">amount</span>
 
     <span class="k">def</span> <span class="nf">increase_recipient_balance</span><span class="p">(</span><span class="n">recipient</span><span class="p">:</span> <span class="n">Account</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>

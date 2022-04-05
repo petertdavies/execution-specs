@@ -20,6 +20,21 @@ Module Contents
 ---------------
 
 
+ExceptionalHalt
+~~~~~~~~~~~~~~~
+
+
+Indicates that the EVM has experienced an exceptional halt. This causes
+execution to immediately end with all gas being consumed.
+
+
+.. exception:: ExceptionalHalt
+
+
+   Bases: :py:obj:`ethereum.exceptions.EthereumException`
+
+
+
 StackUnderflowError
 ~~~~~~~~~~~~~~~~~~~
 
@@ -30,7 +45,7 @@ Occurs when a pop is executed on an empty stack.
 .. exception:: StackUnderflowError
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -44,7 +59,7 @@ Occurs when a push is executed on a stack at max capacity.
 .. exception:: StackOverflowError
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -59,7 +74,7 @@ frame.
 .. exception:: OutOfGasError
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -73,7 +88,7 @@ Raised when an invalid opcode is encountered.
 .. exception:: InvalidOpcode
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -93,7 +108,7 @@ following criteria:
 .. exception:: InvalidJumpDestError
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -107,7 +122,7 @@ Raised when the message depth is greater than `1024`
 .. exception:: StackDepthLimitError
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 
 
@@ -122,6 +137,6 @@ requested value.
 .. exception:: InsufficientFunds
 
 
-   Bases: :py:obj:`Exception`
+   Bases: :py:obj:`ExceptionalHalt`
 
 

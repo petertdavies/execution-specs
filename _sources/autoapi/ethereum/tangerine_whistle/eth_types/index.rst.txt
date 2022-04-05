@@ -276,7 +276,7 @@ EMPTY_ACCOUNT
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/eth_types.py
    :language: python
-   :lines: 73-76
+   :lines: 73-77
 
 
 encode_account

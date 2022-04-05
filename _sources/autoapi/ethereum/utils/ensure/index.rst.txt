@@ -33,32 +33,18 @@ Functions
 Module Details
 ---------------
 
-EnsureError
-~~~~~~~~~~~
-
-
-Represents a failed check.
-
-
-.. exception:: EnsureError
-
-
-   Bases: :py:obj:`Exception`
-
-
-
 ensure
 ~~~~~~
 
 
-.. function:: ensure(value: bool, exception_class: Callable[[], Exception] = EnsureError) -> None
+.. function:: ensure(value: bool, exception: Union[Type[BaseException], BaseException]) -> None
    :noindexentry:
 
    Does nothing if `value` is truthy, otherwise raises the exception returned
    by `exception_class`.
 
    :param value: Value that should be true.
-   :param exception_class: Constructor for the exception to raise.
+   :param exception: Constructor for the exception to raise.
 
 
 

@@ -39,7 +39,6 @@ Functions
    ethereum.tangerine_whistle.vm.interpreter.process_message
    ethereum.tangerine_whistle.vm.interpreter.execute_code
    ethereum.tangerine_whistle.vm.interpreter.collect_accounts_to_delete
-   ethereum.tangerine_whistle.vm.interpreter.collect_logs
    ethereum.tangerine_whistle.vm.interpreter.calculate_gas_refund
 
 
@@ -66,7 +65,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/vm/interpreter.py
    :language: python
-   :lines: 49-49
+   :lines: 45-45
 
 
 MessageCallOutput
@@ -234,28 +233,6 @@ collect_accounts_to_delete
 .. undocinclude:: /../src/ethereum/tangerine_whistle/vm/interpreter.py
    :language: python
    :pyobject: collect_accounts_to_delete
-
-collect_logs
-~~~~~~~~~~~~
-
-
-.. function:: collect_logs(evm: ethereum.tangerine_whistle.vm.Evm) -> Tuple[ethereum.tangerine_whistle.eth_types.Log, Ellipsis]
-   :noindexentry:
-
-   Collects all the logs emitted while executing the message call.
-
-   :param evm: The current EVM frame.
-
-   :returns: **logs** -- returns all the logs that were emitted while executing the
-             message call.
-   :rtype: `tuple`
-
-
-
-
-.. undocinclude:: /../src/ethereum/tangerine_whistle/vm/interpreter.py
-   :language: python
-   :pyobject: collect_logs
 
 calculate_gas_refund
 ~~~~~~~~~~~~~~~~~~~~

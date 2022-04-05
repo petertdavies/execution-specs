@@ -31,5 +31,5 @@ PRE_COMPILED_CONTRACTS
 
 .. undocinclude:: /../src/ethereum/dao_fork/vm/precompiled_contracts/mapping.py
    :language: python
-   :lines: 23-27
+   :lines: 23-28
 

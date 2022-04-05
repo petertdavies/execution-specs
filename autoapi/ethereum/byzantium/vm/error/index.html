@@ -92,16 +92,17 @@
 <li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
 <li><p><a class="reference internal" href="#module-contents" id="id2">Module Contents</a></p>
 <ul>
-<li><p><a class="reference internal" href="#stackunderflowerror" id="id3">StackUnderflowError</a></p></li>
-<li><p><a class="reference internal" href="#stackoverflowerror" id="id4">StackOverflowError</a></p></li>
-<li><p><a class="reference internal" href="#outofgaserror" id="id5">OutOfGasError</a></p></li>
-<li><p><a class="reference internal" href="#invalidopcode" id="id6">InvalidOpcode</a></p></li>
-<li><p><a class="reference internal" href="#invalidjumpdesterror" id="id7">InvalidJumpDestError</a></p></li>
-<li><p><a class="reference internal" href="#stackdepthlimiterror" id="id8">StackDepthLimitError</a></p></li>
-<li><p><a class="reference internal" href="#insufficientfunds" id="id9">InsufficientFunds</a></p></li>
-<li><p><a class="reference internal" href="#writeinstaticcontext" id="id10">WriteInStaticContext</a></p></li>
-<li><p><a class="reference internal" href="#outofboundsread" id="id11">OutOfBoundsRead</a></p></li>
-<li><p><a class="reference internal" href="#revert" id="id12">Revert</a></p></li>
+<li><p><a class="reference internal" href="#exceptionalhalt" id="id3">ExceptionalHalt</a></p></li>
+<li><p><a class="reference internal" href="#revert" id="id4">Revert</a></p></li>
+<li><p><a class="reference internal" href="#stackunderflowerror" id="id5">StackUnderflowError</a></p></li>
+<li><p><a class="reference internal" href="#stackoverflowerror" id="id6">StackOverflowError</a></p></li>
+<li><p><a class="reference internal" href="#outofgaserror" id="id7">OutOfGasError</a></p></li>
+<li><p><a class="reference internal" href="#invalidopcode" id="id8">InvalidOpcode</a></p></li>
+<li><p><a class="reference internal" href="#invalidjumpdesterror" id="id9">InvalidJumpDestError</a></p></li>
+<li><p><a class="reference internal" href="#stackdepthlimiterror" id="id10">StackDepthLimitError</a></p></li>
+<li><p><a class="reference internal" href="#insufficientfunds" id="id11">InsufficientFunds</a></p></li>
+<li><p><a class="reference internal" href="#writeinstaticcontext" id="id12">WriteInStaticContext</a></p></li>
+<li><p><a class="reference internal" href="#outofboundsread" id="id13">OutOfBoundsRead</a></p></li>
 </ul>
 </li>
 </ul>
@@ -112,13 +113,36 @@
 </section>
 <section id="module-contents">
 <h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h3>
+<section id="exceptionalhalt">
+<h4>ExceptionalHalt<a class="headerlink" href="#exceptionalhalt" title="Permalink to this headline">¶</a></h4>
+<p>Indicates that the EVM has experienced an exceptional halt. This causes
+execution to immediately end with all gas being consumed.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ethereum.byzantium.vm.error.ExceptionalHalt">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">ExceptionalHalt</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../exceptions/index.html#ethereum.exceptions.EthereumException" title="ethereum.exceptions.EthereumException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.exceptions.EthereumException</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="revert">
+<h4>Revert<a class="headerlink" href="#revert" title="Permalink to this headline">¶</a></h4>
+<p>Raised by the <cite>REVERT</cite> opcode.</p>
+<p>Unlike other EVM exceptions this does not result in the consumption of all
+gas.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="ethereum.byzantium.vm.error.Revert">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">Revert</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.Revert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../../exceptions/index.html#ethereum.exceptions.EthereumException" title="ethereum.exceptions.EthereumException"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ethereum.exceptions.EthereumException</span></code></a></p>
+</dd></dl>
+
+</section>
 <section id="stackunderflowerror">
 <h4>StackUnderflowError<a class="headerlink" href="#stackunderflowerror" title="Permalink to this headline">¶</a></h4>
 <p>Occurs when a pop is executed on an empty stack.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.StackUnderflowError">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">StackUnderflowError</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.StackUnderflowError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -128,7 +152,7 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.StackOverflowError">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">StackOverflowError</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.StackOverflowError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -139,7 +163,7 @@ frame.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.OutOfGasError">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">OutOfGasError</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.OutOfGasError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -149,7 +173,7 @@ frame.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.InvalidOpcode">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">InvalidOpcode</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.InvalidOpcode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -168,7 +192,7 @@ following criteria:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.InvalidJumpDestError">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">InvalidJumpDestError</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.InvalidJumpDestError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -178,7 +202,7 @@ following criteria:</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.StackDepthLimitError">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">StackDepthLimitError</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.StackDepthLimitError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -189,7 +213,7 @@ requested value.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.InsufficientFunds">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">InsufficientFunds</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.InsufficientFunds" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -200,7 +224,7 @@ of a STATICCALL context.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.WriteInStaticContext">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">WriteInStaticContext</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.WriteInStaticContext" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>
@@ -211,17 +235,7 @@ boundaries of the buffer.</p>
 <dl class="py exception">
 <dt class="sig sig-object py" id="ethereum.byzantium.vm.error.OutOfBoundsRead">
 <em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">OutOfBoundsRead</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.OutOfBoundsRead" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
-</dd></dl>
-
-</section>
-<section id="revert">
-<h4>Revert<a class="headerlink" href="#revert" title="Permalink to this headline">¶</a></h4>
-<p>Raised by the <cite>REVERT</cite> opcode.</p>
-<dl class="py exception">
-<dt class="sig sig-object py" id="ethereum.byzantium.vm.error.Revert">
-<em class="property"><span class="pre">exception</span> </em><span class="sig-name descname"><span class="pre">Revert</span></span><a class="headerlink" href="#ethereum.byzantium.vm.error.Revert" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#ethereum.byzantium.vm.error.ExceptionalHalt" title="ethereum.byzantium.vm.error.ExceptionalHalt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExceptionalHalt</span></code></a></p>
 </dd></dl>
 
 </section>

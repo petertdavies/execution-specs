@@ -34,7 +34,7 @@ DAO_ACCOUNTS
 
 .. undocinclude:: /../src/ethereum/dao_fork/dao.py
    :language: python
-   :lines: 20-138
+   :lines: 20-140
 
 
 DAO_RECOVERY

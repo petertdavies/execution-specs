@@ -33,6 +33,7 @@ Submodules
 
    base_types/index.rst
    ethash/index.rst
+   exceptions/index.rst
    rlp/index.rst
 
 

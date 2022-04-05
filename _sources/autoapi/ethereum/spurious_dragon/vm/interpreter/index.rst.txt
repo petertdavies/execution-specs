@@ -40,7 +40,6 @@ Functions
    ethereum.spurious_dragon.vm.interpreter.execute_code
    ethereum.spurious_dragon.vm.interpreter.collect_touched_accounts
    ethereum.spurious_dragon.vm.interpreter.collect_accounts_to_delete
-   ethereum.spurious_dragon.vm.interpreter.collect_logs
    ethereum.spurious_dragon.vm.interpreter.calculate_gas_refund
 
 
@@ -69,7 +68,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
-   :lines: 51-51
+   :lines: 49-49
 
 
 MAX_CODE_SIZE
@@ -83,7 +82,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
-   :lines: 52-52
+   :lines: 50-50
 
 
 RIPEMD160_ADDRESS
@@ -97,7 +96,7 @@ RIPEMD160_ADDRESS
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
-   :lines: 53-53
+   :lines: 51-51
 
 
 MessageCallOutput
@@ -298,28 +297,6 @@ collect_accounts_to_delete
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
    :pyobject: collect_accounts_to_delete
-
-collect_logs
-~~~~~~~~~~~~
-
-
-.. function:: collect_logs(evm: ethereum.spurious_dragon.vm.Evm) -> Tuple[ethereum.spurious_dragon.eth_types.Log, Ellipsis]
-   :noindexentry:
-
-   Collects all the logs emitted while executing the message call.
-
-   :param evm: The current EVM frame.
-
-   :returns: **logs** -- returns all the logs that were emitted while executing the
-             message call.
-   :rtype: `tuple`
-
-
-
-
-.. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
-   :language: python
-   :pyobject: collect_logs
 
 calculate_gas_refund
 ~~~~~~~~~~~~~~~~~~~~

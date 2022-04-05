@@ -64,7 +64,7 @@ RLP
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 25-25
+   :lines: 26-26
 
 
 encode
@@ -187,7 +187,7 @@ T
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 180-180
+   :lines: 184-184
 
 
 decode_to

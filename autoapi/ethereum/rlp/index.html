@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Comparisons" href="../../../diffs/index.html" />
-    <link rel="prev" title="ethereum.ethash" href="../ethash/index.html" />
+    <link rel="prev" title="ethereum.exceptions" href="../exceptions/index.html" />
    
   <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
   
@@ -237,7 +237,7 @@ objects.</p>
     <span class="k">elif</span> <span class="n">is_dataclass</span><span class="p">(</span><span class="n">raw_data</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">encode</span><span class="p">(</span><span class="n">astuple</span><span class="p">(</span><span class="n">raw_data</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+        <span class="k">raise</span> <span class="n">RLPEncodingError</span><span class="p">(</span>
             <span class="s2">&quot;RLP Encoding of type </span><span class="si">{}</span><span class="s2"> is not supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_data</span><span class="p">))</span>
         <span class="p">)</span>
 </pre></div>
@@ -366,7 +366,10 @@ from the byte sequence <cite>encoded_data</cite>, using RLP.</p>
     <span class="c1"># given raw data (including empty raw data)</span>
     <span class="c1"># RLP Encoding(b&#39;&#39;) -&gt; [0x80]  # noqa: SC100</span>
     <span class="c1"># RLP Encoding([])  -&gt; [0xc0]  # noqa: SC100</span>
-    <span class="n">ensure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span>
+        <span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">RLPDecodingError</span><span class="p">(</span><span class="s2">&quot;Cannot decode empty bytestring&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">encoded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mh">0xBF</span><span class="p">:</span>
         <span class="c1"># This means that the raw data is of type bytes</span>
@@ -442,7 +445,7 @@ a <cite>Bytes</cite> subclass, a dataclass, <cite>Uint</cite>, <cite>U256</cite>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_decode_to</span><span class="p">(</span><span class="bp">cls</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">T</span><span class="p">],</span> <span class="n">raw_rlp</span><span class="p">:</span> <span class="n">RLP</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">Tuple</span><span class="p">[</span><span class="n">Uint</span><span class="p">,</span> <span class="o">...</span><span class="p">]))</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_name</span> <span class="o">==</span> <span class="s2">&quot;Tuple&quot;</span><span class="p">:</span>  <span class="c1"># type: ignore # noqa: E501</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">for</span> <span class="n">raw_item</span> <span class="ow">in</span> <span class="n">raw_rlp</span><span class="p">:</span>
             <span class="n">args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_decode_to</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">__args__</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">raw_item</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
@@ -450,13 +453,13 @@ a <cite>Bytes</cite> subclass, a dataclass, <cite>Uint</cite>, <cite>U256</cite>
     <span class="k">elif</span> <span class="bp">cls</span> <span class="o">==</span> <span class="n">Union</span><span class="p">[</span><span class="n">Bytes0</span><span class="p">,</span> <span class="n">Bytes20</span><span class="p">]:</span>
         <span class="c1"># We can&#39;t support Union types in general, so we support this one</span>
         <span class="c1"># (which appears in the Transaction type) as a special case</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Bytes0</span><span class="p">()</span>  <span class="c1"># type: ignore</span>
         <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">Bytes20</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+            <span class="k">raise</span> <span class="n">RLPDecodingError</span><span class="p">(</span>
                 <span class="s2">&quot;RLP Decoding to type </span><span class="si">{}</span><span class="s2"> is not supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
             <span class="p">)</span>
     <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
@@ -467,13 +470,13 @@ a <cite>Bytes</cite> subclass, a dataclass, <cite>Uint</cite>, <cite>U256</cite>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Cannot decode </span><span class="si">{}</span><span class="s2"> as </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">,</span> <span class="bp">cls</span><span class="p">))</span>
     <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">Bytes</span><span class="p">):</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">raw_rlp</span>
     <span class="k">elif</span> <span class="nb">issubclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="p">(</span><span class="n">Uint</span><span class="p">,</span> <span class="n">U256</span><span class="p">)):</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="n">Bytes</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
     <span class="k">elif</span> <span class="n">is_dataclass</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">)</span> <span class="o">==</span> <span class="nb">list</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">raw_rlp</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
         <span class="n">args</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="c1"># FIXME: Add length check</span>
@@ -481,7 +484,9 @@ a <cite>Bytes</cite> subclass, a dataclass, <cite>Uint</cite>, <cite>U256</cite>
             <span class="n">args</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_decode_to</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">rlp_item</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;RLP Decoding to type </span><span class="si">{}</span><span class="s2"> is not supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="p">))</span>
+        <span class="k">raise</span> <span class="n">RLPDecodingError</span><span class="p">(</span>
+            <span class="s2">&quot;RLP Decoding to type </span><span class="si">{}</span><span class="s2"> is not supported&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
+        <span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -510,24 +515,28 @@ should be of type <cite>bytes</cite>.</p>
         <span class="k">return</span> <span class="n">encoded_bytes</span>
     <span class="k">elif</span> <span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mh">0xB7</span><span class="p">:</span>
         <span class="n">len_raw_data</span> <span class="o">=</span> <span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mh">0x80</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">len_raw_data</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">len_raw_data</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">),</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">raw_data</span> <span class="o">=</span> <span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">len_raw_data</span><span class="p">]</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">len_raw_data</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">raw_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mh">0x80</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span>
+            <span class="ow">not</span> <span class="p">(</span><span class="n">len_raw_data</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">raw_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mh">0x80</span><span class="p">),</span> <span class="n">RLPDecodingError</span>
+        <span class="p">)</span>
         <span class="k">return</span> <span class="n">raw_data</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># This is the index in the encoded data at which decoded data</span>
         <span class="c1"># starts from.</span>
         <span class="n">decoded_data_start_idx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mh">0xB7</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">decoded_data_start_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span>
+            <span class="n">decoded_data_start_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">),</span> <span class="n">RLPDecodingError</span>
+        <span class="p">)</span>
         <span class="c1"># Expectation is that the big endian bytes shouldn&#39;t start with 0</span>
         <span class="c1"># while trying to decode using RLP, in which case is an error.</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">len_decoded_data</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span>
             <span class="n">encoded_bytes</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">decoded_data_start_idx</span><span class="p">]</span>
         <span class="p">)</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">len_decoded_data</span> <span class="o">&gt;=</span> <span class="mh">0x38</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">len_decoded_data</span> <span class="o">&gt;=</span> <span class="mh">0x38</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">decoded_data_end_idx</span> <span class="o">=</span> <span class="n">decoded_data_start_idx</span> <span class="o">+</span> <span class="n">len_decoded_data</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">decoded_data_end_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">decoded_data_end_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_bytes</span><span class="p">),</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">encoded_bytes</span><span class="p">[</span><span class="n">decoded_data_start_idx</span><span class="p">:</span><span class="n">decoded_data_end_idx</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -555,22 +564,28 @@ should be of type <cite>Sequence</cite> of objects.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decode_to_sequence</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">:</span> <span class="n">Bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RLP</span><span class="p">]:</span>
     <span class="k">if</span> <span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mh">0xF7</span><span class="p">:</span>
         <span class="n">len_joined_encodings</span> <span class="o">=</span> <span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mh">0xC0</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">len_joined_encodings</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">len_joined_encodings</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">),</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">joined_encodings</span> <span class="o">=</span> <span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">len_joined_encodings</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">joined_encodings_start_idx</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mh">0xF7</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">joined_encodings_start_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span>
+            <span class="n">joined_encodings_start_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">),</span>
+            <span class="n">RLPDecodingError</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="c1"># Expectation is that the big endian bytes shouldn&#39;t start with 0</span>
         <span class="c1"># while trying to decode using RLP, in which case is an error.</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">len_joined_encodings</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span>
             <span class="n">encoded_sequence</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">joined_encodings_start_idx</span><span class="p">]</span>
         <span class="p">)</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">len_joined_encodings</span> <span class="o">&gt;=</span> <span class="mh">0x38</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">len_joined_encodings</span> <span class="o">&gt;=</span> <span class="mh">0x38</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">joined_encodings_end_idx</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">joined_encodings_start_idx</span> <span class="o">+</span> <span class="n">len_joined_encodings</span>
         <span class="p">)</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">joined_encodings_end_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span>
+            <span class="n">joined_encodings_end_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_sequence</span><span class="p">),</span>
+            <span class="n">RLPDecodingError</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">joined_encodings</span> <span class="o">=</span> <span class="n">encoded_sequence</span><span class="p">[</span>
             <span class="n">joined_encodings_start_idx</span><span class="p">:</span><span class="n">joined_encodings_end_idx</span>
         <span class="p">]</span>
@@ -608,7 +623,8 @@ objects.</p>
             <span class="n">joined_encodings</span><span class="p">[</span><span class="n">item_start_idx</span><span class="p">:]</span>
         <span class="p">)</span>
         <span class="n">ensure</span><span class="p">(</span>
-            <span class="n">item_start_idx</span> <span class="o">+</span> <span class="n">encoded_item_length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">joined_encodings</span><span class="p">)</span>
+            <span class="n">item_start_idx</span> <span class="o">+</span> <span class="n">encoded_item_length</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">joined_encodings</span><span class="p">),</span>
+            <span class="n">RLPDecodingError</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">encoded_item</span> <span class="o">=</span> <span class="n">joined_encodings</span><span class="p">[</span>
             <span class="n">item_start_idx</span> <span class="p">:</span> <span class="n">item_start_idx</span> <span class="o">+</span> <span class="n">encoded_item_length</span>
@@ -647,7 +663,7 @@ data.</p>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decode_item_length</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">:</span> <span class="n">Bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="c1"># Can&#39;t decode item length for empty encoding</span>
-    <span class="n">ensure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
 
     <span class="n">first_rlp_byte</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
@@ -670,10 +686,10 @@ data.</p>
     <span class="c1"># into the above cases</span>
     <span class="k">elif</span> <span class="n">first_rlp_byte</span> <span class="o">&lt;=</span> <span class="mh">0xBF</span><span class="p">:</span>
         <span class="n">length_length</span> <span class="o">=</span> <span class="n">first_rlp_byte</span> <span class="o">-</span> <span class="mh">0xB7</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">length_length</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">length_length</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">),</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="c1"># Expectation is that the big endian bytes shouldn&#39;t start with 0</span>
         <span class="c1"># while trying to decode using RLP, in which case is an error.</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">decoded_data_length</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span>
             <span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">length_length</span><span class="p">]</span>
         <span class="p">)</span>
@@ -685,10 +701,10 @@ data.</p>
     <span class="c1"># doesn&#39;t fall into the above cases.</span>
     <span class="k">elif</span> <span class="n">first_rlp_byte</span> <span class="o">&lt;=</span> <span class="mh">0xFF</span><span class="p">:</span>
         <span class="n">length_length</span> <span class="o">=</span> <span class="n">first_rlp_byte</span> <span class="o">-</span> <span class="mh">0xF7</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">length_length</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">))</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">length_length</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">),</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="c1"># Expectation is that the big endian bytes shouldn&#39;t start with 0</span>
         <span class="c1"># while trying to decode using RLP, in which case is an error.</span>
-        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">ensure</span><span class="p">(</span><span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">RLPDecodingError</span><span class="p">)</span>
         <span class="n">decoded_data_length</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span>
             <span class="n">encoded_data</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">length_length</span><span class="p">]</span>
         <span class="p">)</span>
@@ -769,7 +785,7 @@ data.</p>
   <li><a href="../../../index.html">Documentation overview</a><ul>
   <li><a href="../../index.html">API Reference</a><ul>
   <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
-      <li>Previous: <a href="../ethash/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.ethash</span></code></a></li>
+      <li>Previous: <a href="../exceptions/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.exceptions</span></code></a></li>
       <li>Next: <a href="../../../diffs/index.html" title="next chapter">Comparisons</a></li>
   </ul></li>
   </ul></li>

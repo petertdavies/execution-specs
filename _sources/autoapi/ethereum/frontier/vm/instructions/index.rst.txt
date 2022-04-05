@@ -988,5 +988,5 @@ op_implementation
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/__init__.py
    :language: python
-   :lines: 198-327
+   :lines: 198-328
 
