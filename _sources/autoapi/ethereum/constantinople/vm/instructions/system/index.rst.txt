@@ -1,0 +1,210 @@
+:mod:`ethereum.constantinople.vm.instructions.system`
+=====================================================
+
+.. py:module:: ethereum.constantinople.vm.instructions.system
+
+Ethereum Virtual Machine (EVM) System Instructions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. contents:: Table of Contents
+    :backlinks: none
+    :local:
+
+Introduction
+------------
+
+Implementations of the EVM system related instructions.
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+   :nosignatures:
+
+   ethereum.constantinople.vm.instructions.system.create
+   ethereum.constantinople.vm.instructions.system.create2
+   ethereum.constantinople.vm.instructions.system.return_
+   ethereum.constantinople.vm.instructions.system.call
+   ethereum.constantinople.vm.instructions.system.callcode
+   ethereum.constantinople.vm.instructions.system.selfdestruct
+   ethereum.constantinople.vm.instructions.system.delegatecall
+   ethereum.constantinople.vm.instructions.system.staticcall
+   ethereum.constantinople.vm.instructions.system.revert
+
+
+
+Module Details
+---------------
+
+create
+~~~~~~
+
+
+.. function:: create(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Creates a new account with associated code.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: create
+
+create2
+~~~~~~~
+
+
+.. function:: create2(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Creates a new account with associated code.
+
+   It's similar to CREATE opcode except that the address of new account
+   depends on the init_code instead of the nonce of sender.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: create2
+
+return_
+~~~~~~~
+
+
+.. function:: return_(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Halts execution returning output data.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: return_
+
+call
+~~~~
+
+
+.. function:: call(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Message-call into an account.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: call
+
+callcode
+~~~~~~~~
+
+
+.. function:: callcode(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Message-call into this account with alternative account’s code.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: callcode
+
+selfdestruct
+~~~~~~~~~~~~
+
+
+.. function:: selfdestruct(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Halt execution and register account for later deletion.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: selfdestruct
+
+delegatecall
+~~~~~~~~~~~~
+
+
+.. function:: delegatecall(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Message-call into this account with an alternative account’s code,
+   but persisting the current values for sender.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: delegatecall
+
+staticcall
+~~~~~~~~~~
+
+
+.. function:: staticcall(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Make a static message-call into an account that prevents all
+   state modifying operations.
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: staticcall
+
+revert
+~~~~~~
+
+
+.. function:: revert(evm: ethereum.constantinople.vm.Evm) -> None
+   :noindexentry:
+
+   Stop execution and revert state changes, without consuming all provided gas
+   and also has the ability to return a reason
+
+   :param evm: The current EVM frame.
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/vm/instructions/system.py
+   :language: python
+   :pyobject: revert

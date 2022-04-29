@@ -16,6 +16,7 @@ Subpackages
    :maxdepth: 3
 
    byzantium/index.rst
+   constantinople/index.rst
    crypto/index.rst
    dao_fork/index.rst
    frontier/index.rst

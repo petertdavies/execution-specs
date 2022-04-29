@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ethereum.constantinople.vm.precompiled_contracts.modexp &#8212; Ethereum Specification  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/dropdown.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/css/custom.css" />
+    <script data-url_root="../../../../../../" id="documentation_options" src="../../../../../../_static/documentation_options.js"></script>
+    <script src="../../../../../../_static/jquery.js"></script>
+    <script src="../../../../../../_static/underscore.js"></script>
+    <script src="../../../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../../search.html" />
+    <link rel="next" title="ethereum.constantinople.vm.precompiled_contracts.ripemd160" href="../ripemd160/index.html" />
+    <link rel="prev" title="ethereum.constantinople.vm.precompiled_contracts.mapping" href="../mapping/index.html" />
+   
+  <link rel="stylesheet" href="../../../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+<div id="disclaimer">
+    The documentation tools are undergoing heavy development and may introduce
+    subtle bugs while rendering, especially in hard fork comparisons. Until this
+    warning is removed, <em>always</em> double check against the
+    <a href="https://github.com/ethereum/execution-specs/">original source</a>.
+</div>
+
+
+<nav class="menu">
+    <ol>
+        <li>
+            <button>Forks</button>
+            <ol class="submenu">
+                
+                <li>
+                    <a href="../../../../byzantium/vm/precompiled_contracts/modexp/index.html">Byzantium</a>
+                </li>
+                
+                <li class="active">
+                    <a href="">Constantinople</a>
+                </li>
+                
+            </ol>
+        </li>
+    </ol>
+</nav>
+
+
+
+
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-ethereum.constantinople.vm.precompiled_contracts.modexp">
+<span id="ethereum-constantinople-vm-precompiled-contracts-modexp"></span><h1><a class="reference internal" href="#module-ethereum.constantinople.vm.precompiled_contracts.modexp" title="ethereum.constantinople.vm.precompiled_contracts.modexp"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.precompiled_contracts.modexp</span></code></a><a class="headerlink" href="#module-ethereum.constantinople.vm.precompiled_contracts.modexp" title="Permalink to this headline">¶</a></h1>
+<section id="ethereum-virtual-machine-evm-modexp-precompiled-contract">
+<h2>Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT<a class="headerlink" href="#ethereum-virtual-machine-evm-modexp-precompiled-contract" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#module-contents" id="id2">Module Contents</a></p>
+<ul>
+<li><p><a class="reference internal" href="#functions" id="id3">Functions</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#module-details" id="id5">Module Details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#gquaddivisor" id="id6">GQUADDIVISOR</a></p></li>
+<li><p><a class="reference internal" href="#modexp" id="id7">modexp</a></p></li>
+<li><p><a class="reference internal" href="#get-mult-complexity" id="id8">get_mult_complexity</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>Implementation of the <cite>MODEXP</cite> precompiled contract.</p>
+</section>
+<section id="module-contents">
+<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h3>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.modexp" title="ethereum.constantinople.vm.precompiled_contracts.modexp.modexp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">modexp</span></code></a></p></td>
+<td><p>Calculates <cite>(base**exp) % modulus</cite> for arbitary sized <cite>base</cite>, <cite>exp</cite> and.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.get_mult_complexity" title="ethereum.constantinople.vm.precompiled_contracts.modexp.get_mult_complexity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_mult_complexity</span></code></a></p></td>
+<td><p>Estimate the complexity of performing Karatsuba multiplication.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.GQUADDIVISOR" title="ethereum.constantinople.vm.precompiled_contracts.modexp.GQUADDIVISOR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GQUADDIVISOR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="module-details">
+<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline">¶</a></h3>
+<section id="gquaddivisor">
+<h4>GQUADDIVISOR<a class="headerlink" href="#gquaddivisor" title="Permalink to this headline">¶</a></h4>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.precompiled_contracts.modexp.GQUADDIVISOR">
+<span class="sig-name descname"><span class="pre">GQUADDIVISOR</span></span><a class="headerlink" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.GQUADDIVISOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">GQUADDIVISOR</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</section>
+<section id="modexp">
+<h4>modexp<a class="headerlink" href="#modexp" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.precompiled_contracts.modexp.modexp">
+<span class="sig-name descname"><span class="pre">modexp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.constantinople.vm.Evm" title="ethereum.constantinople.vm.Evm"><span class="pre">ethereum.constantinople.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.modexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates <cite>(base**exp) % modulus</cite> for arbitary sized <cite>base</cite>, <cite>exp</cite> and.
+<cite>modulus</cite>. The return value is the same length as the modulus.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">modexp</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">data</span>
+    <span class="n">base_length</span> <span class="o">=</span> <span class="n">U256</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">32</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">))</span>
+    <span class="n">exp_length</span> <span class="o">=</span> <span class="n">U256</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">32</span><span class="p">:</span><span class="mi">64</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">))</span>
+    <span class="n">modulus_length</span> <span class="o">=</span> <span class="n">U256</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">64</span><span class="p">:</span><span class="mi">96</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">base_length</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">modulus_length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">Bytes</span><span class="p">()</span>
+        <span class="k">return</span>
+
+    <span class="n">mult_complexity</span> <span class="o">=</span> <span class="n">get_mult_complexity</span><span class="p">(</span>
+        <span class="n">Uint</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">base_length</span><span class="p">,</span> <span class="n">modulus_length</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="c1"># This is an estimate of the bit length of exp</span>
+    <span class="n">adjusted_exp_length</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">exp_length</span><span class="p">)</span> <span class="o">-</span> <span class="mi">32</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span>
+        <span class="o">&lt;</span> <span class="n">mult_complexity</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">adjusted_exp_length</span><span class="p">)</span> <span class="o">//</span> <span class="n">GQUADDIVISOR</span>
+    <span class="p">):</span>
+        <span class="c1"># This check must be done now to prevent loading of absurdly long</span>
+        <span class="c1"># arguments. It is an underestimate, because adjusted_exp_length may</span>
+        <span class="c1"># increase later.</span>
+        <span class="k">raise</span> <span class="n">OutOfGasError</span><span class="p">()</span>
+
+    <span class="n">pointer</span> <span class="o">=</span> <span class="mi">96</span>
+    <span class="n">base_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pointer</span> <span class="p">:</span> <span class="n">pointer</span> <span class="o">+</span> <span class="n">base_length</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span>
+        <span class="n">base_length</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">base</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">base_data</span><span class="p">)</span>
+    <span class="n">pointer</span> <span class="o">+=</span> <span class="n">base_length</span>
+    <span class="n">exp_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pointer</span> <span class="p">:</span> <span class="n">pointer</span> <span class="o">+</span> <span class="n">exp_length</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="n">exp_length</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">exp</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">exp_data</span><span class="p">)</span>
+    <span class="n">pointer</span> <span class="o">+=</span> <span class="n">exp_length</span>
+    <span class="n">modulus_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">pointer</span> <span class="p">:</span> <span class="n">pointer</span> <span class="o">+</span> <span class="n">modulus_length</span><span class="p">]</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span>
+        <span class="n">modulus_length</span><span class="p">,</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">modulus</span> <span class="o">=</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">modulus_data</span><span class="p">)</span>
+
+    <span class="n">adjusted_exp_length</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span>
+        <span class="nb">max</span><span class="p">(</span><span class="n">adjusted_exp_length</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">exp</span><span class="o">.</span><span class="n">bit_length</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">gas_used</span> <span class="o">=</span> <span class="n">mult_complexity</span> <span class="o">*</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">adjusted_exp_length</span><span class="p">)</span> <span class="o">//</span> <span class="n">GQUADDIVISOR</span>
+
+    <span class="c1"># NOTE: It is in principle possible for the conversion to U256 to overflow</span>
+    <span class="c1"># here. However, for this to happen without triggering the earlier check</span>
+    <span class="c1"># would require providing more than 2**250 gas, which is obviously</span>
+    <span class="c1"># not realistic.</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="n">gas_used</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">modulus</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">Bytes</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">modulus_length</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">modulus</span><span class="p">))</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span>
+            <span class="n">modulus_length</span><span class="p">,</span> <span class="s2">&quot;big&quot;</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="get-mult-complexity">
+<h4>get_mult_complexity<a class="headerlink" href="#get-mult-complexity" title="Permalink to this headline">¶</a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.precompiled_contracts.modexp.get_mult_complexity">
+<span class="sig-name descname"><span class="pre">get_mult_complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.constantinople.vm.precompiled_contracts.modexp.get_mult_complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the complexity of performing Karatsuba multiplication.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_mult_complexity</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Uint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">64</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1024</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">96</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3072</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">480</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">199680</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../../../index.html">Ethereum Specification</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../../../index.html#ethereum-specification">Ethereum Specification</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../../../../index.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../index.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-contents">Package Contents</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../index.html#package-details">Package Details</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Comparisons:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../diffs/index.html">Comparisons</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../../../index.html">API Reference</a><ul>
+  <li><a href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
+  <li><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople</span></code></a><ul>
+  <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm</span></code></a><ul>
+  <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.precompiled_contracts</span></code></a><ul>
+      <li>Previous: <a href="../mapping/index.html" title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.precompiled_contracts.mapping</span></code></a></li>
+      <li>Next: <a href="../ripemd160/index.html" title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.precompiled_contracts.ripemd160</span></code></a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Ethereum.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../../../_sources/autoapi/ethereum/constantinople/vm/precompiled_contracts/modexp/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
