@@ -47,6 +47,7 @@ Functions
    ethereum.spurious_dragon.state.get_account_optional
    ethereum.spurious_dragon.state.set_account
    ethereum.spurious_dragon.state.destroy_account
+   ethereum.spurious_dragon.state.destroy_storage
    ethereum.spurious_dragon.state.get_storage
    ethereum.spurious_dragon.state.set_storage
    ethereum.spurious_dragon.state.storage_root
@@ -278,6 +279,27 @@ destroy_account
 .. undocinclude:: /../src/ethereum/spurious_dragon/state.py
    :language: python
    :pyobject: destroy_account
+
+destroy_storage
+~~~~~~~~~~~~~~~
+
+
+.. function:: destroy_storage(state: State, address: ethereum.spurious_dragon.eth_types.Address) -> None
+   :noindexentry:
+
+   Completely remove the storage at `address`.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of account whose storage is to be deleted.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/spurious_dragon/state.py
+   :language: python
+   :pyobject: destroy_storage
 
 get_storage
 ~~~~~~~~~~~

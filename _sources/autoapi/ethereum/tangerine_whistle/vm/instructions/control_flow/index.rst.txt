@@ -68,13 +68,13 @@ jump
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.InvalidJumpDestError: If the jump destination doesn't meet any of the following criteria:
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.InvalidJumpDestError: If the jump destination doesn't meet any of the following criteria:
            * The jump destination is less than the length of the code.
            * The jump destination should have the `JUMPDEST` opcode (0x5B).
            * The jump destination shouldn't be part of the data corresponding
            to `PUSH-N` opcodes.
-   :raises ~ethereum.tangerine_whistle.vm.error.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.tangerine_whistle.vm.error.OutOfGasError: If `evm.gas_left` is less than `8`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `8`.
 
 
 
@@ -96,13 +96,13 @@ jumpi
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.InvalidJumpDestError: If the jump destination doesn't meet any of the following criteria:
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.InvalidJumpDestError: If the jump destination doesn't meet any of the following criteria:
            * The jump destination is less than the length of the code.
            * The jump destination should have the `JUMPDEST` opcode (0x5B).
            * The jump destination shouldn't be part of the data corresponding
            to `PUSH-N` opcodes.
-   :raises ~ethereum.tangerine_whistle.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.tangerine_whistle.vm.error.OutOfGasError: If `evm.gas_left` is less than `10`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `10`.
 
 
 
@@ -123,8 +123,8 @@ pc
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.StackOverflowError: If `len(stack)` is more than `1023`.
-   :raises ~ethereum.tangerine_whistle.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackOverflowError: If `len(stack)` is more than `1023`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -145,8 +145,8 @@ gas_left
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.StackOverflowError: If `len(stack)` is more than `1023`.
-   :raises ~ethereum.tangerine_whistle.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackOverflowError: If `len(stack)` is more than `1023`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -168,7 +168,7 @@ jumpdest
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.OutOfGasError: If `evm.gas_left` is less than `1`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `1`.
 
 
 

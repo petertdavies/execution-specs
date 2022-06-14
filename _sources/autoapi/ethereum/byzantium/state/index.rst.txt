@@ -47,6 +47,7 @@ Functions
    ethereum.byzantium.state.get_account_optional
    ethereum.byzantium.state.set_account
    ethereum.byzantium.state.destroy_account
+   ethereum.byzantium.state.destroy_storage
    ethereum.byzantium.state.get_storage
    ethereum.byzantium.state.set_storage
    ethereum.byzantium.state.storage_root
@@ -278,6 +279,27 @@ destroy_account
 .. undocinclude:: /../src/ethereum/byzantium/state.py
    :language: python
    :pyobject: destroy_account
+
+destroy_storage
+~~~~~~~~~~~~~~~
+
+
+.. function:: destroy_storage(state: State, address: ethereum.byzantium.eth_types.Address) -> None
+   :noindexentry:
+
+   Completely remove the storage at `address`.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of account whose storage is to be deleted.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/byzantium/state.py
+   :language: python
+   :pyobject: destroy_storage
 
 get_storage
 ~~~~~~~~~~~

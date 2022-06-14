@@ -53,7 +53,7 @@ GQUADDIVISOR
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/precompiled_contracts/modexp.py
    :language: python
-   :lines: 20-20
+   :lines: 21-21
 
 
 modexp

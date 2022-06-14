@@ -59,7 +59,7 @@ address
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -79,8 +79,8 @@ balance
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `20`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
 
 
 
@@ -101,7 +101,7 @@ origin
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -121,7 +121,7 @@ caller
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -141,7 +141,7 @@ callvalue
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -162,8 +162,8 @@ calldataload
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `3`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
 
 
 
@@ -183,7 +183,7 @@ calldatasize
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -206,7 +206,7 @@ calldatacopy
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `3`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
 
 
 
@@ -226,7 +226,7 @@ codesize
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -249,7 +249,7 @@ codecopy
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `3`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
 
 
 
@@ -269,7 +269,7 @@ gasprice
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -289,8 +289,8 @@ extcodesize
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `20`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
 
 
 
@@ -310,7 +310,7 @@ extcodecopy
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `4`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `4`.
 
 
 

@@ -33,7 +33,7 @@ Submodules
    :titlesonly:
    :maxdepth: 1
 
-   error/index.rst
+   exceptions/index.rst
    gas/index.rst
    interpreter/index.rst
    memory/index.rst

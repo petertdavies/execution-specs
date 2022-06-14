@@ -47,6 +47,7 @@ Functions
    ethereum.tangerine_whistle.state.get_account_optional
    ethereum.tangerine_whistle.state.set_account
    ethereum.tangerine_whistle.state.destroy_account
+   ethereum.tangerine_whistle.state.destroy_storage
    ethereum.tangerine_whistle.state.get_storage
    ethereum.tangerine_whistle.state.set_storage
    ethereum.tangerine_whistle.state.storage_root
@@ -277,6 +278,27 @@ destroy_account
 .. undocinclude:: /../src/ethereum/tangerine_whistle/state.py
    :language: python
    :pyobject: destroy_account
+
+destroy_storage
+~~~~~~~~~~~~~~~
+
+
+.. function:: destroy_storage(state: State, address: ethereum.tangerine_whistle.eth_types.Address) -> None
+   :noindexentry:
+
+   Completely remove the storage at `address`.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of account whose storage is to be deleted.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/tangerine_whistle/state.py
+   :language: python
+   :pyobject: destroy_storage
 
 get_storage
 ~~~~~~~~~~~

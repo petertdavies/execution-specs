@@ -52,8 +52,8 @@ bitwise_and
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -74,8 +74,8 @@ bitwise_or
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -96,8 +96,8 @@ bitwise_xor
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -118,8 +118,8 @@ bitwise_not
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -141,8 +141,8 @@ get_byte
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.constantinople.vm.error.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
+   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 

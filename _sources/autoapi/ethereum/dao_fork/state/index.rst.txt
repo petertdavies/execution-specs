@@ -47,6 +47,7 @@ Functions
    ethereum.dao_fork.state.get_account_optional
    ethereum.dao_fork.state.set_account
    ethereum.dao_fork.state.destroy_account
+   ethereum.dao_fork.state.destroy_storage
    ethereum.dao_fork.state.get_storage
    ethereum.dao_fork.state.set_storage
    ethereum.dao_fork.state.storage_root
@@ -277,6 +278,27 @@ destroy_account
 .. undocinclude:: /../src/ethereum/dao_fork/state.py
    :language: python
    :pyobject: destroy_account
+
+destroy_storage
+~~~~~~~~~~~~~~~
+
+
+.. function:: destroy_storage(state: State, address: ethereum.dao_fork.eth_types.Address) -> None
+   :noindexentry:
+
+   Completely remove the storage at `address`.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of account whose storage is to be deleted.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/dao_fork/state.py
+   :language: python
+   :pyobject: destroy_storage
 
 get_storage
 ~~~~~~~~~~~

@@ -28,6 +28,7 @@ Classes
    ethereum.base_types.FixedUInt
    ethereum.base_types.U256
    ethereum.base_types.Uint32
+   ethereum.base_types.Uint64
    ethereum.base_types.FixedBytes
    ethereum.base_types.Bytes0
    ethereum.base_types.Bytes4
@@ -81,7 +82,7 @@ UINT32_CEIL_VALUE
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 24-24
+   :lines: 22-22
 
 
 U255_CEIL_VALUE
@@ -95,7 +96,7 @@ U255_CEIL_VALUE
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 26-26
+   :lines: 25-25
 
 
 U256_CEIL_VALUE
@@ -109,7 +110,7 @@ U256_CEIL_VALUE
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 28-28
+   :lines: 27-27
 
 
 Uint
@@ -144,6 +145,8 @@ Unsigned positive integer.
 
    .. py:method:: from_le_bytes(cls: Type, buffer: Bytes) -> Uint
       :classmethod:
+
+      Convert a series of little endian bytes to an unsigned integer.
 
 
    .. py:method:: __radd__(self, left: int) -> Uint
@@ -265,6 +268,15 @@ Unsigned positive integer.
 
    .. py:method:: to_le_bytes(self, number_bytes: int = None) -> Bytes
 
+      Converts this arbitrarily sized unsigned integer into its little endian
+      representation.
+
+      :param number_bytes: Exact number of bytes to return (defaults to the fewest that can
+                           represent this number.)
+
+      :returns: **little_endian** -- Little endian (most significant bits last) representation.
+      :rtype: `Bytes`
+
 
 
 
@@ -279,7 +291,7 @@ T
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 276-276
+   :lines: 293-293
 
 
 FixedUInt
@@ -321,6 +333,13 @@ directly, but rather to be subclassed.
 
    .. py:method:: wrapping_add(self: T, right: int) -> T
 
+      Return a new instance containing `self + right (mod N)`.
+
+      :param right: Other operand for addition.
+
+      :returns: **sum** -- The result of adding `self` and `right`, wrapped.
+      :rtype: T
+
 
    .. py:method:: __iadd__(self: T, right: int) -> T
 
@@ -331,6 +350,13 @@ directly, but rather to be subclassed.
 
 
    .. py:method:: wrapping_sub(self: T, right: int) -> T
+
+      Return a new instance containing `self - right (mod N)`.
+
+      :param right: Subtrahend operand for subtraction.
+
+      :returns: **difference** -- The result of subtracting `right` from `self`, wrapped.
+      :rtype: T
 
 
    .. py:method:: __rsub__(self: T, left: int) -> T
@@ -347,6 +373,13 @@ directly, but rather to be subclassed.
 
 
    .. py:method:: wrapping_mul(self: T, right: int) -> T
+
+      Return a new instance containing `self * right (mod N)`.
+
+      :param right: Other operand for multiplication.
+
+      :returns: **product** -- The result of multiplying `self` by `right`, wrapped.
+      :rtype: T
 
 
    .. py:method:: __rmul__(self: T, left: int) -> T
@@ -399,6 +432,14 @@ directly, but rather to be subclassed.
 
 
    .. py:method:: wrapping_pow(self: T, right: int, modulo: Optional[int] = None) -> T
+
+      Return a new instance containing `self ** right (mod modulo)`.
+
+      :param right: Exponent operand.
+      :param modulo: Optional modulus (defaults to `MAX_VALUE + 1`.)
+
+      :returns: **power** -- The result of raising `self` to the power of `right`, wrapped.
+      :rtype: T
 
 
    .. py:method:: __rpow__(self: T, left: int, modulo: Optional[int] = None) -> T
@@ -546,8 +587,74 @@ inclusive.
 
    .. py:method:: to_le_bytes4(self) -> Bytes4
 
+      Converts this fixed sized unsigned integer into its little endian
+      representation, with exactly 4 bytes.
+
+      :returns: **little_endian** -- Little endian (most significant bits last) representation.
+      :rtype: `Bytes4`
+
 
    .. py:method:: to_le_bytes(self) -> Bytes
+
+      Converts this fixed sized unsigned integer into its little endian
+      representation, in the fewest bytes possible.
+
+      :returns: **little_endian** -- Little endian (most significant bits last) representation.
+      :rtype: `Bytes`
+
+
+
+
+Uint64
+~~~~~~
+
+
+Unsigned positive integer, which can represent `0` to `2 ** 64 - 1`,
+inclusive.
+
+
+.. class:: Uint64(value: int)
+
+
+   Bases: :py:obj:`FixedUInt`
+
+   
+
+   .. py:attribute:: MAX_VALUE
+      :annotation: :Uint64
+
+      
+
+   
+
+   .. py:attribute:: __slots__
+      :annotation: = []
+
+      
+
+   .. py:method:: from_le_bytes(cls: Type, buffer: Bytes) -> Uint64
+      :classmethod:
+
+      Converts a sequence of bytes into an arbitrarily sized unsigned integer
+      from its little endian representation.
+
+
+   .. py:method:: to_le_bytes8(self) -> Bytes8
+
+      Converts this fixed sized unsigned integer into its little endian
+      representation, with exactly 8 bytes.
+
+      :returns: **little_endian** -- Little endian (most significant bits last) representation.
+      :rtype: `Bytes8`
+
+
+   .. py:method:: to_le_bytes(self) -> Bytes
+
+      Converts this fixed sized unsigned integer into its little endian
+      representation, in the fewest bytes possible.
+
+      :returns: **little_endian** -- Little endian (most significant bits last) representation.
+      :rtype: `Bytes`
 
 
 
@@ -563,7 +670,7 @@ B
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 687-687
+   :lines: 836-836
 
 
 FixedBytes
@@ -753,7 +860,7 @@ Bytes
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 765-765
+   :lines: 917-917
 
 
 _setattr_function
@@ -829,7 +936,7 @@ S
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 807-807
+   :lines: 959-959
 
 
 modify

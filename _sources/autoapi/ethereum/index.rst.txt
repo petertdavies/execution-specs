@@ -21,6 +21,8 @@ Subpackages
    dao_fork/index.rst
    frontier/index.rst
    homestead/index.rst
+   istanbul/index.rst
+   muir_glacier/index.rst
    spurious_dragon/index.rst
    tangerine_whistle/index.rst
    utils/index.rst

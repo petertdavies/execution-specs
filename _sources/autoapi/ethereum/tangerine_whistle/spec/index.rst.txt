@@ -162,6 +162,13 @@ History and current state of the block chain.
 
       
 
+   
+
+   .. py:attribute:: chain_id
+      :annotation: :ethereum.base_types.Uint64
+
+      
+
 
 
 apply_fork

@@ -50,17 +50,3 @@ MAINNET_FORK_BLOCK
    :language: python
    :lines: 8-8
 
-
-CHAIN_ID
-~~~~~~~~
-
-
-
-.. py:data:: CHAIN_ID
-
-   
-
-.. undocinclude:: /../src/ethereum/frontier/__init__.py
-   :language: python
-   :lines: 9-9
-

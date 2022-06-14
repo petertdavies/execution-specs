@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ethereum.constantinople.vm.instructions.blockethereum.istanbul.vm.instructions.block &mdash; Ethereum Specification  documentation</title>
+      <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/dropdown.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="ethereum.constantinople.utils.addressethereum.istanbul.utils.address" href="../../../utils/address/index.html" />
+    <link rel="prev" title="constantinople → istanbul" href="../../../../constantinople_istanbul.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+<div id="disclaimer">
+    The documentation tools are undergoing heavy development and may introduce
+    subtle bugs while rendering, especially in hard fork comparisons. Until this
+    warning is removed, <em>always</em> double check against the
+    <a href="https://github.com/ethereum/execution-specs/">original source</a>.
+</div>
+
+
+
+ 
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../../index.html" class="icon icon-home"> Ethereum Specification
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../autoapi/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../autoapi/ethereum/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/index.html#ethereum-specification">Ethereum Specification</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Comparisons:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Comparisons</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../frontier_homestead.html">frontier → homestead</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier_homestead/vm/index.html">vm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/precompiled_contracts/ecrecover/index.html">vm.precompiled_contracts.ecrecover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/dao/index.html">dao</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/index.html">__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/precompiled_contracts/ecrecover/index.html">vm.precompiled_contracts.ecrecover</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/index.html">__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../byzantium_constantinople.html">byzantium → constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium_constantinople/index.html">__init__</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../constantinople_istanbul.html">constantinople → istanbul</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../state/index.html">state</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html">vm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/trie/index.html">trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/index.html">__init__</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Ethereum Specification</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../../index.html">Comparisons</a> &raquo;</li>
+          <li><a href="../../../../constantinople_istanbul.html">constantinople → istanbul</a> &raquo;</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.instructions.block</span></code><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.instructions.block</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/diffs/constantinople_istanbul/vm/instructions/block/index.pickle64.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-ethereum.constantinople.vm.instructions.block">
+<span id="ethereum-constantinople-vm-instructions-block"></span><h1><a class="change-replaced reference internal" href="#module-ethereum.constantinople.vm.instructions.block" title="ethereum.constantinople.vm.instructions.block"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.instructions.block</span></code></a><a class="change-replacement reference internal" href="#module-ethereum.istanbul.vm.instructions.block" title="ethereum.istanbul.vm.instructions.block"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.instructions.block</span></code></a><a class="headerlink" href="#module-ethereum.constantinople.vm.instructions.block" title="Permalink to this headline"></a></h1>
+<section id="ethereum-virtual-machine-evm-block-instructions">
+<h2>Ethereum Virtual Machine (EVM) Block Instructions<a class="headerlink" href="#ethereum-virtual-machine-evm-block-instructions" title="Permalink to this headline"></a></h2>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#module-contents" id="id2">Module Contents</a></p>
+<ul>
+<li><p><a class="reference internal" href="#functions" id="id3">Functions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#module-details" id="id4">Module Details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#block-hash" id="id5">block_hash</a></p></li>
+<li><p><a class="reference internal" href="#coinbase" id="id6">coinbase</a></p></li>
+<li><p><a class="reference internal" href="#timestamp" id="id7">timestamp</a></p></li>
+<li><p><a class="reference internal" href="#number" id="id8">number</a></p></li>
+<li><p><a class="reference internal" href="#difficulty" id="id9">difficulty</a></p></li>
+<li><p><a class="reference internal" href="#gas-limit" id="id10">gas_limit</a></p></li>
+<li class="change-added"><p><a class="reference internal" href="#chain-id" id="id11">chain_id</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<p>Implementations of the EVM block instructions.</p>
+</section>
+<section id="module-contents">
+<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.block_hash" title="ethereum.constantinople.vm.instructions.block.block_hash"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block_hash</span></code></a></p></td>
+<td><p>Push the hash of one of the 256 most recent complete blocks onto the</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.coinbase" title="ethereum.constantinople.vm.instructions.block.coinbase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coinbase</span></code></a></p></td>
+<td><p>Push the current block’s beneficiary address (address of the block miner)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.timestamp" title="ethereum.constantinople.vm.instructions.block.timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timestamp</span></code></a></p></td>
+<td><p>Push the current block’s timestamp onto the stack. Here the timestamp</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.number" title="ethereum.constantinople.vm.instructions.block.number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">number</span></code></a></p></td>
+<td><p>Push the current block’s number onto the stack.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.difficulty" title="ethereum.constantinople.vm.instructions.block.difficulty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">difficulty</span></code></a></p></td>
+<td><p>Push the current block’s difficulty onto the stack.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.vm.instructions.block.gas_limit" title="ethereum.constantinople.vm.instructions.block.gas_limit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gas_limit</span></code></a></p></td>
+<td><p>Push the current block’s gas limit onto the stack.</p></td>
+</tr>
+<tr class="change-added row-odd"><td><p><a class="reference internal" href="#ethereum.istanbul.vm.instructions.block.chain_id" title="ethereum.istanbul.vm.instructions.block.chain_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chain_id</span></code></a></p></td>
+<td><p>Push the chain id onto the stack.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="module-details">
+<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<section id="block-hash">
+<h4>block_hash<a class="headerlink" href="#block-hash" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.block_hash">
+<span class="sig-name descname"><span class="pre">block_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.block_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Push the hash of one of the 256 most recent complete blocks onto the
+stack. The block number to hash is present at the top of the stack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">block_hash</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BLOCK_HASH</span><span class="p">)</span>
+
+    <span class="n">block_number</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">number</span> <span class="o">&lt;=</span> <span class="n">block_number</span> <span class="ow">or</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">number</span> <span class="o">&gt;</span> <span class="n">block_number</span> <span class="o">+</span> <span class="mi">256</span><span class="p">:</span>
+        <span class="c1"># Default hash to 0, if the block of interest is not yet on the chain</span>
+        <span class="c1"># (including the block which has the current executing transaction),</span>
+        <span class="c1"># or if the block&#39;s age is more than 256.</span>
+        <span class="nb">hash</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">hash</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">block_hashes</span><span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">number</span> <span class="o">-</span> <span class="n">block_number</span><span class="p">)]</span>
+
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="nb">hash</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="coinbase">
+<h4>coinbase<a class="headerlink" href="#coinbase" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.coinbase">
+<span class="sig-name descname"><span class="pre">coinbase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.coinbase" title="Permalink to this definition"></a></dt>
+<dd><p>Push the current block’s beneficiary address (address of the block miner)
+onto the stack.</p>
+<p>Here the current block refers to the block in which the currently
+executing transaction/call resides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackOverflowError" title="ethereum.constantinople.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coinbase</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="o">.</span><span class="n">from_be_bytes</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">coinbase</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="timestamp">
+<h4>timestamp<a class="headerlink" href="#timestamp" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.timestamp">
+<span class="sig-name descname"><span class="pre">timestamp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.timestamp" title="Permalink to this definition"></a></dt>
+<dd><p>Push the current block’s timestamp onto the stack. Here the timestamp
+being referred is actually the unix timestamp in seconds.</p>
+<p>Here the current block refers to the block in which the currently
+executing transaction/call resides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackOverflowError" title="ethereum.constantinople.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timestamp</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">time</span><span class="p">)</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="number">
+<h4>number<a class="headerlink" href="#number" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.number">
+<span class="sig-name descname"><span class="pre">number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.number" title="Permalink to this definition"></a></dt>
+<dd><p>Push the current block’s number onto the stack.</p>
+<p>Here the current block refers to the block in which the currently
+executing transaction/call resides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackOverflowError" title="ethereum.constantinople.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">number</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">number</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="difficulty">
+<h4>difficulty<a class="headerlink" href="#difficulty" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.difficulty">
+<span class="sig-name descname"><span class="pre">difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.difficulty" title="Permalink to this definition"></a></dt>
+<dd><p>Push the current block’s difficulty onto the stack.</p>
+<p>Here the current block refers to the block in which the currently
+executing transaction/call resides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackOverflowError" title="ethereum.constantinople.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">difficulty</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">difficulty</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="gas-limit">
+<h4>gas_limit<a class="headerlink" href="#gas-limit" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.vm.instructions.block.gas_limit">
+<span class="sig-name descname"><span class="pre">gas_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.vm.instructions.block.gas_limit" title="Permalink to this definition"></a></dt>
+<dd><p>Push the current block’s gas limit onto the stack.</p>
+<p>Here the current block refers to the block in which the currently
+executing transaction/call resides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.StackOverflowError" title="ethereum.constantinople.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gas_limit</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">gas_limit</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section class="change-added" id="chain-id">
+<h4>chain_id<a class="headerlink" href="#chain-id" title="Permalink to this headline"></a></h4>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.istanbul.vm.instructions.block.chain_id">
+<span class="sig-name descname"><span class="pre">chain_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.istanbul.vm.instructions.block.chain_id" title="Permalink to this definition"></a></dt>
+<dd><p>Push the chain id onto the stack.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.istanbul.vm.exceptions.StackOverflowError" title="ethereum.istanbul.vm.exceptions.StackOverflowError"><strong>StackOverflowError</strong></a> – If <cite>len(stack)</cite> is equal to <cite>1024</cite>.</p></li>
+<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chain_id</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">subtract_gas</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">GAS_BASE</span><span class="p">)</span>
+    <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">chain_id</span><span class="p">))</span>
+
+    <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../../constantinople_istanbul.html" class="btn btn-neutral float-left" title="constantinople → istanbul" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../utils/address/index.html" class="btn btn-neutral float-right" title="ethereum.constantinople.utils.addressethereum.istanbul.utils.address" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ethereum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

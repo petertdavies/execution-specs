@@ -47,6 +47,7 @@ Functions
    ethereum.homestead.state.get_account_optional
    ethereum.homestead.state.set_account
    ethereum.homestead.state.destroy_account
+   ethereum.homestead.state.destroy_storage
    ethereum.homestead.state.get_storage
    ethereum.homestead.state.set_storage
    ethereum.homestead.state.storage_root
@@ -277,6 +278,27 @@ destroy_account
 .. undocinclude:: /../src/ethereum/homestead/state.py
    :language: python
    :pyobject: destroy_account
+
+destroy_storage
+~~~~~~~~~~~~~~~
+
+
+.. function:: destroy_storage(state: State, address: ethereum.homestead.eth_types.Address) -> None
+   :noindexentry:
+
+   Completely remove the storage at `address`.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of account whose storage is to be deleted.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/homestead/state.py
+   :language: python
+   :pyobject: destroy_storage
 
 get_storage
 ~~~~~~~~~~~

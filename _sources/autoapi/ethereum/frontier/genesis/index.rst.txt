@@ -56,6 +56,13 @@ the fields of the genesis block.
 
    
 
+   .. py:attribute:: chain_id
+      :annotation: :ethereum.base_types.Uint64
+
+      
+
+   
+
    .. py:attribute:: difficulty
       :annotation: :ethereum.base_types.Uint
 

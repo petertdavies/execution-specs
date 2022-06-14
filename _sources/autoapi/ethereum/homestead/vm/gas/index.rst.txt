@@ -611,7 +611,7 @@ subtract_gas
    :param gas_left: The amount of gas left in the current frame.
    :param amount: The amount of gas the current operation requires.
 
-   :raises ~ethereum.homestead.vm.error.OutOfGasError: If `gas_left` is less than `amount`.
+   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `gas_left` is less than `amount`.
 
 
 

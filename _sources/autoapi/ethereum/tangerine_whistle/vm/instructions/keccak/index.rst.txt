@@ -47,7 +47,7 @@ keccak
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
 
 
 

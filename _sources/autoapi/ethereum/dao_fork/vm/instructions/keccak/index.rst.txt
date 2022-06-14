@@ -47,7 +47,7 @@ keccak
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.dao_fork.vm.error.StackUnderflowError: If `len(stack)` is less than `2`.
+   :raises ~ethereum.dao_fork.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
 
 
 

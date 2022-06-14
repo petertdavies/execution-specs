@@ -60,7 +60,7 @@ log_n
    :param evm: The current EVM frame.
    :param num_topics: The number of topics to be included in the log entry.
 
-   :raises ~ethereum.byzantium.vm.error.StackUnderflowError: If `len(stack)` is less than `2 + num_topics`.
+   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2 + num_topics`.
 
 
 
@@ -80,7 +80,7 @@ log0
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
    :language: python
-   :lines: 96-96
+   :lines: 95-95
 
 
 log1
@@ -94,7 +94,7 @@ log1
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
    :language: python
-   :lines: 97-97
+   :lines: 96-96
 
 
 log2
@@ -108,7 +108,7 @@ log2
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
    :language: python
-   :lines: 98-98
+   :lines: 97-97
 
 
 log3
@@ -122,7 +122,7 @@ log3
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
    :language: python
-   :lines: 99-99
+   :lines: 98-98
 
 
 log4
@@ -136,5 +136,5 @@ log4
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
    :language: python
-   :lines: 100-100
+   :lines: 99-99
 
