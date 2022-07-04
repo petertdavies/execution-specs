@@ -5,21 +5,20 @@ constantinople → istanbul
 .. toctree::
    :maxdepth: 1
 
-   vm.instructions.block <constantinople_istanbul/vm/instructions/block/index.pickle64>
-   utils.address <constantinople_istanbul/utils/address/index.pickle64>
-   state <constantinople_istanbul/state/index.pickle64>
+   vm.instructions.storage <constantinople_istanbul/vm/instructions/storage/index.pickle64>
    spec <constantinople_istanbul/spec/index.pickle64>
-   trie <constantinople_istanbul/trie/index.pickle64>
+   state <constantinople_istanbul/state/index.pickle64>
    vm.interpreter <constantinople_istanbul/vm/interpreter/index.pickle64>
+   utils.address <constantinople_istanbul/utils/address/index.pickle64>
+   vm <constantinople_istanbul/vm/index.pickle64>
+   vm.precompiled_contracts.mapping <constantinople_istanbul/vm/precompiled_contracts/mapping/index.pickle64>
+   vm.exceptions <constantinople_istanbul/vm/exceptions/index.pickle64>
+   vm.instructions <constantinople_istanbul/vm/instructions/index.pickle64>
+   vm.instructions.environment <constantinople_istanbul/vm/instructions/environment/index.pickle64>
+   vm.gas <constantinople_istanbul/vm/gas/index.pickle64>
+   vm.precompiled_contracts.blake2f <constantinople_istanbul/vm/precompiled_contracts/blake2f/index.pickle64>
+   vm.precompiled_contracts.alt_bn128 <constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.pickle64>
+   vm.instructions.block <constantinople_istanbul/vm/instructions/block/index.pickle64>
    __init__ <constantinople_istanbul/index.pickle64>
    vm.precompiled_contracts <constantinople_istanbul/vm/precompiled_contracts/index.pickle64>
-   vm.gas <constantinople_istanbul/vm/gas/index.pickle64>
-   vm.precompiled_contracts.alt_bn128 <constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.pickle64>
    eth_types <constantinople_istanbul/eth_types/index.pickle64>
-   vm.instructions <constantinople_istanbul/vm/instructions/index.pickle64>
-   vm.instructions.storage <constantinople_istanbul/vm/instructions/storage/index.pickle64>
-   vm.precompiled_contracts.blake2f <constantinople_istanbul/vm/precompiled_contracts/blake2f/index.pickle64>
-   vm.exceptions <constantinople_istanbul/vm/exceptions/index.pickle64>
-   vm.precompiled_contracts.mapping <constantinople_istanbul/vm/precompiled_contracts/mapping/index.pickle64>
-   vm.instructions.environment <constantinople_istanbul/vm/instructions/environment/index.pickle64>
-   vm <constantinople_istanbul/vm/index.pickle64>
