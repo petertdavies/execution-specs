@@ -5,12 +5,12 @@ Dao Fork → Tangerine Whistle
 .. toctree::
    :maxdepth: 1
 
-   vm.gas <dao_fork_tangerine_whistle/vm/gas/index.pickle64>
-   spec <dao_fork_tangerine_whistle/spec/index.pickle64>
-   utils <dao_fork_tangerine_whistle/utils/index.pickle64>
-   dao <dao_fork_tangerine_whistle/dao/index.pickle64>
-   __init__ <dao_fork_tangerine_whistle/index.pickle64>
    vm.instructions.system <dao_fork_tangerine_whistle/vm/instructions/system/index.pickle64>
+   vm.gas <dao_fork_tangerine_whistle/vm/gas/index.pickle64>
+   utils <dao_fork_tangerine_whistle/utils/index.pickle64>
    utils.address <dao_fork_tangerine_whistle/utils/address/index.pickle64>
+   spec <dao_fork_tangerine_whistle/spec/index.pickle64>
+   dao <dao_fork_tangerine_whistle/dao/index.pickle64>
    utils.message <dao_fork_tangerine_whistle/utils/message/index.pickle64>
    utils.hexadecimal <dao_fork_tangerine_whistle/utils/hexadecimal/index.pickle64>
+   __init__ <dao_fork_tangerine_whistle/index.pickle64>

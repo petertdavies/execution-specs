@@ -69,7 +69,6 @@ Attributes
 .. autoapisummary::
 
    ethereum.__version__
-   ethereum.ffi
    ethereum.EVM_RECURSION_LIMIT
 
 
@@ -87,21 +86,7 @@ __version__
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 24-24
-
-
-ffi
-~~~
-
-
-
-.. py:data:: ffi
-   
-   
-
-.. undocinclude:: /../src/ethereum/__init__.py
-   :language: python
-   :lines: 28-28
+   :lines: 22-22
 
 
 EVM_RECURSION_LIMIT
@@ -115,7 +100,7 @@ EVM_RECURSION_LIMIT
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 51-51
+   :lines: 27-27
 
 
 evm_trace

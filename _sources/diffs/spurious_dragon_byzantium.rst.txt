@@ -5,22 +5,22 @@ Spurious Dragon → Byzantium
 .. toctree::
    :maxdepth: 1
 
-   vm.gas <spurious_dragon_byzantium/vm/gas/index.pickle64>
-   vm.precompiled_contracts.mapping <spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.pickle64>
-   spec <spurious_dragon_byzantium/spec/index.pickle64>
-   utils <spurious_dragon_byzantium/utils/index.pickle64>
-   vm.exceptions <spurious_dragon_byzantium/vm/exceptions/index.pickle64>
-   vm.interpreter <spurious_dragon_byzantium/vm/interpreter/index.pickle64>
-   vm.instructions <spurious_dragon_byzantium/vm/instructions/index.pickle64>
    vm.instructions.system <spurious_dragon_byzantium/vm/instructions/system/index.pickle64>
+   vm.exceptions <spurious_dragon_byzantium/vm/exceptions/index.pickle64>
+   vm.gas <spurious_dragon_byzantium/vm/gas/index.pickle64>
+   utils <spurious_dragon_byzantium/utils/index.pickle64>
+   utils.address <spurious_dragon_byzantium/utils/address/index.pickle64>
+   vm.instructions.storage <spurious_dragon_byzantium/vm/instructions/storage/index.pickle64>
+   vm.instructions.log <spurious_dragon_byzantium/vm/instructions/log/index.pickle64>
+   vm.instructions <spurious_dragon_byzantium/vm/instructions/index.pickle64>
+   vm.precompiled_contracts <spurious_dragon_byzantium/vm/precompiled_contracts/index.pickle64>
+   vm.precompiled_contracts.alt_bn128 <spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.pickle64>
+   spec <spurious_dragon_byzantium/spec/index.pickle64>
+   vm.precompiled_contracts.mapping <spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.pickle64>
+   vm.instructions.environment <spurious_dragon_byzantium/vm/instructions/environment/index.pickle64>
    __init__ <spurious_dragon_byzantium/index.pickle64>
+   vm.interpreter <spurious_dragon_byzantium/vm/interpreter/index.pickle64>
+   utils.message <spurious_dragon_byzantium/utils/message/index.pickle64>
+   vm.precompiled_contracts.modexp <spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.pickle64>
    vm <spurious_dragon_byzantium/vm/index.pickle64>
    eth_types <spurious_dragon_byzantium/eth_types/index.pickle64>
-   vm.precompiled_contracts <spurious_dragon_byzantium/vm/precompiled_contracts/index.pickle64>
-   utils.address <spurious_dragon_byzantium/utils/address/index.pickle64>
-   vm.precompiled_contracts.modexp <spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.pickle64>
-   vm.instructions.log <spurious_dragon_byzantium/vm/instructions/log/index.pickle64>
-   utils.message <spurious_dragon_byzantium/utils/message/index.pickle64>
-   vm.instructions.storage <spurious_dragon_byzantium/vm/instructions/storage/index.pickle64>
-   vm.instructions.environment <spurious_dragon_byzantium/vm/instructions/environment/index.pickle64>
-   vm.precompiled_contracts.alt_bn128 <spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.pickle64>
