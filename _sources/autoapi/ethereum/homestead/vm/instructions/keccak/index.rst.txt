@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.keccak`
-================================================
-
 .. py:module:: ethereum.homestead.vm.instructions.keccak
 
 Ethereum Virtual Machine (EVM) Keccak Instructions

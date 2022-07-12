@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.dao_fork.dao &mdash; Ethereum Specification  documentation</title>
+  <title>Dao Fork &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ethereum.homestead.utils.addressethereum.dao_fork.utils.address" href="../utils/address/index.html" />
-    <link rel="prev" title="ethereum.homestead.utilsethereum.dao_fork.utils" href="../utils/index.html" /> 
+    <link rel="next" title="Ethereum HomesteadDao Hardfork" href="../index.html" />
+    <link rel="prev" title="HomesteadDao Fork Utility Functions" href="../utils/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,9 +53,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../autoapi/ethereum/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">Specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autoapi/ethereum/index.html">Ethereum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -64,113 +78,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Comparisons</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../homestead_dao_fork.html">homestead → dao_fork</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../homestead_dao_fork.html">Homestead → Dao Fork</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils/index.html">utils</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -192,8 +206,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../homestead_dao_fork.html">homestead → dao_fork</a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.dao</span></code></li>
+          <li><a href="../../homestead_dao_fork.html">Homestead → Dao Fork</a> &raquo;</li>
+      <li>Dao Fork</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/homestead_dao_fork/dao/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -203,10 +217,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section class="change-replacement" id="module-ethereum.dao_fork.dao">
-<span id="ethereum-dao-fork-dao"></span><h1><a class="reference internal" href="#module-ethereum.dao_fork.dao" title="ethereum.dao_fork.dao"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.dao</span></code></a><a class="headerlink" href="#module-ethereum.dao_fork.dao" title="Permalink to this headline"></a></h1>
-<section id="dao-fork">
-<h2>Dao Fork<a class="headerlink" href="#dao-fork" title="Permalink to this headline"></a></h2>
+  <span class="change-replacement target" id="module-ethereum.dao_fork.dao"></span><section class="change-replacement" id="dao-fork">
+<h1>Dao Fork<a class="headerlink" href="#dao-fork" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -220,15 +232,15 @@
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>The Dao Fork was an irregular state change that moved all Ether from a large
 collection of accounts (The Dao and all its children) to a recovery contract.</p>
 <p>The recovery contract was previously created using normal contract deployment.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="dao-accounts">
-<h4>DAO_ACCOUNTS<a class="headerlink" href="#dao-accounts" title="Permalink to this headline"></a></h4>
+<h3>DAO_ACCOUNTS<a class="headerlink" href="#dao-accounts" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.dao_fork.dao.DAO_ACCOUNTS">
 <span class="sig-name descname"><span class="pre">DAO_ACCOUNTS</span></span><a class="headerlink" href="#ethereum.dao_fork.dao.DAO_ACCOUNTS" title="Permalink to this definition"></a></dt>
@@ -359,7 +371,7 @@ collection of accounts (The Dao and all its children) to a recovery contract.</p
 </div>
 </section>
 <section id="dao-recovery">
-<h4>DAO_RECOVERY<a class="headerlink" href="#dao-recovery" title="Permalink to this headline"></a></h4>
+<h3>DAO_RECOVERY<a class="headerlink" href="#dao-recovery" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.dao_fork.dao.DAO_RECOVERY">
 <span class="sig-name descname"><span class="pre">DAO_RECOVERY</span></span><a class="headerlink" href="#ethereum.dao_fork.dao.DAO_RECOVERY" title="Permalink to this definition"></a></dt>
@@ -371,14 +383,13 @@ collection of accounts (The Dao and all its children) to a recovery contract.</p
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../utils/index.html" class="btn btn-neutral float-left" title="ethereum.homestead.utilsethereum.dao_fork.utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../utils/address/index.html" class="btn btn-neutral float-right" title="ethereum.homestead.utils.addressethereum.dao_fork.utils.address" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../utils/index.html" class="btn btn-neutral float-left" title="HomesteadDao Fork Utility Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../index.html" class="btn btn-neutral float-right" title="Ethereum HomesteadDao Hardfork" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

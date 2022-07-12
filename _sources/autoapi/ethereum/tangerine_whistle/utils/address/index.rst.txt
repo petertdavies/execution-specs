@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.utils.address`
-===============================================
-
 .. py:module:: ethereum.tangerine_whistle.utils.address
 
 Tangerine Whistle Utility Functions For Addresses

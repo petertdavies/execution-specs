@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.state`
-====================================
-
 .. py:module:: ethereum.constantinople.state
 
 State
@@ -80,21 +77,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.constantinople.trie.Trie[ethereum.constantinople.eth_types.Address, Optional[ethereum.constantinople.eth_types.Account]]
+         :annotation: :ethereum.constantinople.trie.Trie[ethereum.constantinople.eth_types.Address, Optional[ethereum.constantinople.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.constantinople.eth_types.Address, ethereum.constantinople.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.constantinople.eth_types.Address, ethereum.constantinople.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.constantinople.trie.Trie[ethereum.constantinople.eth_types.Address, Optional[ethereum.constantinople.eth_types.Account]], Dict[ethereum.constantinople.eth_types.Address, ethereum.constantinople.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.constantinople.trie.Trie[ethereum.constantinople.eth_types.Address, Optional[ethereum.constantinople.eth_types.Account]], Dict[ethereum.constantinople.eth_types.Address, ethereum.constantinople.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.memory`
-=========================================
-
 .. py:module:: ethereum.spurious_dragon.vm.memory
 
 Ethereum Virtual Machine (EVM) Memory

@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm`
-============================
-
 .. py:module:: ethereum.byzantium.vm
 
 Ethereum Virtual Machine (EVM)
@@ -71,70 +68,70 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: caller
-      :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.eth_types.Address
 
       
 
    
 
    .. py:attribute:: block_hashes
-      :annotation: :List[ethereum.crypto.hash.Hash32]
+         :annotation: :List[ethereum.crypto.hash.Hash32]
 
       
 
    
 
    .. py:attribute:: origin
-      :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.eth_types.Address
 
       
 
    
 
    .. py:attribute:: coinbase
-      :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.eth_types.Address
 
       
 
    
 
    .. py:attribute:: number
-      :annotation: :ethereum.base_types.Uint
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: gas_limit
-      :annotation: :ethereum.base_types.Uint
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: gas_price
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: time
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: difficulty
-      :annotation: :ethereum.base_types.Uint
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: state
-      :annotation: :ethereum.byzantium.state.State
+         :annotation: :ethereum.byzantium.state.State
 
       
 
@@ -152,77 +149,77 @@ Items that are used by contract creation or message call.
    
 
    .. py:attribute:: caller
-      :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.eth_types.Address
 
       
 
    
 
    .. py:attribute:: target
-      :annotation: :Union[ethereum.base_types.Bytes0, ethereum.byzantium.eth_types.Address]
+         :annotation: :Union[ethereum.base_types.Bytes0, ethereum.byzantium.eth_types.Address]
 
       
 
    
 
    .. py:attribute:: current_target
-      :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.eth_types.Address
 
       
 
    
 
    .. py:attribute:: gas
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: value
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: data
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: code_address
-      :annotation: :Optional[ethereum.byzantium.eth_types.Address]
+         :annotation: :Optional[ethereum.byzantium.eth_types.Address]
 
       
 
    
 
    .. py:attribute:: code
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: depth
-      :annotation: :ethereum.base_types.Uint
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: should_transfer_value
-      :annotation: :bool
+         :annotation: :bool
 
       
 
    
 
    .. py:attribute:: is_static
-      :annotation: :bool
+         :annotation: :bool
 
       
 
@@ -240,119 +237,119 @@ The internal state of the virtual machine.
    
 
    .. py:attribute:: pc
-      :annotation: :ethereum.base_types.Uint
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: stack
-      :annotation: :List[ethereum.base_types.U256]
+         :annotation: :List[ethereum.base_types.U256]
 
       
 
    
 
    .. py:attribute:: memory
-      :annotation: :bytearray
+         :annotation: :bytearray
 
       
 
    
 
    .. py:attribute:: code
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: gas_left
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: env
-      :annotation: :Environment
+         :annotation: :Environment
 
       
 
    
 
    .. py:attribute:: valid_jump_destinations
-      :annotation: :Set[ethereum.base_types.Uint]
+         :annotation: :Set[ethereum.base_types.Uint]
 
       
 
    
 
    .. py:attribute:: logs
-      :annotation: :Tuple[ethereum.byzantium.eth_types.Log, Ellipsis]
+         :annotation: :Tuple[ethereum.byzantium.eth_types.Log, Ellipsis]
 
       
 
    
 
    .. py:attribute:: refund_counter
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: running
-      :annotation: :bool
+         :annotation: :bool
 
       
 
    
 
    .. py:attribute:: message
-      :annotation: :Message
+         :annotation: :Message
 
       
 
    
 
    .. py:attribute:: output
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-      :annotation: :Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.eth_types.Address]
+         :annotation: :Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.eth_types.Address]
 
       
 
    
 
    .. py:attribute:: has_erred
-      :annotation: :bool
+         :annotation: :bool
 
       
 
    
 
    .. py:attribute:: children
-      :annotation: :List[Evm]
+         :annotation: :List[Evm]
 
       
 
    
 
    .. py:attribute:: return_data
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: error
-      :annotation: :Optional[Exception]
+         :annotation: :Optional[Exception]
 
       
 

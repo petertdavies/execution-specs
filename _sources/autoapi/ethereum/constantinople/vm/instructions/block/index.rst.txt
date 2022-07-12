@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.instructions.block`
-====================================================
-
 .. py:module:: ethereum.constantinople.vm.instructions.block
 
 Ethereum Virtual Machine (EVM) Block Instructions

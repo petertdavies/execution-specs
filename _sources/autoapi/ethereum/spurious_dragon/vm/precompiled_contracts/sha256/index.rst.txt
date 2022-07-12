@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.precompiled_contracts.sha256`
-===============================================================
-
 .. py:module:: ethereum.spurious_dragon.vm.precompiled_contracts.sha256
 
 Ethereum Virtual Machine (EVM) SHA256 PRECOMPILED CONTRACT

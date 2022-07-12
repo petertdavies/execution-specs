@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.vm.stack`
-==========================================
-
 .. py:module:: ethereum.tangerine_whistle.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

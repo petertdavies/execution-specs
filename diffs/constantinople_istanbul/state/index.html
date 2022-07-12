@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.constantinople.stateethereum.istanbul.state &mdash; Ethereum Specification  documentation</title>
+  <title>State &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ethereum.constantinople.vm.interpreterethereum.istanbul.vm.interpreter" href="../vm/interpreter/index.html" />
-    <link rel="prev" title="ethereum.constantinople.specethereum.istanbul.spec" href="../spec/index.html" /> 
+    <link rel="next" title="Istanbul → Muir Glacier" href="../../istanbul_muir_glacier.html" />
+    <link rel="prev" title="Ethereum Virtual Machine (EVM) Storage Instructions" href="../vm/instructions/storage/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,9 +53,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../autoapi/ethereum/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../autoapi/index.html">Specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../autoapi/ethereum/index.html">Ethereum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -64,113 +78,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Comparisons</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="../../constantinople_istanbul.html">constantinople → istanbul</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../spec/index.html">spec</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../constantinople_istanbul.html">Constantinople → Istanbul</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -192,8 +206,8 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../constantinople_istanbul.html">constantinople → istanbul</a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.state</span></code><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.state</span></code></li>
+          <li><a href="../../constantinople_istanbul.html">Constantinople → Istanbul</a> &raquo;</li>
+      <li>State</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/constantinople_istanbul/state/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -203,10 +217,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.constantinople.state">
-<span id="ethereum-constantinople-state"></span><h1><a class="change-replaced reference internal" href="#module-ethereum.constantinople.state" title="ethereum.constantinople.state"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.state</span></code></a><a class="change-replacement reference internal" href="#module-ethereum.istanbul.state" title="ethereum.istanbul.state"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.state</span></code></a><a class="headerlink" href="#module-ethereum.constantinople.state" title="Permalink to this headline"></a></h1>
-<section id="state">
-<h2>State<a class="headerlink" href="#state" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.constantinople.state"></span><section id="state">
+<h1>State<a class="headerlink" href="#state" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -249,16 +261,16 @@
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>The state contains all information that is preserved between transactions.</p>
 <p>It consists of a main account trie and storage tries for each contract.</p>
 <p>There is a distinction between an account that does not exist and
 <cite>EMPTY_ACCOUNT</cite>.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="classes">
-<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h4>
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -272,7 +284,7 @@
 </table>
 </section>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -356,9 +368,9 @@
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
 <section id="id1">
-<h4>State<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h4>
+<h3>State<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <p>Contains all information that is preserved between transactions.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.State">
@@ -382,7 +394,7 @@
 
 </section>
 <section id="close-state">
-<h4>close_state<a class="headerlink" href="#close-state" title="Permalink to this headline"></a></h4>
+<h3>close_state<a class="headerlink" href="#close-state" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.close_state">
 <span class="sig-name descname"><span class="pre">close_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.close_state" title="Permalink to this definition"></a></dt>
@@ -398,7 +410,7 @@ release file descriptors.</p>
 </div>
 </section>
 <section id="begin-transaction">
-<h4>begin_transaction<a class="headerlink" href="#begin-transaction" title="Permalink to this headline"></a></h4>
+<h3>begin_transaction<a class="headerlink" href="#begin-transaction" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.begin_transaction">
 <span class="sig-name descname"><span class="pre">begin_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.begin_transaction" title="Permalink to this definition"></a></dt>
@@ -423,7 +435,7 @@ calculate the state root during a transaction.</p>
 </div>
 </section>
 <section id="commit-transaction">
-<h4>commit_transaction<a class="headerlink" href="#commit-transaction" title="Permalink to this headline"></a></h4>
+<h3>commit_transaction<a class="headerlink" href="#commit-transaction" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.commit_transaction">
 <span class="sig-name descname"><span class="pre">commit_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.commit_transaction" title="Permalink to this definition"></a></dt>
@@ -441,7 +453,7 @@ calculate the state root during a transaction.</p>
 </div>
 </section>
 <section id="rollback-transaction">
-<h4>rollback_transaction<a class="headerlink" href="#rollback-transaction" title="Permalink to this headline"></a></h4>
+<h3>rollback_transaction<a class="headerlink" href="#rollback-transaction" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.rollback_transaction">
 <span class="sig-name descname"><span class="pre">rollback_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.rollback_transaction" title="Permalink to this definition"></a></dt>
@@ -460,7 +472,7 @@ corresponding <cite>start_transaction()</cite> call was made.</p>
 </div>
 </section>
 <section id="get-account">
-<h4>get_account<a class="headerlink" href="#get-account" title="Permalink to this headline"></a></h4>
+<h3>get_account<a class="headerlink" href="#get-account" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.get_account">
 <span class="sig-name descname"><span class="pre">get_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.get_account" title="Permalink to this definition"></a></dt>
@@ -494,7 +506,7 @@ non-existent account and <cite>EMPTY_ACCOUNT</cite>.</p>
 </div>
 </section>
 <section id="get-account-optional">
-<h4>get_account_optional<a class="headerlink" href="#get-account-optional" title="Permalink to this headline"></a></h4>
+<h3>get_account_optional<a class="headerlink" href="#get-account-optional" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.get_account_optional">
 <span class="sig-name descname"><span class="pre">get_account_optional</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.get_account_optional" title="Permalink to this definition"></a></dt>
@@ -523,7 +535,7 @@ non-existent account and <cite>EMPTY_ACCOUNT</cite>.</p>
 </div>
 </section>
 <section id="set-account">
-<h4>set_account<a class="headerlink" href="#set-account" title="Permalink to this headline"></a></h4>
+<h3>set_account<a class="headerlink" href="#set-account" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.set_account">
 <span class="sig-name descname"><span class="pre">set_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">account</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.set_account" title="Permalink to this definition"></a></dt>
@@ -548,7 +560,7 @@ the account (but not its storage, see <cite>destroy_account()</cite>).</p>
 </div>
 </section>
 <section id="destroy-account">
-<h4>destroy_account<a class="headerlink" href="#destroy-account" title="Permalink to this headline"></a></h4>
+<h3>destroy_account<a class="headerlink" href="#destroy-account" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.destroy_account">
 <span class="sig-name descname"><span class="pre">destroy_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.destroy_account" title="Permalink to this definition"></a></dt>
@@ -573,7 +585,7 @@ hardfork and this function will be removed.</p>
 </div>
 </section>
 <section id="destroy-storage">
-<h4>destroy_storage<a class="headerlink" href="#destroy-storage" title="Permalink to this headline"></a></h4>
+<h3>destroy_storage<a class="headerlink" href="#destroy-storage" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.destroy_storage">
 <span class="sig-name descname"><span class="pre">destroy_storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.destroy_storage" title="Permalink to this definition"></a></dt>
@@ -595,7 +607,7 @@ hardfork and this function will be removed.</p>
 </div>
 </section>
 <section id="get-storage">
-<h4>get_storage<a class="headerlink" href="#get-storage" title="Permalink to this headline"></a></h4>
+<h3>get_storage<a class="headerlink" href="#get-storage" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.get_storage">
 <span class="sig-name descname"><span class="pre">get_storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.get_storage" title="Permalink to this definition"></a></dt>
@@ -631,7 +643,7 @@ storage key has not been set previously.</p>
 </div>
 </section>
 <section id="set-storage">
-<h4>set_storage<a class="headerlink" href="#set-storage" title="Permalink to this headline"></a></h4>
+<h3>set_storage<a class="headerlink" href="#set-storage" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.set_storage">
 <span class="sig-name descname"><span class="pre">set_storage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.set_storage" title="Permalink to this definition"></a></dt>
@@ -665,7 +677,7 @@ the key.</p>
 </div>
 </section>
 <section id="storage-root">
-<h4>storage_root<a class="headerlink" href="#storage-root" title="Permalink to this headline"></a></h4>
+<h3>storage_root<a class="headerlink" href="#storage-root" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.storage_root">
 <span class="sig-name descname"><span class="pre">storage_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.storage_root" title="Permalink to this definition"></a></dt>
@@ -696,7 +708,7 @@ the key.</p>
 </div>
 </section>
 <section id="state-root">
-<h4>state_root<a class="headerlink" href="#state-root" title="Permalink to this headline"></a></h4>
+<h3>state_root<a class="headerlink" href="#state-root" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.state_root">
 <span class="sig-name descname"><span class="pre">state_root</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.state_root" title="Permalink to this definition"></a></dt>
@@ -725,7 +737,7 @@ the key.</p>
 </div>
 </section>
 <section id="account-exists">
-<h4>account_exists<a class="headerlink" href="#account-exists" title="Permalink to this headline"></a></h4>
+<h3>account_exists<a class="headerlink" href="#account-exists" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.account_exists">
 <span class="sig-name descname"><span class="pre">account_exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.account_exists" title="Permalink to this definition"></a></dt>
@@ -752,7 +764,7 @@ the key.</p>
 </div>
 </section>
 <section id="account-has-code-or-nonce">
-<h4>account_has_code_or_nonce<a class="headerlink" href="#account-has-code-or-nonce" title="Permalink to this headline"></a></h4>
+<h3>account_has_code_or_nonce<a class="headerlink" href="#account-has-code-or-nonce" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.account_has_code_or_nonce">
 <span class="sig-name descname"><span class="pre">account_has_code_or_nonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.account_has_code_or_nonce" title="Permalink to this definition"></a></dt>
@@ -781,7 +793,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="is-account-empty">
-<h4>is_account_empty<a class="headerlink" href="#is-account-empty" title="Permalink to this headline"></a></h4>
+<h3>is_account_empty<a class="headerlink" href="#is-account-empty" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.is_account_empty">
 <span class="sig-name descname"><span class="pre">is_account_empty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.is_account_empty" title="Permalink to this definition"></a></dt>
@@ -814,7 +826,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="modify-state">
-<h4>modify_state<a class="headerlink" href="#modify-state" title="Permalink to this headline"></a></h4>
+<h3>modify_state<a class="headerlink" href="#modify-state" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.modify_state">
 <span class="sig-name descname"><span class="pre">modify_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.modify_state" title="Permalink to this definition"></a></dt>
@@ -829,7 +841,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="move-ether">
-<h4>move_ether<a class="headerlink" href="#move-ether" title="Permalink to this headline"></a></h4>
+<h3>move_ether<a class="headerlink" href="#move-ether" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.move_ether">
 <span class="sig-name descname"><span class="pre">move_ether</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recipient_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.move_ether" title="Permalink to this definition"></a></dt>
@@ -856,7 +868,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="set-account-balance">
-<h4>set_account_balance<a class="headerlink" href="#set-account-balance" title="Permalink to this headline"></a></h4>
+<h3>set_account_balance<a class="headerlink" href="#set-account-balance" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.set_account_balance">
 <span class="sig-name descname"><span class="pre">set_account_balance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.set_account_balance" title="Permalink to this definition"></a></dt>
@@ -882,7 +894,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="touch-account">
-<h4>touch_account<a class="headerlink" href="#touch-account" title="Permalink to this headline"></a></h4>
+<h3>touch_account<a class="headerlink" href="#touch-account" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.touch_account">
 <span class="sig-name descname"><span class="pre">touch_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.touch_account" title="Permalink to this definition"></a></dt>
@@ -904,7 +916,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="increment-nonce">
-<h4>increment_nonce<a class="headerlink" href="#increment-nonce" title="Permalink to this headline"></a></h4>
+<h3>increment_nonce<a class="headerlink" href="#increment-nonce" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.increment_nonce">
 <span class="sig-name descname"><span class="pre">increment_nonce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.increment_nonce" title="Permalink to this definition"></a></dt>
@@ -929,7 +941,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="set-code">
-<h4>set_code<a class="headerlink" href="#set-code" title="Permalink to this headline"></a></h4>
+<h3>set_code<a class="headerlink" href="#set-code" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.set_code">
 <span class="sig-name descname"><span class="pre">set_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.set_code" title="Permalink to this definition"></a></dt>
@@ -955,7 +967,7 @@ False otherwise.</p>
 </div>
 </section>
 <section id="create-ether">
-<h4>create_ether<a class="headerlink" href="#create-ether" title="Permalink to this headline"></a></h4>
+<h3>create_ether<a class="headerlink" href="#create-ether" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.state.create_ether">
 <span class="sig-name descname"><span class="pre">create_ether</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.constantinople.state.create_ether" title="Permalink to this definition"></a></dt>
@@ -981,7 +993,7 @@ False otherwise.</p>
 </div>
 </section>
 <section class="change-added" id="get-storage-original">
-<h4>get_storage_original<a class="headerlink" href="#get-storage-original" title="Permalink to this headline"></a></h4>
+<h3>get_storage_original<a class="headerlink" href="#get-storage-original" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.istanbul.state.get_storage_original">
 <span class="sig-name descname"><span class="pre">get_storage_original</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.istanbul.state.get_storage_original" title="Permalink to this definition"></a></dt>
@@ -1016,14 +1028,13 @@ before executing the transaction.</p>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../spec/index.html" class="btn btn-neutral float-left" title="ethereum.constantinople.specethereum.istanbul.spec" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../vm/interpreter/index.html" class="btn btn-neutral float-right" title="ethereum.constantinople.vm.interpreterethereum.istanbul.vm.interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../vm/instructions/storage/index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM) Storage Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../istanbul_muir_glacier.html" class="btn btn-neutral float-right" title="Istanbul → Muir Glacier" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

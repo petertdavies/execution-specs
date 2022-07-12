@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.instructions.arithmetic`
-====================================================
-
 .. py:module:: ethereum.byzantium.vm.instructions.arithmetic
 
 Ethereum Virtual Machine (EVM) Arithmetic Instructions

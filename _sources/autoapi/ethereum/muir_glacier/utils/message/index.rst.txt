@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.utils.message`
-==========================================
-
 .. py:module:: ethereum.muir_glacier.utils.message
 
 Muir Glacier Utility Functions For The Message Data-structure

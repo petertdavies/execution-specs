@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.state`
-===============================
-
 .. py:module:: ethereum.byzantium.state
 
 State
@@ -80,21 +77,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.byzantium.trie.Trie[ethereum.byzantium.eth_types.Address, Optional[ethereum.byzantium.eth_types.Account]]
+         :annotation: :ethereum.byzantium.trie.Trie[ethereum.byzantium.eth_types.Address, Optional[ethereum.byzantium.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.byzantium.trie.Trie[ethereum.byzantium.eth_types.Address, Optional[ethereum.byzantium.eth_types.Account]], Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.byzantium.trie.Trie[ethereum.byzantium.eth_types.Address, Optional[ethereum.byzantium.eth_types.Account]], Dict[ethereum.byzantium.eth_types.Address, ethereum.byzantium.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

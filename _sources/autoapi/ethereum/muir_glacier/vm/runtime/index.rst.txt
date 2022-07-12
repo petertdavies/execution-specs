@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.runtime`
-=======================================
-
 .. py:module:: ethereum.muir_glacier.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

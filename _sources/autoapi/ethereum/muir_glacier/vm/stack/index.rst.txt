@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.stack`
-=====================================
-
 .. py:module:: ethereum.muir_glacier.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

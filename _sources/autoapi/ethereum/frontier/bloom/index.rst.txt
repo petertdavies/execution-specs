@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.bloom`
-==============================
-
 .. py:module:: ethereum.frontier.bloom
 
 Ethereum Logs Bloom
@@ -68,13 +65,13 @@ logs_bloom
 .. function:: logs_bloom(logs: Tuple[ethereum.frontier.eth_types.Log, Ellipsis]) -> ethereum.frontier.eth_types.Bloom
    :noindexentry:
 
-   Calculate the Bloom filter for a set of logs.
+   Obtain the logs bloom from a list of log entries.
 
    The address and each topic of a log are added to the bloom filter.
 
-   :param logs: List of logs for which the logs bloom is to be calculated.
+   :param logs: List of logs for which the logs bloom is to be obtained.
 
-   :returns: **logs_bloom** -- The logs bloom calculated which is 256 bytes with some bits set as per
+   :returns: **logs_bloom** -- The logs bloom obtained which is 256 bytes with some bits set as per
              the caller address and the log topics.
    :rtype: `Bloom`
 

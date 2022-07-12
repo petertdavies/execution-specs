@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.stack`
-=======================================
-
 .. py:module:: ethereum.constantinople.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

@@ -1,6 +1,3 @@
-:mod:`ethereum.utils.hexadecimal`
-=================================
-
 .. py:module:: ethereum.utils.hexadecimal
 
 Utility Functions For Hexadecimal Strings

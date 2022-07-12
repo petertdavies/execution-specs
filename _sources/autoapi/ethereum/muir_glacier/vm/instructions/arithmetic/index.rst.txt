@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.instructions.arithmetic`
-=======================================================
-
 .. py:module:: ethereum.muir_glacier.vm.instructions.arithmetic
 
 Ethereum Virtual Machine (EVM) Arithmetic Instructions

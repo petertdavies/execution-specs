@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.precompiled_contracts.sha256`
-========================================================
-
 .. py:module:: ethereum.dao_fork.vm.precompiled_contracts.sha256
 
 Ethereum Virtual Machine (EVM) SHA256 PRECOMPILED CONTRACT

@@ -1,17 +1,17 @@
 ===================================
-tangerine_whistle → spurious_dragon
+Tangerine Whistle → Spurious Dragon
 ===================================
 
 .. toctree::
    :maxdepth: 1
 
-   utils <tangerine_whistle_spurious_dragon/utils/index.pickle64>
-   state <tangerine_whistle_spurious_dragon/state/index.pickle64>
+   vm.gas <tangerine_whistle_spurious_dragon/vm/gas/index.pickle64>
    spec <tangerine_whistle_spurious_dragon/spec/index.pickle64>
+   utils <tangerine_whistle_spurious_dragon/utils/index.pickle64>
    vm.interpreter <tangerine_whistle_spurious_dragon/vm/interpreter/index.pickle64>
-   vm <tangerine_whistle_spurious_dragon/vm/index.pickle64>
    __init__ <tangerine_whistle_spurious_dragon/index.pickle64>
+   vm.instructions.system <tangerine_whistle_spurious_dragon/vm/instructions/system/index.pickle64>
+   vm <tangerine_whistle_spurious_dragon/vm/index.pickle64>
    utils.address <tangerine_whistle_spurious_dragon/utils/address/index.pickle64>
    utils.message <tangerine_whistle_spurious_dragon/utils/message/index.pickle64>
-   vm.gas <tangerine_whistle_spurious_dragon/vm/gas/index.pickle64>
-   vm.instructions.system <tangerine_whistle_spurious_dragon/vm/instructions/system/index.pickle64>
+   state <tangerine_whistle_spurious_dragon/state/index.pickle64>

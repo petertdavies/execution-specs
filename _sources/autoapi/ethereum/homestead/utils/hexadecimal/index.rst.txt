@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.utils.hexadecimal`
-===========================================
-
 .. py:module:: ethereum.homestead.utils.hexadecimal
 
 Utility Functions For Hexadecimal Strings

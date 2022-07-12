@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.bitwise`
-=================================================
-
 .. py:module:: ethereum.homestead.vm.instructions.bitwise
 
 Ethereum Virtual Machine (EVM) Bitwise Instructions

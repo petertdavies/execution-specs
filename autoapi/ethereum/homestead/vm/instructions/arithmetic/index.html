@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.homestead.vm.instructions.arithmetic &mdash; Ethereum Specification  documentation</title>
+  <title>Ethereum Virtual Machine (EVM) Arithmetic Instructions &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="ethereum.homestead.vm.instructions.bitwise" href="../bitwise/index.html" />
-    <link rel="prev" title="ethereum.homestead.vm.instructions" href="../index.html" /> 
+    <link rel="next" title="Ethereum Virtual Machine (EVM) Bitwise Instructions" href="../bitwise/index.html" />
+    <link rel="prev" title="EVM Instruction Encoding (Opcodes)" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +100,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../../../index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html">Ethereum</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -111,113 +125,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -238,12 +252,12 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a> &raquo;</li>
-          <li><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead</span></code></a> &raquo;</li>
-          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm</span></code></a> &raquo;</li>
-          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.instructions</span></code></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.instructions.arithmetic</span></code></li>
+          <li><a href="../../../../../index.html">Specification</a> &raquo;</li>
+          <li><a href="../../../../index.html">Ethereum Specification</a> &raquo;</li>
+          <li><a href="../../../index.html">Ethereum Homestead Hardfork</a> &raquo;</li>
+          <li><a href="../../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
+          <li><a href="../index.html">EVM Instruction Encoding (Opcodes)</a> &raquo;</li>
+      <li>Ethereum Virtual Machine (EVM) Arithmetic Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/autoapi/ethereum/homestead/vm/instructions/arithmetic/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -253,10 +267,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.homestead.vm.instructions.arithmetic">
-<span id="ethereum-homestead-vm-instructions-arithmetic"></span><h1><a class="reference internal" href="#module-ethereum.homestead.vm.instructions.arithmetic" title="ethereum.homestead.vm.instructions.arithmetic"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.instructions.arithmetic</span></code></a><a class="headerlink" href="#module-ethereum.homestead.vm.instructions.arithmetic" title="Permalink to this headline"></a></h1>
-<section id="ethereum-virtual-machine-evm-arithmetic-instructions">
-<h2>Ethereum Virtual Machine (EVM) Arithmetic Instructions<a class="headerlink" href="#ethereum-virtual-machine-evm-arithmetic-instructions" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.homestead.vm.instructions.arithmetic"></span><section id="ethereum-virtual-machine-evm-arithmetic-instructions">
+<h1>Ethereum Virtual Machine (EVM) Arithmetic Instructions<a class="headerlink" href="#ethereum-virtual-machine-evm-arithmetic-instructions" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -284,13 +296,13 @@
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>Implementations of the EVM Arithmetic instructions.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -335,9 +347,9 @@
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
 <section id="add">
-<h4>add<a class="headerlink" href="#add" title="Permalink to this headline"></a></h4>
+<h3>add<a class="headerlink" href="#add" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.add" title="Permalink to this definition"></a></dt>
@@ -370,7 +382,7 @@ on the stack.</p>
 </div>
 </section>
 <section id="sub">
-<h4>sub<a class="headerlink" href="#sub" title="Permalink to this headline"></a></h4>
+<h3>sub<a class="headerlink" href="#sub" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.sub">
 <span class="sig-name descname"><span class="pre">sub</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.sub" title="Permalink to this definition"></a></dt>
@@ -403,7 +415,7 @@ on the stack.</p>
 </div>
 </section>
 <section id="mul">
-<h4>mul<a class="headerlink" href="#mul" title="Permalink to this headline"></a></h4>
+<h3>mul<a class="headerlink" href="#mul" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.mul">
 <span class="sig-name descname"><span class="pre">mul</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.mul" title="Permalink to this definition"></a></dt>
@@ -436,7 +448,7 @@ on the stack.</p>
 </div>
 </section>
 <section id="div">
-<h4>div<a class="headerlink" href="#div" title="Permalink to this headline"></a></h4>
+<h3>div<a class="headerlink" href="#div" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.div">
 <span class="sig-name descname"><span class="pre">div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.div" title="Permalink to this definition"></a></dt>
@@ -472,7 +484,7 @@ back on the stack.</p>
 </div>
 </section>
 <section id="sdiv">
-<h4>sdiv<a class="headerlink" href="#sdiv" title="Permalink to this headline"></a></h4>
+<h3>sdiv<a class="headerlink" href="#sdiv" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.sdiv">
 <span class="sig-name descname"><span class="pre">sdiv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.sdiv" title="Permalink to this definition"></a></dt>
@@ -512,7 +524,7 @@ result back on the stack.</p>
 </div>
 </section>
 <section id="mod">
-<h4>mod<a class="headerlink" href="#mod" title="Permalink to this headline"></a></h4>
+<h3>mod<a class="headerlink" href="#mod" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.mod">
 <span class="sig-name descname"><span class="pre">mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.mod" title="Permalink to this definition"></a></dt>
@@ -548,7 +560,7 @@ back on the stack.</p>
 </div>
 </section>
 <section id="smod">
-<h4>smod<a class="headerlink" href="#smod" title="Permalink to this headline"></a></h4>
+<h3>smod<a class="headerlink" href="#smod" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.smod">
 <span class="sig-name descname"><span class="pre">smod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.smod" title="Permalink to this definition"></a></dt>
@@ -585,7 +597,7 @@ result back on the stack.</p>
 </div>
 </section>
 <section id="addmod">
-<h4>addmod<a class="headerlink" href="#addmod" title="Permalink to this headline"></a></h4>
+<h3>addmod<a class="headerlink" href="#addmod" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.addmod">
 <span class="sig-name descname"><span class="pre">addmod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.addmod" title="Permalink to this definition"></a></dt>
@@ -623,7 +635,7 @@ result back on the stack.</p>
 </div>
 </section>
 <section id="mulmod">
-<h4>mulmod<a class="headerlink" href="#mulmod" title="Permalink to this headline"></a></h4>
+<h3>mulmod<a class="headerlink" href="#mulmod" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.mulmod">
 <span class="sig-name descname"><span class="pre">mulmod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.mulmod" title="Permalink to this definition"></a></dt>
@@ -661,7 +673,7 @@ the result back on the stack.</p>
 </div>
 </section>
 <section id="exp">
-<h4>exp<a class="headerlink" href="#exp" title="Permalink to this headline"></a></h4>
+<h3>exp<a class="headerlink" href="#exp" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.exp">
 <span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.exp" title="Permalink to this definition"></a></dt>
@@ -699,7 +711,7 @@ the stack.</p>
 </div>
 </section>
 <section id="signextend">
-<h4>signextend<a class="headerlink" href="#signextend" title="Permalink to this headline"></a></h4>
+<h3>signextend<a class="headerlink" href="#signextend" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.instructions.arithmetic.signextend">
 <span class="sig-name descname"><span class="pre">signextend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.homestead.vm.Evm" title="ethereum.homestead.vm.Evm"><span class="pre">ethereum.homestead.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.homestead.vm.instructions.arithmetic.signextend" title="Permalink to this definition"></a></dt>
@@ -751,14 +763,13 @@ fits in N bytes to 32 bytes.</p>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="ethereum.homestead.vm.instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../bitwise/index.html" class="btn btn-neutral float-right" title="ethereum.homestead.vm.instructions.bitwise" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="EVM Instruction Encoding (Opcodes)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../bitwise/index.html" class="btn btn-neutral float-right" title="Ethereum Virtual Machine (EVM) Bitwise Instructions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

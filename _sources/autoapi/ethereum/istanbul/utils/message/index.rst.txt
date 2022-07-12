@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul.utils.message`
-======================================
-
 .. py:module:: ethereum.istanbul.utils.message
 
 Istanbul Utility Functions For The Message Data-structure

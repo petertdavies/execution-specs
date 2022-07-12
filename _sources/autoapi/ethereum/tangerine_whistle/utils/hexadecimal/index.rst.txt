@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.utils.hexadecimal`
-===================================================
-
 .. py:module:: ethereum.tangerine_whistle.utils.hexadecimal
 
 Utility Functions For Hexadecimal Strings

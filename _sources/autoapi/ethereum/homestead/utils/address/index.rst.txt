@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.utils.address`
-=======================================
-
 .. py:module:: ethereum.homestead.utils.address
 
 Homestead Utility Functions For Addresses

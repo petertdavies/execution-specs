@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.runtime`
-===================================
-
 .. py:module:: ethereum.dao_fork.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

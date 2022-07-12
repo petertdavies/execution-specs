@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.vm.memory`
-===========================================
-
 .. py:module:: ethereum.tangerine_whistle.vm.memory
 
 Ethereum Virtual Machine (EVM) Memory

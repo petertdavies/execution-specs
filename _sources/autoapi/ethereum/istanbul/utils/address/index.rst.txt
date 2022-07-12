@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul.utils.address`
-======================================
-
 .. py:module:: ethereum.istanbul.utils.address
 
 Istanbul Utility Functions For Addresses

@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.utils.message`
-=======================================
-
 .. py:module:: ethereum.byzantium.utils.message
 
 Byzantium Utility Functions For The Message Data-structure

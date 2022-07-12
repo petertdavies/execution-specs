@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.crypto.alt_bn128 &mdash; Ethereum Specification  documentation</title>
+  <title>The alt_bn128 curve &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="ethereum.crypto.blake2" href="../blake2/index.html" />
-    <link rel="prev" title="ethereum.crypto" href="../index.html" /> 
+    <link rel="next" title="The Blake2 Implementation" href="../blake2/index.html" />
+    <link rel="prev" title="Cryptographic Functions" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,9 +53,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">Ethereum</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -64,113 +78,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -191,10 +205,10 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a> &raquo;</li>
-          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.alt_bn128</span></code></li>
+          <li><a href="../../../index.html">Specification</a> &raquo;</li>
+          <li><a href="../../index.html">Ethereum Specification</a> &raquo;</li>
+          <li><a href="../index.html">Cryptographic Functions</a> &raquo;</li>
+      <li>The alt_bn128 curve</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/autoapi/ethereum/crypto/alt_bn128/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -204,14 +218,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.crypto.alt_bn128">
-<span id="ethereum-crypto-alt-bn128"></span><h1><a class="reference internal" href="#module-ethereum.crypto.alt_bn128" title="ethereum.crypto.alt_bn128"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.alt_bn128</span></code></a><a class="headerlink" href="#module-ethereum.crypto.alt_bn128" title="Permalink to this headline"></a></h1>
-<section id="the-alt-bn128-curve">
-<h2>The alt_bn128 curve<a class="headerlink" href="#the-alt-bn128-curve" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.crypto.alt_bn128"></span><section id="the-alt-bn128-curve">
+<h1>The alt_bn128 curve<a class="headerlink" href="#the-alt-bn128-curve" title="Permalink to this headline"></a></h1>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="classes">
-<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h4>
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -240,7 +252,7 @@
 </table>
 </section>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -269,7 +281,7 @@
 </table>
 </section>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h4>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -288,20 +300,14 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS" title="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ATE_PAIRING_COUNT_BITS</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.i" title="ethereum.crypto.alt_bn128.i"><code class="xref py py-obj docutils literal notranslate"><span class="pre">i</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.crypto.alt_bn128.w" title="ethereum.crypto.alt_bn128.w"><code class="xref py py-obj docutils literal notranslate"><span class="pre">w</span></code></a></p></td>
-<td><p></p></td>
-</tr>
 </tbody>
 </table>
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
 <section id="alt-bn128-prime">
-<h4>ALT_BN128_PRIME<a class="headerlink" href="#alt-bn128-prime" title="Permalink to this headline"></a></h4>
+<h3>ALT_BN128_PRIME<a class="headerlink" href="#alt-bn128-prime" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ALT_BN128_PRIME">
 <span class="sig-name descname"><span class="pre">ALT_BN128_PRIME</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ALT_BN128_PRIME" title="Permalink to this definition"></a></dt>
@@ -312,7 +318,7 @@
 </div>
 </section>
 <section id="alt-bn128-curve-order">
-<h4>ALT_BN128_CURVE_ORDER<a class="headerlink" href="#alt-bn128-curve-order" title="Permalink to this headline"></a></h4>
+<h3>ALT_BN128_CURVE_ORDER<a class="headerlink" href="#alt-bn128-curve-order" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER">
 <span class="sig-name descname"><span class="pre">ALT_BN128_CURVE_ORDER</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER" title="Permalink to this definition"></a></dt>
@@ -323,7 +329,7 @@
 </div>
 </section>
 <section id="ate-pairing-count">
-<h4>ATE_PAIRING_COUNT<a class="headerlink" href="#ate-pairing-count" title="Permalink to this headline"></a></h4>
+<h3>ATE_PAIRING_COUNT<a class="headerlink" href="#ate-pairing-count" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT">
 <span class="sig-name descname"><span class="pre">ATE_PAIRING_COUNT</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT" title="Permalink to this definition"></a></dt>
@@ -334,7 +340,7 @@
 </div>
 </section>
 <section id="ate-pairing-count-bits">
-<h4>ATE_PAIRING_COUNT_BITS<a class="headerlink" href="#ate-pairing-count-bits" title="Permalink to this headline"></a></h4>
+<h3>ATE_PAIRING_COUNT_BITS<a class="headerlink" href="#ate-pairing-count-bits" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS">
 <span class="sig-name descname"><span class="pre">ATE_PAIRING_COUNT_BITS</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS" title="Permalink to this definition"></a></dt>
@@ -345,7 +351,7 @@
 </div>
 </section>
 <section id="bnf">
-<h4>BNF<a class="headerlink" href="#bnf" title="Permalink to this headline"></a></h4>
+<h3>BNF<a class="headerlink" href="#bnf" title="Permalink to this headline"></a></h3>
 <p>The prime field over which the alt_bn128 curve is defined.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF">
@@ -360,7 +366,7 @@
 
 </section>
 <section id="bnp">
-<h4>BNP<a class="headerlink" href="#bnp" title="Permalink to this headline"></a></h4>
+<h3>BNP<a class="headerlink" href="#bnp" title="Permalink to this headline"></a></h3>
 <p>The alt_bn128 curve.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNP">
@@ -385,7 +391,7 @@
 
 </section>
 <section id="bnf2">
-<h4>BNF2<a class="headerlink" href="#bnf2" title="Permalink to this headline"></a></h4>
+<h3>BNF2<a class="headerlink" href="#bnf2" title="Permalink to this headline"></a></h3>
 <p><cite>BNF</cite> extended with a square root of 1 (<cite>i</cite>).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2">
@@ -406,22 +412,49 @@
 <span class="sig-name descname"><span class="pre">i</span></span><em class="property"> <span class="pre">:BNF2</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2.i" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF2.i_plus_9">
+<span class="sig-name descname"><span class="pre">i_plus_9</span></span><em class="property"> <span class="pre">:BNF2</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF2.i_plus_9" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 </section>
-<section id="i">
-<h4>i<a class="headerlink" href="#i" title="Permalink to this headline"></a></h4>
+<section id="frobenius-coefficients">
+<h3>FROBENIUS_COEFFICIENTS<a class="headerlink" href="#frobenius-coefficients" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.i">
-<span class="sig-name descname"><span class="pre">i</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.i" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF2.</span></span><span class="sig-name descname"><span class="pre">FROBENIUS_COEFFICIENTS</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF2</span><span class="o">.</span><span class="n">FROBENIUS_COEFFICIENTS</span> <span class="o">=</span> <span class="n">BNF2</span><span class="o">.</span><span class="n">calculate_frobenius_coefficients</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="i">
+<h3>i<a class="headerlink" href="#i" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF2.</span></span><span class="sig-name descname"><span class="pre">i</span></span></dt>
 <dd></dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF2</span><span class="o">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">BNF2</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
+<section id="i-plus-9">
+<h3>i_plus_9<a class="headerlink" href="#i-plus-9" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF2.</span></span><span class="sig-name descname"><span class="pre">i_plus_9</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF2</span><span class="o">.</span><span class="n">i_plus_9</span> <span class="o">=</span> <span class="n">BNF2</span><span class="p">((</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 <section id="bnp2">
-<h4>BNP2<a class="headerlink" href="#bnp2" title="Permalink to this headline"></a></h4>
+<h3>BNP2<a class="headerlink" href="#bnp2" title="Permalink to this headline"></a></h3>
 <p>A twist of <cite>BNP</cite>. This is actually the same curve as <cite>BNP</cite> under a change
 of variable, but that change of variable is only possible over the larger
 field <cite>BNP12</cite>.</p>
@@ -448,7 +481,7 @@ field <cite>BNP12</cite>.</p>
 
 </section>
 <section id="bnf12">
-<h4>BNF12<a class="headerlink" href="#bnf12" title="Permalink to this headline"></a></h4>
+<h3>BNF12<a class="headerlink" href="#bnf12" title="Permalink to this headline"></a></h3>
 <p><cite>BNF2</cite> extended by adding a 6th root of <cite>9 + i</cite> called <cite>w</cite> (omega).</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12">
@@ -469,6 +502,11 @@ field <cite>BNP12</cite>.</p>
 <span class="sig-name descname"><span class="pre">w</span></span><em class="property"> <span class="pre">:BNF12</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.w" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.i_plus_9">
+<span class="sig-name descname"><span class="pre">i_plus_9</span></span><em class="property"> <span class="pre">:BNF12</span></em><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.i_plus_9" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.BNF12.__mul__">
 <span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">right</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.BNF12.__mul__" title="Permalink to this definition"></a></dt>
@@ -478,19 +516,41 @@ field <cite>BNP12</cite>.</p>
 </dd></dl>
 
 </section>
-<section id="w">
-<h4>w<a class="headerlink" href="#w" title="Permalink to this headline"></a></h4>
+<section id="id1">
+<h3>FROBENIUS_COEFFICIENTS<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.w">
-<span class="sig-name descname"><span class="pre">w</span></span><a class="headerlink" href="#ethereum.crypto.alt_bn128.w" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF12.</span></span><span class="sig-name descname"><span class="pre">FROBENIUS_COEFFICIENTS</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF12</span><span class="o">.</span><span class="n">FROBENIUS_COEFFICIENTS</span> <span class="o">=</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">calculate_frobenius_coefficients</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="w">
+<h3>w<a class="headerlink" href="#w" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF12.</span></span><span class="sig-name descname"><span class="pre">w</span></span></dt>
 <dd></dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF12</span><span class="o">.</span><span class="n">w</span> <span class="o">=</span> <span class="n">BNF12</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
+<section id="id2">
+<h3>i_plus_9<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">BNF12.</span></span><span class="sig-name descname"><span class="pre">i_plus_9</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BNF12</span><span class="o">.</span><span class="n">i_plus_9</span> <span class="o">=</span> <span class="n">BNF12</span><span class="o">.</span><span class="n">w</span><span class="o">**</span><span class="mi">6</span>
+</pre></div>
+</div>
+</section>
 <section id="bnp12">
-<h4>BNP12<a class="headerlink" href="#bnp12" title="Permalink to this headline"></a></h4>
+<h3>BNP12<a class="headerlink" href="#bnp12" title="Permalink to this headline"></a></h3>
 <p>The same curve as <cite>BNP</cite>, but defined over the larger field. This curve has
 both subgroups of order <cite>ALT_BN128_CURVE_ORDER</cite> and allows pairings to be
 computed.</p>
@@ -517,7 +577,7 @@ computed.</p>
 
 </section>
 <section id="bnf2-to-bnf12">
-<h4>bnf2_to_bnf12<a class="headerlink" href="#bnf2-to-bnf12" title="Permalink to this headline"></a></h4>
+<h3>bnf2_to_bnf12<a class="headerlink" href="#bnf2-to-bnf12" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.bnf2_to_bnf12">
 <span class="sig-name descname"><span class="pre">bnf2_to_bnf12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF2" title="ethereum.crypto.alt_bn128.BNF2"><span class="pre">BNF2</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.bnf2_to_bnf12" title="Permalink to this definition"></a></dt>
@@ -532,7 +592,7 @@ computed.</p>
 </div>
 </section>
 <section id="bnp-to-bnp12">
-<h4>bnp_to_bnp12<a class="headerlink" href="#bnp-to-bnp12" title="Permalink to this headline"></a></h4>
+<h3>bnp_to_bnp12<a class="headerlink" href="#bnp-to-bnp12" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.bnp_to_bnp12">
 <span class="sig-name descname"><span class="pre">bnp_to_bnp12</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP" title="ethereum.crypto.alt_bn128.BNP"><span class="pre">BNP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.bnp_to_bnp12" title="Permalink to this definition"></a></dt>
@@ -545,7 +605,7 @@ computed.</p>
 </div>
 </section>
 <section id="twist">
-<h4>twist<a class="headerlink" href="#twist" title="Permalink to this headline"></a></h4>
+<h3>twist<a class="headerlink" href="#twist" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.twist">
 <span class="sig-name descname"><span class="pre">twist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP2" title="ethereum.crypto.alt_bn128.BNP2"><span class="pre">BNP2</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.twist" title="Permalink to this definition"></a></dt>
@@ -561,7 +621,7 @@ computed.</p>
 </div>
 </section>
 <section id="linefunc">
-<h4>linefunc<a class="headerlink" href="#linefunc" title="Permalink to this headline"></a></h4>
+<h3>linefunc<a class="headerlink" href="#linefunc" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.linefunc">
 <span class="sig-name descname"><span class="pre">linefunc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.linefunc" title="Permalink to this definition"></a></dt>
@@ -586,7 +646,7 @@ matter.</p>
 </div>
 </section>
 <section id="miller-loop">
-<h4>miller_loop<a class="headerlink" href="#miller-loop" title="Permalink to this headline"></a></h4>
+<h3>miller_loop<a class="headerlink" href="#miller-loop" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.miller_loop">
 <span class="sig-name descname"><span class="pre">miller_loop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP12" title="ethereum.crypto.alt_bn128.BNP12"><span class="pre">BNP12</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.miller_loop" title="Permalink to this definition"></a></dt>
@@ -618,7 +678,7 @@ matter.</p>
 </div>
 </section>
 <section id="pairing">
-<h4>pairing<a class="headerlink" href="#pairing" title="Permalink to this headline"></a></h4>
+<h3>pairing<a class="headerlink" href="#pairing" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.crypto.alt_bn128.pairing">
 <span class="sig-name descname"><span class="pre">pairing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP2" title="ethereum.crypto.alt_bn128.BNP2"><span class="pre">BNP2</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.crypto.alt_bn128.BNP" title="ethereum.crypto.alt_bn128.BNP"><span class="pre">BNP</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.crypto.alt_bn128.BNF12" title="ethereum.crypto.alt_bn128.BNF12"><span class="pre">BNF12</span></a><a class="headerlink" href="#ethereum.crypto.alt_bn128.pairing" title="Permalink to this definition"></a></dt>
@@ -632,14 +692,13 @@ matter.</p>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="ethereum.crypto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../blake2/index.html" class="btn btn-neutral float-right" title="ethereum.crypto.blake2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Cryptographic Functions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../blake2/index.html" class="btn btn-neutral float-right" title="The Blake2 Implementation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

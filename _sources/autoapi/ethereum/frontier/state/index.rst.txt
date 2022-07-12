@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.state`
-==============================
-
 .. py:module:: ethereum.frontier.state
 
 State
@@ -79,21 +76,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.frontier.trie.Trie[ethereum.frontier.eth_types.Address, Optional[ethereum.frontier.eth_types.Account]]
+         :annotation: :ethereum.frontier.trie.Trie[ethereum.frontier.eth_types.Address, Optional[ethereum.frontier.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.frontier.eth_types.Address, ethereum.frontier.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.frontier.eth_types.Address, ethereum.frontier.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.frontier.trie.Trie[ethereum.frontier.eth_types.Address, Optional[ethereum.frontier.eth_types.Account]], Dict[ethereum.frontier.eth_types.Address, ethereum.frontier.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.frontier.trie.Trie[ethereum.frontier.eth_types.Address, Optional[ethereum.frontier.eth_types.Account]], Dict[ethereum.frontier.eth_types.Address, ethereum.frontier.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

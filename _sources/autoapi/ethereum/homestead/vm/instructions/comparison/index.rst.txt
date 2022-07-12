@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.comparison`
-====================================================
-
 .. py:module:: ethereum.homestead.vm.instructions.comparison
 
 Ethereum Virtual Machine (EVM) Comparison Instructions

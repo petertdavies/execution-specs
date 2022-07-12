@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.instructions.bitwise`
-=================================================
-
 .. py:module:: ethereum.byzantium.vm.instructions.bitwise
 
 Ethereum Virtual Machine (EVM) Bitwise Instructions

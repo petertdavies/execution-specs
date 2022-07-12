@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.precompiled_contracts`
-==================================================
-
 .. py:module:: ethereum.byzantium.vm.precompiled_contracts
 
 Precompiled Contract Addresses

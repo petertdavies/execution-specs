@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.instructions.stack`
-==============================================
-
 .. py:module:: ethereum.frontier.vm.instructions.stack
 
 Ethereum Virtual Machine (EVM) Stack Instructions
@@ -205,7 +202,7 @@ push1
 
 
 .. py:data:: push1
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -219,7 +216,7 @@ push2
 
 
 .. py:data:: push2
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -233,7 +230,7 @@ push3
 
 
 .. py:data:: push3
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -247,7 +244,7 @@ push4
 
 
 .. py:data:: push4
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -261,7 +258,7 @@ push5
 
 
 .. py:data:: push5
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -275,7 +272,7 @@ push6
 
 
 .. py:data:: push6
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -289,7 +286,7 @@ push7
 
 
 .. py:data:: push7
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -303,7 +300,7 @@ push8
 
 
 .. py:data:: push8
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -317,7 +314,7 @@ push9
 
 
 .. py:data:: push9
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -331,7 +328,7 @@ push10
 
 
 .. py:data:: push10
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -345,7 +342,7 @@ push11
 
 
 .. py:data:: push11
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -359,7 +356,7 @@ push12
 
 
 .. py:data:: push12
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -373,7 +370,7 @@ push13
 
 
 .. py:data:: push13
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -387,7 +384,7 @@ push14
 
 
 .. py:data:: push14
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -401,7 +398,7 @@ push15
 
 
 .. py:data:: push15
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -415,7 +412,7 @@ push16
 
 
 .. py:data:: push16
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -429,7 +426,7 @@ push17
 
 
 .. py:data:: push17
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -443,7 +440,7 @@ push18
 
 
 .. py:data:: push18
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -457,7 +454,7 @@ push19
 
 
 .. py:data:: push19
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -471,7 +468,7 @@ push20
 
 
 .. py:data:: push20
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -485,7 +482,7 @@ push21
 
 
 .. py:data:: push21
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -499,7 +496,7 @@ push22
 
 
 .. py:data:: push22
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -513,7 +510,7 @@ push23
 
 
 .. py:data:: push23
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -527,7 +524,7 @@ push24
 
 
 .. py:data:: push24
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -541,7 +538,7 @@ push25
 
 
 .. py:data:: push25
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -555,7 +552,7 @@ push26
 
 
 .. py:data:: push26
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -569,7 +566,7 @@ push27
 
 
 .. py:data:: push27
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -583,7 +580,7 @@ push28
 
 
 .. py:data:: push28
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -597,7 +594,7 @@ push29
 
 
 .. py:data:: push29
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -611,7 +608,7 @@ push30
 
 
 .. py:data:: push30
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -625,7 +622,7 @@ push31
 
 
 .. py:data:: push31
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -639,7 +636,7 @@ push32
 
 
 .. py:data:: push32
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -653,7 +650,7 @@ dup1
 
 
 .. py:data:: dup1
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -667,7 +664,7 @@ dup2
 
 
 .. py:data:: dup2
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -681,7 +678,7 @@ dup3
 
 
 .. py:data:: dup3
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -695,7 +692,7 @@ dup4
 
 
 .. py:data:: dup4
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -709,7 +706,7 @@ dup5
 
 
 .. py:data:: dup5
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -723,7 +720,7 @@ dup6
 
 
 .. py:data:: dup6
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -737,7 +734,7 @@ dup7
 
 
 .. py:data:: dup7
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -751,7 +748,7 @@ dup8
 
 
 .. py:data:: dup8
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -765,7 +762,7 @@ dup9
 
 
 .. py:data:: dup9
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -779,7 +776,7 @@ dup10
 
 
 .. py:data:: dup10
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -793,7 +790,7 @@ dup11
 
 
 .. py:data:: dup11
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -807,7 +804,7 @@ dup12
 
 
 .. py:data:: dup12
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -821,7 +818,7 @@ dup13
 
 
 .. py:data:: dup13
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -835,7 +832,7 @@ dup14
 
 
 .. py:data:: dup14
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -849,7 +846,7 @@ dup15
 
 
 .. py:data:: dup15
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -863,7 +860,7 @@ dup16
 
 
 .. py:data:: dup16
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -877,7 +874,7 @@ swap1
 
 
 .. py:data:: swap1
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -891,7 +888,7 @@ swap2
 
 
 .. py:data:: swap2
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -905,7 +902,7 @@ swap3
 
 
 .. py:data:: swap3
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -919,7 +916,7 @@ swap4
 
 
 .. py:data:: swap4
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -933,7 +930,7 @@ swap5
 
 
 .. py:data:: swap5
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -947,7 +944,7 @@ swap6
 
 
 .. py:data:: swap6
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -961,7 +958,7 @@ swap7
 
 
 .. py:data:: swap7
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -975,7 +972,7 @@ swap8
 
 
 .. py:data:: swap8
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -989,7 +986,7 @@ swap9
 
 
 .. py:data:: swap9
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1003,7 +1000,7 @@ swap10
 
 
 .. py:data:: swap10
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1017,7 +1014,7 @@ swap11
 
 
 .. py:data:: swap11
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1031,7 +1028,7 @@ swap12
 
 
 .. py:data:: swap12
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1045,7 +1042,7 @@ swap13
 
 
 .. py:data:: swap13
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1059,7 +1056,7 @@ swap14
 
 
 .. py:data:: swap14
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1073,7 +1070,7 @@ swap15
 
 
 .. py:data:: swap15
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py
@@ -1087,7 +1084,7 @@ swap16
 
 
 .. py:data:: swap16
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/instructions/stack.py

@@ -1,6 +1,3 @@
-:mod:`ethereum.utils`
-=====================
-
 .. py:module:: ethereum.utils
 
 Utility Functions

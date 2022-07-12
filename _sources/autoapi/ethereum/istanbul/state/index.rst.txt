@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul.state`
-==============================
-
 .. py:module:: ethereum.istanbul.state
 
 State
@@ -81,21 +78,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.istanbul.trie.Trie[ethereum.istanbul.eth_types.Address, Optional[ethereum.istanbul.eth_types.Account]]
+         :annotation: :ethereum.istanbul.trie.Trie[ethereum.istanbul.eth_types.Address, Optional[ethereum.istanbul.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.istanbul.eth_types.Address, ethereum.istanbul.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.istanbul.eth_types.Address, ethereum.istanbul.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.istanbul.trie.Trie[ethereum.istanbul.eth_types.Address, Optional[ethereum.istanbul.eth_types.Account]], Dict[ethereum.istanbul.eth_types.Address, ethereum.istanbul.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.istanbul.trie.Trie[ethereum.istanbul.eth_types.Address, Optional[ethereum.istanbul.eth_types.Account]], Dict[ethereum.istanbul.eth_types.Address, ethereum.istanbul.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

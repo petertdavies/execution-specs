@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.trie`
-==============================
-
 .. py:module:: ethereum.homestead.trie
 
 State Trie
@@ -73,7 +70,7 @@ EMPTY_TRIE_ROOT
 
 
 .. py:data:: EMPTY_TRIE_ROOT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/homestead/trie.py
@@ -87,7 +84,7 @@ Node
 
 
 .. py:data:: Node
-
+   
    
 
 .. undocinclude:: /../src/ethereum/homestead/trie.py
@@ -101,7 +98,7 @@ K
 
 
 .. py:data:: K
-
+   
    
 
 .. undocinclude:: /../src/ethereum/homestead/trie.py
@@ -115,7 +112,7 @@ V
 
 
 .. py:data:: V
-
+   
    
 
 .. undocinclude:: /../src/ethereum/homestead/trie.py
@@ -135,14 +132,14 @@ Leaf node in the Merkle Trie
    
 
    .. py:attribute:: rest_of_key
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: value
-      :annotation: :ethereum.rlp.RLP
+         :annotation: :ethereum.rlp.RLP
 
       
 
@@ -160,14 +157,14 @@ Extension node in the Merkle Trie
    
 
    .. py:attribute:: key_segment
-      :annotation: :ethereum.base_types.Bytes
+         :annotation: :ethereum.base_types.Bytes
 
       
 
    
 
    .. py:attribute:: subnode
-      :annotation: :ethereum.rlp.RLP
+         :annotation: :ethereum.rlp.RLP
 
       
 
@@ -185,14 +182,14 @@ Branch node in the Merkle Trie
    
 
    .. py:attribute:: subnodes
-      :annotation: :List[ethereum.rlp.RLP]
+         :annotation: :List[ethereum.rlp.RLP]
 
       
 
    
 
    .. py:attribute:: value
-      :annotation: :ethereum.rlp.RLP
+         :annotation: :ethereum.rlp.RLP
 
       
 
@@ -204,7 +201,7 @@ InternalNode
 
 
 .. py:data:: InternalNode
-
+   
    
 
 .. undocinclude:: /../src/ethereum/homestead/trie.py
@@ -271,21 +268,21 @@ The Merkle Trie.
    
 
    .. py:attribute:: secured
-      :annotation: :bool
+         :annotation: :bool
 
       
 
    
 
    .. py:attribute:: default
-      :annotation: :V
+         :annotation: :V
 
       
 
    
 
    .. py:attribute:: _data
-      :annotation: :Dict[K, V]
+         :annotation: :Dict[K, V]
 
       
 

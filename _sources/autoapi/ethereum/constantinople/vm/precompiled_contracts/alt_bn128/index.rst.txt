@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.precompiled_contracts.alt_bn128`
-=================================================================
-
 .. py:module:: ethereum.constantinople.vm.precompiled_contracts.alt_bn128
 
 Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS

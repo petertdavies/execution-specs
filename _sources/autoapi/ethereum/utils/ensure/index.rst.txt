@@ -1,6 +1,3 @@
-:mod:`ethereum.utils.ensure`
-============================
-
 .. py:module:: ethereum.utils.ensure
 
 Ensure (Assertion) Utilities

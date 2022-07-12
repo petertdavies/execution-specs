@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.instructions.block`
-==================================================
-
 .. py:module:: ethereum.muir_glacier.vm.instructions.block
 
 Ethereum Virtual Machine (EVM) Block Instructions

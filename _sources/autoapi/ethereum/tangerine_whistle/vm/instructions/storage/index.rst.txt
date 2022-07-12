@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.vm.instructions.storage`
-=========================================================
-
 .. py:module:: ethereum.tangerine_whistle.vm.instructions.storage
 
 Ethereum Virtual Machine (EVM) Storage Instructions

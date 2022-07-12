@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.precompiled_contracts.modexp`
-============================================================
-
 .. py:module:: ethereum.muir_glacier.vm.precompiled_contracts.modexp
 
 Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT
@@ -48,7 +45,7 @@ GQUADDIVISOR
 
 
 .. py:data:: GQUADDIVISOR
-
+   
    
 
 .. undocinclude:: /../src/ethereum/muir_glacier/vm/precompiled_contracts/modexp.py

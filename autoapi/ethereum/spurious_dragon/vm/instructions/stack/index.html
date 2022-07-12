@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.spurious_dragon.vm.instructions.stack &mdash; Ethereum Specification  documentation</title>
+  <title>Ethereum Virtual Machine (EVM) Stack Instructions &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
-    <link rel="next" title="ethereum.spurious_dragon.vm.instructions.storage" href="../storage/index.html" />
-    <link rel="prev" title="ethereum.spurious_dragon.vm.instructions.memory" href="../memory/index.html" /> 
+    <link rel="next" title="Ethereum Virtual Machine (EVM) Storage Instructions" href="../storage/index.html" />
+    <link rel="prev" title="Ethereum Virtual Machine (EVM) Memory Instructions" href="../memory/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +100,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../../../index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../../index.html">Ethereum</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../../frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -111,113 +125,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -238,12 +252,12 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a> &raquo;</li>
-          <li><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon</span></code></a> &raquo;</li>
-          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm</span></code></a> &raquo;</li>
-          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.instructions</span></code></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.instructions.stack</span></code></li>
+          <li><a href="../../../../../index.html">Specification</a> &raquo;</li>
+          <li><a href="../../../../index.html">Ethereum Specification</a> &raquo;</li>
+          <li><a href="../../../index.html">Ethereum Spurious Dragon Hardfork</a> &raquo;</li>
+          <li><a href="../../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
+          <li><a href="../index.html">EVM Instruction Encoding (Opcodes)</a> &raquo;</li>
+      <li>Ethereum Virtual Machine (EVM) Stack Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/autoapi/ethereum/spurious_dragon/vm/instructions/stack/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -253,10 +267,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.spurious_dragon.vm.instructions.stack">
-<span id="ethereum-spurious-dragon-vm-instructions-stack"></span><h1><a class="reference internal" href="#module-ethereum.spurious_dragon.vm.instructions.stack" title="ethereum.spurious_dragon.vm.instructions.stack"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.instructions.stack</span></code></a><a class="headerlink" href="#module-ethereum.spurious_dragon.vm.instructions.stack" title="Permalink to this headline"></a></h1>
-<section id="ethereum-virtual-machine-evm-stack-instructions">
-<h2>Ethereum Virtual Machine (EVM) Stack Instructions<a class="headerlink" href="#ethereum-virtual-machine-evm-stack-instructions" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.spurious_dragon.vm.instructions.stack"></span><section id="ethereum-virtual-machine-evm-stack-instructions">
+<h1>Ethereum Virtual Machine (EVM) Stack Instructions<a class="headerlink" href="#ethereum-virtual-machine-evm-stack-instructions" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -342,13 +354,13 @@
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>Implementations of the EVM stack related instructions.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -371,7 +383,7 @@
 </table>
 </section>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h4>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -575,9 +587,9 @@
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
 <section id="pop">
-<h4>pop<a class="headerlink" href="#pop" title="Permalink to this headline"></a></h4>
+<h3>pop<a class="headerlink" href="#pop" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.pop">
 <span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><span class="pre">ethereum.spurious_dragon.vm.Evm</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.pop" title="Permalink to this definition"></a></dt>
@@ -604,7 +616,7 @@
 </div>
 </section>
 <section id="push-n">
-<h4>push_n<a class="headerlink" href="#push-n" title="Permalink to this headline"></a></h4>
+<h3>push_n<a class="headerlink" href="#push-n" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push_n">
 <span class="sig-name descname"><span class="pre">push_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><span class="pre">ethereum.spurious_dragon.vm.Evm</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bytes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push_n" title="Permalink to this definition"></a></dt>
@@ -639,7 +651,7 @@ the stack.</p></li>
 </div>
 </section>
 <section id="dup-n">
-<h4>dup_n<a class="headerlink" href="#dup-n" title="Permalink to this headline"></a></h4>
+<h3>dup_n<a class="headerlink" href="#dup-n" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup_n">
 <span class="sig-name descname"><span class="pre">dup_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><span class="pre">ethereum.spurious_dragon.vm.Evm</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup_n" title="Permalink to this definition"></a></dt>
@@ -670,7 +682,7 @@ to the top of stack.</p></li>
 </div>
 </section>
 <section id="swap-n">
-<h4>swap_n<a class="headerlink" href="#swap-n" title="Permalink to this headline"></a></h4>
+<h3>swap_n<a class="headerlink" href="#swap-n" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap_n">
 <span class="sig-name descname"><span class="pre">swap_n</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../index.html#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><span class="pre">ethereum.spurious_dragon.vm.Evm</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">item_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap_n" title="Permalink to this definition"></a></dt>
@@ -708,7 +720,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push1">
-<h4>push1<a class="headerlink" href="#push1" title="Permalink to this headline"></a></h4>
+<h3>push1<a class="headerlink" href="#push1" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push1">
 <span class="sig-name descname"><span class="pre">push1</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push1" title="Permalink to this definition"></a></dt>
@@ -719,7 +731,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push2">
-<h4>push2<a class="headerlink" href="#push2" title="Permalink to this headline"></a></h4>
+<h3>push2<a class="headerlink" href="#push2" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push2">
 <span class="sig-name descname"><span class="pre">push2</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push2" title="Permalink to this definition"></a></dt>
@@ -730,7 +742,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push3">
-<h4>push3<a class="headerlink" href="#push3" title="Permalink to this headline"></a></h4>
+<h3>push3<a class="headerlink" href="#push3" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push3">
 <span class="sig-name descname"><span class="pre">push3</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push3" title="Permalink to this definition"></a></dt>
@@ -741,7 +753,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push4">
-<h4>push4<a class="headerlink" href="#push4" title="Permalink to this headline"></a></h4>
+<h3>push4<a class="headerlink" href="#push4" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push4">
 <span class="sig-name descname"><span class="pre">push4</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push4" title="Permalink to this definition"></a></dt>
@@ -752,7 +764,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push5">
-<h4>push5<a class="headerlink" href="#push5" title="Permalink to this headline"></a></h4>
+<h3>push5<a class="headerlink" href="#push5" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push5">
 <span class="sig-name descname"><span class="pre">push5</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push5" title="Permalink to this definition"></a></dt>
@@ -763,7 +775,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push6">
-<h4>push6<a class="headerlink" href="#push6" title="Permalink to this headline"></a></h4>
+<h3>push6<a class="headerlink" href="#push6" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push6">
 <span class="sig-name descname"><span class="pre">push6</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push6" title="Permalink to this definition"></a></dt>
@@ -774,7 +786,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push7">
-<h4>push7<a class="headerlink" href="#push7" title="Permalink to this headline"></a></h4>
+<h3>push7<a class="headerlink" href="#push7" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push7">
 <span class="sig-name descname"><span class="pre">push7</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push7" title="Permalink to this definition"></a></dt>
@@ -785,7 +797,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push8">
-<h4>push8<a class="headerlink" href="#push8" title="Permalink to this headline"></a></h4>
+<h3>push8<a class="headerlink" href="#push8" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push8">
 <span class="sig-name descname"><span class="pre">push8</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push8" title="Permalink to this definition"></a></dt>
@@ -796,7 +808,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push9">
-<h4>push9<a class="headerlink" href="#push9" title="Permalink to this headline"></a></h4>
+<h3>push9<a class="headerlink" href="#push9" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push9">
 <span class="sig-name descname"><span class="pre">push9</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push9" title="Permalink to this definition"></a></dt>
@@ -807,7 +819,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push10">
-<h4>push10<a class="headerlink" href="#push10" title="Permalink to this headline"></a></h4>
+<h3>push10<a class="headerlink" href="#push10" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push10">
 <span class="sig-name descname"><span class="pre">push10</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push10" title="Permalink to this definition"></a></dt>
@@ -818,7 +830,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push11">
-<h4>push11<a class="headerlink" href="#push11" title="Permalink to this headline"></a></h4>
+<h3>push11<a class="headerlink" href="#push11" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push11">
 <span class="sig-name descname"><span class="pre">push11</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push11" title="Permalink to this definition"></a></dt>
@@ -829,7 +841,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push12">
-<h4>push12<a class="headerlink" href="#push12" title="Permalink to this headline"></a></h4>
+<h3>push12<a class="headerlink" href="#push12" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push12">
 <span class="sig-name descname"><span class="pre">push12</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push12" title="Permalink to this definition"></a></dt>
@@ -840,7 +852,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push13">
-<h4>push13<a class="headerlink" href="#push13" title="Permalink to this headline"></a></h4>
+<h3>push13<a class="headerlink" href="#push13" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push13">
 <span class="sig-name descname"><span class="pre">push13</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push13" title="Permalink to this definition"></a></dt>
@@ -851,7 +863,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push14">
-<h4>push14<a class="headerlink" href="#push14" title="Permalink to this headline"></a></h4>
+<h3>push14<a class="headerlink" href="#push14" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push14">
 <span class="sig-name descname"><span class="pre">push14</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push14" title="Permalink to this definition"></a></dt>
@@ -862,7 +874,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push15">
-<h4>push15<a class="headerlink" href="#push15" title="Permalink to this headline"></a></h4>
+<h3>push15<a class="headerlink" href="#push15" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push15">
 <span class="sig-name descname"><span class="pre">push15</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push15" title="Permalink to this definition"></a></dt>
@@ -873,7 +885,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push16">
-<h4>push16<a class="headerlink" href="#push16" title="Permalink to this headline"></a></h4>
+<h3>push16<a class="headerlink" href="#push16" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push16">
 <span class="sig-name descname"><span class="pre">push16</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push16" title="Permalink to this definition"></a></dt>
@@ -884,7 +896,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push17">
-<h4>push17<a class="headerlink" href="#push17" title="Permalink to this headline"></a></h4>
+<h3>push17<a class="headerlink" href="#push17" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push17">
 <span class="sig-name descname"><span class="pre">push17</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push17" title="Permalink to this definition"></a></dt>
@@ -895,7 +907,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push18">
-<h4>push18<a class="headerlink" href="#push18" title="Permalink to this headline"></a></h4>
+<h3>push18<a class="headerlink" href="#push18" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push18">
 <span class="sig-name descname"><span class="pre">push18</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push18" title="Permalink to this definition"></a></dt>
@@ -906,7 +918,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push19">
-<h4>push19<a class="headerlink" href="#push19" title="Permalink to this headline"></a></h4>
+<h3>push19<a class="headerlink" href="#push19" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push19">
 <span class="sig-name descname"><span class="pre">push19</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push19" title="Permalink to this definition"></a></dt>
@@ -917,7 +929,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push20">
-<h4>push20<a class="headerlink" href="#push20" title="Permalink to this headline"></a></h4>
+<h3>push20<a class="headerlink" href="#push20" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push20">
 <span class="sig-name descname"><span class="pre">push20</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push20" title="Permalink to this definition"></a></dt>
@@ -928,7 +940,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push21">
-<h4>push21<a class="headerlink" href="#push21" title="Permalink to this headline"></a></h4>
+<h3>push21<a class="headerlink" href="#push21" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push21">
 <span class="sig-name descname"><span class="pre">push21</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push21" title="Permalink to this definition"></a></dt>
@@ -939,7 +951,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push22">
-<h4>push22<a class="headerlink" href="#push22" title="Permalink to this headline"></a></h4>
+<h3>push22<a class="headerlink" href="#push22" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push22">
 <span class="sig-name descname"><span class="pre">push22</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push22" title="Permalink to this definition"></a></dt>
@@ -950,7 +962,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push23">
-<h4>push23<a class="headerlink" href="#push23" title="Permalink to this headline"></a></h4>
+<h3>push23<a class="headerlink" href="#push23" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push23">
 <span class="sig-name descname"><span class="pre">push23</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push23" title="Permalink to this definition"></a></dt>
@@ -961,7 +973,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push24">
-<h4>push24<a class="headerlink" href="#push24" title="Permalink to this headline"></a></h4>
+<h3>push24<a class="headerlink" href="#push24" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push24">
 <span class="sig-name descname"><span class="pre">push24</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push24" title="Permalink to this definition"></a></dt>
@@ -972,7 +984,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push25">
-<h4>push25<a class="headerlink" href="#push25" title="Permalink to this headline"></a></h4>
+<h3>push25<a class="headerlink" href="#push25" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push25">
 <span class="sig-name descname"><span class="pre">push25</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push25" title="Permalink to this definition"></a></dt>
@@ -983,7 +995,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push26">
-<h4>push26<a class="headerlink" href="#push26" title="Permalink to this headline"></a></h4>
+<h3>push26<a class="headerlink" href="#push26" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push26">
 <span class="sig-name descname"><span class="pre">push26</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push26" title="Permalink to this definition"></a></dt>
@@ -994,7 +1006,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push27">
-<h4>push27<a class="headerlink" href="#push27" title="Permalink to this headline"></a></h4>
+<h3>push27<a class="headerlink" href="#push27" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push27">
 <span class="sig-name descname"><span class="pre">push27</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push27" title="Permalink to this definition"></a></dt>
@@ -1005,7 +1017,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push28">
-<h4>push28<a class="headerlink" href="#push28" title="Permalink to this headline"></a></h4>
+<h3>push28<a class="headerlink" href="#push28" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push28">
 <span class="sig-name descname"><span class="pre">push28</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push28" title="Permalink to this definition"></a></dt>
@@ -1016,7 +1028,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push29">
-<h4>push29<a class="headerlink" href="#push29" title="Permalink to this headline"></a></h4>
+<h3>push29<a class="headerlink" href="#push29" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push29">
 <span class="sig-name descname"><span class="pre">push29</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push29" title="Permalink to this definition"></a></dt>
@@ -1027,7 +1039,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push30">
-<h4>push30<a class="headerlink" href="#push30" title="Permalink to this headline"></a></h4>
+<h3>push30<a class="headerlink" href="#push30" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push30">
 <span class="sig-name descname"><span class="pre">push30</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push30" title="Permalink to this definition"></a></dt>
@@ -1038,7 +1050,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push31">
-<h4>push31<a class="headerlink" href="#push31" title="Permalink to this headline"></a></h4>
+<h3>push31<a class="headerlink" href="#push31" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push31">
 <span class="sig-name descname"><span class="pre">push31</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push31" title="Permalink to this definition"></a></dt>
@@ -1049,7 +1061,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="push32">
-<h4>push32<a class="headerlink" href="#push32" title="Permalink to this headline"></a></h4>
+<h3>push32<a class="headerlink" href="#push32" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.push32">
 <span class="sig-name descname"><span class="pre">push32</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.push32" title="Permalink to this definition"></a></dt>
@@ -1060,7 +1072,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup1">
-<h4>dup1<a class="headerlink" href="#dup1" title="Permalink to this headline"></a></h4>
+<h3>dup1<a class="headerlink" href="#dup1" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup1">
 <span class="sig-name descname"><span class="pre">dup1</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup1" title="Permalink to this definition"></a></dt>
@@ -1071,7 +1083,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup2">
-<h4>dup2<a class="headerlink" href="#dup2" title="Permalink to this headline"></a></h4>
+<h3>dup2<a class="headerlink" href="#dup2" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup2">
 <span class="sig-name descname"><span class="pre">dup2</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup2" title="Permalink to this definition"></a></dt>
@@ -1082,7 +1094,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup3">
-<h4>dup3<a class="headerlink" href="#dup3" title="Permalink to this headline"></a></h4>
+<h3>dup3<a class="headerlink" href="#dup3" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup3">
 <span class="sig-name descname"><span class="pre">dup3</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup3" title="Permalink to this definition"></a></dt>
@@ -1093,7 +1105,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup4">
-<h4>dup4<a class="headerlink" href="#dup4" title="Permalink to this headline"></a></h4>
+<h3>dup4<a class="headerlink" href="#dup4" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup4">
 <span class="sig-name descname"><span class="pre">dup4</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup4" title="Permalink to this definition"></a></dt>
@@ -1104,7 +1116,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup5">
-<h4>dup5<a class="headerlink" href="#dup5" title="Permalink to this headline"></a></h4>
+<h3>dup5<a class="headerlink" href="#dup5" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup5">
 <span class="sig-name descname"><span class="pre">dup5</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup5" title="Permalink to this definition"></a></dt>
@@ -1115,7 +1127,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup6">
-<h4>dup6<a class="headerlink" href="#dup6" title="Permalink to this headline"></a></h4>
+<h3>dup6<a class="headerlink" href="#dup6" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup6">
 <span class="sig-name descname"><span class="pre">dup6</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup6" title="Permalink to this definition"></a></dt>
@@ -1126,7 +1138,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup7">
-<h4>dup7<a class="headerlink" href="#dup7" title="Permalink to this headline"></a></h4>
+<h3>dup7<a class="headerlink" href="#dup7" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup7">
 <span class="sig-name descname"><span class="pre">dup7</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup7" title="Permalink to this definition"></a></dt>
@@ -1137,7 +1149,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup8">
-<h4>dup8<a class="headerlink" href="#dup8" title="Permalink to this headline"></a></h4>
+<h3>dup8<a class="headerlink" href="#dup8" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup8">
 <span class="sig-name descname"><span class="pre">dup8</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup8" title="Permalink to this definition"></a></dt>
@@ -1148,7 +1160,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup9">
-<h4>dup9<a class="headerlink" href="#dup9" title="Permalink to this headline"></a></h4>
+<h3>dup9<a class="headerlink" href="#dup9" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup9">
 <span class="sig-name descname"><span class="pre">dup9</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup9" title="Permalink to this definition"></a></dt>
@@ -1159,7 +1171,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup10">
-<h4>dup10<a class="headerlink" href="#dup10" title="Permalink to this headline"></a></h4>
+<h3>dup10<a class="headerlink" href="#dup10" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup10">
 <span class="sig-name descname"><span class="pre">dup10</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup10" title="Permalink to this definition"></a></dt>
@@ -1170,7 +1182,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup11">
-<h4>dup11<a class="headerlink" href="#dup11" title="Permalink to this headline"></a></h4>
+<h3>dup11<a class="headerlink" href="#dup11" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup11">
 <span class="sig-name descname"><span class="pre">dup11</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup11" title="Permalink to this definition"></a></dt>
@@ -1181,7 +1193,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup12">
-<h4>dup12<a class="headerlink" href="#dup12" title="Permalink to this headline"></a></h4>
+<h3>dup12<a class="headerlink" href="#dup12" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup12">
 <span class="sig-name descname"><span class="pre">dup12</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup12" title="Permalink to this definition"></a></dt>
@@ -1192,7 +1204,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup13">
-<h4>dup13<a class="headerlink" href="#dup13" title="Permalink to this headline"></a></h4>
+<h3>dup13<a class="headerlink" href="#dup13" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup13">
 <span class="sig-name descname"><span class="pre">dup13</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup13" title="Permalink to this definition"></a></dt>
@@ -1203,7 +1215,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup14">
-<h4>dup14<a class="headerlink" href="#dup14" title="Permalink to this headline"></a></h4>
+<h3>dup14<a class="headerlink" href="#dup14" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup14">
 <span class="sig-name descname"><span class="pre">dup14</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup14" title="Permalink to this definition"></a></dt>
@@ -1214,7 +1226,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup15">
-<h4>dup15<a class="headerlink" href="#dup15" title="Permalink to this headline"></a></h4>
+<h3>dup15<a class="headerlink" href="#dup15" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup15">
 <span class="sig-name descname"><span class="pre">dup15</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup15" title="Permalink to this definition"></a></dt>
@@ -1225,7 +1237,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="dup16">
-<h4>dup16<a class="headerlink" href="#dup16" title="Permalink to this headline"></a></h4>
+<h3>dup16<a class="headerlink" href="#dup16" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.dup16">
 <span class="sig-name descname"><span class="pre">dup16</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.dup16" title="Permalink to this definition"></a></dt>
@@ -1236,7 +1248,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap1">
-<h4>swap1<a class="headerlink" href="#swap1" title="Permalink to this headline"></a></h4>
+<h3>swap1<a class="headerlink" href="#swap1" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap1">
 <span class="sig-name descname"><span class="pre">swap1</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap1" title="Permalink to this definition"></a></dt>
@@ -1247,7 +1259,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap2">
-<h4>swap2<a class="headerlink" href="#swap2" title="Permalink to this headline"></a></h4>
+<h3>swap2<a class="headerlink" href="#swap2" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap2">
 <span class="sig-name descname"><span class="pre">swap2</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap2" title="Permalink to this definition"></a></dt>
@@ -1258,7 +1270,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap3">
-<h4>swap3<a class="headerlink" href="#swap3" title="Permalink to this headline"></a></h4>
+<h3>swap3<a class="headerlink" href="#swap3" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap3">
 <span class="sig-name descname"><span class="pre">swap3</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap3" title="Permalink to this definition"></a></dt>
@@ -1269,7 +1281,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap4">
-<h4>swap4<a class="headerlink" href="#swap4" title="Permalink to this headline"></a></h4>
+<h3>swap4<a class="headerlink" href="#swap4" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap4">
 <span class="sig-name descname"><span class="pre">swap4</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap4" title="Permalink to this definition"></a></dt>
@@ -1280,7 +1292,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap5">
-<h4>swap5<a class="headerlink" href="#swap5" title="Permalink to this headline"></a></h4>
+<h3>swap5<a class="headerlink" href="#swap5" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap5">
 <span class="sig-name descname"><span class="pre">swap5</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap5" title="Permalink to this definition"></a></dt>
@@ -1291,7 +1303,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap6">
-<h4>swap6<a class="headerlink" href="#swap6" title="Permalink to this headline"></a></h4>
+<h3>swap6<a class="headerlink" href="#swap6" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap6">
 <span class="sig-name descname"><span class="pre">swap6</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap6" title="Permalink to this definition"></a></dt>
@@ -1302,7 +1314,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap7">
-<h4>swap7<a class="headerlink" href="#swap7" title="Permalink to this headline"></a></h4>
+<h3>swap7<a class="headerlink" href="#swap7" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap7">
 <span class="sig-name descname"><span class="pre">swap7</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap7" title="Permalink to this definition"></a></dt>
@@ -1313,7 +1325,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap8">
-<h4>swap8<a class="headerlink" href="#swap8" title="Permalink to this headline"></a></h4>
+<h3>swap8<a class="headerlink" href="#swap8" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap8">
 <span class="sig-name descname"><span class="pre">swap8</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap8" title="Permalink to this definition"></a></dt>
@@ -1324,7 +1336,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap9">
-<h4>swap9<a class="headerlink" href="#swap9" title="Permalink to this headline"></a></h4>
+<h3>swap9<a class="headerlink" href="#swap9" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap9">
 <span class="sig-name descname"><span class="pre">swap9</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap9" title="Permalink to this definition"></a></dt>
@@ -1335,7 +1347,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap10">
-<h4>swap10<a class="headerlink" href="#swap10" title="Permalink to this headline"></a></h4>
+<h3>swap10<a class="headerlink" href="#swap10" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap10">
 <span class="sig-name descname"><span class="pre">swap10</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap10" title="Permalink to this definition"></a></dt>
@@ -1346,7 +1358,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap11">
-<h4>swap11<a class="headerlink" href="#swap11" title="Permalink to this headline"></a></h4>
+<h3>swap11<a class="headerlink" href="#swap11" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap11">
 <span class="sig-name descname"><span class="pre">swap11</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap11" title="Permalink to this definition"></a></dt>
@@ -1357,7 +1369,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap12">
-<h4>swap12<a class="headerlink" href="#swap12" title="Permalink to this headline"></a></h4>
+<h3>swap12<a class="headerlink" href="#swap12" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap12">
 <span class="sig-name descname"><span class="pre">swap12</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap12" title="Permalink to this definition"></a></dt>
@@ -1368,7 +1380,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap13">
-<h4>swap13<a class="headerlink" href="#swap13" title="Permalink to this headline"></a></h4>
+<h3>swap13<a class="headerlink" href="#swap13" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap13">
 <span class="sig-name descname"><span class="pre">swap13</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap13" title="Permalink to this definition"></a></dt>
@@ -1379,7 +1391,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap14">
-<h4>swap14<a class="headerlink" href="#swap14" title="Permalink to this headline"></a></h4>
+<h3>swap14<a class="headerlink" href="#swap14" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap14">
 <span class="sig-name descname"><span class="pre">swap14</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap14" title="Permalink to this definition"></a></dt>
@@ -1390,7 +1402,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap15">
-<h4>swap15<a class="headerlink" href="#swap15" title="Permalink to this headline"></a></h4>
+<h3>swap15<a class="headerlink" href="#swap15" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap15">
 <span class="sig-name descname"><span class="pre">swap15</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap15" title="Permalink to this definition"></a></dt>
@@ -1401,7 +1413,7 @@ with the top of stack element.</p></li>
 </div>
 </section>
 <section id="swap16">
-<h4>swap16<a class="headerlink" href="#swap16" title="Permalink to this headline"></a></h4>
+<h3>swap16<a class="headerlink" href="#swap16" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.instructions.stack.swap16">
 <span class="sig-name descname"><span class="pre">swap16</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.instructions.stack.swap16" title="Permalink to this definition"></a></dt>
@@ -1413,14 +1425,13 @@ with the top of stack element.</p></li>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../memory/index.html" class="btn btn-neutral float-left" title="ethereum.spurious_dragon.vm.instructions.memory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../storage/index.html" class="btn btn-neutral float-right" title="ethereum.spurious_dragon.vm.instructions.storage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../memory/index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM) Memory Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../storage/index.html" class="btn btn-neutral float-right" title="Ethereum Virtual Machine (EVM) Storage Instructions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

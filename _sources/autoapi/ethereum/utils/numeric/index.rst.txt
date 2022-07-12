@@ -1,6 +1,3 @@
-:mod:`ethereum.utils.numeric`
-=============================
-
 .. py:module:: ethereum.utils.numeric
 
 Utility Functions For Numeric Operations

@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.stack`
-========================================
-
 .. py:module:: ethereum.spurious_dragon.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

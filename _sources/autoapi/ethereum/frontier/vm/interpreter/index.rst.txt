@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.interpreter`
-=======================================
-
 .. py:module:: ethereum.frontier.vm.interpreter
 
 Ethereum Virtual Machine (EVM) Interpreter
@@ -60,7 +57,7 @@ STACK_DEPTH_LIMIT
 
 
 .. py:data:: STACK_DEPTH_LIMIT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/interpreter.py
@@ -88,35 +85,35 @@ Contains the following:
    
 
    .. py:attribute:: gas_left
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: refund_counter
-      :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.U256
 
       
 
    
 
    .. py:attribute:: logs
-      :annotation: :Union[Tuple[], Tuple[ethereum.frontier.eth_types.Log, Ellipsis]]
+         :annotation: :Union[Tuple[], Tuple[ethereum.frontier.eth_types.Log, Ellipsis]]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-      :annotation: :Set[ethereum.frontier.eth_types.Address]
+         :annotation: :Set[ethereum.frontier.eth_types.Address]
 
       
 
    
 
    .. py:attribute:: has_erred
-      :annotation: :bool
+         :annotation: :bool
 
       
 

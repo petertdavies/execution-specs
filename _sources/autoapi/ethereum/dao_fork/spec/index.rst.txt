@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.spec`
-=============================
-
 .. py:module:: ethereum.dao_fork.spec
 
 Ethereum Specification
@@ -75,7 +72,7 @@ BLOCK_REWARD
 
 
 .. py:data:: BLOCK_REWARD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
@@ -89,7 +86,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 
 .. py:data:: GAS_LIMIT_ADJUSTMENT_FACTOR
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
@@ -103,7 +100,7 @@ GAS_LIMIT_MINIMUM
 
 
 .. py:data:: GAS_LIMIT_MINIMUM
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
@@ -117,7 +114,7 @@ GENESIS_DIFFICULTY
 
 
 .. py:data:: GENESIS_DIFFICULTY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
@@ -131,7 +128,7 @@ MAX_OMMER_DEPTH
 
 
 .. py:data:: MAX_OMMER_DEPTH
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
@@ -151,21 +148,21 @@ History and current state of the block chain.
    
 
    .. py:attribute:: blocks
-      :annotation: :List[ethereum.dao_fork.eth_types.Block]
+         :annotation: :List[ethereum.dao_fork.eth_types.Block]
 
       
 
    
 
    .. py:attribute:: state
-      :annotation: :ethereum.dao_fork.state.State
+         :annotation: :ethereum.dao_fork.state.State
 
       
 
    
 
    .. py:attribute:: chain_id
-      :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.Uint64
 
       
 

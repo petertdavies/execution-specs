@@ -1,6 +1,3 @@
-:mod:`ethereum.utils.safe_arithmetic`
-=====================================
-
 .. py:module:: ethereum.utils.safe_arithmetic
 
 Safe Arithmetic for U256 Integer Type

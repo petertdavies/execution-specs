@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.instructions.system`
-===================================================
-
 .. py:module:: ethereum.muir_glacier.vm.instructions.system
 
 Ethereum Virtual Machine (EVM) System Instructions

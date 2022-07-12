@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.base_types &mdash; Ethereum Specification  documentation</title>
+  <title>Numeric &amp; Array Types &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="ethereum.ethash" href="../ethash/index.html" />
-    <link rel="prev" title="ethereum.utils.safe_arithmetic" href="../utils/safe_arithmetic/index.html" /> 
+    <link rel="next" title="Ethash Functions" href="../ethash/index.html" />
+    <link rel="prev" title="Safe Arithmetic for U256 Integer Type" href="../utils/safe_arithmetic/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +100,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Ethereum</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -111,113 +125,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -238,9 +252,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.base_types</span></code></li>
+          <li><a href="../../index.html">Specification</a> &raquo;</li>
+          <li><a href="../index.html">Ethereum Specification</a> &raquo;</li>
+      <li>Numeric &amp; Array Types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/autoapi/ethereum/base_types/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -250,60 +264,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.base_types">
-<span id="ethereum-base-types"></span><h1><a class="reference internal" href="#module-ethereum.base_types" title="ethereum.base_types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.base_types</span></code></a><a class="headerlink" href="#module-ethereum.base_types" title="Permalink to this headline"></a></h1>
-<section id="numeric-array-types">
-<h2>Numeric &amp; Array Types<a class="headerlink" href="#numeric-array-types" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.base_types"></span><section id="numeric-array-types">
+<h1>Numeric &amp; Array Types<a class="headerlink" href="#numeric-array-types" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
-<li><p><a class="reference internal" href="#module-contents" id="id2">Module Contents</a></p>
+<li><p><a class="reference internal" href="#introduction" id="id3">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#module-contents" id="id4">Module Contents</a></p>
 <ul>
-<li><p><a class="reference internal" href="#classes" id="id3">Classes</a></p></li>
-<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
-<li><p><a class="reference internal" href="#attributes" id="id5">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id6">Functions</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id7">Attributes</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#module-details" id="id6">Module Details</a></p>
+<li><p><a class="reference internal" href="#module-details" id="id8">Module Details</a></p>
 <ul>
-<li><p><a class="reference internal" href="#uint32-ceil-value" id="id7">UINT32_CEIL_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#u255-ceil-value" id="id8">U255_CEIL_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#u256-ceil-value" id="id9">U256_CEIL_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint" id="id10">Uint</a></p></li>
-<li><p><a class="reference internal" href="#t" id="id11">T</a></p></li>
-<li><p><a class="reference internal" href="#fixeduint" id="id12">FixedUInt</a></p></li>
-<li><p><a class="reference internal" href="#u256" id="id13">U256</a></p></li>
-<li><p><a class="reference internal" href="#uint32" id="id14">Uint32</a></p></li>
-<li><p><a class="reference internal" href="#uint64" id="id15">Uint64</a></p></li>
-<li><p><a class="reference internal" href="#b" id="id16">B</a></p></li>
-<li><p><a class="reference internal" href="#fixedbytes" id="id17">FixedBytes</a></p></li>
-<li><p><a class="reference internal" href="#bytes0" id="id18">Bytes0</a></p></li>
-<li><p><a class="reference internal" href="#bytes4" id="id19">Bytes4</a></p></li>
-<li><p><a class="reference internal" href="#bytes8" id="id20">Bytes8</a></p></li>
-<li><p><a class="reference internal" href="#bytes20" id="id21">Bytes20</a></p></li>
-<li><p><a class="reference internal" href="#bytes32" id="id22">Bytes32</a></p></li>
-<li><p><a class="reference internal" href="#bytes64" id="id23">Bytes64</a></p></li>
-<li><p><a class="reference internal" href="#bytes256" id="id24">Bytes256</a></p></li>
-<li><p><a class="reference internal" href="#bytes" id="id25">Bytes</a></p></li>
-<li><p><a class="reference internal" href="#setattr-function" id="id26">_setattr_function</a></p></li>
-<li><p><a class="reference internal" href="#delattr-function" id="id27">_delattr_function</a></p></li>
-<li><p><a class="reference internal" href="#make-init-function" id="id28">_make_init_function</a></p></li>
-<li><p><a class="reference internal" href="#slotted-freezable" id="id29">slotted_freezable</a></p></li>
-<li><p><a class="reference internal" href="#s" id="id30">S</a></p></li>
-<li><p><a class="reference internal" href="#modify" id="id31">modify</a></p></li>
+<li><p><a class="reference internal" href="#u8-max-value" id="id9">U8_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint32-max-value" id="id10">UINT32_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint32-ceil-value" id="id11">UINT32_CEIL_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint64-max-value" id="id12">UINT64_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u255-max-value" id="id13">U255_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u255-ceil-value" id="id14">U255_CEIL_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u256-max-value" id="id15">U256_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u256-ceil-value" id="id16">U256_CEIL_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint" id="id17">Uint</a></p></li>
+<li><p><a class="reference internal" href="#t" id="id18">T</a></p></li>
+<li><p><a class="reference internal" href="#fixeduint" id="id19">FixedUInt</a></p></li>
+<li><p><a class="reference internal" href="#u256" id="id20">U256</a></p></li>
+<li><p><a class="reference internal" href="#max-value" id="id21">MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint32" id="id22">Uint32</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id23">MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#uint64" id="id24">Uint64</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id25">MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#b" id="id26">B</a></p></li>
+<li><p><a class="reference internal" href="#fixedbytes" id="id27">FixedBytes</a></p></li>
+<li><p><a class="reference internal" href="#bytes0" id="id28">Bytes0</a></p></li>
+<li><p><a class="reference internal" href="#bytes4" id="id29">Bytes4</a></p></li>
+<li><p><a class="reference internal" href="#bytes8" id="id30">Bytes8</a></p></li>
+<li><p><a class="reference internal" href="#bytes20" id="id31">Bytes20</a></p></li>
+<li><p><a class="reference internal" href="#bytes32" id="id32">Bytes32</a></p></li>
+<li><p><a class="reference internal" href="#bytes64" id="id33">Bytes64</a></p></li>
+<li><p><a class="reference internal" href="#bytes256" id="id34">Bytes256</a></p></li>
+<li><p><a class="reference internal" href="#bytes" id="id35">Bytes</a></p></li>
+<li><p><a class="reference internal" href="#setattr-function" id="id36">_setattr_function</a></p></li>
+<li><p><a class="reference internal" href="#delattr-function" id="id37">_delattr_function</a></p></li>
+<li><p><a class="reference internal" href="#make-init-function" id="id38">_make_init_function</a></p></li>
+<li><p><a class="reference internal" href="#slotted-freezable" id="id39">slotted_freezable</a></p></li>
+<li><p><a class="reference internal" href="#s" id="id40">S</a></p></li>
+<li><p><a class="reference internal" href="#modify" id="id41">modify</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>Integer and array types which are used by—but not unique to—Ethereum.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="classes">
-<h4>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h4>
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -353,7 +373,7 @@
 </table>
 </section>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -379,32 +399,47 @@
 </table>
 </section>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h4>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U8_MAX_VALUE" title="ethereum.base_types.U8_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U8_MAX_VALUE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.UINT32_MAX_VALUE" title="ethereum.base_types.UINT32_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT32_MAX_VALUE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.UINT32_CEIL_VALUE" title="ethereum.base_types.UINT32_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT32_CEIL_VALUE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.UINT64_MAX_VALUE" title="ethereum.base_types.UINT64_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT64_MAX_VALUE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U255_MAX_VALUE" title="ethereum.base_types.U255_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U255_MAX_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.U255_CEIL_VALUE" title="ethereum.base_types.U255_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U255_CEIL_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U256_CEIL_VALUE" title="ethereum.base_types.U256_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U256_CEIL_VALUE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U256_MAX_VALUE" title="ethereum.base_types.U256_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U256_MAX_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.T" title="ethereum.base_types.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.U256_CEIL_VALUE" title="ethereum.base_types.U256_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U256_CEIL_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.B" title="ethereum.base_types.B"><code class="xref py py-obj docutils literal notranslate"><span class="pre">B</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.T" title="ethereum.base_types.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bytes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.B" title="ethereum.base_types.B"><code class="xref py py-obj docutils literal notranslate"><span class="pre">B</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.S" title="ethereum.base_types.S"><code class="xref py py-obj docutils literal notranslate"><span class="pre">S</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bytes</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.S" title="ethereum.base_types.S"><code class="xref py py-obj docutils literal notranslate"><span class="pre">S</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -412,9 +447,31 @@
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
+<section id="u8-max-value">
+<h3>U8_MAX_VALUE<a class="headerlink" href="#u8-max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.base_types.U8_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">U8_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U8_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U8_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">8</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="uint32-max-value">
+<h3>UINT32_MAX_VALUE<a class="headerlink" href="#uint32-max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.base_types.UINT32_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">UINT32_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT32_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UINT32_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
 <section id="uint32-ceil-value">
-<h4>UINT32_CEIL_VALUE<a class="headerlink" href="#uint32-ceil-value" title="Permalink to this headline"></a></h4>
+<h3>UINT32_CEIL_VALUE<a class="headerlink" href="#uint32-ceil-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.UINT32_CEIL_VALUE">
 <span class="sig-name descname"><span class="pre">UINT32_CEIL_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT32_CEIL_VALUE" title="Permalink to this definition"></a></dt>
@@ -424,8 +481,30 @@
 </pre></div>
 </div>
 </section>
+<section id="uint64-max-value">
+<h3>UINT64_MAX_VALUE<a class="headerlink" href="#uint64-max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.base_types.UINT64_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">UINT64_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT64_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UINT64_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="u255-max-value">
+<h3>U255_MAX_VALUE<a class="headerlink" href="#u255-max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.base_types.U255_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">U255_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U255_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U255_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">255</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
 <section id="u255-ceil-value">
-<h4>U255_CEIL_VALUE<a class="headerlink" href="#u255-ceil-value" title="Permalink to this headline"></a></h4>
+<h3>U255_CEIL_VALUE<a class="headerlink" href="#u255-ceil-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.U255_CEIL_VALUE">
 <span class="sig-name descname"><span class="pre">U255_CEIL_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U255_CEIL_VALUE" title="Permalink to this definition"></a></dt>
@@ -435,8 +514,19 @@
 </pre></div>
 </div>
 </section>
+<section id="u256-max-value">
+<h3>U256_MAX_VALUE<a class="headerlink" href="#u256-max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.base_types.U256_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">U256_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U256_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U256_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">256</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</section>
 <section id="u256-ceil-value">
-<h4>U256_CEIL_VALUE<a class="headerlink" href="#u256-ceil-value" title="Permalink to this headline"></a></h4>
+<h3>U256_CEIL_VALUE<a class="headerlink" href="#u256-ceil-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.U256_CEIL_VALUE">
 <span class="sig-name descname"><span class="pre">U256_CEIL_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U256_CEIL_VALUE" title="Permalink to this definition"></a></dt>
@@ -447,7 +537,7 @@
 </div>
 </section>
 <section id="uint">
-<h4>Uint<a class="headerlink" href="#uint" title="Permalink to this headline"></a></h4>
+<h3>Uint<a class="headerlink" href="#uint" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Uint">
@@ -652,7 +742,7 @@ represent this number.)</p>
 
 </section>
 <section id="t">
-<h4>T<a class="headerlink" href="#t" title="Permalink to this headline"></a></h4>
+<h3>T<a class="headerlink" href="#t" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.T">
 <span class="sig-name descname"><span class="pre">T</span></span><a class="headerlink" href="#ethereum.base_types.T" title="Permalink to this definition"></a></dt>
@@ -663,7 +753,7 @@ represent this number.)</p>
 </div>
 </section>
 <section id="fixeduint">
-<h4>FixedUInt<a class="headerlink" href="#fixeduint" title="Permalink to this headline"></a></h4>
+<h3>FixedUInt<a class="headerlink" href="#fixeduint" title="Permalink to this headline"></a></h3>
 <p>Superclass for fixed size unsigned integers. Not intended to be used
 directly, but rather to be subclassed.</p>
 <dl class="py class">
@@ -910,7 +1000,7 @@ directly, but rather to be subclassed.</p>
 
 </section>
 <section id="u256">
-<h4>U256<a class="headerlink" href="#u256" title="Permalink to this headline"></a></h4>
+<h3>U256<a class="headerlink" href="#u256" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 256 - 1</cite>,
 inclusive.</p>
 <dl class="py class">
@@ -982,8 +1072,19 @@ representation, omitting leading zero bytes.
 </dd></dl>
 
 </section>
+<section id="max-value">
+<h3>MAX_VALUE<a class="headerlink" href="#max-value" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">U256.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U256</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">U256</span><span class="p">,</span> <span class="n">U256_MAX_VALUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="uint32">
-<h4>Uint32<a class="headerlink" href="#uint32" title="Permalink to this headline"></a></h4>
+<h3>Uint32<a class="headerlink" href="#uint32" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 32 - 1</cite>,
 inclusive.</p>
 <dl class="py class">
@@ -1040,8 +1141,19 @@ representation, in the fewest bytes possible.</p>
 </dd></dl>
 
 </section>
+<section id="id1">
+<h3>MAX_VALUE<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Uint32.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Uint32</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">Uint32</span><span class="p">,</span> <span class="n">UINT32_MAX_VALUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="uint64">
-<h4>Uint64<a class="headerlink" href="#uint64" title="Permalink to this headline"></a></h4>
+<h3>Uint64<a class="headerlink" href="#uint64" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 64 - 1</cite>,
 inclusive.</p>
 <dl class="py class">
@@ -1098,8 +1210,19 @@ representation, in the fewest bytes possible.</p>
 </dd></dl>
 
 </section>
+<section id="id2">
+<h3>MAX_VALUE<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">Uint64.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Uint64</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">Uint64</span><span class="p">,</span> <span class="n">UINT64_MAX_VALUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="b">
-<h4>B<a class="headerlink" href="#b" title="Permalink to this headline"></a></h4>
+<h3>B<a class="headerlink" href="#b" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.B">
 <span class="sig-name descname"><span class="pre">B</span></span><a class="headerlink" href="#ethereum.base_types.B" title="Permalink to this definition"></a></dt>
@@ -1110,7 +1233,7 @@ representation, in the fewest bytes possible.</p>
 </div>
 </section>
 <section id="fixedbytes">
-<h4>FixedBytes<a class="headerlink" href="#fixedbytes" title="Permalink to this headline"></a></h4>
+<h3>FixedBytes<a class="headerlink" href="#fixedbytes" title="Permalink to this headline"></a></h3>
 <p>Superclass for fixed sized byte arrays. Not intended to be used directly,
 but should be subclassed.</p>
 <dl class="py class">
@@ -1131,7 +1254,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes0">
-<h4>Bytes0<a class="headerlink" href="#bytes0" title="Permalink to this headline"></a></h4>
+<h3>Bytes0<a class="headerlink" href="#bytes0" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly zero elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes0">
@@ -1146,7 +1269,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes4">
-<h4>Bytes4<a class="headerlink" href="#bytes4" title="Permalink to this headline"></a></h4>
+<h3>Bytes4<a class="headerlink" href="#bytes4" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly four elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes4">
@@ -1161,7 +1284,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes8">
-<h4>Bytes8<a class="headerlink" href="#bytes8" title="Permalink to this headline"></a></h4>
+<h3>Bytes8<a class="headerlink" href="#bytes8" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly eight elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes8">
@@ -1176,7 +1299,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes20">
-<h4>Bytes20<a class="headerlink" href="#bytes20" title="Permalink to this headline"></a></h4>
+<h3>Bytes20<a class="headerlink" href="#bytes20" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly 20 elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes20">
@@ -1191,7 +1314,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes32">
-<h4>Bytes32<a class="headerlink" href="#bytes32" title="Permalink to this headline"></a></h4>
+<h3>Bytes32<a class="headerlink" href="#bytes32" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly 32 elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes32">
@@ -1206,7 +1329,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes64">
-<h4>Bytes64<a class="headerlink" href="#bytes64" title="Permalink to this headline"></a></h4>
+<h3>Bytes64<a class="headerlink" href="#bytes64" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly 64 elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes64">
@@ -1221,7 +1344,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes256">
-<h4>Bytes256<a class="headerlink" href="#bytes256" title="Permalink to this headline"></a></h4>
+<h3>Bytes256<a class="headerlink" href="#bytes256" title="Permalink to this headline"></a></h3>
 <p>Byte array of exactly 256 elements.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes256">
@@ -1236,7 +1359,7 @@ but should be subclassed.</p>
 
 </section>
 <section id="bytes">
-<h4>Bytes<a class="headerlink" href="#bytes" title="Permalink to this headline"></a></h4>
+<h3>Bytes<a class="headerlink" href="#bytes" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.Bytes">
 <span class="sig-name descname"><span class="pre">Bytes</span></span><a class="headerlink" href="#ethereum.base_types.Bytes" title="Permalink to this definition"></a></dt>
@@ -1247,7 +1370,7 @@ but should be subclassed.</p>
 </div>
 </section>
 <section id="setattr-function">
-<h4>_setattr_function<a class="headerlink" href="#setattr-function" title="Permalink to this headline"></a></h4>
+<h3>_setattr_function<a class="headerlink" href="#setattr-function" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.base_types._setattr_function">
 <span class="sig-name descname"><span class="pre">_setattr_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.base_types._setattr_function" title="Permalink to this definition"></a></dt>
@@ -1262,7 +1385,7 @@ but should be subclassed.</p>
 </div>
 </section>
 <section id="delattr-function">
-<h4>_delattr_function<a class="headerlink" href="#delattr-function" title="Permalink to this headline"></a></h4>
+<h3>_delattr_function<a class="headerlink" href="#delattr-function" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.base_types._delattr_function">
 <span class="sig-name descname"><span class="pre">_delattr_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.base_types._delattr_function" title="Permalink to this definition"></a></dt>
@@ -1277,7 +1400,7 @@ but should be subclassed.</p>
 </div>
 </section>
 <section id="make-init-function">
-<h4>_make_init_function<a class="headerlink" href="#make-init-function" title="Permalink to this headline"></a></h4>
+<h3>_make_init_function<a class="headerlink" href="#make-init-function" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.base_types._make_init_function">
 <span class="sig-name descname"><span class="pre">_make_init_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Callable</span><a class="headerlink" href="#ethereum.base_types._make_init_function" title="Permalink to this definition"></a></dt>
@@ -1295,7 +1418,7 @@ but should be subclassed.</p>
 </div>
 </section>
 <section id="slotted-freezable">
-<h4>slotted_freezable<a class="headerlink" href="#slotted-freezable" title="Permalink to this headline"></a></h4>
+<h3>slotted_freezable<a class="headerlink" href="#slotted-freezable" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.base_types.slotted_freezable">
 <span class="sig-name descname"><span class="pre">slotted_freezable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Any</span><a class="headerlink" href="#ethereum.base_types.slotted_freezable" title="Permalink to this definition"></a></dt>
@@ -1315,7 +1438,7 @@ to <cite>__init__</cite>.</p>
 </div>
 </section>
 <section id="s">
-<h4>S<a class="headerlink" href="#s" title="Permalink to this headline"></a></h4>
+<h3>S<a class="headerlink" href="#s" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.base_types.S">
 <span class="sig-name descname"><span class="pre">S</span></span><a class="headerlink" href="#ethereum.base_types.S" title="Permalink to this definition"></a></dt>
@@ -1326,7 +1449,7 @@ to <cite>__init__</cite>.</p>
 </div>
 </section>
 <section id="modify">
-<h4>modify<a class="headerlink" href="#modify" title="Permalink to this headline"></a></h4>
+<h3>modify<a class="headerlink" href="#modify" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.base_types.modify">
 <span class="sig-name descname"><span class="pre">modify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.S" title="ethereum.base_types.S"><span class="pre">S</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#ethereum.base_types.S" title="ethereum.base_types.S"><span class="pre">S</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.S" title="ethereum.base_types.S"><span class="pre">S</span></a><a class="headerlink" href="#ethereum.base_types.modify" title="Permalink to this definition"></a></dt>
@@ -1358,14 +1481,13 @@ apply <cite>f</cite> to the copy before freezing it.</p>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../utils/safe_arithmetic/index.html" class="btn btn-neutral float-left" title="ethereum.utils.safe_arithmetic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../ethash/index.html" class="btn btn-neutral float-right" title="ethereum.ethash" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../utils/safe_arithmetic/index.html" class="btn btn-neutral float-left" title="Safe Arithmetic for U256 Integer Type" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ethash/index.html" class="btn btn-neutral float-right" title="Ethash Functions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.utils.message`
-============================================
-
 .. py:module:: ethereum.constantinople.utils.message
 
 Constantinople Utility Functions For The Message Data-structure

@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.memory`
-================================================
-
 .. py:module:: ethereum.homestead.vm.instructions.memory
 
 Ethereum Virtual Machine (EVM) Memory Instructions

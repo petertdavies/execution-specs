@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.instructions.log`
-=============================================
-
 .. py:module:: ethereum.byzantium.vm.instructions.log
 
 Ethereum Virtual Machine (EVM) Logging Instructions
@@ -75,7 +72,7 @@ log0
 
 
 .. py:data:: log0
-
+   
    
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
@@ -89,7 +86,7 @@ log1
 
 
 .. py:data:: log1
-
+   
    
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
@@ -103,7 +100,7 @@ log2
 
 
 .. py:data:: log2
-
+   
    
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
@@ -117,7 +114,7 @@ log3
 
 
 .. py:data:: log3
-
+   
    
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py
@@ -131,7 +128,7 @@ log4
 
 
 .. py:data:: log4
-
+   
    
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/log.py

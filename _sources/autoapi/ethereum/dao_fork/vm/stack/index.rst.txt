@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.stack`
-=================================
-
 .. py:module:: ethereum.dao_fork.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

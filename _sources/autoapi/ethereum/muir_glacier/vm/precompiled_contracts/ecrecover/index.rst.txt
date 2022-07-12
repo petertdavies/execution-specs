@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.precompiled_contracts.ecrecover`
-===============================================================
-
 .. py:module:: ethereum.muir_glacier.vm.precompiled_contracts.ecrecover
 
 Ethereum Virtual Machine (EVM) ECRECOVER PRECOMPILED CONTRACT

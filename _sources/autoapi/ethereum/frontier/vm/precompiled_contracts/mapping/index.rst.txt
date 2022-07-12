@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.precompiled_contracts.mapping`
-=========================================================
-
 .. py:module:: ethereum.frontier.vm.precompiled_contracts.mapping
 
 Precompiled Contract Addresses
@@ -26,7 +23,7 @@ PRE_COMPILED_CONTRACTS
 
 
 .. py:data:: PRE_COMPILED_CONTRACTS
-
+   
    
 
 .. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py

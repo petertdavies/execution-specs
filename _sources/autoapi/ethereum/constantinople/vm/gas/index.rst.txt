@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.gas`
-=====================================
-
 .. py:module:: ethereum.constantinople.vm.gas
 
 Ethereum Virtual Machine (EVM) Gas
@@ -92,7 +89,7 @@ GAS_JUMPDEST
 
 
 .. py:data:: GAS_JUMPDEST
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -106,7 +103,7 @@ GAS_BASE
 
 
 .. py:data:: GAS_BASE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -120,7 +117,7 @@ GAS_VERY_LOW
 
 
 .. py:data:: GAS_VERY_LOW
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -134,7 +131,7 @@ GAS_SLOAD
 
 
 .. py:data:: GAS_SLOAD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -148,7 +145,7 @@ GAS_STORAGE_SET
 
 
 .. py:data:: GAS_STORAGE_SET
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -162,7 +159,7 @@ GAS_STORAGE_UPDATE
 
 
 .. py:data:: GAS_STORAGE_UPDATE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -176,7 +173,7 @@ GAS_STORAGE_CLEAR_REFUND
 
 
 .. py:data:: GAS_STORAGE_CLEAR_REFUND
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -190,7 +187,7 @@ GAS_LOW
 
 
 .. py:data:: GAS_LOW
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -204,7 +201,7 @@ GAS_MID
 
 
 .. py:data:: GAS_MID
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -218,7 +215,7 @@ GAS_HIGH
 
 
 .. py:data:: GAS_HIGH
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -232,7 +229,7 @@ GAS_EXPONENTIATION
 
 
 .. py:data:: GAS_EXPONENTIATION
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -246,7 +243,7 @@ GAS_EXPONENTIATION_PER_BYTE
 
 
 .. py:data:: GAS_EXPONENTIATION_PER_BYTE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -260,7 +257,7 @@ GAS_MEMORY
 
 
 .. py:data:: GAS_MEMORY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -274,7 +271,7 @@ GAS_KECCAK256
 
 
 .. py:data:: GAS_KECCAK256
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -288,7 +285,7 @@ GAS_KECCAK256_WORD
 
 
 .. py:data:: GAS_KECCAK256_WORD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -302,7 +299,7 @@ GAS_COPY
 
 
 .. py:data:: GAS_COPY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -316,7 +313,7 @@ GAS_BLOCK_HASH
 
 
 .. py:data:: GAS_BLOCK_HASH
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -330,7 +327,7 @@ GAS_EXTERNAL
 
 
 .. py:data:: GAS_EXTERNAL
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -344,7 +341,7 @@ GAS_BALANCE
 
 
 .. py:data:: GAS_BALANCE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -358,7 +355,7 @@ GAS_LOG
 
 
 .. py:data:: GAS_LOG
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -372,7 +369,7 @@ GAS_LOG_DATA
 
 
 .. py:data:: GAS_LOG_DATA
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -386,7 +383,7 @@ GAS_LOG_TOPIC
 
 
 .. py:data:: GAS_LOG_TOPIC
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -400,7 +397,7 @@ GAS_CREATE
 
 
 .. py:data:: GAS_CREATE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -414,7 +411,7 @@ GAS_CODE_DEPOSIT
 
 
 .. py:data:: GAS_CODE_DEPOSIT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -428,7 +425,7 @@ GAS_ZERO
 
 
 .. py:data:: GAS_ZERO
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -442,7 +439,7 @@ GAS_CALL
 
 
 .. py:data:: GAS_CALL
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -456,7 +453,7 @@ GAS_NEW_ACCOUNT
 
 
 .. py:data:: GAS_NEW_ACCOUNT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -470,7 +467,7 @@ GAS_CALL_VALUE
 
 
 .. py:data:: GAS_CALL_VALUE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -484,7 +481,7 @@ GAS_CALL_STIPEND
 
 
 .. py:data:: GAS_CALL_STIPEND
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -498,7 +495,7 @@ GAS_SELF_DESTRUCT
 
 
 .. py:data:: GAS_SELF_DESTRUCT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -512,7 +509,7 @@ GAS_SELF_DESTRUCT_NEW_ACCOUNT
 
 
 .. py:data:: GAS_SELF_DESTRUCT_NEW_ACCOUNT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -526,7 +523,7 @@ REFUND_SELF_DESTRUCT
 
 
 .. py:data:: REFUND_SELF_DESTRUCT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -540,7 +537,7 @@ GAS_ECRECOVER
 
 
 .. py:data:: GAS_ECRECOVER
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -554,7 +551,7 @@ GAS_SHA256
 
 
 .. py:data:: GAS_SHA256
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -568,7 +565,7 @@ GAS_SHA256_WORD
 
 
 .. py:data:: GAS_SHA256_WORD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -582,7 +579,7 @@ GAS_RIPEMD160
 
 
 .. py:data:: GAS_RIPEMD160
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -596,7 +593,7 @@ GAS_RIPEMD160_WORD
 
 
 .. py:data:: GAS_RIPEMD160_WORD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -610,7 +607,7 @@ GAS_IDENTITY
 
 
 .. py:data:: GAS_IDENTITY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -624,7 +621,7 @@ GAS_IDENTITY_WORD
 
 
 .. py:data:: GAS_IDENTITY_WORD
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -638,7 +635,7 @@ GAS_RETURN_DATA_COPY
 
 
 .. py:data:: GAS_RETURN_DATA_COPY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
@@ -652,7 +649,7 @@ GAS_CODE_HASH
 
 
 .. py:data:: GAS_CODE_HASH
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py

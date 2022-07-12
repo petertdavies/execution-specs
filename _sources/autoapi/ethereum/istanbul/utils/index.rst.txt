@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul.utils`
-==============================
-
 .. py:module:: ethereum.istanbul.utils
 
 Istanbul Utility Functions

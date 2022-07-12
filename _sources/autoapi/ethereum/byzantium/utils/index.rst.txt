@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.utils`
-===============================
-
 .. py:module:: ethereum.byzantium.utils
 
 Byzantium Utility Functions

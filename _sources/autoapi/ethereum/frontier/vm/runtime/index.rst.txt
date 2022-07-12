@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.runtime`
-===================================
-
 .. py:module:: ethereum.frontier.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

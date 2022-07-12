@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum.constantinople.vm.gas &mdash; Ethereum Specification  documentation</title>
+  <title>Ethereum Virtual Machine (EVM) Gas &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="ethereum.constantinople.vm.interpreter" href="../interpreter/index.html" />
-    <link rel="prev" title="ethereum.constantinople.vm.exceptions" href="../exceptions/index.html" /> 
+    <link rel="next" title="Ethereum Virtual Machine (EVM) Interpreter" href="../interpreter/index.html" />
+    <link rel="prev" title="Ethereum Virtual Machine (EVM) Exceptions" href="../exceptions/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -100,9 +100,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="../../../index.html#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">Ethereum</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -111,113 +125,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -238,11 +252,11 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../index.html">API Reference</a> &raquo;</li>
-          <li><a href="../../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a> &raquo;</li>
-          <li><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople</span></code></a> &raquo;</li>
-          <li><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm</span></code></a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.gas</span></code></li>
+          <li><a href="../../../../index.html">Specification</a> &raquo;</li>
+          <li><a href="../../../index.html">Ethereum Specification</a> &raquo;</li>
+          <li><a href="../../index.html">Ethereum Constantinople Hardfork</a> &raquo;</li>
+          <li><a href="../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
+      <li>Ethereum Virtual Machine (EVM) Gas</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/autoapi/ethereum/constantinople/vm/gas/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -252,10 +266,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum.constantinople.vm.gas">
-<span id="ethereum-constantinople-vm-gas"></span><h1><a class="reference internal" href="#module-ethereum.constantinople.vm.gas" title="ethereum.constantinople.vm.gas"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.gas</span></code></a><a class="headerlink" href="#module-ethereum.constantinople.vm.gas" title="Permalink to this headline"></a></h1>
-<section id="ethereum-virtual-machine-evm-gas">
-<h2>Ethereum Virtual Machine (EVM) Gas<a class="headerlink" href="#ethereum-virtual-machine-evm-gas" title="Permalink to this headline"></a></h2>
+  <span class="target" id="module-ethereum.constantinople.vm.gas"></span><section id="ethereum-virtual-machine-evm-gas">
+<h1>Ethereum Virtual Machine (EVM) Gas<a class="headerlink" href="#ethereum-virtual-machine-evm-gas" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -320,13 +332,13 @@
 </ul>
 </div>
 <section id="introduction">
-<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h3>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
 <p>EVM gas constants and calculators.</p>
 </section>
 <section id="module-contents">
-<h3>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h3>
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -355,7 +367,7 @@
 </table>
 </section>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h4>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -490,9 +502,9 @@
 </section>
 </section>
 <section id="module-details">
-<h3>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h3>
+<h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
 <section id="gas-jumpdest">
-<h4>GAS_JUMPDEST<a class="headerlink" href="#gas-jumpdest" title="Permalink to this headline"></a></h4>
+<h3>GAS_JUMPDEST<a class="headerlink" href="#gas-jumpdest" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_JUMPDEST">
 <span class="sig-name descname"><span class="pre">GAS_JUMPDEST</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_JUMPDEST" title="Permalink to this definition"></a></dt>
@@ -503,7 +515,7 @@
 </div>
 </section>
 <section id="gas-base">
-<h4>GAS_BASE<a class="headerlink" href="#gas-base" title="Permalink to this headline"></a></h4>
+<h3>GAS_BASE<a class="headerlink" href="#gas-base" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_BASE">
 <span class="sig-name descname"><span class="pre">GAS_BASE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_BASE" title="Permalink to this definition"></a></dt>
@@ -514,7 +526,7 @@
 </div>
 </section>
 <section id="gas-very-low">
-<h4>GAS_VERY_LOW<a class="headerlink" href="#gas-very-low" title="Permalink to this headline"></a></h4>
+<h3>GAS_VERY_LOW<a class="headerlink" href="#gas-very-low" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_VERY_LOW">
 <span class="sig-name descname"><span class="pre">GAS_VERY_LOW</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_VERY_LOW" title="Permalink to this definition"></a></dt>
@@ -525,7 +537,7 @@
 </div>
 </section>
 <section id="gas-sload">
-<h4>GAS_SLOAD<a class="headerlink" href="#gas-sload" title="Permalink to this headline"></a></h4>
+<h3>GAS_SLOAD<a class="headerlink" href="#gas-sload" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_SLOAD">
 <span class="sig-name descname"><span class="pre">GAS_SLOAD</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_SLOAD" title="Permalink to this definition"></a></dt>
@@ -536,7 +548,7 @@
 </div>
 </section>
 <section id="gas-storage-set">
-<h4>GAS_STORAGE_SET<a class="headerlink" href="#gas-storage-set" title="Permalink to this headline"></a></h4>
+<h3>GAS_STORAGE_SET<a class="headerlink" href="#gas-storage-set" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_STORAGE_SET">
 <span class="sig-name descname"><span class="pre">GAS_STORAGE_SET</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_STORAGE_SET" title="Permalink to this definition"></a></dt>
@@ -547,7 +559,7 @@
 </div>
 </section>
 <section id="gas-storage-update">
-<h4>GAS_STORAGE_UPDATE<a class="headerlink" href="#gas-storage-update" title="Permalink to this headline"></a></h4>
+<h3>GAS_STORAGE_UPDATE<a class="headerlink" href="#gas-storage-update" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_STORAGE_UPDATE">
 <span class="sig-name descname"><span class="pre">GAS_STORAGE_UPDATE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_STORAGE_UPDATE" title="Permalink to this definition"></a></dt>
@@ -558,7 +570,7 @@
 </div>
 </section>
 <section id="gas-storage-clear-refund">
-<h4>GAS_STORAGE_CLEAR_REFUND<a class="headerlink" href="#gas-storage-clear-refund" title="Permalink to this headline"></a></h4>
+<h3>GAS_STORAGE_CLEAR_REFUND<a class="headerlink" href="#gas-storage-clear-refund" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_STORAGE_CLEAR_REFUND">
 <span class="sig-name descname"><span class="pre">GAS_STORAGE_CLEAR_REFUND</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_STORAGE_CLEAR_REFUND" title="Permalink to this definition"></a></dt>
@@ -569,7 +581,7 @@
 </div>
 </section>
 <section id="gas-low">
-<h4>GAS_LOW<a class="headerlink" href="#gas-low" title="Permalink to this headline"></a></h4>
+<h3>GAS_LOW<a class="headerlink" href="#gas-low" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_LOW">
 <span class="sig-name descname"><span class="pre">GAS_LOW</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_LOW" title="Permalink to this definition"></a></dt>
@@ -580,7 +592,7 @@
 </div>
 </section>
 <section id="gas-mid">
-<h4>GAS_MID<a class="headerlink" href="#gas-mid" title="Permalink to this headline"></a></h4>
+<h3>GAS_MID<a class="headerlink" href="#gas-mid" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_MID">
 <span class="sig-name descname"><span class="pre">GAS_MID</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_MID" title="Permalink to this definition"></a></dt>
@@ -591,7 +603,7 @@
 </div>
 </section>
 <section id="gas-high">
-<h4>GAS_HIGH<a class="headerlink" href="#gas-high" title="Permalink to this headline"></a></h4>
+<h3>GAS_HIGH<a class="headerlink" href="#gas-high" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_HIGH">
 <span class="sig-name descname"><span class="pre">GAS_HIGH</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_HIGH" title="Permalink to this definition"></a></dt>
@@ -602,7 +614,7 @@
 </div>
 </section>
 <section id="gas-exponentiation">
-<h4>GAS_EXPONENTIATION<a class="headerlink" href="#gas-exponentiation" title="Permalink to this headline"></a></h4>
+<h3>GAS_EXPONENTIATION<a class="headerlink" href="#gas-exponentiation" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_EXPONENTIATION">
 <span class="sig-name descname"><span class="pre">GAS_EXPONENTIATION</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_EXPONENTIATION" title="Permalink to this definition"></a></dt>
@@ -613,7 +625,7 @@
 </div>
 </section>
 <section id="gas-exponentiation-per-byte">
-<h4>GAS_EXPONENTIATION_PER_BYTE<a class="headerlink" href="#gas-exponentiation-per-byte" title="Permalink to this headline"></a></h4>
+<h3>GAS_EXPONENTIATION_PER_BYTE<a class="headerlink" href="#gas-exponentiation-per-byte" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_EXPONENTIATION_PER_BYTE">
 <span class="sig-name descname"><span class="pre">GAS_EXPONENTIATION_PER_BYTE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_EXPONENTIATION_PER_BYTE" title="Permalink to this definition"></a></dt>
@@ -624,7 +636,7 @@
 </div>
 </section>
 <section id="gas-memory">
-<h4>GAS_MEMORY<a class="headerlink" href="#gas-memory" title="Permalink to this headline"></a></h4>
+<h3>GAS_MEMORY<a class="headerlink" href="#gas-memory" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_MEMORY">
 <span class="sig-name descname"><span class="pre">GAS_MEMORY</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_MEMORY" title="Permalink to this definition"></a></dt>
@@ -635,7 +647,7 @@
 </div>
 </section>
 <section id="gas-keccak256">
-<h4>GAS_KECCAK256<a class="headerlink" href="#gas-keccak256" title="Permalink to this headline"></a></h4>
+<h3>GAS_KECCAK256<a class="headerlink" href="#gas-keccak256" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_KECCAK256">
 <span class="sig-name descname"><span class="pre">GAS_KECCAK256</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_KECCAK256" title="Permalink to this definition"></a></dt>
@@ -646,7 +658,7 @@
 </div>
 </section>
 <section id="gas-keccak256-word">
-<h4>GAS_KECCAK256_WORD<a class="headerlink" href="#gas-keccak256-word" title="Permalink to this headline"></a></h4>
+<h3>GAS_KECCAK256_WORD<a class="headerlink" href="#gas-keccak256-word" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_KECCAK256_WORD">
 <span class="sig-name descname"><span class="pre">GAS_KECCAK256_WORD</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_KECCAK256_WORD" title="Permalink to this definition"></a></dt>
@@ -657,7 +669,7 @@
 </div>
 </section>
 <section id="gas-copy">
-<h4>GAS_COPY<a class="headerlink" href="#gas-copy" title="Permalink to this headline"></a></h4>
+<h3>GAS_COPY<a class="headerlink" href="#gas-copy" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_COPY">
 <span class="sig-name descname"><span class="pre">GAS_COPY</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_COPY" title="Permalink to this definition"></a></dt>
@@ -668,7 +680,7 @@
 </div>
 </section>
 <section id="gas-block-hash">
-<h4>GAS_BLOCK_HASH<a class="headerlink" href="#gas-block-hash" title="Permalink to this headline"></a></h4>
+<h3>GAS_BLOCK_HASH<a class="headerlink" href="#gas-block-hash" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_BLOCK_HASH">
 <span class="sig-name descname"><span class="pre">GAS_BLOCK_HASH</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_BLOCK_HASH" title="Permalink to this definition"></a></dt>
@@ -679,7 +691,7 @@
 </div>
 </section>
 <section id="gas-external">
-<h4>GAS_EXTERNAL<a class="headerlink" href="#gas-external" title="Permalink to this headline"></a></h4>
+<h3>GAS_EXTERNAL<a class="headerlink" href="#gas-external" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_EXTERNAL">
 <span class="sig-name descname"><span class="pre">GAS_EXTERNAL</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_EXTERNAL" title="Permalink to this definition"></a></dt>
@@ -690,7 +702,7 @@
 </div>
 </section>
 <section id="gas-balance">
-<h4>GAS_BALANCE<a class="headerlink" href="#gas-balance" title="Permalink to this headline"></a></h4>
+<h3>GAS_BALANCE<a class="headerlink" href="#gas-balance" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_BALANCE">
 <span class="sig-name descname"><span class="pre">GAS_BALANCE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_BALANCE" title="Permalink to this definition"></a></dt>
@@ -701,7 +713,7 @@
 </div>
 </section>
 <section id="gas-log">
-<h4>GAS_LOG<a class="headerlink" href="#gas-log" title="Permalink to this headline"></a></h4>
+<h3>GAS_LOG<a class="headerlink" href="#gas-log" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_LOG">
 <span class="sig-name descname"><span class="pre">GAS_LOG</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_LOG" title="Permalink to this definition"></a></dt>
@@ -712,7 +724,7 @@
 </div>
 </section>
 <section id="gas-log-data">
-<h4>GAS_LOG_DATA<a class="headerlink" href="#gas-log-data" title="Permalink to this headline"></a></h4>
+<h3>GAS_LOG_DATA<a class="headerlink" href="#gas-log-data" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_LOG_DATA">
 <span class="sig-name descname"><span class="pre">GAS_LOG_DATA</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_LOG_DATA" title="Permalink to this definition"></a></dt>
@@ -723,7 +735,7 @@
 </div>
 </section>
 <section id="gas-log-topic">
-<h4>GAS_LOG_TOPIC<a class="headerlink" href="#gas-log-topic" title="Permalink to this headline"></a></h4>
+<h3>GAS_LOG_TOPIC<a class="headerlink" href="#gas-log-topic" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_LOG_TOPIC">
 <span class="sig-name descname"><span class="pre">GAS_LOG_TOPIC</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_LOG_TOPIC" title="Permalink to this definition"></a></dt>
@@ -734,7 +746,7 @@
 </div>
 </section>
 <section id="gas-create">
-<h4>GAS_CREATE<a class="headerlink" href="#gas-create" title="Permalink to this headline"></a></h4>
+<h3>GAS_CREATE<a class="headerlink" href="#gas-create" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CREATE">
 <span class="sig-name descname"><span class="pre">GAS_CREATE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CREATE" title="Permalink to this definition"></a></dt>
@@ -745,7 +757,7 @@
 </div>
 </section>
 <section id="gas-code-deposit">
-<h4>GAS_CODE_DEPOSIT<a class="headerlink" href="#gas-code-deposit" title="Permalink to this headline"></a></h4>
+<h3>GAS_CODE_DEPOSIT<a class="headerlink" href="#gas-code-deposit" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CODE_DEPOSIT">
 <span class="sig-name descname"><span class="pre">GAS_CODE_DEPOSIT</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CODE_DEPOSIT" title="Permalink to this definition"></a></dt>
@@ -756,7 +768,7 @@
 </div>
 </section>
 <section id="gas-zero">
-<h4>GAS_ZERO<a class="headerlink" href="#gas-zero" title="Permalink to this headline"></a></h4>
+<h3>GAS_ZERO<a class="headerlink" href="#gas-zero" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_ZERO">
 <span class="sig-name descname"><span class="pre">GAS_ZERO</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_ZERO" title="Permalink to this definition"></a></dt>
@@ -767,7 +779,7 @@
 </div>
 </section>
 <section id="gas-call">
-<h4>GAS_CALL<a class="headerlink" href="#gas-call" title="Permalink to this headline"></a></h4>
+<h3>GAS_CALL<a class="headerlink" href="#gas-call" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CALL">
 <span class="sig-name descname"><span class="pre">GAS_CALL</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CALL" title="Permalink to this definition"></a></dt>
@@ -778,7 +790,7 @@
 </div>
 </section>
 <section id="gas-new-account">
-<h4>GAS_NEW_ACCOUNT<a class="headerlink" href="#gas-new-account" title="Permalink to this headline"></a></h4>
+<h3>GAS_NEW_ACCOUNT<a class="headerlink" href="#gas-new-account" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_NEW_ACCOUNT">
 <span class="sig-name descname"><span class="pre">GAS_NEW_ACCOUNT</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_NEW_ACCOUNT" title="Permalink to this definition"></a></dt>
@@ -789,7 +801,7 @@
 </div>
 </section>
 <section id="gas-call-value">
-<h4>GAS_CALL_VALUE<a class="headerlink" href="#gas-call-value" title="Permalink to this headline"></a></h4>
+<h3>GAS_CALL_VALUE<a class="headerlink" href="#gas-call-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CALL_VALUE">
 <span class="sig-name descname"><span class="pre">GAS_CALL_VALUE</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CALL_VALUE" title="Permalink to this definition"></a></dt>
@@ -800,7 +812,7 @@
 </div>
 </section>
 <section id="gas-call-stipend">
-<h4>GAS_CALL_STIPEND<a class="headerlink" href="#gas-call-stipend" title="Permalink to this headline"></a></h4>
+<h3>GAS_CALL_STIPEND<a class="headerlink" href="#gas-call-stipend" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CALL_STIPEND">
 <span class="sig-name descname"><span class="pre">GAS_CALL_STIPEND</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CALL_STIPEND" title="Permalink to this definition"></a></dt>
@@ -811,7 +823,7 @@
 </div>
 </section>
 <section id="gas-self-destruct">
-<h4>GAS_SELF_DESTRUCT<a class="headerlink" href="#gas-self-destruct" title="Permalink to this headline"></a></h4>
+<h3>GAS_SELF_DESTRUCT<a class="headerlink" href="#gas-self-destruct" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_SELF_DESTRUCT">
 <span class="sig-name descname"><span class="pre">GAS_SELF_DESTRUCT</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_SELF_DESTRUCT" title="Permalink to this definition"></a></dt>
@@ -822,7 +834,7 @@
 </div>
 </section>
 <section id="gas-self-destruct-new-account">
-<h4>GAS_SELF_DESTRUCT_NEW_ACCOUNT<a class="headerlink" href="#gas-self-destruct-new-account" title="Permalink to this headline"></a></h4>
+<h3>GAS_SELF_DESTRUCT_NEW_ACCOUNT<a class="headerlink" href="#gas-self-destruct-new-account" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_SELF_DESTRUCT_NEW_ACCOUNT">
 <span class="sig-name descname"><span class="pre">GAS_SELF_DESTRUCT_NEW_ACCOUNT</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_SELF_DESTRUCT_NEW_ACCOUNT" title="Permalink to this definition"></a></dt>
@@ -833,7 +845,7 @@
 </div>
 </section>
 <section id="refund-self-destruct">
-<h4>REFUND_SELF_DESTRUCT<a class="headerlink" href="#refund-self-destruct" title="Permalink to this headline"></a></h4>
+<h3>REFUND_SELF_DESTRUCT<a class="headerlink" href="#refund-self-destruct" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.REFUND_SELF_DESTRUCT">
 <span class="sig-name descname"><span class="pre">REFUND_SELF_DESTRUCT</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.REFUND_SELF_DESTRUCT" title="Permalink to this definition"></a></dt>
@@ -844,7 +856,7 @@
 </div>
 </section>
 <section id="gas-ecrecover">
-<h4>GAS_ECRECOVER<a class="headerlink" href="#gas-ecrecover" title="Permalink to this headline"></a></h4>
+<h3>GAS_ECRECOVER<a class="headerlink" href="#gas-ecrecover" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_ECRECOVER">
 <span class="sig-name descname"><span class="pre">GAS_ECRECOVER</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_ECRECOVER" title="Permalink to this definition"></a></dt>
@@ -855,7 +867,7 @@
 </div>
 </section>
 <section id="gas-sha256">
-<h4>GAS_SHA256<a class="headerlink" href="#gas-sha256" title="Permalink to this headline"></a></h4>
+<h3>GAS_SHA256<a class="headerlink" href="#gas-sha256" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_SHA256">
 <span class="sig-name descname"><span class="pre">GAS_SHA256</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_SHA256" title="Permalink to this definition"></a></dt>
@@ -866,7 +878,7 @@
 </div>
 </section>
 <section id="gas-sha256-word">
-<h4>GAS_SHA256_WORD<a class="headerlink" href="#gas-sha256-word" title="Permalink to this headline"></a></h4>
+<h3>GAS_SHA256_WORD<a class="headerlink" href="#gas-sha256-word" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_SHA256_WORD">
 <span class="sig-name descname"><span class="pre">GAS_SHA256_WORD</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_SHA256_WORD" title="Permalink to this definition"></a></dt>
@@ -877,7 +889,7 @@
 </div>
 </section>
 <section id="gas-ripemd160">
-<h4>GAS_RIPEMD160<a class="headerlink" href="#gas-ripemd160" title="Permalink to this headline"></a></h4>
+<h3>GAS_RIPEMD160<a class="headerlink" href="#gas-ripemd160" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_RIPEMD160">
 <span class="sig-name descname"><span class="pre">GAS_RIPEMD160</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_RIPEMD160" title="Permalink to this definition"></a></dt>
@@ -888,7 +900,7 @@
 </div>
 </section>
 <section id="gas-ripemd160-word">
-<h4>GAS_RIPEMD160_WORD<a class="headerlink" href="#gas-ripemd160-word" title="Permalink to this headline"></a></h4>
+<h3>GAS_RIPEMD160_WORD<a class="headerlink" href="#gas-ripemd160-word" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_RIPEMD160_WORD">
 <span class="sig-name descname"><span class="pre">GAS_RIPEMD160_WORD</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_RIPEMD160_WORD" title="Permalink to this definition"></a></dt>
@@ -899,7 +911,7 @@
 </div>
 </section>
 <section id="gas-identity">
-<h4>GAS_IDENTITY<a class="headerlink" href="#gas-identity" title="Permalink to this headline"></a></h4>
+<h3>GAS_IDENTITY<a class="headerlink" href="#gas-identity" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_IDENTITY">
 <span class="sig-name descname"><span class="pre">GAS_IDENTITY</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_IDENTITY" title="Permalink to this definition"></a></dt>
@@ -910,7 +922,7 @@
 </div>
 </section>
 <section id="gas-identity-word">
-<h4>GAS_IDENTITY_WORD<a class="headerlink" href="#gas-identity-word" title="Permalink to this headline"></a></h4>
+<h3>GAS_IDENTITY_WORD<a class="headerlink" href="#gas-identity-word" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_IDENTITY_WORD">
 <span class="sig-name descname"><span class="pre">GAS_IDENTITY_WORD</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_IDENTITY_WORD" title="Permalink to this definition"></a></dt>
@@ -921,7 +933,7 @@
 </div>
 </section>
 <section id="gas-return-data-copy">
-<h4>GAS_RETURN_DATA_COPY<a class="headerlink" href="#gas-return-data-copy" title="Permalink to this headline"></a></h4>
+<h3>GAS_RETURN_DATA_COPY<a class="headerlink" href="#gas-return-data-copy" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_RETURN_DATA_COPY">
 <span class="sig-name descname"><span class="pre">GAS_RETURN_DATA_COPY</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_RETURN_DATA_COPY" title="Permalink to this definition"></a></dt>
@@ -932,7 +944,7 @@
 </div>
 </section>
 <section id="gas-code-hash">
-<h4>GAS_CODE_HASH<a class="headerlink" href="#gas-code-hash" title="Permalink to this headline"></a></h4>
+<h3>GAS_CODE_HASH<a class="headerlink" href="#gas-code-hash" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.GAS_CODE_HASH">
 <span class="sig-name descname"><span class="pre">GAS_CODE_HASH</span></span><a class="headerlink" href="#ethereum.constantinople.vm.gas.GAS_CODE_HASH" title="Permalink to this definition"></a></dt>
@@ -943,7 +955,7 @@
 </div>
 </section>
 <section id="subtract-gas">
-<h4>subtract_gas<a class="headerlink" href="#subtract-gas" title="Permalink to this headline"></a></h4>
+<h3>subtract_gas<a class="headerlink" href="#subtract-gas" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.subtract_gas">
 <span class="sig-name descname"><span class="pre">subtract_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gas_left</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.subtract_gas" title="Permalink to this definition"></a></dt>
@@ -970,7 +982,7 @@
 </div>
 </section>
 <section id="calculate-memory-gas-cost">
-<h4>calculate_memory_gas_cost<a class="headerlink" href="#calculate-memory-gas-cost" title="Permalink to this headline"></a></h4>
+<h3>calculate_memory_gas_cost<a class="headerlink" href="#calculate-memory-gas-cost" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.calculate_memory_gas_cost">
 <span class="sig-name descname"><span class="pre">calculate_memory_gas_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size_in_bytes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.calculate_memory_gas_cost" title="Permalink to this definition"></a></dt>
@@ -1003,7 +1015,7 @@ such that the allocated size is at least as big as the given size.</p>
 </div>
 </section>
 <section id="calculate-gas-extend-memory">
-<h4>calculate_gas_extend_memory<a class="headerlink" href="#calculate-gas-extend-memory" title="Permalink to this headline"></a></h4>
+<h3>calculate_gas_extend_memory<a class="headerlink" href="#calculate-gas-extend-memory" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.calculate_gas_extend_memory">
 <span class="sig-name descname"><span class="pre">calculate_gas_extend_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.calculate_gas_extend_memory" title="Permalink to this definition"></a></dt>
@@ -1045,7 +1057,7 @@ else it returns the amount that needs to be paid for extendinng memory.</p>
 </div>
 </section>
 <section id="calculate-call-gas-cost">
-<h4>calculate_call_gas_cost<a class="headerlink" href="#calculate-call-gas-cost" title="Permalink to this headline"></a></h4>
+<h3>calculate_call_gas_cost<a class="headerlink" href="#calculate-call-gas-cost" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.calculate_call_gas_cost">
 <span class="sig-name descname"><span class="pre">calculate_call_gas_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_left</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.calculate_call_gas_cost" title="Permalink to this definition"></a></dt>
@@ -1085,7 +1097,7 @@ account inside a message call.</p></li>
 </div>
 </section>
 <section id="calculate-message-call-gas-stipend">
-<h4>calculate_message_call_gas_stipend<a class="headerlink" href="#calculate-message-call-gas-stipend" title="Permalink to this headline"></a></h4>
+<h3>calculate_message_call_gas_stipend<a class="headerlink" href="#calculate-message-call-gas-stipend" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.calculate_message_call_gas_stipend">
 <span class="sig-name descname"><span class="pre">calculate_message_call_gas_stipend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_left</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">call_stipend</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">GAS_CALL_STIPEND</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.calculate_message_call_gas_stipend" title="Permalink to this definition"></a></dt>
@@ -1133,7 +1145,7 @@ transferring value(ETH).</p></li>
 </div>
 </section>
 <section id="max-message-call-gas">
-<h4>max_message_call_gas<a class="headerlink" href="#max-message-call-gas" title="Permalink to this headline"></a></h4>
+<h3>max_message_call_gas<a class="headerlink" href="#max-message-call-gas" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.constantinople.vm.gas.max_message_call_gas">
 <span class="sig-name descname"><span class="pre">max_message_call_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><a class="headerlink" href="#ethereum.constantinople.vm.gas.max_message_call_gas" title="Permalink to this definition"></a></dt>
@@ -1158,14 +1170,13 @@ transferring value(ETH).</p></li>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../exceptions/index.html" class="btn btn-neutral float-left" title="ethereum.constantinople.vm.exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../interpreter/index.html" class="btn btn-neutral float-right" title="ethereum.constantinople.vm.interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../exceptions/index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM) Exceptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../interpreter/index.html" class="btn btn-neutral float-right" title="Ethereum Virtual Machine (EVM) Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

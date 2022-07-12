@@ -1,6 +1,3 @@
-:mod:`ethereum.crypto.blake2`
-=============================
-
 .. py:module:: ethereum.crypto.blake2
 
 The Blake2 Implementation
@@ -68,63 +65,63 @@ https://datatracker.ietf.org/doc/html/rfc7693
    
 
    .. py:attribute:: w
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: mask_bits
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: word_format
-      :annotation: :str
+         :annotation: :str
 
       
 
    
 
    .. py:attribute:: R1
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: R2
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: R3
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: R4
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: sigma
-      :annotation: :Tuple = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [14, 10, 4, 8, 9, 15, 13, 6, 1, 12, 0,...
+         :annotation: :Tuple = [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], [14, 10, 4, 8, 9, 15, 13, 6, 1, 12, 0,...
 
       
 
    
 
    .. py:attribute:: IV
-      :annotation: :Tuple = [7640891576956012808, 13503953896175478587, 4354685564936845355, 11912009170470909681,...
+         :annotation: :Tuple = [7640891576956012808, 13503953896175478587, 4354685564936845355, 11912009170470909681,...
 
       
 
@@ -220,49 +217,49 @@ This version is used in the pre-compiled contract.
    
 
    .. py:attribute:: w
-      :annotation: :int = 64
+         :annotation: :int = 64
 
       
 
    
 
    .. py:attribute:: mask_bits
-      :annotation: :int = 18446744073709551615
+         :annotation: :int = 18446744073709551615
 
       
 
    
 
    .. py:attribute:: word_format
-      :annotation: :str = Q
+         :annotation: :str = Q
 
       
 
    
 
    .. py:attribute:: R1
-      :annotation: :int = 32
+         :annotation: :int = 32
 
       
 
    
 
    .. py:attribute:: R2
-      :annotation: :int = 24
+         :annotation: :int = 24
 
       
 
    
 
    .. py:attribute:: R3
-      :annotation: :int = 16
+         :annotation: :int = 16
 
       
 
    
 
    .. py:attribute:: R4
-      :annotation: :int = 63
+         :annotation: :int = 63
 
       
 

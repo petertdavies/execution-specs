@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon`
-===============================
-
 .. py:module:: ethereum.spurious_dragon
 
 Ethereum Spurious Dragon Hardfork
@@ -42,7 +39,7 @@ MAINNET_FORK_BLOCK
 
 
 .. py:data:: MAINNET_FORK_BLOCK
-
+   
    
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/__init__.py

@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.memory`
-======================================
-
 .. py:module:: ethereum.muir_glacier.vm.memory
 
 Ethereum Virtual Machine (EVM) Memory

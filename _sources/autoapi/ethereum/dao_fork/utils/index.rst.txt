@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.utils`
-==============================
-
 .. py:module:: ethereum.dao_fork.utils
 
 Dao Fork Utility Functions

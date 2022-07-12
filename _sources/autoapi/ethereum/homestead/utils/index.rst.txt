@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.utils`
-===============================
-
 .. py:module:: ethereum.homestead.utils
 
 Homestead Utility Functions

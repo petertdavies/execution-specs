@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle`
-=================================
-
 .. py:module:: ethereum.tangerine_whistle
 
 Ethereum Tangerine Whistle Hardfork
@@ -42,7 +39,7 @@ MAINNET_FORK_BLOCK
 
 
 .. py:data:: MAINNET_FORK_BLOCK
-
+   
    
 
 .. undocinclude:: /../src/ethereum/tangerine_whistle/__init__.py

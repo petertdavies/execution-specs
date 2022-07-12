@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.state`
-=====================================
-
 .. py:module:: ethereum.spurious_dragon.state
 
 State
@@ -80,21 +77,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.spurious_dragon.trie.Trie[ethereum.spurious_dragon.eth_types.Address, Optional[ethereum.spurious_dragon.eth_types.Account]]
+         :annotation: :ethereum.spurious_dragon.trie.Trie[ethereum.spurious_dragon.eth_types.Address, Optional[ethereum.spurious_dragon.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.spurious_dragon.eth_types.Address, ethereum.spurious_dragon.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.spurious_dragon.eth_types.Address, ethereum.spurious_dragon.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.spurious_dragon.trie.Trie[ethereum.spurious_dragon.eth_types.Address, Optional[ethereum.spurious_dragon.eth_types.Account]], Dict[ethereum.spurious_dragon.eth_types.Address, ethereum.spurious_dragon.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.spurious_dragon.trie.Trie[ethereum.spurious_dragon.eth_types.Address, Optional[ethereum.spurious_dragon.eth_types.Account]], Dict[ethereum.spurious_dragon.eth_types.Address, ethereum.spurious_dragon.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

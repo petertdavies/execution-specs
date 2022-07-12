@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.instructions.system`
-===============================================
-
 .. py:module:: ethereum.frontier.vm.instructions.system
 
 Ethereum Virtual Machine (EVM) System Instructions

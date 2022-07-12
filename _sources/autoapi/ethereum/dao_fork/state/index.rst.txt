@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.state`
-==============================
-
 .. py:module:: ethereum.dao_fork.state
 
 State
@@ -79,21 +76,21 @@ Contains all information that is preserved between transactions.
    
 
    .. py:attribute:: _main_trie
-      :annotation: :ethereum.dao_fork.trie.Trie[ethereum.dao_fork.eth_types.Address, Optional[ethereum.dao_fork.eth_types.Account]]
+         :annotation: :ethereum.dao_fork.trie.Trie[ethereum.dao_fork.eth_types.Address, Optional[ethereum.dao_fork.eth_types.Account]]
 
       
 
    
 
    .. py:attribute:: _storage_tries
-      :annotation: :Dict[ethereum.dao_fork.eth_types.Address, ethereum.dao_fork.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
+         :annotation: :Dict[ethereum.dao_fork.eth_types.Address, ethereum.dao_fork.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]
 
       
 
    
 
    .. py:attribute:: _snapshots
-      :annotation: :List[Tuple[ethereum.dao_fork.trie.Trie[ethereum.dao_fork.eth_types.Address, Optional[ethereum.dao_fork.eth_types.Account]], Dict[ethereum.dao_fork.eth_types.Address, ethereum.dao_fork.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+         :annotation: :List[Tuple[ethereum.dao_fork.trie.Trie[ethereum.dao_fork.eth_types.Address, Optional[ethereum.dao_fork.eth_types.Account]], Dict[ethereum.dao_fork.eth_types.Address, ethereum.dao_fork.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
 
       
 

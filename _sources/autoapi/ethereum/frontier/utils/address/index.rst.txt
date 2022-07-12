@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.utils.address`
-======================================
-
 .. py:module:: ethereum.frontier.utils.address
 
 Frontier Utility Functions For Addresses

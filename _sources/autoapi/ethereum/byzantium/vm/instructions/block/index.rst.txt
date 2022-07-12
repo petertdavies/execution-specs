@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.instructions.block`
-===============================================
-
 .. py:module:: ethereum.byzantium.vm.instructions.block
 
 Ethereum Virtual Machine (EVM) Block Instructions

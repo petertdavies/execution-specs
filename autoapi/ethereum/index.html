@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ethereum &mdash; Ethereum Specification  documentation</title>
+  <title>Ethereum Specification &mdash; Ethereum Specification  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" />
@@ -21,8 +21,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ethereum.byzantium" href="byzantium/index.html" />
-    <link rel="prev" title="API Reference" href="../index.html" /> 
+    <link rel="next" title="Ethereum Frontier Hardfork" href="frontier/index.html" />
+    <link rel="prev" title="Specification" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -53,9 +53,23 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ethereum-specification">Ethereum Specification</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Specification</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ethereum</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frontier/index.html">Ethereum Frontier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/index.html">Ethereum Homestead Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/index.html">Ethereum Dao Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/index.html">Ethereum Byzantium Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="crypto/index.html">Cryptographic Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils/index.html">Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </li>
 </ul>
@@ -64,113 +78,113 @@
 <p class="caption"><span class="caption-text">Comparisons:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../diffs/index.html">Comparisons</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/frontier_homestead.html">frontier → homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/trie/index.html">trie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/trie/index.html">trie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/homestead_dao_fork.html">homestead → dao_fork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle.html">dao_fork → tangerine_whistle</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon.html">tangerine_whistle → spurious_dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium.html">spurious_dragon → byzantium</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/byzantium_constantinople.html">byzantium → constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/constantinople_istanbul.html">constantinople → istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/index.html">__init__</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/constantinople_istanbul/state/index.html">state</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../diffs/istanbul_muir_glacier.html">istanbul → muir_glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
 </ul>
 </li>
 </ul>
@@ -191,8 +205,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../index.html">API Reference</a> &raquo;</li>
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></li>
+          <li><a href="../index.html">Specification</a> &raquo;</li>
+      <li>Ethereum Specification</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/autoapi/ethereum/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -202,276 +216,285 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-ethereum">
-<span id="ethereum"></span><h1><a class="reference internal" href="#module-ethereum" title="ethereum"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum</span></code></a><a class="headerlink" href="#module-ethereum" title="Permalink to this headline"></a></h1>
-<section id="ethereum-specification">
-<h2>Ethereum Specification<a class="headerlink" href="#ethereum-specification" title="Permalink to this headline"></a></h2>
-<p>Core specifications for Ethereum clients.</p>
+  <span class="target" id="module-ethereum"></span><section id="ethereum-specification">
+<h1>Ethereum Specification<a class="headerlink" href="#ethereum-specification" title="Permalink to this headline"></a></h1>
+<p>Seeing as internet connections have been vastly expanding across the
+world, spreading information has become as cheap as ever. Bitcoin, for
+example, has demonstrated the possibility of creating a decentralized,
+trade system that is accessible around the world. Namecoin is another
+system that built off of Bitcoin’s currency structure to create other
+simple technological applications.</p>
+<p>Ethereum’s goal is to create a cryptographically secure system in which
+any and all types of transaction-based concepts can be built. It provides
+an exceptionally accessible and decentralized system to build software
+and execute transactions.</p>
+<p>This package contains a reference implementation, written as simply as
+possible, to aid in defining the behavior of Ethereum clients.</p>
 <section id="subpackages">
-<h3>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h3>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="byzantium/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.utils.message</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="frontier/index.html">Ethereum Frontier Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="frontier/utils/index.html">Frontier Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frontier/utils/address/index.html">Frontier Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/utils/message/index.html">Frontier Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="frontier/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="byzantium/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.byzantium.trie</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/genesis/index.html">Genesis Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="frontier/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="constantinople/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.utils.message</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="homestead/index.html">Ethereum Homestead Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="homestead/utils/index.html">Homestead Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="homestead/utils/address/index.html">Homestead Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/utils/message/index.html">Homestead Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="homestead/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="constantinople/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.constantinople.trie</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homestead/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="crypto/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="crypto/alt_bn128/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.alt_bn128</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="crypto/blake2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.blake2</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="crypto/elliptic_curve/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.elliptic_curve</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="crypto/finite_field/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.finite_field</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="crypto/hash/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.crypto.hash</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="dao_fork/index.html">Ethereum Dao Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/utils/index.html">Dao Fork Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/address/index.html">Dao Fork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/message/index.html">Dao Fork Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="dao_fork/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="dao_fork/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/dao/index.html">Dao Fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dao_fork/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/dao/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.dao</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="dao_fork/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.dao_fork.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangerine_whistle/index.html">Ethereum Tangerine Whistle Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/utils/index.html">Tangerine Whistle Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/address/index.html">Tangerine Whistle Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/message/index.html">Tangerine Whistle Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="frontier/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="frontier/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="frontier/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="frontier/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/genesis/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.genesis</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="frontier/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.frontier.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="spurious_dragon/index.html">Ethereum Spurious Dragon Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/utils/index.html">Spurious Dragon Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/address/index.html">Spurious Dragon Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/message/index.html">Spurious Dragon Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="homestead/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="homestead/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="homestead/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="homestead/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="homestead/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.homestead.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="byzantium/index.html">Ethereum Byzantium Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/utils/index.html">Byzantium Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/address/index.html">Byzantium Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/utils/message/index.html">Byzantium Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="istanbul/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="byzantium/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="byzantium/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="istanbul/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.istanbul.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="constantinople/index.html">Ethereum Constantinople Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/utils/index.html">Constantinople Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/address/index.html">Constantinople Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/utils/message/index.html">Constantinople Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="muir_glacier/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="constantinople/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constantinople/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="muir_glacier/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.muir_glacier.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="istanbul/index.html">Ethereum Istanbul Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/utils/index.html">Istanbul Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/address/index.html">Istanbul Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/utils/message/index.html">Istanbul Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="spurious_dragon/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="istanbul/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="spurious_dragon/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="istanbul/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="spurious_dragon/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.spurious_dragon.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/utils/index.html">Muir Glacier Utility Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/address/index.html">Muir Glacier Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/utils/message/index.html">Muir Glacier Utility Functions For The Message Data-structure</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="tangerine_whistle/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.utils</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/address/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.utils.address</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/utils/message/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.utils.message</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/vm/index.html">Ethereum Virtual Machine (EVM)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/memory/index.html">Ethereum Virtual Machine (EVM) Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/runtime/index.html">Ethereum Virtual Machine (EVM) Runtime Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="muir_glacier/vm/stack/index.html">Ethereum Virtual Machine (EVM) Stack</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/vm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/instructions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.instructions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/precompiled_contracts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.precompiled_contracts</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.exceptions</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/gas/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.gas</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/interpreter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.interpreter</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/memory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.memory</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.runtime</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="tangerine_whistle/vm/stack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.vm.stack</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/state/index.html">State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="muir_glacier/trie/index.html">State Trie</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/bloom/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.bloom</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/eth_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.eth_types</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/spec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.spec</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/state/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.state</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="tangerine_whistle/trie/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.tangerine_whistle.trie</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="crypto/index.html">Cryptographic Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crypto/alt_bn128/index.html">The alt_bn128 curve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/blake2/index.html">The Blake2 Implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/elliptic_curve/index.html">Elliptic Curves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/finite_field/index.html">Finite Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="crypto/hash/index.html">Cryptographic Hash Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils</span></code></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils/byte/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils.byte</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/ensure/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils.ensure</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/hexadecimal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils.hexadecimal</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/numeric/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils.numeric</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils/safe_arithmetic/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.utils.safe_arithmetic</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/index.html">Utility Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils/byte/index.html">Utility Functions For Byte Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/ensure/index.html">Ensure (Assertion) Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/numeric/index.html">Utility Functions For Numeric Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils/safe_arithmetic/index.html">Safe Arithmetic for U256 Integer Type</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </section>
 <section id="submodules">
-<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h3>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="base_types/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.base_types</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ethash/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.ethash</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="exceptions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.exceptions</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="rlp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ethereum.rlp</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="base_types/index.html">Numeric &amp; Array Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ethash/index.html">Ethash Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
 </ul>
 </div>
 </section>
 <section id="package-contents">
-<h3>Package Contents<a class="headerlink" href="#package-contents" title="Permalink to this headline"></a></h3>
+<h2>Package Contents<a class="headerlink" href="#package-contents" title="Permalink to this headline"></a></h2>
 <section id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h4>
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -485,7 +508,7 @@
 </table>
 </section>
 <section id="attributes">
-<h4>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h4>
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%" />
@@ -495,7 +518,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.__version__" title="ethereum.__version__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__version__</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.EVM_RECURSION_LIMIT" title="ethereum.EVM_RECURSION_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EVM_RECURSION_LIMIT</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.ffi" title="ethereum.ffi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffi</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.EVM_RECURSION_LIMIT" title="ethereum.EVM_RECURSION_LIMIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EVM_RECURSION_LIMIT</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -503,9 +529,9 @@
 </section>
 </section>
 <section id="package-details">
-<h3>Package Details<a class="headerlink" href="#package-details" title="Permalink to this headline"></a></h3>
+<h2>Package Details<a class="headerlink" href="#package-details" title="Permalink to this headline"></a></h2>
 <section id="version">
-<h4>__version__<a class="headerlink" href="#version" title="Permalink to this headline"></a></h4>
+<h3>__version__<a class="headerlink" href="#version" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.__version__">
 <span class="sig-name descname"><span class="pre">__version__</span></span><a class="headerlink" href="#ethereum.__version__" title="Permalink to this definition"></a></dt>
@@ -515,8 +541,19 @@
 </pre></div>
 </div>
 </section>
+<section id="ffi">
+<h3>ffi<a class="headerlink" href="#ffi" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.ffi">
+<span class="sig-name descname"><span class="pre">ffi</span></span><a class="headerlink" href="#ethereum.ffi" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="n">ffi</span> <span class="o">=</span> <span class="n">cffi</span><span class="o">.</span><span class="n">FFI</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 <section id="evm-recursion-limit">
-<h4>EVM_RECURSION_LIMIT<a class="headerlink" href="#evm-recursion-limit" title="Permalink to this headline"></a></h4>
+<h3>EVM_RECURSION_LIMIT<a class="headerlink" href="#evm-recursion-limit" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="ethereum.EVM_RECURSION_LIMIT">
 <span class="sig-name descname"><span class="pre">EVM_RECURSION_LIMIT</span></span><a class="headerlink" href="#ethereum.EVM_RECURSION_LIMIT" title="Permalink to this definition"></a></dt>
@@ -527,7 +564,7 @@
 </div>
 </section>
 <section id="evm-trace">
-<h4>evm_trace<a class="headerlink" href="#evm-trace" title="Permalink to this headline"></a></h4>
+<h3>evm_trace<a class="headerlink" href="#evm-trace" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.evm_trace">
 <span class="sig-name descname"><span class="pre">evm_trace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">op</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.evm_trace" title="Permalink to this definition"></a></dt>
@@ -542,14 +579,13 @@ default. EVM tracing will be injected if the user requests it.</p>
 </section>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../index.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="byzantium/index.html" class="btn btn-neutral float-right" title="ethereum.byzantium" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="Specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="frontier/index.html" class="btn btn-neutral float-right" title="Ethereum Frontier Hardfork" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

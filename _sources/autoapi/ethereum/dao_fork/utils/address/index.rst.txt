@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.utils.address`
-======================================
-
 .. py:module:: ethereum.dao_fork.utils.address
 
 Dao Fork Utility Functions For Addresses

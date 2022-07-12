@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.utils`
-====================================
-
 .. py:module:: ethereum.constantinople.utils
 
 Constantinople Utility Functions

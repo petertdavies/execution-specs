@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.precompiled_contracts.blake2f`
-=============================================================
-
 .. py:module:: ethereum.muir_glacier.vm.precompiled_contracts.blake2f
 
 Ethereum Virtual Machine (EVM) Blake2 PRECOMPILED CONTRACT

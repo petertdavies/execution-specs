@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.utils.message`
-======================================
-
 .. py:module:: ethereum.frontier.utils.message
 
 Frontier Utility Functions For The Message Data-structure

@@ -1,6 +1,3 @@
-:mod:`ethereum.byzantium.vm.instructions.environment`
-=====================================================
-
 .. py:module:: ethereum.byzantium.vm.instructions.environment
 
 Ethereum Virtual Machine (EVM) Environmental Instructions

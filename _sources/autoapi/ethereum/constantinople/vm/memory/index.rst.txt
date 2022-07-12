@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.memory`
-========================================
-
 .. py:module:: ethereum.constantinople.vm.memory
 
 Ethereum Virtual Machine (EVM) Memory

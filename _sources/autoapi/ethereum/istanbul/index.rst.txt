@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul`
-========================
-
 .. py:module:: ethereum.istanbul
 
 Ethereum Istanbul Hardfork
@@ -42,7 +39,7 @@ MAINNET_FORK_BLOCK
 
 
 .. py:data:: MAINNET_FORK_BLOCK
-
+   
    
 
 .. undocinclude:: /../src/ethereum/istanbul/__init__.py

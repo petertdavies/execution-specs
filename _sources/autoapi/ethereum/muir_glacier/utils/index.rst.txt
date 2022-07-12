@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.utils`
-==================================
-
 .. py:module:: ethereum.muir_glacier.utils
 
 Muir Glacier Utility Functions

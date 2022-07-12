@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.system`
-================================================
-
 .. py:module:: ethereum.homestead.vm.instructions.system
 
 Ethereum Virtual Machine (EVM) System Instructions

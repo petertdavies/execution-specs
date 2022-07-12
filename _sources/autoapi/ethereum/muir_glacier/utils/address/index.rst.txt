@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.utils.address`
-==========================================
-
 .. py:module:: ethereum.muir_glacier.utils.address
 
 Muir Glacier Utility Functions For Addresses

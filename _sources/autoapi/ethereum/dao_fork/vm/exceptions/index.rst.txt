@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.exceptions`
-======================================
-
 .. py:module:: ethereum.dao_fork.vm.exceptions
 
 Ethereum Virtual Machine (EVM) Exceptions

@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.precompiled_contracts`
-=======================================================
-
 .. py:module:: ethereum.constantinople.vm.precompiled_contracts
 
 Precompiled Contract Addresses

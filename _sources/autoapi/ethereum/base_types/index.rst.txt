@@ -1,6 +1,3 @@
-:mod:`ethereum.base_types`
-==========================
-
 .. py:module:: ethereum.base_types
 
 Numeric & Array Types
@@ -59,8 +56,13 @@ Attributes
 
 .. autoapisummary::
 
+   ethereum.base_types.U8_MAX_VALUE
+   ethereum.base_types.UINT32_MAX_VALUE
    ethereum.base_types.UINT32_CEIL_VALUE
+   ethereum.base_types.UINT64_MAX_VALUE
+   ethereum.base_types.U255_MAX_VALUE
    ethereum.base_types.U255_CEIL_VALUE
+   ethereum.base_types.U256_MAX_VALUE
    ethereum.base_types.U256_CEIL_VALUE
    ethereum.base_types.T
    ethereum.base_types.B
@@ -71,18 +73,74 @@ Attributes
 Module Details
 ---------------
 
+U8_MAX_VALUE
+~~~~~~~~~~~~
+
+
+
+.. py:data:: U8_MAX_VALUE
+   
+   
+
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 20-20
+
+
+UINT32_MAX_VALUE
+~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: UINT32_MAX_VALUE
+   
+   
+
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 21-21
+
+
 UINT32_CEIL_VALUE
 ~~~~~~~~~~~~~~~~~
 
 
 
 .. py:data:: UINT32_CEIL_VALUE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
    :lines: 22-22
+
+
+UINT64_MAX_VALUE
+~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: UINT64_MAX_VALUE
+   
+   
+
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 23-23
+
+
+U255_MAX_VALUE
+~~~~~~~~~~~~~~
+
+
+
+.. py:data:: U255_MAX_VALUE
+   
+   
+
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 24-24
 
 
 U255_CEIL_VALUE
@@ -91,12 +149,26 @@ U255_CEIL_VALUE
 
 
 .. py:data:: U255_CEIL_VALUE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
    :lines: 25-25
+
+
+U256_MAX_VALUE
+~~~~~~~~~~~~~~
+
+
+
+.. py:data:: U256_MAX_VALUE
+   
+   
+
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 26-26
 
 
 U256_CEIL_VALUE
@@ -105,7 +177,7 @@ U256_CEIL_VALUE
 
 
 .. py:data:: U256_CEIL_VALUE
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
@@ -128,7 +200,7 @@ Unsigned positive integer.
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -286,7 +358,7 @@ T
 
 
 .. py:data:: T
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
@@ -310,14 +382,14 @@ directly, but rather to be subclassed.
    
 
    .. py:attribute:: MAX_VALUE
-      :annotation: :FixedUInt
+         :annotation: :FixedUInt
 
       
 
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -501,7 +573,7 @@ inclusive.
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -551,6 +623,20 @@ inclusive.
 
 
 
+MAX_VALUE
+~~~~~~~~~
+
+
+
+.. py:data:: U256.MAX_VALUE
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 731-731
+
+
 Uint32
 ~~~~~~
 
@@ -567,14 +653,14 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-      :annotation: :Uint32
+         :annotation: :Uint32
 
       
 
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -605,6 +691,20 @@ inclusive.
 
 
 
+MAX_VALUE
+~~~~~~~~~
+
+
+
+.. py:data:: Uint32.MAX_VALUE
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 783-783
+
+
 Uint64
 ~~~~~~
 
@@ -621,14 +721,14 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-      :annotation: :Uint64
+         :annotation: :Uint64
 
       
 
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -659,18 +759,32 @@ inclusive.
 
 
 
+MAX_VALUE
+~~~~~~~~~
+
+
+
+.. py:data:: Uint64.MAX_VALUE
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/base_types.py
+   :language: python
+   :lines: 835-835
+
+
 B
 ~
 
 
 
 .. py:data:: B
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 836-836
+   :lines: 839-839
 
 
 FixedBytes
@@ -689,14 +803,14 @@ but should be subclassed.
    
 
    .. py:attribute:: LENGTH
-      :annotation: :int
+         :annotation: :int
 
       
 
    
 
    .. py:attribute:: __slots__
-      :annotation: = []
+         :annotation: = []
 
       
 
@@ -717,7 +831,7 @@ Byte array of exactly zero elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 0
+         :annotation: = 0
 
       
 
@@ -738,7 +852,7 @@ Byte array of exactly four elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 4
+         :annotation: = 4
 
       
 
@@ -759,7 +873,7 @@ Byte array of exactly eight elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 8
+         :annotation: = 8
 
       
 
@@ -780,7 +894,7 @@ Byte array of exactly 20 elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 20
+         :annotation: = 20
 
       
 
@@ -801,7 +915,7 @@ Byte array of exactly 32 elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 32
+         :annotation: = 32
 
       
 
@@ -822,7 +936,7 @@ Byte array of exactly 64 elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 64
+         :annotation: = 64
 
       
 
@@ -843,7 +957,7 @@ Byte array of exactly 256 elements.
    
 
    .. py:attribute:: LENGTH
-      :annotation: = 256
+         :annotation: = 256
 
       
 
@@ -855,12 +969,12 @@ Bytes
 
 
 .. py:data:: Bytes
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 917-917
+   :lines: 920-920
 
 
 _setattr_function
@@ -931,12 +1045,12 @@ S
 
 
 .. py:data:: S
-
+   
    
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 959-959
+   :lines: 962-962
 
 
 modify

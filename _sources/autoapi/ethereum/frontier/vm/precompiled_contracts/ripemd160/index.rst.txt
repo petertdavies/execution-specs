@@ -1,6 +1,3 @@
-:mod:`ethereum.frontier.vm.precompiled_contracts.ripemd160`
-===========================================================
-
 .. py:module:: ethereum.frontier.vm.precompiled_contracts.ripemd160
 
 Ethereum Virtual Machine (EVM) RIPEMD160 PRECOMPILED CONTRACT

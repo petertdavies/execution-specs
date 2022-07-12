@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.instructions.environment`
-===========================================================
-
 .. py:module:: ethereum.spurious_dragon.vm.instructions.environment
 
 Ethereum Virtual Machine (EVM) Environmental Instructions

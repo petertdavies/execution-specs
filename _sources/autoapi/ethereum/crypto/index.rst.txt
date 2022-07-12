@@ -1,6 +1,3 @@
-:mod:`ethereum.crypto`
-======================
-
 .. py:module:: ethereum.crypto
 
 Cryptographic Functions

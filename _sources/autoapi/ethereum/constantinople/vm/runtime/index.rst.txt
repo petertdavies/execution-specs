@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.runtime`
-=========================================
-
 .. py:module:: ethereum.constantinople.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.precompiled_contracts.ecrecover`
-============================================================
-
 .. py:module:: ethereum.homestead.vm.precompiled_contracts.ecrecover
 
 Ethereum Virtual Machine (EVM) ECRECOVER PRECOMPILED CONTRACT

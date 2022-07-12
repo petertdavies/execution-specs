@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.runtime`
-====================================
-
 .. py:module:: ethereum.homestead.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

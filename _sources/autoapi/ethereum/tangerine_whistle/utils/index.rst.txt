@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.utils`
-=======================================
-
 .. py:module:: ethereum.tangerine_whistle.utils
 
 Tangerine Whistle Utility Functions

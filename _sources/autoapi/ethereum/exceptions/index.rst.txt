@@ -1,6 +1,3 @@
-:mod:`ethereum.exceptions`
-==========================
-
 .. py:module:: ethereum.exceptions
 
 Exceptions

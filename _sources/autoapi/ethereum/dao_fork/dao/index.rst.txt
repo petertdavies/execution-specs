@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.dao`
-============================
-
 .. py:module:: ethereum.dao_fork.dao
 
 Dao Fork
@@ -29,7 +26,7 @@ DAO_ACCOUNTS
 
 
 .. py:data:: DAO_ACCOUNTS
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/dao.py
@@ -43,7 +40,7 @@ DAO_RECOVERY
 
 
 .. py:data:: DAO_RECOVERY
-
+   
    
 
 .. undocinclude:: /../src/ethereum/dao_fork/dao.py

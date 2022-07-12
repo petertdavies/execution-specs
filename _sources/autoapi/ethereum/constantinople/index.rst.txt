@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople`
-==============================
-
 .. py:module:: ethereum.constantinople
 
 Ethereum Constantinople Hardfork
@@ -42,7 +39,7 @@ MAINNET_FORK_BLOCK
 
 
 .. py:data:: MAINNET_FORK_BLOCK
-
+   
    
 
 .. undocinclude:: /../src/ethereum/constantinople/__init__.py

@@ -1,6 +1,3 @@
-:mod:`ethereum.muir_glacier.vm.instructions.comparison`
-=======================================================
-
 .. py:module:: ethereum.muir_glacier.vm.instructions.comparison
 
 Ethereum Virtual Machine (EVM) Comparison Instructions

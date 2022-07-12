@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.precompiled_contracts.identity`
-=================================================================
-
 .. py:module:: ethereum.spurious_dragon.vm.precompiled_contracts.identity
 
 Ethereum Virtual Machine (EVM) IDENTITY PRECOMPILED CONTRACT

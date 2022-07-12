@@ -1,6 +1,3 @@
-:mod:`ethereum.crypto.alt_bn128`
-================================
-
 .. py:module:: ethereum.crypto.alt_bn128
 
 The alt_bn128 curve
@@ -48,8 +45,6 @@ Attributes
    ethereum.crypto.alt_bn128.ALT_BN128_CURVE_ORDER
    ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT
    ethereum.crypto.alt_bn128.ATE_PAIRING_COUNT_BITS
-   ethereum.crypto.alt_bn128.i
-   ethereum.crypto.alt_bn128.w
 
 
 Module Details
@@ -61,7 +56,7 @@ ALT_BN128_PRIME
 
 
 .. py:data:: ALT_BN128_PRIME
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
@@ -75,7 +70,7 @@ ALT_BN128_CURVE_ORDER
 
 
 .. py:data:: ALT_BN128_CURVE_ORDER
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
@@ -89,7 +84,7 @@ ATE_PAIRING_COUNT
 
 
 .. py:data:: ATE_PAIRING_COUNT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
@@ -103,7 +98,7 @@ ATE_PAIRING_COUNT_BITS
 
 
 .. py:data:: ATE_PAIRING_COUNT_BITS
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
@@ -126,7 +121,7 @@ The prime field over which the alt_bn128 curve is defined.
    
 
    .. py:attribute:: PRIME
-      
+         
 
       
 
@@ -147,21 +142,21 @@ The alt_bn128 curve.
    
 
    .. py:attribute:: FIELD
-      
+         
 
       
 
    
 
    .. py:attribute:: A
-      
+         
 
       
 
    
 
    .. py:attribute:: B
-      
+         
 
       
 
@@ -182,24 +177,45 @@ BNF2
    
 
    .. py:attribute:: PRIME
-      
+         
 
       
 
    
 
    .. py:attribute:: MODULUS
-      :annotation: = [1, 0]
+         :annotation: = [1, 0]
 
       
 
    
 
    .. py:attribute:: i
-      :annotation: :BNF2
+         :annotation: :BNF2
 
       
 
+   
+
+   .. py:attribute:: i_plus_9
+         :annotation: :BNF2
+
+      
+
+
+
+FROBENIUS_COEFFICIENTS
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: BNF2.FROBENIUS_COEFFICIENTS
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
+   :language: python
+   :lines: 44-44
 
 
 i
@@ -207,13 +223,27 @@ i
 
 
 
-.. py:data:: i
+.. py:data:: BNF2.i
+   :noindex:
 
    
-
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
    :language: python
-   :lines: 45-45
+   :lines: 47-47
+
+
+i_plus_9
+~~~~~~~~
+
+
+
+.. py:data:: BNF2.i_plus_9
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
+   :language: python
+   :lines: 50-50
 
 
 BNP2
@@ -233,21 +263,21 @@ field `BNP12`.
    
 
    .. py:attribute:: FIELD
-      
+         
 
       
 
    
 
    .. py:attribute:: A
-      
+         
 
       
 
    
 
    .. py:attribute:: B
-      
+         
 
       
 
@@ -268,21 +298,28 @@ BNF12
    
 
    .. py:attribute:: PRIME
-      
+         
 
       
 
    
 
    .. py:attribute:: MODULUS
-      
+         
 
       
 
    
 
    .. py:attribute:: w
-      :annotation: :BNF12
+         :annotation: :BNF12
+
+      
+
+   
+
+   .. py:attribute:: i_plus_9
+         :annotation: :BNF12
 
       
 
@@ -293,18 +330,46 @@ BNF12
 
 
 
+FROBENIUS_COEFFICIENTS
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: BNF12.FROBENIUS_COEFFICIENTS
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
+   :language: python
+   :lines: 97-97
+
+
 w
 ~
 
 
 
-.. py:data:: w
+.. py:data:: BNF12.w
+   :noindex:
 
    
-
 .. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
    :language: python
-   :lines: 93-93
+   :lines: 100-100
+
+
+i_plus_9
+~~~~~~~~
+
+
+
+.. py:data:: BNF12.i_plus_9
+   :noindex:
+
+   
+.. undocinclude:: /../src/ethereum/crypto/alt_bn128.py
+   :language: python
+   :lines: 103-103
 
 
 BNP12
@@ -324,21 +389,21 @@ computed.
    
 
    .. py:attribute:: FIELD
-      
+         
 
       
 
    
 
    .. py:attribute:: A
-      
+         
 
       
 
    
 
    .. py:attribute:: B
-      
+         
 
       
 

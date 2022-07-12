@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.instructions.environment`
-====================================================
-
 .. py:module:: ethereum.dao_fork.vm.instructions.environment
 
 Ethereum Virtual Machine (EVM) Environmental Instructions

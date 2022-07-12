@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.precompiled_contracts.ripemd160`
-===========================================================
-
 .. py:module:: ethereum.dao_fork.vm.precompiled_contracts.ripemd160
 
 Ethereum Virtual Machine (EVM) RIPEMD160 PRECOMPILED CONTRACT

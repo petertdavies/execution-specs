@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.stack`
-==================================
-
 .. py:module:: ethereum.homestead.vm.stack
 
 Ethereum Virtual Machine (EVM) Stack

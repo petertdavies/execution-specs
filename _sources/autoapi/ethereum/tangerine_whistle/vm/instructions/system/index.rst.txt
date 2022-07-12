@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.vm.instructions.system`
-========================================================
-
 .. py:module:: ethereum.tangerine_whistle.vm.instructions.system
 
 Ethereum Virtual Machine (EVM) System Instructions

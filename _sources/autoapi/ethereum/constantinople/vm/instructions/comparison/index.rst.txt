@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.instructions.comparison`
-=========================================================
-
 .. py:module:: ethereum.constantinople.vm.instructions.comparison
 
 Ethereum Virtual Machine (EVM) Comparison Instructions

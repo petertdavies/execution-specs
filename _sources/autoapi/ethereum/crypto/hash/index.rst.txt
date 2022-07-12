@@ -1,6 +1,3 @@
-:mod:`ethereum.crypto.hash`
-===========================
-
 .. py:module:: ethereum.crypto.hash
 
 Cryptographic Hash Functions
@@ -49,7 +46,7 @@ Hash32
 
 
 .. py:data:: Hash32
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/hash.py
@@ -63,7 +60,7 @@ Hash64
 
 
 .. py:data:: Hash64
-
+   
    
 
 .. undocinclude:: /../src/ethereum/crypto/hash.py

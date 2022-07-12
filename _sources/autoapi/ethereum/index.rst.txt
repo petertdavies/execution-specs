@@ -1,12 +1,21 @@
-:mod:`ethereum`
-===============
-
 .. py:module:: ethereum
 
 Ethereum Specification
 ^^^^^^^^^^^^^^^^^^^^^^
+Seeing as internet connections have been vastly expanding across the
+world, spreading information has become as cheap as ever. Bitcoin, for
+example, has demonstrated the possibility of creating a decentralized,
+trade system that is accessible around the world. Namecoin is another
+system that built off of Bitcoin's currency structure to create other
+simple technological applications.
 
-Core specifications for Ethereum clients.
+Ethereum's goal is to create a cryptographically secure system in which
+any and all types of transaction-based concepts can be built. It provides
+an exceptionally accessible and decentralized system to build software
+and execute transactions.
+
+This package contains a reference implementation, written as simply as
+possible, to aid in defining the behavior of Ethereum clients.
 
 
 Subpackages
@@ -15,16 +24,16 @@ Subpackages
    :titlesonly:
    :maxdepth: 3
 
-   byzantium/index.rst
-   constantinople/index.rst
-   crypto/index.rst
-   dao_fork/index.rst
    frontier/index.rst
    homestead/index.rst
+   dao_fork/index.rst
+   tangerine_whistle/index.rst
+   spurious_dragon/index.rst
+   byzantium/index.rst
+   constantinople/index.rst
    istanbul/index.rst
    muir_glacier/index.rst
-   spurious_dragon/index.rst
-   tangerine_whistle/index.rst
+   crypto/index.rst
    utils/index.rst
 
 
@@ -60,6 +69,7 @@ Attributes
 .. autoapisummary::
 
    ethereum.__version__
+   ethereum.ffi
    ethereum.EVM_RECURSION_LIMIT
 
 
@@ -72,12 +82,26 @@ __version__
 
 
 .. py:data:: __version__
-
+   
    
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 10-10
+   :lines: 24-24
+
+
+ffi
+~~~
+
+
+
+.. py:data:: ffi
+   
+   
+
+.. undocinclude:: /../src/ethereum/__init__.py
+   :language: python
+   :lines: 28-28
 
 
 EVM_RECURSION_LIMIT
@@ -86,12 +110,12 @@ EVM_RECURSION_LIMIT
 
 
 .. py:data:: EVM_RECURSION_LIMIT
-
+   
    
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 15-15
+   :lines: 51-51
 
 
 evm_trace

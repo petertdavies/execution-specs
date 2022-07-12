@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.vm.instructions.arithmetic`
-=========================================================
-
 .. py:module:: ethereum.constantinople.vm.instructions.arithmetic
 
 Ethereum Virtual Machine (EVM) Arithmetic Instructions

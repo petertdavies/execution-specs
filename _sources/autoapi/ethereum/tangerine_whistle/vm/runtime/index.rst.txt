@@ -1,6 +1,3 @@
-:mod:`ethereum.tangerine_whistle.vm.runtime`
-============================================
-
 .. py:module:: ethereum.tangerine_whistle.vm.runtime
 
 Ethereum Virtual Machine (EVM) Runtime Operations

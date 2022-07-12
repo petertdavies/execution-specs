@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.instructions.comparison`
-==========================================================
-
 .. py:module:: ethereum.spurious_dragon.vm.instructions.comparison
 
 Ethereum Virtual Machine (EVM) Comparison Instructions

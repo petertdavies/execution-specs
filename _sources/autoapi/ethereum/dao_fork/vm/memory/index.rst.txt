@@ -1,6 +1,3 @@
-:mod:`ethereum.dao_fork.vm.memory`
-==================================
-
 .. py:module:: ethereum.dao_fork.vm.memory
 
 Ethereum Virtual Machine (EVM) Memory

@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.vm.instructions.control_flow`
-============================================================
-
 .. py:module:: ethereum.spurious_dragon.vm.instructions.control_flow
 
 Ethereum Virtual Machine (EVM) Control Flow Instructions

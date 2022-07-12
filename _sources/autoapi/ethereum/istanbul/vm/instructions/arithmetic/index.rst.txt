@@ -1,6 +1,3 @@
-:mod:`ethereum.istanbul.vm.instructions.arithmetic`
-===================================================
-
 .. py:module:: ethereum.istanbul.vm.instructions.arithmetic
 
 Ethereum Virtual Machine (EVM) Arithmetic Instructions

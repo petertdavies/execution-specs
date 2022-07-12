@@ -1,6 +1,3 @@
-:mod:`ethereum.homestead.vm.instructions.block`
-===============================================
-
 .. py:module:: ethereum.homestead.vm.instructions.block
 
 Ethereum Virtual Machine (EVM) Block Instructions

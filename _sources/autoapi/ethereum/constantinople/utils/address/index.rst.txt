@@ -1,6 +1,3 @@
-:mod:`ethereum.constantinople.utils.address`
-============================================
-
 .. py:module:: ethereum.constantinople.utils.address
 
 Constantinople Utility Functions For Addresses

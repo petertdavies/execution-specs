@@ -1,6 +1,3 @@
-:mod:`ethereum.spurious_dragon.utils.message`
-=============================================
-
 .. py:module:: ethereum.spurious_dragon.utils.message
 
 Spurious Dragon Utility Functions For The Message Data-structure
