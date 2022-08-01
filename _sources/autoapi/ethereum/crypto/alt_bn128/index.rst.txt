@@ -323,7 +323,7 @@ BNF12
 
       
 
-   .. py:method:: __mul__(self: BNF12, right: BNF12) -> BNF12
+   .. py:method:: __mul__(right: BNF12) -> BNF12
 
       Multiplication special cased for BNF12.
 

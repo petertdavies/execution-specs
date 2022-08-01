@@ -64,48 +64,48 @@ A type protocol for defining fields.
 
       
 
-   .. py:method:: zero(cls: Type[F]) -> F
+   .. py:method:: zero() -> F
       :classmethod:
 
 
-   .. py:method:: from_int(cls: Type[F], n: int) -> F
+   .. py:method:: from_int(n: int) -> F
       :classmethod:
 
 
-   .. py:method:: __radd__(self: F, left: F) -> F
+   .. py:method:: __radd__(left: F) -> F
 
 
-   .. py:method:: __add__(self: F, right: F) -> F
+   .. py:method:: __add__(right: F) -> F
 
 
-   .. py:method:: __iadd__(self: F, right: F) -> F
+   .. py:method:: __iadd__(right: F) -> F
 
 
-   .. py:method:: __sub__(self: F, right: F) -> F
+   .. py:method:: __sub__(right: F) -> F
 
 
-   .. py:method:: __rsub__(self: F, left: F) -> F
+   .. py:method:: __rsub__(left: F) -> F
 
 
-   .. py:method:: __mul__(self: F, right: F) -> F
+   .. py:method:: __mul__(right: F) -> F
 
 
-   .. py:method:: __rmul__(self: F, left: F) -> F
+   .. py:method:: __rmul__(left: F) -> F
 
 
-   .. py:method:: __imul__(self: F, right: F) -> F
+   .. py:method:: __imul__(right: F) -> F
 
 
-   .. py:method:: __pow__(self: F, exponent: int) -> F
+   .. py:method:: __pow__(exponent: int) -> F
 
 
-   .. py:method:: __ipow__(self: F, right: int) -> F
+   .. py:method:: __ipow__(right: int) -> F
 
 
-   .. py:method:: __neg__(self: F) -> F
+   .. py:method:: __neg__() -> F
 
 
-   .. py:method:: __truediv__(self: F, right: F) -> F
+   .. py:method:: __truediv__(right: F) -> F
 
 
 
@@ -256,7 +256,7 @@ directly, but rather to be subclassed.
 
       
 
-   .. py:method:: from_be_bytes(cls: Type[T], buffer: ethereum.base_types.Bytes) -> T
+   .. py:method:: from_be_bytes(buffer: ethereum.base_types.Bytes) -> T
       :classmethod:
 
       Converts a sequence of bytes into a element of the field.
@@ -266,72 +266,72 @@ directly, but rather to be subclassed.
       :rtype: `T`
 
 
-   .. py:method:: zero(cls: Type[T]) -> T
+   .. py:method:: zero() -> T
       :classmethod:
 
 
-   .. py:method:: from_int(cls: Type[T], n: int) -> T
+   .. py:method:: from_int(n: int) -> T
       :classmethod:
 
 
-   .. py:method:: __radd__(self: T, left: T) -> T
+   .. py:method:: __radd__(left: T) -> T
 
       Return value+self.
 
 
-   .. py:method:: __add__(self: T, right: T) -> T
+   .. py:method:: __add__(right: T) -> T
 
       Return self+value.
 
 
-   .. py:method:: __iadd__(self: T, right: T) -> T
+   .. py:method:: __iadd__(right: T) -> T
 
 
-   .. py:method:: __sub__(self: T, right: T) -> T
+   .. py:method:: __sub__(right: T) -> T
 
       Return self-value.
 
 
-   .. py:method:: __rsub__(self: T, left: T) -> T
+   .. py:method:: __rsub__(left: T) -> T
 
       Return value-self.
 
 
-   .. py:method:: __mul__(self: T, right: T) -> T
+   .. py:method:: __mul__(right: T) -> T
 
       Return self*value.
 
 
-   .. py:method:: __rmul__(self: T, left: T) -> T
+   .. py:method:: __rmul__(left: T) -> T
 
       Return value*self.
 
 
-   .. py:method:: __imul__(self: T, right: T) -> T
+   .. py:method:: __imul__(right: T) -> T
 
 
-   .. py:method:: __pow__(self: T, exponent: int) -> T
+   .. py:method:: __pow__(exponent: int) -> T
 
       Return pow(self, value, mod).
 
 
-   .. py:method:: __ipow__(self: T, right: int) -> T
+   .. py:method:: __ipow__(right: int) -> T
 
 
-   .. py:method:: __neg__(self: T) -> T
+   .. py:method:: __neg__() -> T
 
       -self
 
 
-   .. py:method:: __truediv__(self: T, right: T) -> T
+   .. py:method:: __truediv__(right: T) -> T
 
       Return self/value.
 
 
-   .. py:method:: multiplicative_inverse(self: T) -> T
+   .. py:method:: multiplicative_inverse() -> T
 
 
-   .. py:method:: to_be_bytes32(self) -> ethereum.base_types.Bytes32
+   .. py:method:: to_be_bytes32() -> ethereum.base_types.Bytes32
 
       Converts this arbitrarily sized unsigned integer into its big endian
       representation with exactly 32 bytes.
@@ -403,76 +403,76 @@ the `__mul__()` function to take advantage of this fact.
 
       
 
-   .. py:method:: zero(cls: Type[U]) -> U
+   .. py:method:: zero() -> U
       :classmethod:
 
 
-   .. py:method:: from_int(cls: Type[U], n: int) -> U
+   .. py:method:: from_int(n: int) -> U
       :classmethod:
 
 
-   .. py:method:: __add__(self: U, right: U) -> U
+   .. py:method:: __add__(right: U) -> U
 
       Return self+value.
 
 
-   .. py:method:: __radd__(self: U, left: U) -> U
+   .. py:method:: __radd__(left: U) -> U
 
 
-   .. py:method:: __iadd__(self: U, right: U) -> U
+   .. py:method:: __iadd__(right: U) -> U
 
 
-   .. py:method:: __sub__(self: U, right: U) -> U
+   .. py:method:: __sub__(right: U) -> U
 
 
-   .. py:method:: __rsub__(self: U, left: U) -> U
+   .. py:method:: __rsub__(left: U) -> U
 
 
-   .. py:method:: __mul__(self: U, right: U) -> U
+   .. py:method:: __mul__(right: U) -> U
 
       Return self*value.
 
 
-   .. py:method:: __rmul__(self: U, left: U) -> U
+   .. py:method:: __rmul__(left: U) -> U
 
       Return value*self.
 
 
-   .. py:method:: __imul__(self: U, right: U) -> U
+   .. py:method:: __imul__(right: U) -> U
 
 
-   .. py:method:: __truediv__(self: U, right: U) -> U
+   .. py:method:: __truediv__(right: U) -> U
 
 
-   .. py:method:: __neg__(self: U) -> U
+   .. py:method:: __neg__() -> U
 
 
-   .. py:method:: scalar_mul(self: U, x: int) -> U
+   .. py:method:: scalar_mul(x: int) -> U
 
       Multiply a field element by a integer. This is faster than using
       `from_int()` and field multiplication.
 
 
-   .. py:method:: deg(self: U) -> int
+   .. py:method:: deg() -> int
 
       This is a support function for `multiplicative_inverse()`.
 
 
-   .. py:method:: multiplicative_inverse(self: U) -> U
+   .. py:method:: multiplicative_inverse() -> U
 
       Calculate the multiplicative inverse. Uses the Euclidian algorithm.
 
 
-   .. py:method:: __pow__(self: U, exponent: int) -> U
+   .. py:method:: __pow__(exponent: int) -> U
 
 
-   .. py:method:: calculate_frobenius_coefficients(cls: Type[U]) -> Tuple[U, Ellipsis]
+   .. py:method:: calculate_frobenius_coefficients() -> Tuple[U, Ellipsis]
       :classmethod:
 
       Calculate the coefficients needed by `frobenius()`.
 
 
-   .. py:method:: frobenius(self: U) -> U
+   .. py:method:: frobenius() -> U
 
       Returns `self ** p`. This function is known as the Frobenius
       endomorphism and has many special mathematical properties. In

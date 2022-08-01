@@ -125,47 +125,47 @@ https://datatracker.ietf.org/doc/html/rfc7693
 
       
 
-   .. py:method:: max_word(self) -> int
+   .. py:method:: max_word() -> int
       :property:
 
       Largest value for a given Blake2 flavor.
 
 
-   .. py:method:: w_R1(self) -> int
+   .. py:method:: w_R1() -> int
       :property:
 
       (w - R1) value for a given Blake2 flavor.
       Used in the function G
 
 
-   .. py:method:: w_R2(self) -> int
+   .. py:method:: w_R2() -> int
       :property:
 
       (w - R2) value for a given Blake2 flavor.
       Used in the function G
 
 
-   .. py:method:: w_R3(self) -> int
+   .. py:method:: w_R3() -> int
       :property:
 
       (w - R3) value for a given Blake2 flavor.
       Used in the function G
 
 
-   .. py:method:: w_R4(self) -> int
+   .. py:method:: w_R4() -> int
       :property:
 
       (w - R4) value for a given Blake2 flavor.
       Used in the function G
 
 
-   .. py:method:: sigma_len(self) -> int
+   .. py:method:: sigma_len() -> int
       :property:
 
       Length of the sigma parameter.
 
 
-   .. py:method:: get_blake2_parameters(self, data: bytes) -> Tuple
+   .. py:method:: get_blake2_parameters(data: bytes) -> Tuple
 
       Extract the parameters required in the Blake2 compression function
       from the provided bytes data.
@@ -173,7 +173,7 @@ https://datatracker.ietf.org/doc/html/rfc7693
       :param data: The bytes data that has been passed in the message.
 
 
-   .. py:method:: G(self, v: List, a: int, b: int, c: int, d: int, x: int, y: int) -> List
+   .. py:method:: G(v: List, a: int, b: int, c: int, d: int, x: int, y: int) -> List
 
       The mixing function used in Blake2
       https://datatracker.ietf.org/doc/html/rfc7693#section-3.1
@@ -187,7 +187,7 @@ https://datatracker.ietf.org/doc/html/rfc7693
       :param y: The two input words for the mixing.
 
 
-   .. py:method:: compress(self, num_rounds: ethereum.base_types.Uint, h: List[ethereum.base_types.Uint], m: List[ethereum.base_types.Uint], t_0: ethereum.base_types.Uint, t_1: ethereum.base_types.Uint, f: bool) -> bytes
+   .. py:method:: compress(num_rounds: ethereum.base_types.Uint, h: List[ethereum.base_types.Uint], m: List[ethereum.base_types.Uint], t_0: ethereum.base_types.Uint, t_1: ethereum.base_types.Uint, f: bool) -> bytes
 
       'F Compression' from section 3.2 of RFC 7693:
       https://tools.ietf.org/html/rfc7693#section-3.2

@@ -5,5 +5,5 @@ Istanbul → Muir Glacier
 .. toctree::
    :maxdepth: 1
 
-   spec <istanbul_muir_glacier/spec/index.pickle64>
-   __init__ <istanbul_muir_glacier/index.pickle64>
+   istanbul_muir_glacier/spec/index.pickle64
+   istanbul_muir_glacier/index.pickle64

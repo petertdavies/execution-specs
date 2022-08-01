@@ -160,17 +160,17 @@ directly, but rather to be subclassed.
 
       
 
-   .. py:method:: __eq__(self, other: object) -> bool
+   .. py:method:: __eq__(other: object) -> bool
 
       Test two points for equality.
 
 
-   .. py:method:: __str__(self) -> str
+   .. py:method:: __str__() -> str
 
       Stringify a point as its coordinates.
 
 
-   .. py:method:: point_at_infinity(cls: Type[T]) -> T
+   .. py:method:: point_at_infinity() -> T
       :classmethod:
 
       Return the point at infinity. This is the identity element of the group
@@ -180,17 +180,17 @@ directly, but rather to be subclassed.
       `(0, 0)` (which isn't on the curve) to represent it.
 
 
-   .. py:method:: double(self: T) -> T
+   .. py:method:: double() -> T
 
       Add a point to itself.
 
 
-   .. py:method:: __add__(self: T, other: T) -> T
+   .. py:method:: __add__(other: T) -> T
 
       Add two points together.
 
 
-   .. py:method:: mul_by(self: T, n: int) -> T
+   .. py:method:: mul_by(n: int) -> T
 
       Multiply `self` by `n` using the double and add algorithm.
 

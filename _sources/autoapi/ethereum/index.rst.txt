@@ -33,6 +33,7 @@ Subpackages
    constantinople/index.rst
    istanbul/index.rst
    muir_glacier/index.rst
+   berlin/index.rst
    crypto/index.rst
    utils/index.rst
 
@@ -52,28 +53,6 @@ Submodules
 Package Contents
 ----------------
 
-
-Functions
-~~~~~~~~~
-
-.. autoapisummary::
-   :nosignatures:
-
-   ethereum.evm_trace
-
-
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   ethereum.__version__
-   ethereum.EVM_RECURSION_LIMIT
-
-
-Package Details
-----------------
 
 __version__
 ~~~~~~~~~~~
@@ -102,20 +81,3 @@ EVM_RECURSION_LIMIT
    :language: python
    :lines: 27-27
 
-
-evm_trace
-~~~~~~~~~
-
-
-.. function:: evm_trace(evm: Any, op: Any) -> None
-   :noindexentry:
-
-   Placeholder for an evm trace function. The spec does not trace evm by
-   default. EVM tracing will be injected if the user requests it.
-
-
-
-
-.. undocinclude:: /../src/ethereum/__init__.py
-   :language: python
-   :pyobject: evm_trace

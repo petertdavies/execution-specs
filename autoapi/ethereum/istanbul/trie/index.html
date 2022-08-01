@@ -18,6 +18,7 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/js/toggle_diffs.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -76,6 +77,10 @@
                     <a href="../../muir_glacier/trie/index.html">Muir_glacier</a>
                 </li>
                 
+                <li>
+                    <a href="../../berlin/trie/index.html">Berlin</a>
+                </li>
+                
             </ol>
         </li>
     </ol>
@@ -111,6 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople/index.html">Ethereum Constantinople Hardfork</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">Ethereum Istanbul Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin/index.html">Ethereum Berlin Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -126,112 +132,129 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../diffs/index.html">Comparisons</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/frontier_homestead.html">Frontier → Homestead</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/trie/index.html">trie</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/genesis/index.html">genesis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/utils/message/index.html">Hardfork Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/genesis/index.html">Genesis Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/trie/index.html">State Trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/index.html">Ethereum <span class="change-replaced">Frontier</span><span class="change-replacement">Homestead</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/frontier_homestead/eth_types/index.html">Ethereum Types</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/homestead_dao_fork.html">Homestead → Dao Fork</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/bloom/index.html">bloom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/dao/index.html">Dao Fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/bloom/index.html">Ethereum Logs Bloom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/index.html">Hardfork Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/utils/message/index.html">Hardfork Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">dao</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">utils.hexadecimal</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/hexadecimal/index.html">Utility Functions For Hexadecimal Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/dao/index.html">Dao Fork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/index.html">Hardfork Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/message/index.html">Hardfork Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">vm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/state/index.html">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/message/index.html">Hardfork Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/index.html">Hardfork Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/tangerine_whistle_spurious_dragon/index.html">Ethereum <span class="change-replaced">Tangerine Whistle</span><span class="change-replacement">Spurious Dragon</span> Hardfork</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/index.html">utils</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">vm.instructions.log</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">utils.message</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">eth_types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/storage/index.html">Ethereum Virtual Machine (EVM) Storage Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/log/index.html">Ethereum Virtual Machine (EVM) Logging Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/message/index.html">Hardfork Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/utils/index.html">Hardfork Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/index.html">Ethereum <span class="change-replaced">Spurious Dragon</span><span class="change-replacement">Byzantium</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/spurious_dragon_byzantium/eth_types/index.html">Ethereum Types</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/byzantium_constantinople.html">Byzantium → Constantinople</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">vm.instructions.system</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">vm.instructions.bitwise</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/index.html">__init__</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">vm.precompiled_contracts.modexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/bitwise/index.html">Ethereum Virtual Machine (EVM) Bitwise Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/byzantium_constantinople/index.html">Ethereum <span class="change-replaced">Byzantium</span><span class="change-replacement">Constantinople</span> Hardfork</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/constantinople_istanbul.html">Constantinople → Istanbul</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">vm.instructions.storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/gas/index.html">vm.gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/utils/address/index.html">utils.address</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/index.html">vm.instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">vm.precompiled_contracts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/index.html">vm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/state/index.html">state</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">vm.precompiled_contracts.mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">vm.instructions.block</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">vm.instructions.environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/eth_types/index.html">eth_types</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">vm.exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">vm.precompiled_contracts.alt_bn128</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">vm.precompiled_contracts.blake2f</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">vm.interpreter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/block/index.html">Ethereum Virtual Machine (EVM) Block Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">Ethereum Virtual Machine (EVM) Blake2 PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/index.html">Ethereum <span class="change-replaced">Constantinople</span><span class="change-replacement">Istanbul</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/instructions/storage/index.html">Ethereum Virtual Machine (EVM) Storage Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/state/index.html">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/utils/address/index.html">Hardfork Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/constantinople_istanbul/eth_types/index.html">Ethereum Types</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/spec/index.html">spec</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/index.html">__init__</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/index.html">Ethereum <span class="change-replaced">Istanbul</span><span class="change-replacement">Muir Glacier</span> Hardfork</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin.html">Muir Glacier → Berlin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/index.html">Ethereum <span class="change-replaced">Muir Glacier</span><span class="change-replacement">Berlin</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/utils/index.html"><span class="change-replaced">Hardfork</span><span class="change-replacement">Berlin</span> Utility Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/instructions/storage/index.html">Ethereum Virtual Machine (EVM) Storage Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/utils/message/index.html"><span class="change-replaced">Hardfork</span><span class="change-replacement">Berlin</span> Utility Functions For The Message Data-structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/utils/address/index.html"><span class="change-replaced">Hardfork</span><span class="change-replacement">Berlin</span> Utility Functions For Addresses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/trie/index.html">State Trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/eth_types/index.html">Ethereum Types</a></li>
 </ul>
 </li>
 </ul>

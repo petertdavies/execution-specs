@@ -219,8 +219,8 @@ _decode_to
    :noindexentry:
 
    Decode the rlp structure in `encoded_data` to an object of type `cls`.
-   `cls` can be a `Bytes` subclass, a dataclass, `Uint`, `U256` or
-   `Tuple[cls]`.
+   `cls` can be a `Bytes` subclass, a dataclass, `Uint`, `U256`,
+   `Tuple[cls, ...]`, `Tuple[cls1, cls2]` or `Union[Bytes, cls]`.
 
    :param cls: The type to decode to.
    :type cls: `Type[T]`

@@ -204,7 +204,7 @@ Unsigned positive integer.
 
       
 
-   .. py:method:: from_be_bytes(cls: Type, buffer: Bytes) -> Uint
+   .. py:method:: from_be_bytes(buffer: Bytes) -> Uint
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
@@ -215,114 +215,114 @@ Unsigned positive integer.
       :rtype: `Uint`
 
 
-   .. py:method:: from_le_bytes(cls: Type, buffer: Bytes) -> Uint
+   .. py:method:: from_le_bytes(buffer: Bytes) -> Uint
       :classmethod:
 
       Convert a series of little endian bytes to an unsigned integer.
 
 
-   .. py:method:: __radd__(self, left: int) -> Uint
+   .. py:method:: __radd__(left: int) -> Uint
 
       Return value+self.
 
 
-   .. py:method:: __add__(self, right: int) -> Uint
+   .. py:method:: __add__(right: int) -> Uint
 
       Return self+value.
 
 
-   .. py:method:: __iadd__(self, right: int) -> Uint
+   .. py:method:: __iadd__(right: int) -> Uint
 
 
-   .. py:method:: __sub__(self, right: int) -> Uint
+   .. py:method:: __sub__(right: int) -> Uint
 
       Return self-value.
 
 
-   .. py:method:: __rsub__(self, left: int) -> Uint
+   .. py:method:: __rsub__(left: int) -> Uint
 
       Return value-self.
 
 
-   .. py:method:: __isub__(self, right: int) -> Uint
+   .. py:method:: __isub__(right: int) -> Uint
 
 
-   .. py:method:: __mul__(self, right: int) -> Uint
+   .. py:method:: __mul__(right: int) -> Uint
 
       Return self*value.
 
 
-   .. py:method:: __rmul__(self, left: int) -> Uint
+   .. py:method:: __rmul__(left: int) -> Uint
 
       Return value*self.
 
 
-   .. py:method:: __imul__(self, right: int) -> Uint
+   .. py:method:: __imul__(right: int) -> Uint
 
 
-   .. py:method:: __floordiv__(self, right: int) -> Uint
+   .. py:method:: __floordiv__(right: int) -> Uint
 
       Return self//value.
 
 
-   .. py:method:: __rfloordiv__(self, left: int) -> Uint
+   .. py:method:: __rfloordiv__(left: int) -> Uint
 
       Return value//self.
 
 
-   .. py:method:: __ifloordiv__(self, right: int) -> Uint
+   .. py:method:: __ifloordiv__(right: int) -> Uint
 
 
-   .. py:method:: __mod__(self, right: int) -> Uint
+   .. py:method:: __mod__(right: int) -> Uint
 
       Return self%value.
 
 
-   .. py:method:: __rmod__(self, left: int) -> Uint
+   .. py:method:: __rmod__(left: int) -> Uint
 
       Return value%self.
 
 
-   .. py:method:: __imod__(self, right: int) -> Uint
+   .. py:method:: __imod__(right: int) -> Uint
 
 
-   .. py:method:: __divmod__(self, right: int) -> Tuple[Uint, Uint]
+   .. py:method:: __divmod__(right: int) -> Tuple[Uint, Uint]
 
       Return divmod(self, value).
 
 
-   .. py:method:: __rdivmod__(self, left: int) -> Tuple[Uint, Uint]
+   .. py:method:: __rdivmod__(left: int) -> Tuple[Uint, Uint]
 
       Return divmod(value, self).
 
 
-   .. py:method:: __pow__(self, right: int, modulo: Optional[int] = None) -> Uint
+   .. py:method:: __pow__(right: int, modulo: Optional[int] = None) -> Uint
 
       Return pow(self, value, mod).
 
 
-   .. py:method:: __rpow__(self, left: int, modulo: Optional[int] = None) -> Uint
+   .. py:method:: __rpow__(left: int, modulo: Optional[int] = None) -> Uint
 
       Return pow(value, self, mod).
 
 
-   .. py:method:: __ipow__(self, right: int, modulo: Optional[int] = None) -> Uint
+   .. py:method:: __ipow__(right: int, modulo: Optional[int] = None) -> Uint
 
 
-   .. py:method:: __xor__(self, right: int) -> Uint
+   .. py:method:: __xor__(right: int) -> Uint
 
       Return self^value.
 
 
-   .. py:method:: __rxor__(self, left: int) -> Uint
+   .. py:method:: __rxor__(left: int) -> Uint
 
       Return value^self.
 
 
-   .. py:method:: __ixor__(self, right: int) -> Uint
+   .. py:method:: __ixor__(right: int) -> Uint
 
 
-   .. py:method:: to_be_bytes32(self) -> Bytes32
+   .. py:method:: to_be_bytes32() -> Bytes32
 
       Converts this arbitrarily sized unsigned integer into its big endian
       representation with exactly 32 bytes.
@@ -330,7 +330,7 @@ Unsigned positive integer.
       :rtype: `Bytes32`
 
 
-   .. py:method:: to_be_bytes(self) -> Bytes
+   .. py:method:: to_be_bytes() -> Bytes
 
       Converts this arbitrarily sized unsigned integer into its big endian
       representation.
@@ -338,7 +338,7 @@ Unsigned positive integer.
       :rtype: `Bytes`
 
 
-   .. py:method:: to_le_bytes(self, number_bytes: int = None) -> Bytes
+   .. py:method:: to_le_bytes(number_bytes: int = None) -> Bytes
 
       Converts this arbitrarily sized unsigned integer into its little endian
       representation.
@@ -393,17 +393,17 @@ directly, but rather to be subclassed.
 
       
 
-   .. py:method:: __radd__(self: T, left: int) -> T
+   .. py:method:: __radd__(left: int) -> T
 
       Return value+self.
 
 
-   .. py:method:: __add__(self: T, right: int) -> T
+   .. py:method:: __add__(right: int) -> T
 
       Return self+value.
 
 
-   .. py:method:: wrapping_add(self: T, right: int) -> T
+   .. py:method:: wrapping_add(right: int) -> T
 
       Return a new instance containing `self + right (mod N)`.
 
@@ -413,15 +413,15 @@ directly, but rather to be subclassed.
       :rtype: T
 
 
-   .. py:method:: __iadd__(self: T, right: int) -> T
+   .. py:method:: __iadd__(right: int) -> T
 
 
-   .. py:method:: __sub__(self: T, right: int) -> T
+   .. py:method:: __sub__(right: int) -> T
 
       Return self-value.
 
 
-   .. py:method:: wrapping_sub(self: T, right: int) -> T
+   .. py:method:: wrapping_sub(right: int) -> T
 
       Return a new instance containing `self - right (mod N)`.
 
@@ -431,20 +431,20 @@ directly, but rather to be subclassed.
       :rtype: T
 
 
-   .. py:method:: __rsub__(self: T, left: int) -> T
+   .. py:method:: __rsub__(left: int) -> T
 
       Return value-self.
 
 
-   .. py:method:: __isub__(self: T, right: int) -> T
+   .. py:method:: __isub__(right: int) -> T
 
 
-   .. py:method:: __mul__(self: T, right: int) -> T
+   .. py:method:: __mul__(right: int) -> T
 
       Return self*value.
 
 
-   .. py:method:: wrapping_mul(self: T, right: int) -> T
+   .. py:method:: wrapping_mul(right: int) -> T
 
       Return a new instance containing `self * right (mod N)`.
 
@@ -454,56 +454,56 @@ directly, but rather to be subclassed.
       :rtype: T
 
 
-   .. py:method:: __rmul__(self: T, left: int) -> T
+   .. py:method:: __rmul__(left: int) -> T
 
       Return value*self.
 
 
-   .. py:method:: __imul__(self: T, right: int) -> T
+   .. py:method:: __imul__(right: int) -> T
 
 
-   .. py:method:: __floordiv__(self: T, right: int) -> T
+   .. py:method:: __floordiv__(right: int) -> T
 
       Return self//value.
 
 
-   .. py:method:: __rfloordiv__(self: T, left: int) -> T
+   .. py:method:: __rfloordiv__(left: int) -> T
 
       Return value//self.
 
 
-   .. py:method:: __ifloordiv__(self: T, right: int) -> T
+   .. py:method:: __ifloordiv__(right: int) -> T
 
 
-   .. py:method:: __mod__(self: T, right: int) -> T
+   .. py:method:: __mod__(right: int) -> T
 
       Return self%value.
 
 
-   .. py:method:: __rmod__(self: T, left: int) -> T
+   .. py:method:: __rmod__(left: int) -> T
 
       Return value%self.
 
 
-   .. py:method:: __imod__(self: T, right: int) -> T
+   .. py:method:: __imod__(right: int) -> T
 
 
-   .. py:method:: __divmod__(self: T, right: int) -> Tuple[T, T]
+   .. py:method:: __divmod__(right: int) -> Tuple[T, T]
 
       Return divmod(self, value).
 
 
-   .. py:method:: __rdivmod__(self: T, left: int) -> Tuple[T, T]
+   .. py:method:: __rdivmod__(left: int) -> Tuple[T, T]
 
       Return divmod(value, self).
 
 
-   .. py:method:: __pow__(self: T, right: int, modulo: Optional[int] = None) -> T
+   .. py:method:: __pow__(right: int, modulo: Optional[int] = None) -> T
 
       Return pow(self, value, mod).
 
 
-   .. py:method:: wrapping_pow(self: T, right: int, modulo: Optional[int] = None) -> T
+   .. py:method:: wrapping_pow(right: int, modulo: Optional[int] = None) -> T
 
       Return a new instance containing `self ** right (mod modulo)`.
 
@@ -514,43 +514,43 @@ directly, but rather to be subclassed.
       :rtype: T
 
 
-   .. py:method:: __rpow__(self: T, left: int, modulo: Optional[int] = None) -> T
+   .. py:method:: __rpow__(left: int, modulo: Optional[int] = None) -> T
 
       Return pow(value, self, mod).
 
 
-   .. py:method:: __ipow__(self: T, right: int, modulo: Optional[int] = None) -> T
+   .. py:method:: __ipow__(right: int, modulo: Optional[int] = None) -> T
 
 
-   .. py:method:: __and__(self: T, right: int) -> T
+   .. py:method:: __and__(right: int) -> T
 
       Return self&value.
 
 
-   .. py:method:: __or__(self: T, right: int) -> T
+   .. py:method:: __or__(right: int) -> T
 
       Return self|value.
 
 
-   .. py:method:: __xor__(self: T, right: int) -> T
+   .. py:method:: __xor__(right: int) -> T
 
       Return self^value.
 
 
-   .. py:method:: __rxor__(self: T, left: int) -> T
+   .. py:method:: __rxor__(left: int) -> T
 
       Return value^self.
 
 
-   .. py:method:: __ixor__(self: T, right: int) -> T
+   .. py:method:: __ixor__(right: int) -> T
 
 
-   .. py:method:: __invert__(self: T) -> T
+   .. py:method:: __invert__() -> T
 
       ~self
 
 
-   .. py:method:: __rshift__(self: T, shift_by: int) -> T
+   .. py:method:: __rshift__(shift_by: int) -> T
 
       Return self>>value.
 
@@ -577,7 +577,7 @@ inclusive.
 
       
 
-   .. py:method:: from_be_bytes(cls: Type, buffer: Bytes) -> U256
+   .. py:method:: from_be_bytes(buffer: Bytes) -> U256
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
@@ -588,7 +588,7 @@ inclusive.
       :rtype: `U256`
 
 
-   .. py:method:: from_signed(cls: Type, value: int) -> U256
+   .. py:method:: from_signed(value: int) -> U256
       :classmethod:
 
       Converts a signed number into a 256-bit unsigned integer.
@@ -598,7 +598,7 @@ inclusive.
       :rtype: `U256`
 
 
-   .. py:method:: to_be_bytes32(self) -> Bytes32
+   .. py:method:: to_be_bytes32() -> Bytes32
 
       Converts this 256-bit unsigned integer into its big endian
       representation with exactly 32 bytes.
@@ -606,7 +606,7 @@ inclusive.
       :rtype: `Bytes32`
 
 
-   .. py:method:: to_be_bytes(self) -> Bytes
+   .. py:method:: to_be_bytes() -> Bytes
 
       Converts this 256-bit unsigned integer into its big endian
       representation, omitting leading zero bytes.
@@ -614,7 +614,7 @@ inclusive.
       :rtype: `Bytes`
 
 
-   .. py:method:: to_signed(self) -> int
+   .. py:method:: to_signed() -> int
 
       Converts this 256-bit unsigned integer into a signed integer.
       :returns: **signed_int** -- Signed integer obtained from 256-bit unsigned integer.
@@ -664,14 +664,14 @@ inclusive.
 
       
 
-   .. py:method:: from_le_bytes(cls: Type, buffer: Bytes) -> Uint32
+   .. py:method:: from_le_bytes(buffer: Bytes) -> Uint32
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
       from its little endian representation.
 
 
-   .. py:method:: to_le_bytes4(self) -> Bytes4
+   .. py:method:: to_le_bytes4() -> Bytes4
 
       Converts this fixed sized unsigned integer into its little endian
       representation, with exactly 4 bytes.
@@ -680,7 +680,7 @@ inclusive.
       :rtype: `Bytes4`
 
 
-   .. py:method:: to_le_bytes(self) -> Bytes
+   .. py:method:: to_le_bytes() -> Bytes
 
       Converts this fixed sized unsigned integer into its little endian
       representation, in the fewest bytes possible.
@@ -732,14 +732,14 @@ inclusive.
 
       
 
-   .. py:method:: from_le_bytes(cls: Type, buffer: Bytes) -> Uint64
+   .. py:method:: from_le_bytes(buffer: Bytes) -> Uint64
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
       from its little endian representation.
 
 
-   .. py:method:: to_le_bytes8(self) -> Bytes8
+   .. py:method:: to_le_bytes8() -> Bytes8
 
       Converts this fixed sized unsigned integer into its little endian
       representation, with exactly 8 bytes.
@@ -748,13 +748,34 @@ inclusive.
       :rtype: `Bytes8`
 
 
-   .. py:method:: to_le_bytes(self) -> Bytes
+   .. py:method:: to_le_bytes() -> Bytes
 
       Converts this fixed sized unsigned integer into its little endian
       representation, in the fewest bytes possible.
 
       :returns: **little_endian** -- Little endian (most significant bits last) representation.
       :rtype: `Bytes`
+
+
+   .. py:method:: to_be_bytes() -> Bytes
+
+      Converts this unsigned 64 bit integer into its big endian
+      representation.
+
+      :returns: **big_endian** -- Big endian (most significant bits first) representation.
+      :rtype: `Bytes`
+
+
+   .. py:method:: from_be_bytes(buffer: Bytes) -> Uint64
+      :classmethod:
+
+      Converts a sequence of bytes into an unsigned 64 bit integer from its
+      big endian representation.
+
+      :param buffer: Bytes to decode.
+
+      :returns: **self** -- Unsigned integer decoded from `buffer`.
+      :rtype: `Uint64`
 
 
 
@@ -770,7 +791,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 835-835
+   :lines: 869-869
 
 
 B
@@ -784,7 +805,7 @@ B
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 839-839
+   :lines: 873-873
 
 
 FixedBytes
@@ -974,7 +995,7 @@ Bytes
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 920-920
+   :lines: 954-954
 
 
 _setattr_function
@@ -1050,7 +1071,7 @@ S
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 962-962
+   :lines: 996-996
 
 
 modify
