@@ -25,6 +25,7 @@ Functions
 
    ethereum.dao_fork.vm.instructions.system.create
    ethereum.dao_fork.vm.instructions.system.return_
+   ethereum.dao_fork.vm.instructions.system.generic_call
    ethereum.dao_fork.vm.instructions.system.call
    ethereum.dao_fork.vm.instructions.system.callcode
    ethereum.dao_fork.vm.instructions.system.selfdestruct
@@ -70,6 +71,22 @@ return_
 .. undocinclude:: /../src/ethereum/dao_fork/vm/instructions/system.py
    :language: python
    :pyobject: return_
+
+generic_call
+~~~~~~~~~~~~
+
+
+.. function:: generic_call(evm: ethereum.dao_fork.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.dao_fork.eth_types.Address, to: ethereum.dao_fork.eth_types.Address, code_address: ethereum.dao_fork.eth_types.Address, should_transfer_value: bool, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
+   :noindexentry:
+
+   Perform the core logic of the `CALL*` family of opcodes.
+
+
+
+
+.. undocinclude:: /../src/ethereum/dao_fork/vm/instructions/system.py
+   :language: python
+   :pyobject: generic_call
 
 call
 ~~~~
@@ -132,8 +149,7 @@ delegatecall
 .. function:: delegatecall(evm: ethereum.dao_fork.vm.Evm) -> None
    :noindexentry:
 
-   Message-call into this account with an alternative account’s code,
-   but persisting the current values for sender.
+   Message-call into an account.
 
    :param evm: The current EVM frame.
 

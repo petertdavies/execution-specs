@@ -1,5 +1,7 @@
 .. py:module:: ethereum.rlp
 
+.. _rlp:
+
 Recursive Length Prefix (RLP) Encoding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -61,7 +63,7 @@ RLP
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 26-26
+   :lines: 28-28
 
 
 encode
@@ -184,7 +186,7 @@ T
 
 .. undocinclude:: /../src/ethereum/rlp.py
    :language: python
-   :lines: 184-184
+   :lines: 186-186
 
 
 decode_to

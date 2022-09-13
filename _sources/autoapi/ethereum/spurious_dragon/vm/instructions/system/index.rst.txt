@@ -25,6 +25,7 @@ Functions
 
    ethereum.spurious_dragon.vm.instructions.system.create
    ethereum.spurious_dragon.vm.instructions.system.return_
+   ethereum.spurious_dragon.vm.instructions.system.generic_call
    ethereum.spurious_dragon.vm.instructions.system.call
    ethereum.spurious_dragon.vm.instructions.system.callcode
    ethereum.spurious_dragon.vm.instructions.system.selfdestruct
@@ -70,6 +71,22 @@ return_
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/instructions/system.py
    :language: python
    :pyobject: return_
+
+generic_call
+~~~~~~~~~~~~
+
+
+.. function:: generic_call(evm: ethereum.spurious_dragon.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.spurious_dragon.eth_types.Address, to: ethereum.spurious_dragon.eth_types.Address, code_address: ethereum.spurious_dragon.eth_types.Address, should_transfer_value: bool, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
+   :noindexentry:
+
+   Perform the core logic of the `CALL*` family of opcodes.
+
+
+
+
+.. undocinclude:: /../src/ethereum/spurious_dragon/vm/instructions/system.py
+   :language: python
+   :pyobject: generic_call
 
 call
 ~~~~
@@ -132,8 +149,7 @@ delegatecall
 .. function:: delegatecall(evm: ethereum.spurious_dragon.vm.Evm) -> None
    :noindexentry:
 
-   Message-call into this account with an alternative account’s code,
-   but persisting the current values for sender.
+   Message-call into an account.
 
    :param evm: The current EVM frame.
 

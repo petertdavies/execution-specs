@@ -52,6 +52,7 @@ Functions
    ethereum.muir_glacier.state.account_exists
    ethereum.muir_glacier.state.account_has_code_or_nonce
    ethereum.muir_glacier.state.is_account_empty
+   ethereum.muir_glacier.state.is_account_alive
    ethereum.muir_glacier.state.modify_state
    ethereum.muir_glacier.state.move_ether
    ethereum.muir_glacier.state.set_account_balance
@@ -462,6 +463,28 @@ is_account_empty
 .. undocinclude:: /../src/ethereum/muir_glacier/state.py
    :language: python
    :pyobject: is_account_empty
+
+is_account_alive
+~~~~~~~~~~~~~~~~
+
+
+.. function:: is_account_alive(state: State, address: ethereum.muir_glacier.eth_types.Address) -> bool
+   :noindexentry:
+
+   Check whether is an account is both in the state and non empty.
+
+   :param state: The state
+   :param address: Address of the account that needs to be checked.
+
+   :returns: **is_alive** -- True if the account is alive.
+   :rtype: `bool`
+
+
+
+
+.. undocinclude:: /../src/ethereum/muir_glacier/state.py
+   :language: python
+   :pyobject: is_account_alive
 
 modify_state
 ~~~~~~~~~~~~

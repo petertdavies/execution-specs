@@ -382,7 +382,7 @@ directly, but rather to be subclassed.
    
 
    .. py:attribute:: MAX_VALUE
-         :annotation: :FixedUInt
+         :annotation: :ClassVar[FixedUInt]
 
       
 
@@ -572,6 +572,13 @@ inclusive.
 
    
 
+   .. py:attribute:: MAX_VALUE
+         :annotation: :ClassVar[U256]
+
+      
+
+   
+
    .. py:attribute:: __slots__
          :annotation: = []
 
@@ -634,7 +641,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 731-731
+   :lines: 733-733
 
 
 Uint32
@@ -653,7 +660,7 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-         :annotation: :Uint32
+         :annotation: :ClassVar[Uint32]
 
       
 
@@ -702,7 +709,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 783-783
+   :lines: 785-785
 
 
 Uint64
@@ -721,7 +728,7 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-         :annotation: :Uint64
+         :annotation: :ClassVar[Uint64]
 
       
 
@@ -791,7 +798,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 869-869
+   :lines: 871-871
 
 
 B
@@ -805,7 +812,7 @@ B
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 873-873
+   :lines: 875-875
 
 
 FixedBytes
@@ -995,7 +1002,7 @@ Bytes
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 954-954
+   :lines: 956-956
 
 
 _setattr_function
@@ -1071,7 +1078,7 @@ S
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 996-996
+   :lines: 998-998
 
 
 modify

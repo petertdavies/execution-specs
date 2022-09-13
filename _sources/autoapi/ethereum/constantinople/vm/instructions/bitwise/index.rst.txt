@@ -157,7 +157,6 @@ bitwise_shl
 
    Logical shift left (SHL) operation of the top 2 elements of the stack.
    Pushes the result back on the stack.
-
    :param evm: The current EVM frame.
 
 
@@ -176,7 +175,6 @@ bitwise_shr
 
    Logical shift right (SHR) operation of the top 2 elements of the stack.
    Pushes the result back on the stack.
-
    :param evm: The current EVM frame.
 
 
@@ -195,7 +193,6 @@ bitwise_sar
 
    Arithmetic shift right (SAR) operation of the top 2 elements of the stack.
    Pushes the result back on the stack.
-
    :param evm: The current EVM frame.
 
 

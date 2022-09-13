@@ -25,6 +25,7 @@ Functions
 
    ethereum.tangerine_whistle.vm.instructions.system.create
    ethereum.tangerine_whistle.vm.instructions.system.return_
+   ethereum.tangerine_whistle.vm.instructions.system.generic_call
    ethereum.tangerine_whistle.vm.instructions.system.call
    ethereum.tangerine_whistle.vm.instructions.system.callcode
    ethereum.tangerine_whistle.vm.instructions.system.selfdestruct
@@ -70,6 +71,22 @@ return_
 .. undocinclude:: /../src/ethereum/tangerine_whistle/vm/instructions/system.py
    :language: python
    :pyobject: return_
+
+generic_call
+~~~~~~~~~~~~
+
+
+.. function:: generic_call(evm: ethereum.tangerine_whistle.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.tangerine_whistle.eth_types.Address, to: ethereum.tangerine_whistle.eth_types.Address, code_address: ethereum.tangerine_whistle.eth_types.Address, should_transfer_value: bool, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
+   :noindexentry:
+
+   Perform the core logic of the `CALL*` family of opcodes.
+
+
+
+
+.. undocinclude:: /../src/ethereum/tangerine_whistle/vm/instructions/system.py
+   :language: python
+   :pyobject: generic_call
 
 call
 ~~~~
@@ -132,8 +149,7 @@ delegatecall
 .. function:: delegatecall(evm: ethereum.tangerine_whistle.vm.Evm) -> None
    :noindexentry:
 
-   Message-call into this account with an alternative account’s code,
-   but persisting the current values for sender.
+   Message-call into an account.
 
    :param evm: The current EVM frame.
 

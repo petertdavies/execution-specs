@@ -33,7 +33,6 @@ Functions
 
    ethereum.berlin.vm.interpreter.process_message_call
    ethereum.berlin.vm.interpreter.process_create_message
-   ethereum.berlin.vm.interpreter.process_create2_message
    ethereum.berlin.vm.interpreter.process_message
    ethereum.berlin.vm.interpreter.execute_code
    ethereum.berlin.vm.interpreter.collect_touched_accounts
@@ -203,28 +202,6 @@ process_create_message
 .. undocinclude:: /../src/ethereum/berlin/vm/interpreter.py
    :language: python
    :pyobject: process_create_message
-
-process_create2_message
-~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: process_create2_message(message: ethereum.berlin.vm.Message, env: ethereum.berlin.vm.Environment) -> ethereum.berlin.vm.Evm
-   :noindexentry:
-
-   Executes a call to create a smart contract via CREATE2 opcode.
-
-   :param message: Transaction specific items.
-   :param env: External items required for EVM execution.
-
-   :returns: **evm** -- Items containing execution specific objects.
-   :rtype: :py:class:`~ethereum.berlin.vm.Evm`
-
-
-
-
-.. undocinclude:: /../src/ethereum/berlin/vm/interpreter.py
-   :language: python
-   :pyobject: process_create2_message
 
 process_message
 ~~~~~~~~~~~~~~~

@@ -23,7 +23,7 @@ Functions
 .. autoapisummary::
    :nosignatures:
 
-   ethereum.constantinople.vm.gas.subtract_gas
+   ethereum.constantinople.vm.gas.charge_gas
    ethereum.constantinople.vm.gas.calculate_memory_gas_cost
    ethereum.constantinople.vm.gas.calculate_gas_extend_memory
    ethereum.constantinople.vm.gas.calculate_call_gas_cost
@@ -657,16 +657,16 @@ GAS_CODE_HASH
    :lines: 60-60
 
 
-subtract_gas
-~~~~~~~~~~~~
+charge_gas
+~~~~~~~~~~
 
 
-.. function:: subtract_gas(gas_left: ethereum.base_types.U256, amount: ethereum.base_types.U256) -> ethereum.base_types.U256
+.. function:: charge_gas(evm: ethereum.constantinople.vm.Evm, amount: ethereum.base_types.Uint) -> None
    :noindexentry:
 
-   Subtracts `amount` from `gas_left`.
+   Subtracts `amount` from `evm.gas_left`.
 
-   :param gas_left: The amount of gas left in the current frame.
+   :param evm: The current EVM.
    :param amount: The amount of gas the current operation requires.
 
    :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `gas_left` is less than `amount`.
@@ -676,13 +676,13 @@ subtract_gas
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :pyobject: subtract_gas
+   :pyobject: charge_gas
 
 calculate_memory_gas_cost
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_memory_gas_cost(size_in_bytes: ethereum.base_types.Uint) -> ethereum.base_types.U256
+.. function:: calculate_memory_gas_cost(size_in_bytes: ethereum.base_types.Uint) -> ethereum.base_types.Uint
    :noindexentry:
 
    Calculates the gas cost for allocating memory
@@ -692,7 +692,7 @@ calculate_memory_gas_cost
    :param size_in_bytes: The size of the data in bytes.
 
    :returns: **total_gas_cost** -- The gas cost for storing data in memory.
-   :rtype: `ethereum.base_types.U256`
+   :rtype: `ethereum.base_types.Uint`
 
 
 
@@ -705,7 +705,7 @@ calculate_gas_extend_memory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_gas_extend_memory(memory: bytearray, start_position: ethereum.base_types.Uint, size: ethereum.base_types.U256) -> ethereum.base_types.U256
+.. function:: calculate_gas_extend_memory(memory: bytearray, start_position: ethereum.base_types.U256, size: ethereum.base_types.U256) -> ethereum.base_types.Uint
    :noindexentry:
 
    Calculates the gas amount to extend memory
@@ -717,7 +717,7 @@ calculate_gas_extend_memory
    :returns: **to_be_paid** -- returns `0` if size=0 or if the
              size after extending memory is less than the size before extending
              else it returns the amount that needs to be paid for extendinng memory.
-   :rtype: `ethereum.base_types.U256`
+   :rtype: `ethereum.base_types.Uint`
 
 
 
@@ -730,7 +730,7 @@ calculate_call_gas_cost
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_call_gas_cost(gas: ethereum.base_types.U256, gas_left: ethereum.base_types.U256, extra_gas: ethereum.base_types.U256) -> ethereum.base_types.U256
+.. function:: calculate_call_gas_cost(gas: ethereum.base_types.Uint, gas_left: ethereum.base_types.Uint, extra_gas: ethereum.base_types.Uint) -> ethereum.base_types.Uint
    :noindexentry:
 
    Calculates the gas amount for executing Opcodes `CALL` and `CALLCODE`.
@@ -741,7 +741,7 @@ calculate_call_gas_cost
                      account inside a message call.
 
    :returns: **call_gas_cost** -- The total gas amount for executing Opcodes `CALL` and `CALLCODE`.
-   :rtype: `ethereum.base_types.U256`
+   :rtype: `ethereum.base_types.Uint`
 
 
 
@@ -754,7 +754,7 @@ calculate_message_call_gas_stipend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_message_call_gas_stipend(value: ethereum.base_types.U256, gas: ethereum.base_types.U256, gas_left: ethereum.base_types.U256, extra_gas: ethereum.base_types.U256, call_stipend: ethereum.base_types.U256 = GAS_CALL_STIPEND) -> ethereum.base_types.U256
+.. function:: calculate_message_call_gas_stipend(value: ethereum.base_types.U256, gas: ethereum.base_types.Uint, gas_left: ethereum.base_types.Uint, extra_gas: ethereum.base_types.Uint, call_stipend: ethereum.base_types.Uint = GAS_CALL_STIPEND) -> ethereum.base_types.Uint
    :noindexentry:
 
    Calculates the gas stipend for making the message call
@@ -769,7 +769,7 @@ calculate_message_call_gas_stipend
                         transferring value(ETH).
 
    :returns: **message_call_gas_stipend** -- The gas stipend for making the message-call.
-   :rtype: `ethereum.base_types.U256`
+   :rtype: `ethereum.base_types.Uint`
 
 
 
@@ -782,7 +782,7 @@ max_message_call_gas
 ~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: max_message_call_gas(gas: ethereum.base_types.U256) -> ethereum.base_types.U256
+.. function:: max_message_call_gas(gas: ethereum.base_types.Uint) -> ethereum.base_types.Uint
    :noindexentry:
 
    Calculates the maximum gas that is allowed for making a message call
@@ -790,7 +790,7 @@ max_message_call_gas
    :param gas: The amount of gas provided to the message-call.
 
    :returns: **max_allowed_message_call_gas** -- The maximum gas allowed for making the message-call.
-   :rtype: `ethereum.base_types.U256`
+   :rtype: `ethereum.base_types.Uint`
 
 
 

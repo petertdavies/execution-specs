@@ -207,7 +207,7 @@ push1
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 139-139
+   :lines: 163-163
 
 
 push2
@@ -221,7 +221,7 @@ push2
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 140-140
+   :lines: 164-164
 
 
 push3
@@ -235,7 +235,7 @@ push3
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 141-141
+   :lines: 165-165
 
 
 push4
@@ -249,7 +249,7 @@ push4
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 142-142
+   :lines: 166-166
 
 
 push5
@@ -263,7 +263,7 @@ push5
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 143-143
+   :lines: 167-167
 
 
 push6
@@ -277,7 +277,7 @@ push6
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 144-144
+   :lines: 168-168
 
 
 push7
@@ -291,7 +291,7 @@ push7
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 145-145
+   :lines: 169-169
 
 
 push8
@@ -305,7 +305,7 @@ push8
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 146-146
+   :lines: 170-170
 
 
 push9
@@ -319,7 +319,7 @@ push9
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 147-147
+   :lines: 171-171
 
 
 push10
@@ -333,7 +333,7 @@ push10
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 148-148
+   :lines: 172-172
 
 
 push11
@@ -347,7 +347,7 @@ push11
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 149-149
+   :lines: 173-173
 
 
 push12
@@ -361,7 +361,7 @@ push12
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 150-150
+   :lines: 174-174
 
 
 push13
@@ -375,7 +375,7 @@ push13
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 151-151
+   :lines: 175-175
 
 
 push14
@@ -389,7 +389,7 @@ push14
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 152-152
+   :lines: 176-176
 
 
 push15
@@ -403,7 +403,7 @@ push15
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 153-153
+   :lines: 177-177
 
 
 push16
@@ -417,7 +417,7 @@ push16
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 154-154
+   :lines: 178-178
 
 
 push17
@@ -431,7 +431,7 @@ push17
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 155-155
+   :lines: 179-179
 
 
 push18
@@ -445,7 +445,7 @@ push18
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 156-156
+   :lines: 180-180
 
 
 push19
@@ -459,7 +459,7 @@ push19
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 157-157
+   :lines: 181-181
 
 
 push20
@@ -473,7 +473,7 @@ push20
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 158-158
+   :lines: 182-182
 
 
 push21
@@ -487,7 +487,7 @@ push21
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 159-159
+   :lines: 183-183
 
 
 push22
@@ -501,7 +501,7 @@ push22
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 160-160
+   :lines: 184-184
 
 
 push23
@@ -515,7 +515,7 @@ push23
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 161-161
+   :lines: 185-185
 
 
 push24
@@ -529,7 +529,7 @@ push24
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 162-162
+   :lines: 186-186
 
 
 push25
@@ -543,7 +543,7 @@ push25
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 163-163
+   :lines: 187-187
 
 
 push26
@@ -557,7 +557,7 @@ push26
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 164-164
+   :lines: 188-188
 
 
 push27
@@ -571,7 +571,7 @@ push27
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 165-165
+   :lines: 189-189
 
 
 push28
@@ -585,7 +585,7 @@ push28
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 166-166
+   :lines: 190-190
 
 
 push29
@@ -599,7 +599,7 @@ push29
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 167-167
+   :lines: 191-191
 
 
 push30
@@ -613,7 +613,7 @@ push30
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 168-168
+   :lines: 192-192
 
 
 push31
@@ -627,7 +627,7 @@ push31
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 169-169
+   :lines: 193-193
 
 
 push32
@@ -641,7 +641,7 @@ push32
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 170-170
+   :lines: 194-194
 
 
 dup1
@@ -655,7 +655,7 @@ dup1
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 172-172
+   :lines: 196-196
 
 
 dup2
@@ -669,7 +669,7 @@ dup2
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 173-173
+   :lines: 197-197
 
 
 dup3
@@ -683,7 +683,7 @@ dup3
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 174-174
+   :lines: 198-198
 
 
 dup4
@@ -697,7 +697,7 @@ dup4
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 175-175
+   :lines: 199-199
 
 
 dup5
@@ -711,7 +711,7 @@ dup5
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 176-176
+   :lines: 200-200
 
 
 dup6
@@ -725,7 +725,7 @@ dup6
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 177-177
+   :lines: 201-201
 
 
 dup7
@@ -739,7 +739,7 @@ dup7
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 178-178
+   :lines: 202-202
 
 
 dup8
@@ -753,7 +753,7 @@ dup8
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 179-179
+   :lines: 203-203
 
 
 dup9
@@ -767,7 +767,7 @@ dup9
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 180-180
+   :lines: 204-204
 
 
 dup10
@@ -781,7 +781,7 @@ dup10
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 181-181
+   :lines: 205-205
 
 
 dup11
@@ -795,7 +795,7 @@ dup11
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 182-182
+   :lines: 206-206
 
 
 dup12
@@ -809,7 +809,7 @@ dup12
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 183-183
+   :lines: 207-207
 
 
 dup13
@@ -823,7 +823,7 @@ dup13
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 184-184
+   :lines: 208-208
 
 
 dup14
@@ -837,7 +837,7 @@ dup14
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 185-185
+   :lines: 209-209
 
 
 dup15
@@ -851,7 +851,7 @@ dup15
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 186-186
+   :lines: 210-210
 
 
 dup16
@@ -865,7 +865,7 @@ dup16
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 187-187
+   :lines: 211-211
 
 
 swap1
@@ -879,7 +879,7 @@ swap1
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 189-189
+   :lines: 213-213
 
 
 swap2
@@ -893,7 +893,7 @@ swap2
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 190-190
+   :lines: 214-214
 
 
 swap3
@@ -907,7 +907,7 @@ swap3
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 191-191
+   :lines: 215-215
 
 
 swap4
@@ -921,7 +921,7 @@ swap4
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 192-192
+   :lines: 216-216
 
 
 swap5
@@ -935,7 +935,7 @@ swap5
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 193-193
+   :lines: 217-217
 
 
 swap6
@@ -949,7 +949,7 @@ swap6
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 194-194
+   :lines: 218-218
 
 
 swap7
@@ -963,7 +963,7 @@ swap7
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 195-195
+   :lines: 219-219
 
 
 swap8
@@ -977,7 +977,7 @@ swap8
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 196-196
+   :lines: 220-220
 
 
 swap9
@@ -991,7 +991,7 @@ swap9
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 197-197
+   :lines: 221-221
 
 
 swap10
@@ -1005,7 +1005,7 @@ swap10
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 198-198
+   :lines: 222-222
 
 
 swap11
@@ -1019,7 +1019,7 @@ swap11
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 199-199
+   :lines: 223-223
 
 
 swap12
@@ -1033,7 +1033,7 @@ swap12
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 200-200
+   :lines: 224-224
 
 
 swap13
@@ -1047,7 +1047,7 @@ swap13
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 201-201
+   :lines: 225-225
 
 
 swap14
@@ -1061,7 +1061,7 @@ swap14
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 202-202
+   :lines: 226-226
 
 
 swap15
@@ -1075,7 +1075,7 @@ swap15
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 203-203
+   :lines: 227-227
 
 
 swap16
@@ -1089,5 +1089,5 @@ swap16
 
 .. undocinclude:: /../src/ethereum/byzantium/vm/instructions/stack.py
    :language: python
-   :lines: 204-204
+   :lines: 228-228
 

@@ -5,17 +5,15 @@ Muir Glacier → Berlin
 .. toctree::
    :maxdepth: 1
 
-   muir_glacier_berlin/vm/index.pickle64
-   muir_glacier_berlin/spec/index.pickle64
-   muir_glacier_berlin/vm/gas/index.pickle64
-   muir_glacier_berlin/vm/instructions/system/index.pickle64
-   muir_glacier_berlin/index.pickle64
-   muir_glacier_berlin/utils/index.pickle64
-   muir_glacier_berlin/vm/instructions/environment/index.pickle64
-   muir_glacier_berlin/vm/precompiled_contracts/modexp/index.pickle64
-   muir_glacier_berlin/vm/instructions/storage/index.pickle64
-   muir_glacier_berlin/utils/message/index.pickle64
-   muir_glacier_berlin/vm/interpreter/index.pickle64
-   muir_glacier_berlin/utils/address/index.pickle64
-   muir_glacier_berlin/trie/index.pickle64
    muir_glacier_berlin/eth_types/index.pickle64
+   muir_glacier_berlin/index.pickle64
+   muir_glacier_berlin/spec/index.pickle64
+   muir_glacier_berlin/trie/index.pickle64
+   muir_glacier_berlin/utils/message/index.pickle64
+   muir_glacier_berlin/vm/gas/index.pickle64
+   muir_glacier_berlin/vm/index.pickle64
+   muir_glacier_berlin/vm/instructions/environment/index.pickle64
+   muir_glacier_berlin/vm/instructions/storage/index.pickle64
+   muir_glacier_berlin/vm/instructions/system/index.pickle64
+   muir_glacier_berlin/vm/interpreter/index.pickle64
+   muir_glacier_berlin/vm/precompiled_contracts/modexp/index.pickle64

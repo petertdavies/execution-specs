@@ -360,7 +360,6 @@ extcodehash
    :noindexentry:
 
    Returns the keccak256 hash of a contract’s bytecode
-
    :param evm: The current EVM frame.
 
 

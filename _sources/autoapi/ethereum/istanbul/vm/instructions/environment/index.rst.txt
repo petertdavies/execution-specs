@@ -361,7 +361,6 @@ extcodehash
    :noindexentry:
 
    Returns the keccak256 hash of a contract’s bytecode
-
    :param evm: The current EVM frame.
 
 
@@ -382,7 +381,8 @@ self_balance
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.istanbul.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than GAS_FAST_STEP.
+   :raises ~ethereum.istanbul.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
+   :raises ~ethereum.istanbul.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
 
 
 
