@@ -81,6 +81,10 @@
                     <a href="../../berlin/spec/index.html">Berlin</a>
                 </li>
                 
+                <li>
+                    <a href="../../london/spec/index.html">London</a>
+                </li>
+                
             </ol>
         </li>
     </ol>
@@ -117,6 +121,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin/index.html">Ethereum Berlin Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../london/index.html">Ethereum London Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -243,6 +248,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../diffs/berlin_london.html">Berlin → London</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/index.html">Ethereum <span class="change-replaced">Berlin</span><span class="change-replacement">London</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -292,7 +309,7 @@
 <li><p><a class="reference internal" href="#block-reward" id="id7">BLOCK_REWARD</a></p></li>
 <li><p><a class="reference internal" href="#gas-limit-adjustment-factor" id="id8">GAS_LIMIT_ADJUSTMENT_FACTOR</a></p></li>
 <li><p><a class="reference internal" href="#gas-limit-minimum" id="id9">GAS_LIMIT_MINIMUM</a></p></li>
-<li><p><a class="reference internal" href="#genesis-difficulty" id="id10">GENESIS_DIFFICULTY</a></p></li>
+<li><p><a class="reference internal" href="#minimum-difficulty" id="id10">MINIMUM_DIFFICULTY</a></p></li>
 <li><p><a class="reference internal" href="#max-ommer-depth" id="id11">MAX_OMMER_DEPTH</a></p></li>
 <li><p><a class="reference internal" href="#blockchain" id="id12">BlockChain</a></p></li>
 <li><p><a class="reference internal" href="#apply-fork" id="id13">apply_fork</a></p></li>
@@ -415,7 +432,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.tangerine_whistle.spec.GAS_LIMIT_MINIMUM" title="ethereum.tangerine_whistle.spec.GAS_LIMIT_MINIMUM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GAS_LIMIT_MINIMUM</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.tangerine_whistle.spec.GENESIS_DIFFICULTY" title="ethereum.tangerine_whistle.spec.GENESIS_DIFFICULTY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENESIS_DIFFICULTY</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.tangerine_whistle.spec.MINIMUM_DIFFICULTY" title="ethereum.tangerine_whistle.spec.MINIMUM_DIFFICULTY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINIMUM_DIFFICULTY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.tangerine_whistle.spec.MAX_OMMER_DEPTH" title="ethereum.tangerine_whistle.spec.MAX_OMMER_DEPTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_OMMER_DEPTH</span></code></a></p></td>
@@ -460,14 +477,14 @@
 </pre></div>
 </div>
 </section>
-<section id="genesis-difficulty">
-<h3>GENESIS_DIFFICULTY<a class="headerlink" href="#genesis-difficulty" title="Permalink to this headline"></a></h3>
+<section id="minimum-difficulty">
+<h3>MINIMUM_DIFFICULTY<a class="headerlink" href="#minimum-difficulty" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.tangerine_whistle.spec.GENESIS_DIFFICULTY">
-<span class="sig-name descname"><span class="pre">GENESIS_DIFFICULTY</span></span><a class="headerlink" href="#ethereum.tangerine_whistle.spec.GENESIS_DIFFICULTY" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.tangerine_whistle.spec.MINIMUM_DIFFICULTY">
+<span class="sig-name descname"><span class="pre">MINIMUM_DIFFICULTY</span></span><a class="headerlink" href="#ethereum.tangerine_whistle.spec.MINIMUM_DIFFICULTY" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">GENESIS_DIFFICULTY</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">131072</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MINIMUM_DIFFICULTY</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">131072</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1047,7 +1064,7 @@ execution.</p>
     <span class="n">sender_account</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
     <span class="n">gas_fee</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">*</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas_price</span>
     <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">nonce</span> <span class="o">==</span> <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
-    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">gas_fee</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">gas_fee</span> <span class="o">+</span> <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
     <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="nb">bytearray</span><span class="p">(),</span> <span class="n">InvalidBlock</span><span class="p">)</span>
 
     <span class="n">gas</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">calculate_intrinsic_cost</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
@@ -1390,11 +1407,12 @@ difficulty and the <code class="docutils literal notranslate"><span class="pre">
     <span class="c1"># See https://github.com/ethereum/go-ethereum/pull/1588</span>
     <span class="n">num_bomb_periods</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">block_number</span><span class="p">)</span> <span class="o">//</span> <span class="mi">100000</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span>
     <span class="k">if</span> <span class="n">num_bomb_periods</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span>
-            <span class="nb">max</span><span class="p">(</span><span class="n">difficulty</span> <span class="o">+</span> <span class="mi">2</span><span class="o">**</span><span class="n">num_bomb_periods</span><span class="p">,</span> <span class="n">GENESIS_DIFFICULTY</span><span class="p">)</span>
-        <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">difficulty</span><span class="p">,</span> <span class="n">GENESIS_DIFFICULTY</span><span class="p">))</span>
+        <span class="n">difficulty</span> <span class="o">+=</span> <span class="mi">2</span><span class="o">**</span><span class="n">num_bomb_periods</span>
+
+    <span class="c1"># Some clients raise the difficulty to `MINIMUM_DIFFICULTY` prior to adding</span>
+    <span class="c1"># the bomb. This bug does not matter because the difficulty is always much</span>
+    <span class="c1"># greater than `MINIMUM_DIFFICULTY` on Mainnet.</span>
+    <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">difficulty</span><span class="p">,</span> <span class="n">MINIMUM_DIFFICULTY</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>

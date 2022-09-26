@@ -60,7 +60,7 @@ Attributes
    ethereum.constantinople.spec.BLOCK_REWARD
    ethereum.constantinople.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.constantinople.spec.GAS_LIMIT_MINIMUM
-   ethereum.constantinople.spec.GENESIS_DIFFICULTY
+   ethereum.constantinople.spec.MINIMUM_DIFFICULTY
    ethereum.constantinople.spec.MAX_OMMER_DEPTH
    ethereum.constantinople.spec.BOMB_DELAY_BLOCKS
    ethereum.constantinople.spec.EMPTY_OMMER_HASH
@@ -111,12 +111,12 @@ GAS_LIMIT_MINIMUM
    :lines: 61-61
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

@@ -59,7 +59,7 @@ Attributes
    ethereum.homestead.spec.BLOCK_REWARD
    ethereum.homestead.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.homestead.spec.GAS_LIMIT_MINIMUM
-   ethereum.homestead.spec.GENESIS_DIFFICULTY
+   ethereum.homestead.spec.MINIMUM_DIFFICULTY
    ethereum.homestead.spec.MAX_OMMER_DEPTH
 
 
@@ -108,12 +108,12 @@ GAS_LIMIT_MINIMUM
    :lines: 59-59
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

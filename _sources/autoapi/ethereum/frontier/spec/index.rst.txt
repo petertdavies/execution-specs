@@ -59,7 +59,7 @@ Attributes
    ethereum.frontier.spec.BLOCK_REWARD
    ethereum.frontier.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.frontier.spec.GAS_LIMIT_MINIMUM
-   ethereum.frontier.spec.GENESIS_DIFFICULTY
+   ethereum.frontier.spec.MINIMUM_DIFFICULTY
    ethereum.frontier.spec.MAX_OMMER_DEPTH
 
 
@@ -108,12 +108,12 @@ GAS_LIMIT_MINIMUM
    :lines: 58-58
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 
@@ -661,12 +661,10 @@ calculate_block_difficulty
    Computes difficulty of a block using its header and
    parent header.
 
-   Since the genesis block is the first on the chain and has no parent,
-   its difficulty is a predefined value stored as ``GENESIS_DIFFICULTY``.
-   For all other blocks the difficulty is determined by the time the
-   block was created after its parent. If a block's timestamp is more
-   than 13 seconds after its parent block then its difficulty is set
-   as the difference between the parent's difficulty and the
+   The difficulty of a block is determined by the time the block was
+   created after its parent. If a block's timestamp is more than 13
+   seconds after its parent block then its difficulty is set as the
+   difference between the parent's difficulty and the
    ``max_adjustment_delta``. Otherwise, if the time between parent and
    child blocks is too small (under 13 seconds) then, to avoid mass
    forking, the block's difficulty is set to the sum of the delta and

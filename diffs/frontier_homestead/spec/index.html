@@ -70,6 +70,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/istanbul/index.html">Ethereum Istanbul Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/muir_glacier/index.html">Ethereum Muir Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/berlin/index.html">Ethereum Berlin Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/london/index.html">Ethereum London Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -196,6 +197,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../../muir_glacier_berlin/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../berlin_london.html">Berlin → London</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/index.html">Ethereum <span class="change-replaced">Berlin</span><span class="change-replacement">London</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -244,7 +257,7 @@
 <li><p><a class="reference internal" href="#block-reward" id="id7">BLOCK_REWARD</a></p></li>
 <li><p><a class="reference internal" href="#gas-limit-adjustment-factor" id="id8">GAS_LIMIT_ADJUSTMENT_FACTOR</a></p></li>
 <li><p><a class="reference internal" href="#gas-limit-minimum" id="id9">GAS_LIMIT_MINIMUM</a></p></li>
-<li><p><a class="reference internal" href="#genesis-difficulty" id="id10">GENESIS_DIFFICULTY</a></p></li>
+<li><p><a class="reference internal" href="#minimum-difficulty" id="id10">MINIMUM_DIFFICULTY</a></p></li>
 <li><p><a class="reference internal" href="#max-ommer-depth" id="id11">MAX_OMMER_DEPTH</a></p></li>
 <li><p><a class="reference internal" href="#blockchain" id="id12">BlockChain</a></p></li>
 <li><p><a class="reference internal" href="#apply-fork" id="id13">apply_fork</a></p></li>
@@ -367,7 +380,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.frontier.spec.GAS_LIMIT_MINIMUM" title="ethereum.frontier.spec.GAS_LIMIT_MINIMUM"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GAS_LIMIT_MINIMUM</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.frontier.spec.GENESIS_DIFFICULTY" title="ethereum.frontier.spec.GENESIS_DIFFICULTY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GENESIS_DIFFICULTY</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.frontier.spec.MINIMUM_DIFFICULTY" title="ethereum.frontier.spec.MINIMUM_DIFFICULTY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MINIMUM_DIFFICULTY</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.frontier.spec.MAX_OMMER_DEPTH" title="ethereum.frontier.spec.MAX_OMMER_DEPTH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAX_OMMER_DEPTH</span></code></a></p></td>
@@ -412,14 +425,14 @@
 </pre></div>
 </div>
 </section>
-<section id="genesis-difficulty">
-<h3>GENESIS_DIFFICULTY<a class="headerlink" href="#genesis-difficulty" title="Permalink to this headline"></a></h3>
+<section id="minimum-difficulty">
+<h3>MINIMUM_DIFFICULTY<a class="headerlink" href="#minimum-difficulty" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.frontier.spec.GENESIS_DIFFICULTY">
-<span class="sig-name descname"><span class="pre">GENESIS_DIFFICULTY</span></span><a class="headerlink" href="#ethereum.frontier.spec.GENESIS_DIFFICULTY" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.frontier.spec.MINIMUM_DIFFICULTY">
+<span class="sig-name descname"><span class="pre">MINIMUM_DIFFICULTY</span></span><a class="headerlink" href="#ethereum.frontier.spec.MINIMUM_DIFFICULTY" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">GENESIS_DIFFICULTY</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">131072</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MINIMUM_DIFFICULTY</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">131072</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -1031,7 +1044,7 @@ execution.</p>
     <span class="n">sender_account</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
     <span class="n">gas_fee</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">*</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas_price</span>
     <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">nonce</span> <span class="o">==</span> <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
-    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">gas_fee</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">gas_fee</span> <span class="o">+</span> <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
     <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="nb">bytearray</span><span class="p">(),</span> <span class="n">InvalidBlock</span><span class="p">)</span>
 
     <span class="n">gas</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">calculate_intrinsic_cost</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
@@ -1321,19 +1334,17 @@ reasonable amount of gas to be used on a block.</p>
 <span class="sig-name descname"><span class="pre">calculate_block_difficulty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_timestamp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent_difficulty</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.frontier.spec.calculate_block_difficulty" title="Permalink to this definition"></a></dt>
 <dd><p>Computes difficulty of a block using its header and
 parent header.</p>
-<p><span class="change-replaced">Since</span><span class="change-replacement">The difficulty is determined by</span> the <span class="change-replaced">genesis</span><span class="change-replacement">time the</span> block <span class="change-replaced">is the first on the chain and has no parent,</span><span class="change-replacement">was created after</span>
-its <span class="change-added">parent. The </span><code class="change-added docutils literal notranslate"><span class="pre">offset</span></code><span class="change-added"> is calculated using the parent block’s difficulty,
+<p>The difficulty <span class="change-added">is determined by the time the block was created after its
+parent. The </span><code class="change-added docutils literal notranslate"><span class="pre">offset</span></code><span class="change-added"> is calculated using the parent block’s difficulty,
 </span><code class="change-added docutils literal notranslate"><span class="pre">parent_difficulty</span></code><span class="change-added">, and the timestamp between blocks. This offset is
-then added to the parent </span>difficulty <span class="change-added">and </span>is<span class="change-added"> stored as the </span><code class="change-added docutils literal notranslate"><span class="pre">difficulty</span></code><span class="change-added">
+then added to the parent difficulty and is stored as the </span><code class="change-added docutils literal notranslate"><span class="pre">difficulty</span></code><span class="change-added">
 variable. If the time between the block and its parent is too short, the
-offset will result in</span> a <span class="change-replaced">predefined</span><span class="change-replacement">positive number thus making the sum of
-</span><code class="change-replacement docutils literal notranslate"><span class="pre">parent_difficulty</span></code><span class="change-replacement"> and </span><code class="change-replacement docutils literal notranslate"><span class="pre">offset</span></code><span class="change-replacement"> to be a greater</span> value <span class="change-replaced">stored as </span><code class="change-replaced docutils literal notranslate"><span class="pre">GENESIS_DIFFICULTY</span></code><span class="change-replaced">.
-For all other blocks</span><span class="change-replacement">in order to
-avoid mass forking. But, if</span> the<span class="change-removed"> difficulty is determined by the</span> time <span class="change-added">is long enough, then </span>the<span class="change-added"> offset
-results in a negative value making the</span>
-block <span class="change-replaced">was created after</span><span class="change-replacement">less difficult than</span> its parent.<span class="change-removed"> If a block’s timestamp is more
-than 13 seconds after its parent block then its difficulty is set
-as the difference between the parent’s difficulty and the
+offset will result in a positive number thus making the sum </span>of <code class="change-added docutils literal notranslate"><span class="pre">parent_difficulty</span></code><span class="change-added"> and </span><code class="change-added docutils literal notranslate"><span class="pre">offset</span></code><span class="change-added"> to be </span>a <span class="change-added">greater value in order to
+avoid mass forking. But, if the time is long enough, then the offset
+results in a negative value making the </span>block <span class="change-replaced">is determined by the time the block was
+created after</span><span class="change-replacement">less difficult than</span> its parent.<span class="change-removed"> If a block’s timestamp is more than 13
+seconds after its parent block then its difficulty is set as the
+difference between the parent’s difficulty and the
 </span><code class="change-removed docutils literal notranslate"><span class="pre">max_adjustment_delta</span></code><span class="change-removed">. Otherwise, if the time between parent and
 child blocks is too small (under 13 seconds) then, to avoid mass
 forking, the block’s difficulty is set to the sum of the delta and
@@ -1378,24 +1389,26 @@ difficulty and the <code class="docutils literal notranslate"><span class="pre">
     # genesis.
     # See https://github.com/ethereum/go-ethereum/pull/1588
     num_bomb_periods = (int(block_number) // 100000) - 2</span>
-    if <span class="change-replaced">block_number ==</span><span class="change-replacement">num_bomb_periods &gt;=</span> 0:
-        return <span class="change-replaced">GENESIS_DIFFICULTY
-    elif block_timestamp &lt; parent_timestamp</span><span class="change-replacement">Uint(
-            max(difficulty</span> + <span class="change-replaced">13:
-        difficulty = parent_difficulty + max_adjustment_delta</span><span class="change-replacement">2**num_bomb_periods, GENESIS_DIFFICULTY)
-        )</span>
-    else:  <span class="change-removed"># block_timestamp &gt;= parent_timestamp + 13
-        difficulty = parent_difficulty - max_adjustment_delta
+    if <span class="change-replaced">block_timestamp &lt; parent_timestamp + 13:
+        difficulty = parent_difficulty + max_adjustment_delta
+    else:  # block_timestamp</span><span class="change-replacement">num_bomb_periods</span> &gt;= <span class="change-replaced">parent_timestamp + 13</span><span class="change-replacement">0:</span>
+        difficulty <span class="change-replaced">= parent_difficulty - max_adjustment_delta</span><span class="change-replacement">+= 2**num_bomb_periods</span>
 
-    # Historical Note: The difficulty bomb was not present in Ethereum at the
-    # start of Frontier, but was added shortly after launch. However since the
+    # <span class="change-replaced">Historical Note: The</span><span class="change-replacement">Some clients raise the</span> difficulty <span class="change-replaced">bomb was</span><span class="change-replacement">to `MINIMUM_DIFFICULTY` prior to adding
+    # the bomb. This bug does</span> not <span class="change-replaced">present in Ethereum at</span><span class="change-replacement">matter because</span> the
+    <span class="change-added">difficulty is always much
+    </span># <span class="change-replaced">start of Frontier, but was added shortly after launch. However since the
     # bomb has no effect prior to block 200000 we pretend it existed from
     # genesis.
     # See https://github.com/ethereum/go-ethereum/pull/1588
-    num_bomb_periods = int(block_number) // 100000 - 2
+    num_bomb_periods = (int(block_number) // 100000) - 2
     if num_bomb_periods &gt;= 0:
         difficulty += 2**num_bomb_periods
-    </span>return Uint(max(difficulty, GENESIS_DIFFICULTY))
+
+    # Some clients raise the difficulty to</span><span class="change-replacement">greater than</span> `MINIMUM_DIFFICULTY` <span class="change-removed">prior to adding
+    # the bomb. This bug does not matter because the difficulty is always much
+    # greater than `MINIMUM_DIFFICULTY` </span>on Mainnet.
+    return <span class="change-replaced">max(difficulty, MINIMUM_DIFFICULTY)</span><span class="change-replacement">Uint(max(difficulty, MINIMUM_DIFFICULTY))</span>
 </pre>
 </section>
 </section>

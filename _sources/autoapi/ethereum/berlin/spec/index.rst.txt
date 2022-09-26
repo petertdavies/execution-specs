@@ -61,7 +61,7 @@ Attributes
    ethereum.berlin.spec.BLOCK_REWARD
    ethereum.berlin.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.berlin.spec.GAS_LIMIT_MINIMUM
-   ethereum.berlin.spec.GENESIS_DIFFICULTY
+   ethereum.berlin.spec.MINIMUM_DIFFICULTY
    ethereum.berlin.spec.MAX_OMMER_DEPTH
    ethereum.berlin.spec.BOMB_DELAY_BLOCKS
    ethereum.berlin.spec.EMPTY_OMMER_HASH
@@ -112,12 +112,12 @@ GAS_LIMIT_MINIMUM
    :lines: 67-67
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

@@ -65,7 +65,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/interpreter.py
    :language: python
-   :lines: 51-51
+   :lines: 49-49
 
 
 MAX_CODE_SIZE
@@ -79,7 +79,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/interpreter.py
    :language: python
-   :lines: 52-52
+   :lines: 50-50
 
 
 RIPEMD160_ADDRESS
@@ -93,7 +93,7 @@ RIPEMD160_ADDRESS
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/interpreter.py
    :language: python
-   :lines: 53-53
+   :lines: 51-51
 
 
 MessageCallOutput

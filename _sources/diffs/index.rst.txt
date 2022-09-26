@@ -14,3 +14,4 @@ Comparisons
    constantinople_istanbul.rst
    istanbul_muir_glacier.rst
    muir_glacier_berlin.rst
+   berlin_london.rst

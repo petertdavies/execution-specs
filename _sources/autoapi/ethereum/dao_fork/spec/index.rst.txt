@@ -61,7 +61,7 @@ Attributes
    ethereum.dao_fork.spec.BLOCK_REWARD
    ethereum.dao_fork.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.dao_fork.spec.GAS_LIMIT_MINIMUM
-   ethereum.dao_fork.spec.GENESIS_DIFFICULTY
+   ethereum.dao_fork.spec.MINIMUM_DIFFICULTY
    ethereum.dao_fork.spec.MAX_OMMER_DEPTH
 
 
@@ -110,12 +110,12 @@ GAS_LIMIT_MINIMUM
    :lines: 63-63
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

@@ -62,7 +62,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/dao_fork/vm/interpreter.py
    :language: python
-   :lines: 45-45
+   :lines: 39-39
 
 
 MessageCallOutput

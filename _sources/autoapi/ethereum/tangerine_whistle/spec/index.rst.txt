@@ -59,7 +59,7 @@ Attributes
    ethereum.tangerine_whistle.spec.BLOCK_REWARD
    ethereum.tangerine_whistle.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.tangerine_whistle.spec.GAS_LIMIT_MINIMUM
-   ethereum.tangerine_whistle.spec.GENESIS_DIFFICULTY
+   ethereum.tangerine_whistle.spec.MINIMUM_DIFFICULTY
    ethereum.tangerine_whistle.spec.MAX_OMMER_DEPTH
 
 
@@ -108,12 +108,12 @@ GAS_LIMIT_MINIMUM
    :lines: 59-59
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

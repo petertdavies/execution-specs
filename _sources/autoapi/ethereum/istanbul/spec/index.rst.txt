@@ -60,7 +60,7 @@ Attributes
    ethereum.istanbul.spec.BLOCK_REWARD
    ethereum.istanbul.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.istanbul.spec.GAS_LIMIT_MINIMUM
-   ethereum.istanbul.spec.GENESIS_DIFFICULTY
+   ethereum.istanbul.spec.MINIMUM_DIFFICULTY
    ethereum.istanbul.spec.MAX_OMMER_DEPTH
    ethereum.istanbul.spec.BOMB_DELAY_BLOCKS
    ethereum.istanbul.spec.EMPTY_OMMER_HASH
@@ -111,12 +111,12 @@ GAS_LIMIT_MINIMUM
    :lines: 61-61
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

@@ -140,21 +140,6 @@ Raised when the message depth is greater than `1024`
 
 
 
-InsufficientFunds
-~~~~~~~~~~~~~~~~~
-
-
-Raised when an account has insufficient funds to transfer the
-requested value.
-
-
-.. exception:: InsufficientFunds
-
-
-   Bases: :py:obj:`ExceptionalHalt`
-
-
-
 WriteInStaticContext
 ~~~~~~~~~~~~~~~~~~~~
 

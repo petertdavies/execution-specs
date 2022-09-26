@@ -60,7 +60,7 @@ Attributes
    ethereum.spurious_dragon.spec.BLOCK_REWARD
    ethereum.spurious_dragon.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.spurious_dragon.spec.GAS_LIMIT_MINIMUM
-   ethereum.spurious_dragon.spec.GENESIS_DIFFICULTY
+   ethereum.spurious_dragon.spec.MINIMUM_DIFFICULTY
    ethereum.spurious_dragon.spec.MAX_OMMER_DEPTH
 
 
@@ -109,12 +109,12 @@ GAS_LIMIT_MINIMUM
    :lines: 61-61
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 

@@ -60,7 +60,7 @@ Attributes
    ethereum.muir_glacier.spec.BLOCK_REWARD
    ethereum.muir_glacier.spec.GAS_LIMIT_ADJUSTMENT_FACTOR
    ethereum.muir_glacier.spec.GAS_LIMIT_MINIMUM
-   ethereum.muir_glacier.spec.GENESIS_DIFFICULTY
+   ethereum.muir_glacier.spec.MINIMUM_DIFFICULTY
    ethereum.muir_glacier.spec.MAX_OMMER_DEPTH
    ethereum.muir_glacier.spec.BOMB_DELAY_BLOCKS
    ethereum.muir_glacier.spec.EMPTY_OMMER_HASH
@@ -111,12 +111,12 @@ GAS_LIMIT_MINIMUM
    :lines: 61-61
 
 
-GENESIS_DIFFICULTY
+MINIMUM_DIFFICULTY
 ~~~~~~~~~~~~~~~~~~
 
 
 
-.. py:data:: GENESIS_DIFFICULTY
+.. py:data:: MINIMUM_DIFFICULTY
    
    
 
