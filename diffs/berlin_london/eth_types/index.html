@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../berlin_london.html">Berlin → London</a> &raquo;</li>
-      <li>Ethereum Types</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../berlin_london.html">Berlin → London</a></li>
+      <li class="breadcrumb-item active">Ethereum Types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/berlin_london/eth_types/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -617,13 +617,13 @@
 </dd></dl>
 
 </section>
-<section id="transaction">
-<h3><span class="change-replaced">Transaction</span><span class="change-replacement">FeeMarketTransaction</span><a class="headerlink" href="#transaction" title="Permalink to this headline"></a></h3>
-<p class="change-added">The transaction type added in EIP-1559.</p>
-<dl class="py data">
-<dt class="sig sig-object py" id="ethereum.berlin.eth_types.Transaction">
-<em class="change-added property"><span class="pre">class</span> </em><span class="sig-name descname change-replaced"><span class="pre">Transaction</span></span><span class="sig-name descname change-replacement"><span class="pre">FeeMarketTransaction</span></span><a class="headerlink" href="#ethereum.berlin.eth_types.Transaction" title="Permalink to this definition"></a></dt>
-<dd class="change-added"><dl class="py attribute">
+<section class="change-added" id="feemarkettransaction">
+<h3>FeeMarketTransaction<a class="headerlink" href="#feemarkettransaction" title="Permalink to this headline"></a></h3>
+<p>The transaction type added in EIP-1559.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.london.eth_types.FeeMarketTransaction">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">FeeMarketTransaction</span></span><a class="headerlink" href="#ethereum.london.eth_types.FeeMarketTransaction" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.london.eth_types.FeeMarketTransaction.chain_id">
 <span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint64</span></em><a class="headerlink" href="#ethereum.london.eth_types.FeeMarketTransaction.chain_id" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
@@ -685,69 +685,57 @@
 
 </dd></dl>
 
-<div class="change-removed highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Transaction</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">LegacyTransaction</span><span class="p">,</span> <span class="n">AccessListTransaction</span><span class="p">]</span>
-</pre></div>
-</div>
 </section>
-<section id="encode-transaction">
-<h3><span class="change-replaced">encode_transaction</span><span class="change-replacement">Transaction</span><a class="headerlink" href="#encode-transaction" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.berlin.eth_types.encode_transaction">
-<span class="sig-name descname change-replaced"><span class="pre">encode_transaction</span></span><span class="sig-name descname change-replacement"><span class="pre">Transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.berlin.eth_types.encode_transaction" title="Permalink to this definition"></a></dt>
-<dd class="change-removed"><p>Encode a transaction. Needed because non-legacy transactions aren’t RLP.</p>
-</dd></dl>
+<section id="transaction">
+<h3>Transaction<a class="headerlink" href="#transaction" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.berlin.eth_types.Transaction">
+<span class="sig-name descname"><span class="pre">Transaction</span></span><a class="headerlink" href="#ethereum.berlin.eth_types.Transaction" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
 
-<pre class="literal-block"><span class="change-replaced">def encode_transaction(tx: Transaction) -&gt; Union[LegacyTransaction, Bytes]:
-    if isinstance(tx, LegacyTransaction):
-        return tx
-    elif isinstance(tx, AccessListTransaction):
-        return b&quot;\x01&quot; + rlp.encode(tx)
-    else:
-        raise Exception(f&quot;Unable to encode transaction of type {type(tx)}&quot;)</span><span class="change-replacement">Transaction = Union[
+<pre class="literal-block">Transaction = <span class="change-replaced">Union[LegacyTransaction, AccessListTransaction]</span><span class="change-replacement">Union[
     LegacyTransaction, AccessListTransaction, FeeMarketTransaction
 ]</span>
 </pre>
 </section>
-<section id="decode-transaction">
-<h3><span class="change-replaced">decode_transaction</span><span class="change-replacement">encode_transaction</span><a class="headerlink" href="#decode-transaction" title="Permalink to this headline"></a></h3>
+<section id="encode-transaction">
+<h3>encode_transaction<a class="headerlink" href="#encode-transaction" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.berlin.eth_types.decode_transaction">
-<span class="sig-name descname change-replaced"><span class="pre">decode_transaction</span></span><span class="sig-name descname change-replacement"><span class="pre">encode_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.berlin.eth_types.decode_transaction" title="Permalink to this definition"></a></dt>
-<dd><p><span class="change-replaced">Decode</span><span class="change-replacement">Encode</span> a transaction. Needed because non-legacy transactions aren’t RLP.</p>
+<dt class="sig sig-object py" id="ethereum.berlin.eth_types.encode_transaction">
+<span class="sig-name descname"><span class="pre">encode_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.berlin.eth_types.encode_transaction" title="Permalink to this definition"></a></dt>
+<dd><p>Encode a transaction. Needed because non-legacy transactions aren’t RLP.</p>
 </dd></dl>
 
-<pre class="literal-block">def <span class="change-replaced">decode_transaction(tx:</span><span class="change-replacement">encode_transaction(tx: Transaction) -&gt;</span> Union[LegacyTransaction, <span class="change-replaced">Bytes]) -&gt; Transaction:</span><span class="change-replacement">Bytes]:</span>
-    if isinstance(tx, <span class="change-replaced">Bytes):
-        ensure(tx[0] == 1, InvalidBlock)</span><span class="change-replacement">LegacyTransaction):</span>
-        return <span class="change-replaced">rlp.decode_to(AccessListTransaction, tx[1:])</span><span class="change-replacement">tx
+<pre class="literal-block">def encode_transaction(tx: Transaction) -&gt; Union[LegacyTransaction, Bytes]:
+    if isinstance(tx, LegacyTransaction):
+        return tx
     elif isinstance(tx, AccessListTransaction):
         return b&quot;\x01&quot; + rlp.encode(tx)
-    elif isinstance(tx, FeeMarketTransaction):
-        return b&quot;\x02&quot; + rlp.encode(tx)</span>
-    else:
-        <span class="change-replaced">return tx</span><span class="change-replacement">raise Exception(f&quot;Unable to encode transaction of type {type(tx)}&quot;)</span>
+    <span class="change-added">elif isinstance(tx, FeeMarketTransaction):
+        return b&quot;\x02&quot; + rlp.encode(tx)
+    </span>else:
+        raise Exception(f&quot;Unable to encode transaction of type {type(tx)}&quot;)
 </pre>
 </section>
-<section class="change-added" id="decode-transaction">
+<section id="decode-transaction">
 <h3>decode_transaction<a class="headerlink" href="#decode-transaction" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.london.eth_types.decode_transaction">
-<span class="sig-name descname"><span class="pre">decode_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.london.eth_types.decode_transaction" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.berlin.eth_types.decode_transaction">
+<span class="sig-name descname"><span class="pre">decode_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.berlin.eth_types.decode_transaction" title="Permalink to this definition"></a></dt>
 <dd><p>Decode a transaction. Needed because non-legacy transactions aren’t RLP.</p>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">decode_transaction</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">LegacyTransaction</span><span class="p">,</span> <span class="n">Bytes</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Transaction</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">Bytes</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">tx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">rlp</span><span class="o">.</span><span class="n">decode_to</span><span class="p">(</span><span class="n">AccessListTransaction</span><span class="p">,</span> <span class="n">tx</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-        <span class="k">elif</span> <span class="n">tx</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">rlp</span><span class="o">.</span><span class="n">decode_to</span><span class="p">(</span><span class="n">FeeMarketTransaction</span><span class="p">,</span> <span class="n">tx</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">InvalidBlock</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">tx</span>
-</pre></div>
-</div>
+<pre class="literal-block">def decode_transaction(tx: Union[LegacyTransaction, Bytes]) -&gt; Transaction:
+    if isinstance(tx, Bytes):
+        <span class="change-replaced">ensure(tx[0]</span><span class="change-replacement">if tx[0]</span> == <span class="change-replaced">1, InvalidBlock)</span><span class="change-replacement">1:</span>
+        return rlp.decode_to(AccessListTransaction, tx[1:])
+    <span class="change-added">elif tx[0] == 2:
+            return rlp.decode_to(FeeMarketTransaction, tx[1:])
+        </span>else:
+        <span class="change-added">raise InvalidBlock
+    else:
+        </span>return tx
+</pre>
 </section>
 <section id="account">
 <h3>Account<a class="headerlink" href="#account" title="Permalink to this headline"></a></h3>

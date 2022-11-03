@@ -57,8 +57,6 @@ log_n
    :param evm: The current EVM frame.
    :param num_topics: The number of topics to be included in the log entry.
 
-   :raises ~ethereum.berlin.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2 + num_topics`.
-
 
 
 
@@ -77,7 +75,7 @@ log0
 
 .. undocinclude:: /../src/ethereum/berlin/vm/instructions/log.py
    :language: python
-   :lines: 73-73
+   :lines: 69-69
 
 
 log1
@@ -91,7 +89,7 @@ log1
 
 .. undocinclude:: /../src/ethereum/berlin/vm/instructions/log.py
    :language: python
-   :lines: 74-74
+   :lines: 70-70
 
 
 log2
@@ -105,7 +103,7 @@ log2
 
 .. undocinclude:: /../src/ethereum/berlin/vm/instructions/log.py
    :language: python
-   :lines: 75-75
+   :lines: 71-71
 
 
 log3
@@ -119,7 +117,7 @@ log3
 
 .. undocinclude:: /../src/ethereum/berlin/vm/instructions/log.py
    :language: python
-   :lines: 76-76
+   :lines: 72-72
 
 
 log4
@@ -133,5 +131,5 @@ log4
 
 .. undocinclude:: /../src/ethereum/berlin/vm/instructions/log.py
    :language: python
-   :lines: 77-77
+   :lines: 73-73
 

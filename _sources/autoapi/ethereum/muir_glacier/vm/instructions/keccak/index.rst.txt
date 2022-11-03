@@ -44,8 +44,6 @@ keccak
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.muir_glacier.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-
 
 
 

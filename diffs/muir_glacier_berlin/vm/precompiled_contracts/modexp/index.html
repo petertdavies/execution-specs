@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../../../muir_glacier_berlin.html">Muir Glacier → Berlin</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../../../muir_glacier_berlin.html">Muir Glacier → Berlin</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/diffs/muir_glacier_berlin/vm/precompiled_contracts/modexp/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -409,13 +409,31 @@
         )
 </span></pre>
 </section>
-<section id="get-mult-complexity">
-<h3><span class="change-replaced">get_mult_complexity</span><span class="change-replacement">complexity</span><a class="headerlink" href="#get-mult-complexity" title="Permalink to this headline"></a></h3>
+<section class="change-replaced" id="get-mult-complexity">
+<h3>get_mult_complexity<a class="headerlink" href="#get-mult-complexity" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.muir_glacier.vm.precompiled_contracts.modexp.get_mult_complexity">
-<span class="sig-name descname change-replaced"><span class="pre">get_mult_complexity</span></span><span class="sig-name descname change-replacement"><span class="pre">complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modulus_length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.muir_glacier.vm.precompiled_contracts.modexp.get_mult_complexity" title="Permalink to this definition"></a></dt>
-<dd><p>Estimate the complexity of performing <span class="change-replaced">Karatsuba multiplication.</span><span class="change-replacement">a modular exponentiation.</span></p>
-<dl class="change-added field-list simple">
+<span class="sig-name descname"><span class="pre">get_mult_complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.muir_glacier.vm.precompiled_contracts.modexp.get_mult_complexity" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the complexity of performing Karatsuba multiplication.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_mult_complexity</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Uint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">64</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1024</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">96</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">3072</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">//</span> <span class="mi">16</span> <span class="o">+</span> <span class="mi">480</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">199680</span>
+</pre></div>
+</div>
+</section>
+<section class="change-replacement" id="complexity">
+<h3>complexity<a class="headerlink" href="#complexity" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.berlin.vm.precompiled_contracts.modexp.complexity">
+<span class="sig-name descname"><span class="pre">complexity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modulus_length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.berlin.vm.precompiled_contracts.modexp.complexity" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the complexity of performing a modular exponentiation.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>base_length</strong> – Length of the array representing the base integer.</p></li>
@@ -431,17 +449,14 @@
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def <span class="change-replaced">get_mult_complexity(x: Uint)</span><span class="change-replacement">complexity(base_length: U256, modulus_length: U256)</span> -&gt; Uint:
-    <span class="change-replaced">if x &lt;= 64:</span><span class="change-replacement">max_length = max(Uint(base_length), Uint(modulus_length))
-    words = (max_length + 7) // 8</span>
-        return <span class="change-replaced">x**2
-    elif x &lt;= 1024:
-        return x**2 // 4 + 96 * x - 3072
-    else:
-        return x**2 // 16 + 480 * x - 199680</span><span class="change-replacement">words**2</span>
-</pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">complexity</span><span class="p">(</span><span class="n">base_length</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span> <span class="n">modulus_length</span><span class="p">:</span> <span class="n">U256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
+    <span class="n">max_length</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">base_length</span><span class="p">),</span> <span class="n">Uint</span><span class="p">(</span><span class="n">modulus_length</span><span class="p">))</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_length</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span> <span class="o">//</span> <span class="mi">8</span>
+    <span class="k">return</span> <span class="n">words</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
 </section>
-<section class="change-added" id="iterations">
+<section class="change-replacement" id="iterations">
 <h3>iterations<a class="headerlink" href="#iterations" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.berlin.vm.precompiled_contracts.modexp.iterations">
@@ -488,7 +503,7 @@ shorter than 32 bytes), as an unsigned integer.</p></li>
 </pre></div>
 </div>
 </section>
-<section class="change-added" id="gas-cost">
+<section class="change-replacement" id="gas-cost">
 <h3>gas_cost<a class="headerlink" href="#gas-cost" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.berlin.vm.precompiled_contracts.modexp.gas_cost">

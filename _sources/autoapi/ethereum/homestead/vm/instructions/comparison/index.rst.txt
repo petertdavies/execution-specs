@@ -47,9 +47,6 @@ less_than
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
-
 
 
 
@@ -67,9 +64,6 @@ signed_less_than
    Signed less-than comparison.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -90,9 +84,6 @@ greater_than
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
-
 
 
 
@@ -110,9 +101,6 @@ signed_greater_than
    Signed greater-than comparison.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -133,9 +121,6 @@ equal
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
-
 
 
 
@@ -154,9 +139,6 @@ is_zero
    stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 

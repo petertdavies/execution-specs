@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) Interpreter</li>
+      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) Interpreter</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/diffs/tangerine_whistle_spurious_dragon/vm/interpreter/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -367,23 +367,46 @@
 </pre></div>
 </div>
 </section>
+<section class="change-added" id="max-code-size">
+<h3>MAX_CODE_SIZE<a class="headerlink" href="#max-code-size" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MAX_CODE_SIZE">
+<span class="sig-name descname"><span class="pre">MAX_CODE_SIZE</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MAX_CODE_SIZE" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MAX_CODE_SIZE</span> <span class="o">=</span> <span class="mh">0x6000</span>
+</pre></div>
+</div>
+</section>
+<section class="change-added" id="ripemd160-address">
+<h3>RIPEMD160_ADDRESS<a class="headerlink" href="#ripemd160-address" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.RIPEMD160_ADDRESS">
+<span class="sig-name descname"><span class="pre">RIPEMD160_ADDRESS</span></span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.RIPEMD160_ADDRESS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">RIPEMD160_ADDRESS</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 <section id="messagecalloutput">
-<h3><span class="change-replaced">MessageCallOutput</span><span class="change-replacement">MAX_CODE_SIZE</span><a class="headerlink" href="#messagecalloutput" title="Permalink to this headline"></a></h3>
-<p class="change-removed">Output of a particular message call</p>
-<p class="change-removed">Contains the following:</p>
-<blockquote class="change-removed">
+<h3>MessageCallOutput<a class="headerlink" href="#messagecalloutput" title="Permalink to this headline"></a></h3>
+<p>Output of a particular message call</p>
+<p>Contains the following:</p>
+<blockquote>
 <div><ol class="arabic simple">
 <li><p><cite>gas_left</cite>: remaining gas after execution.</p></li>
 <li><p><cite>refund_counter</cite>: gas to refund after execution.</p></li>
 <li><p><cite>logs</cite>: list of <cite>Log</cite> generated during execution.</p></li>
 <li><p><cite>accounts_to_delete</cite>: Contracts which have self-destructed.</p></li>
+<li class="change-added"><p><cite>touched_accounts</cite>: Accounts that have been touched.</p></li>
 <li><p><cite>has_erred</cite>: True if execution has caused an error.</p></li>
 </ol>
 </div></blockquote>
 <dl class="py class">
 <dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput">
-<em class="change-removed property"><span class="pre">class</span> </em><span class="sig-name descname change-replaced"><span class="pre">MessageCallOutput</span></span><span class="sig-name descname change-replacement"><span class="pre">MAX_CODE_SIZE</span></span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput" title="Permalink to this definition"></a></dt>
-<dd class="change-removed"><dl class="py attribute">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MessageCallOutput</span></span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.gas_left">
 <span class="sig-name descname"><span class="pre">gas_left</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.gas_left" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
@@ -395,12 +418,17 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.logs">
-<span class="sig-name descname"><span class="pre">logs</span></span><em class="property"> <span class="pre">:Union[Tuple[],</span> <span class="pre">Tuple[ethereum.tangerine_whistle.eth_types.Log,</span> <span class="pre">Ellipsis]]</span></em><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.logs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">logs</span></span><em class="property"> <span class="pre">:Union[Tuple[],</span> <span class="change-replaced"><span class="pre">Tuple[ethereum.tangerine_whistle.eth_types.Log,</span></span><span class="change-replacement"><span class="pre">Tuple[ethereum.spurious_dragon.eth_types.Log,</span></span> <span class="pre">Ellipsis]]</span></em><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.logs" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.accounts_to_delete">
-<span class="sig-name descname"><span class="pre">accounts_to_delete</span></span><em class="property"> <span class="pre">:Set[ethereum.tangerine_whistle.eth_types.Address]</span></em><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.accounts_to_delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">accounts_to_delete</span></span><em class="property"> <span class="change-replaced"><span class="pre">:Set[ethereum.tangerine_whistle.eth_types.Address]</span></span><span class="change-replacement"><span class="pre">:Set[ethereum.spurious_dragon.eth_types.Address]</span></span></em><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.MessageCallOutput.accounts_to_delete" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute change-added">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.touched_accounts">
+<span class="sig-name descname"><span class="pre">touched_accounts</span></span><em class="property"> <span class="pre">:Iterable[ethereum.spurious_dragon.eth_types.Address]</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.touched_accounts" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -410,154 +438,12 @@
 
 </dd></dl>
 
-<div class="change-added highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">MAX_CODE_SIZE</span> <span class="o">=</span> <span class="mh">0x6000</span>
-</pre></div>
-</div>
 </section>
 <section id="process-message-call">
-<h3><span class="change-replaced">process_message_call</span><span class="change-replacement">RIPEMD160_ADDRESS</span><a class="headerlink" href="#process-message-call" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.process_message_call">
-<span class="sig-name descname change-replaced"><span class="pre">process_message_call</span></span><span class="sig-name descname change-replacement"><span class="pre">RIPEMD160_ADDRESS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.process_message_call" title="Permalink to this definition"></a></dt>
-<dd class="change-removed"><p>If <cite>message.current</cite> is empty then it creates a smart contract
-else it executes a call from the <cite>message.caller</cite> to the <cite>message.target</cite>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>message</strong> – Transaction specific items.</p></li>
-<li><p><strong>env</strong> – External items required for EVM execution.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>output</strong> – Output of the message call</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>MessageCallOutput</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<pre class="literal-block"><span class="change-replaced">def process_message_call(
-    message: Message, env: Environment
-) -&gt; MessageCallOutput:
-    if message.target == Bytes0(b&quot;&quot;):
-        is_collision</span><span class="change-replacement">RIPEMD160_ADDRESS</span> = <span class="change-replaced">account_has_code_or_nonce(
-            env.state, message.current_target
-        )
-        if is_collision:
-            return MessageCallOutput(U256(0), U256(0), tuple(), set(), True)
-        else:
-            evm = process_create_message(message, env)
-    else:
-        evm = process_message(message, env)
-
-    accounts_to_delete = collect_accounts_to_delete(evm)
-    refund_counter = (
-        calculate_gas_refund(evm)
-        + len(accounts_to_delete) * REFUND_SELF_DESTRUCT
-    )
-
-    return MessageCallOutput(
-        gas_left=evm.gas_left,
-        refund_counter=refund_counter,
-        logs=evm.logs if not evm.has_erred else (),
-        accounts_to_delete=accounts_to_delete,
-        has_erred=evm.has_erred,
-    )</span><span class="change-replacement">to_address(Uint(3))</span>
-</pre>
-</section>
-<section id="process-create-message">
-<h3><span class="change-replaced">process_create_message</span><span class="change-replacement">MessageCallOutput</span><a class="headerlink" href="#process-create-message" title="Permalink to this headline"></a></h3>
-<p class="change-added">Output of a particular message call</p>
-<p class="change-added">Contains the following:</p>
-<blockquote class="change-added">
-<div><ol class="arabic simple">
-<li><p><cite>gas_left</cite>: remaining gas after execution.</p></li>
-<li><p><cite>refund_counter</cite>: gas to refund after execution.</p></li>
-<li><p><cite>logs</cite>: list of <cite>Log</cite> generated during execution.</p></li>
-<li><p><cite>accounts_to_delete</cite>: Contracts which have self-destructed.</p></li>
-<li><p><cite>touched_accounts</cite>: Accounts that have been touched.</p></li>
-<li><p><cite>has_erred</cite>: True if execution has caused an error.</p></li>
-</ol>
-</div></blockquote>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.process_create_message">
-<em class="change-added property"><span class="pre">class</span> </em><span class="sig-name descname change-replaced"><span class="pre">process_create_message</span></span><span class="sig-name descname change-replacement"><span class="pre">MessageCallOutput</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.process_create_message" title="Permalink to this definition"></a></dt>
-<dd class="change-replaced"><p>Executes a call to create a smart contract.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>message</strong> – Transaction specific items.</p></li>
-<li><p><strong>env</strong> – External items required for EVM execution.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>evm</strong> – Items containing execution specific objects.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../index.pickle#ethereum.tangerine_whistle.vm.Evm" title="ethereum.tangerine_whistle.vm.Evm"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evm</span></code></a></p>
-</dd>
-</dl>
-</dd><dd class="change-replacement"><dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.gas_left">
-<span class="sig-name descname"><span class="pre">gas_left</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.gas_left" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.refund_counter">
-<span class="sig-name descname"><span class="pre">refund_counter</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.refund_counter" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.logs">
-<span class="sig-name descname"><span class="pre">logs</span></span><em class="property"> <span class="pre">:Union[Tuple[],</span> <span class="pre">Tuple[ethereum.spurious_dragon.eth_types.Log,</span> <span class="pre">Ellipsis]]</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.logs" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.accounts_to_delete">
-<span class="sig-name descname"><span class="pre">accounts_to_delete</span></span><em class="property"> <span class="pre">:Set[ethereum.spurious_dragon.eth_types.Address]</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.accounts_to_delete" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.touched_accounts">
-<span class="sig-name descname"><span class="pre">touched_accounts</span></span><em class="property"> <span class="pre">:Iterable[ethereum.spurious_dragon.eth_types.Address]</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.touched_accounts" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.has_erred">
-<span class="sig-name descname"><span class="pre">has_erred</span></span><em class="property"> <span class="pre">:bool</span></em><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.MessageCallOutput.has_erred" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<div class="change-removed highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_create_message</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evm</span><span class="p">:</span>
-    <span class="c1"># take snapshot of state before processing the message</span>
-    <span class="n">begin_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-
-    <span class="n">evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="n">contract_code</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">output</span>
-        <span class="n">contract_code_gas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contract_code</span><span class="p">)</span> <span class="o">*</span> <span class="n">GAS_CODE_DEPOSIT</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">contract_code_gas</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
-            <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">set_code</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span> <span class="n">contract_code</span><span class="p">)</span>
-            <span class="n">commit_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">evm</span>
-</pre></div>
-</div>
-</section>
-<section class="change-added" id="process-message-call">
 <h3>process_message_call<a class="headerlink" href="#process-message-call" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.process_message_call">
-<span class="sig-name descname"><span class="pre">process_message_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.process_message_call" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.process_message_call">
+<span class="sig-name descname"><span class="pre">process_message_call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.process_message_call" title="Permalink to this definition"></a></dt>
 <dd><p>If <cite>message.current</cite> is empty then it creates a smart contract
 else it executes a call from the <cite>message.caller</cite> to the <cite>message.target</cite>.</p>
 <dl class="field-list simple">
@@ -576,44 +462,42 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_message_call</span><span class="p">(</span>
-    <span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MessageCallOutput</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">Bytes0</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="n">is_collision</span> <span class="o">=</span> <span class="n">account_has_code_or_nonce</span><span class="p">(</span>
-            <span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
-        <span class="p">)</span>
-        <span class="k">if</span> <span class="n">is_collision</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
-                <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="kc">True</span>
-            <span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">evm</span> <span class="o">=</span> <span class="n">process_create_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+<pre class="literal-block">def process_message_call(
+    message: Message, env: Environment
+) -&gt; MessageCallOutput:
+    if message.target == Bytes0(b&quot;&quot;):
+        is_collision = account_has_code_or_nonce(
+            env.state, message.current_target
+        )
+        if is_collision:
+            return <span class="change-replaced">MessageCallOutput(U256(0),</span><span class="change-replacement">MessageCallOutput(</span> U256(0), <span class="change-added">U256(0), </span>tuple(), set(), <span class="change-replaced">True)</span><span class="change-replacement">set(), True
+            )</span>
+        else:
+            evm = process_create_message(message, env)
+    else:
+        evm = process_message(message, env)
 
-    <span class="n">accounts_to_delete</span> <span class="o">=</span> <span class="n">collect_accounts_to_delete</span><span class="p">(</span><span class="n">evm</span><span class="p">)</span>
-    <span class="n">refund_counter</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="n">calculate_gas_refund</span><span class="p">(</span><span class="n">evm</span><span class="p">)</span>
-        <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">accounts_to_delete</span><span class="p">)</span> <span class="o">*</span> <span class="n">REFUND_SELF_DESTRUCT</span>
-    <span class="p">)</span>
+    accounts_to_delete = collect_accounts_to_delete(evm)
+    refund_counter = (
+        calculate_gas_refund(evm)
+        + len(accounts_to_delete) * REFUND_SELF_DESTRUCT
+    )
 
-    <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
-        <span class="n">gas_left</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span>
-        <span class="n">refund_counter</span><span class="o">=</span><span class="n">refund_counter</span><span class="p">,</span>
-        <span class="n">logs</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">logs</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="k">else</span> <span class="p">(),</span>
-        <span class="n">accounts_to_delete</span><span class="o">=</span><span class="n">accounts_to_delete</span><span class="p">,</span>
-        <span class="n">touched_accounts</span><span class="o">=</span><span class="n">collect_touched_accounts</span><span class="p">(</span><span class="n">evm</span><span class="p">),</span>
-        <span class="n">has_erred</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">,</span>
-    <span class="p">)</span>
-</pre></div>
-</div>
+    return MessageCallOutput(
+        gas_left=evm.gas_left,
+        refund_counter=refund_counter,
+        logs=evm.logs if not evm.has_erred else (),
+        accounts_to_delete=accounts_to_delete,
+        <span class="change-added">touched_accounts=collect_touched_accounts(evm),
+        </span>has_erred=evm.has_erred,
+    )
+</pre>
 </section>
-<section class="change-added" id="process-create-message">
+<section id="process-create-message">
 <h3>process_create_message<a class="headerlink" href="#process-create-message" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.process_create_message">
-<span class="sig-name descname"><span class="pre">process_create_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.process_create_message" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.process_create_message">
+<span class="sig-name descname"><span class="pre">process_create_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.process_create_message" title="Permalink to this definition"></a></dt>
 <dd><p>Executes a call to create a smart contract.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -626,35 +510,34 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
 <dd class="field-even"><p><strong>evm</strong> – Items containing execution specific objects.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="../index.pickle#ethereum.spurious_dragon.vm.Evm" title="ethereum.spurious_dragon.vm.Evm"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evm</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../index.pickle#ethereum.tangerine_whistle.vm.Evm" title="ethereum.tangerine_whistle.vm.Evm"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evm</span></code></a></p>
 </dd>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_create_message</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evm</span><span class="p">:</span>
-    <span class="c1"># take snapshot of state before processing the message</span>
-    <span class="n">begin_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+<pre class="literal-block">def process_create_message(message: Message, env: Environment) -&gt; Evm:
+    # take snapshot of state before processing the message
+    begin_transaction(env.state)
 
-    <span class="n">increment_nonce</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">)</span>
-    <span class="n">evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="n">contract_code</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">output</span>
-        <span class="n">contract_code_gas</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">contract_code</span><span class="p">)</span> <span class="o">*</span> <span class="n">GAS_CODE_DEPOSIT</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">contract_code_gas</span><span class="p">)</span>
-            <span class="n">ensure</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">contract_code</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">MAX_CODE_SIZE</span><span class="p">,</span> <span class="n">OutOfGasError</span><span class="p">)</span>
-        <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
-            <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">set_code</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span> <span class="n">contract_code</span><span class="p">)</span>
-            <span class="n">commit_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">evm</span>
-</pre></div>
-</div>
+    <span class="change-added">increment_nonce(env.state, message.current_target)
+    </span>evm = process_message(message, env)
+    if not evm.has_erred:
+        contract_code = evm.output
+        contract_code_gas = len(contract_code) * GAS_CODE_DEPOSIT
+        try:
+            charge_gas(evm, contract_code_gas)
+        <span class="change-added">ensure(len(contract_code) &lt;= MAX_CODE_SIZE, OutOfGasError)
+        </span>except ExceptionalHalt:
+            rollback_transaction(env.state)
+            evm.gas_left = U256(0)
+            evm.has_erred = True
+        else:
+            set_code(env.state, message.current_target, contract_code)
+            commit_transaction(env.state)
+    else:
+        rollback_transaction(env.state)
+    return evm
+</pre>
 </section>
 <section id="process-message">
 <h3>process_message<a class="headerlink" href="#process-message" title="Permalink to this headline"></a></h3>
@@ -767,83 +650,74 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     return evm
 </pre>
 </section>
-<section id="collect-accounts-to-delete">
-<h3><span class="change-replaced">collect_accounts_to_delete</span><span class="change-replacement">collect_touched_accounts</span><a class="headerlink" href="#collect-accounts-to-delete" title="Permalink to this headline"></a></h3>
+<section class="change-added" id="collect-touched-accounts">
+<h3>collect_touched_accounts<a class="headerlink" href="#collect-touched-accounts" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.collect_accounts_to_delete">
-<span class="sig-name descname change-replaced"><span class="pre">collect_accounts_to_delete</span></span><span class="sig-name descname change-replacement"><span class="pre">collect_touched_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ancestor_had_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.collect_accounts_to_delete" title="Permalink to this definition"></a></dt>
-<dd><p><span class="change-replaced">Collects</span><span class="change-replacement">Collect</span> all <span class="change-added">of </span>the accounts that <span class="change-replaced">were marked for deletion by</span><em class="change-replacement">may</em><span class="change-replacement"> need to be deleted based on
-</span><a class="change-replacement reference external" href="https://eips.ethereum.org/EIPS/eip-161">EIP-161</a><span class="change-replacement">.
-Checking whether they </span><em class="change-replacement">do</em><span class="change-replacement"> need to be deleted happens in</span> the
-<span class="change-added">caller.
-See also: </span><cite class="change-replaced">SELFDESTRUCT</cite><span class="change-replaced"> opcode.</span><a class="change-replacement reference external" href="https://github.com/ethereum/EIPs/issues/716">https://github.com/ethereum/EIPs/issues/716</a></p>
-<dl class="field-list">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.collect_touched_accounts">
+<span class="sig-name descname"><span class="pre">collect_touched_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ancestor_had_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.collect_touched_accounts" title="Permalink to this definition"></a></dt>
+<dd><p>Collect all of the accounts that <em>may</em> need to be deleted based on
+<a class="reference external" href="https://eips.ethereum.org/EIPS/eip-161">EIP-161</a>.
+Checking whether they <em>do</em> need to be deleted happens in the caller.
+See also: <a class="reference external" href="https://github.com/ethereum/EIPs/issues/716">https://github.com/ethereum/EIPs/issues/716</a></p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p class="change-replaced"><strong>evm</strong> – The current EVM frame.</p>
-<ul class="change-replacement simple">
+<dd class="field-odd"><ul class="simple">
 <li><p><strong>evm</strong> – The current EVM frame.</p></li>
 <li><p><strong>ancestor_had_error</strong> – True if the ancestors of the evm object erred else False</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong class="change-replaced">accounts_to_delete</strong><strong class="change-replacement">touched_accounts</strong> – returns all the accounts <span class="change-added">that were touched and may </span>need <span class="change-replaced">marked for deletion by the
-</span><cite class="change-replaced">SELFDESTRUCT</cite><span class="change-replaced"> opcode.</span><span class="change-replacement">to be deleted.</span></p>
+<dd class="field-even"><p><strong>touched_accounts</strong> – returns all the accounts that were touched and may need to be deleted.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p class="change-replaced"><cite>set</cite></p>
-<p class="change-replacement"><cite>typing.Iterable</cite></p>
+<dd class="field-odd"><p><cite>typing.Iterable</cite></p>
 </dd>
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def <span class="change-replaced">collect_accounts_to_delete(evm: Evm)</span><span class="change-replacement">collect_touched_accounts(
-    evm: Evm, ancestor_had_error: bool = False
-)</span> -&gt; <span class="change-replaced">Set[Address]:</span><span class="change-replacement">Iterable[Address]:
-    # collect the coinbase account</span>
-    if <span class="change-replaced">evm.has_erred:
-        return set()</span><span class="change-replacement">it was touched via zero-fee transfer
-    if (evm.message.caller == evm.env.origin) and evm.env.gas_price == 0:
-        yield evm.env.coinbase
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_touched_accounts</span><span class="p">(</span>
+    <span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">,</span> <span class="n">ancestor_had_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Address</span><span class="p">]:</span>
+    <span class="c1"># collect the coinbase account if it was touched via zero-fee transfer</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">caller</span> <span class="o">==</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span> <span class="ow">and</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">gas_price</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">coinbase</span>
 
-    # collect those explicitly marked for deletion
-    # (&quot;beneficiary&quot; is of SELFDESTRUCT)
-    for beneficiary in sorted(set(evm.accounts_to_delete.values())):
-        if evm.has_erred or ancestor_had_error:
-            # Special case to account for geth+parity bug
-            # https://github.com/ethereum/EIPs/issues/716
-            if beneficiary == RIPEMD160_ADDRESS:
-                yield beneficiary
-            continue</span>
-    else:
-        <span class="change-replaced">return set(
-            chain(
-                evm.accounts_to_delete,
-                *(collect_accounts_to_delete(child)</span><span class="change-replacement">yield beneficiary
+    <span class="c1"># collect those explicitly marked for deletion</span>
+    <span class="c1"># (&quot;beneficiary&quot; is of SELFDESTRUCT)</span>
+    <span class="k">for</span> <span class="n">beneficiary</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="o">.</span><span class="n">values</span><span class="p">())):</span>
+        <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">:</span>
+            <span class="c1"># Special case to account for geth+parity bug</span>
+            <span class="c1"># https://github.com/ethereum/EIPs/issues/716</span>
+            <span class="k">if</span> <span class="n">beneficiary</span> <span class="o">==</span> <span class="n">RIPEMD160_ADDRESS</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">beneficiary</span>
+            <span class="k">continue</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">beneficiary</span>
 
-    # collect account directly addressed
-    if not isinstance(evm.message.target, Bytes0):
-        if evm.has_erred or ancestor_had_error:
-            # collect RIPEMD160 precompile even if ancestor evm had error.
-            # otherwise, skip collection from children of erred-out evm objects
-            if evm.message.target == RIPEMD160_ADDRESS:
-                yield evm.message.target
-        else:
-            yield evm.message.target
+    <span class="c1"># collect account directly addressed</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">Bytes0</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">:</span>
+            <span class="c1"># collect RIPEMD160 precompile even if ancestor evm had error.</span>
+            <span class="c1"># otherwise, skip collection from children of erred-out evm objects</span>
+            <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">RIPEMD160_ADDRESS</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span>
 
-    # recurse into nested computations
-    # (even erred ones, since looking</span> for<span class="change-added"> RIPEMD160)
-    for</span> child in <span class="change-replaced">evm.children),</span><span class="change-replacement">evm.children:
-        yield from collect_touched_accounts(
-            child, ancestor_had_error=(evm.has_erred or ancestor_had_error)</span>
-            )
-        <span class="change-removed">)
-</span></pre>
+    <span class="c1"># recurse into nested computations</span>
+    <span class="c1"># (even erred ones, since looking for RIPEMD160)</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
+        <span class="k">yield from</span> <span class="n">collect_touched_accounts</span><span class="p">(</span>
+            <span class="n">child</span><span class="p">,</span> <span class="n">ancestor_had_error</span><span class="o">=</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">)</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section class="change-added" id="collect-accounts-to-delete">
+<section id="collect-accounts-to-delete">
 <h3>collect_accounts_to_delete<a class="headerlink" href="#collect-accounts-to-delete" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.vm.interpreter.collect_accounts_to_delete">
-<span class="sig-name descname"><span class="pre">collect_accounts_to_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.vm.interpreter.collect_accounts_to_delete" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.tangerine_whistle.vm.interpreter.collect_accounts_to_delete">
+<span class="sig-name descname"><span class="pre">collect_accounts_to_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.vm.interpreter.collect_accounts_to_delete" title="Permalink to this definition"></a></dt>
 <dd><p>Collects all the accounts that were marked for deletion by the
 <cite>SELFDESTRUCT</cite> opcode.</p>
 <dl class="field-list simple">
@@ -860,18 +734,17 @@ See also: </span><cite class="change-replaced">SELFDESTRUCT</cite><span class="c
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_accounts_to_delete</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Address</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span>
-            <span class="n">chain</span><span class="p">(</span>
-                <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
-                <span class="o">*</span><span class="p">(</span><span class="n">collect_accounts_to_delete</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">),</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-</pre></div>
-</div>
+<pre class="literal-block">def collect_accounts_to_delete(evm: Evm) -&gt; Set[Address]:
+    if evm.has_erred:
+        return set()
+    else:
+        return set(
+            chain(
+                <span class="change-replaced">evm.accounts_to_delete,</span><span class="change-replacement">evm.accounts_to_delete.keys(),</span>
+                *(collect_accounts_to_delete(child) for child in evm.children),
+            )
+        )
+</pre>
 </section>
 <section id="calculate-gas-refund">
 <h3>calculate_gas_refund<a class="headerlink" href="#calculate-gas-refund" title="Permalink to this headline"></a></h3>

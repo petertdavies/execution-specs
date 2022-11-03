@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../muir_glacier_berlin.html">Muir Glacier → Berlin</a> &raquo;</li>
-      <li>Ethereum Types</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../muir_glacier_berlin.html">Muir Glacier → Berlin</a></li>
+      <li class="breadcrumb-item active">Ethereum Types</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/muir_glacier_berlin/eth_types/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -473,60 +473,14 @@
 </pre></div>
 </div>
 </section>
-<section id="transaction">
-<h3><span class="change-replaced">Transaction</span><span class="change-replacement">TX_ACCESS_LIST_ADDRESS_COST</span><a class="headerlink" href="#transaction" title="Permalink to this headline"></a></h3>
-<p class="change-removed">Atomic operation performed on the block chain.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction">
-<em class="change-removed property"><span class="pre">class</span> </em><span class="sig-name descname change-replaced"><span class="pre">Transaction</span></span><span class="sig-name descname change-replacement"><span class="pre">TX_ACCESS_LIST_ADDRESS_COST</span></span><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction" title="Permalink to this definition"></a></dt>
-<dd class="change-removed"><dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.nonce">
-<span class="sig-name descname"><span class="pre">nonce</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.nonce" title="Permalink to this definition"></a></dt>
+<section class="change-added" id="tx-access-list-address-cost">
+<h3>TX_ACCESS_LIST_ADDRESS_COST<a class="headerlink" href="#tx-access-list-address-cost" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.berlin.eth_types.TX_ACCESS_LIST_ADDRESS_COST">
+<span class="sig-name descname"><span class="pre">TX_ACCESS_LIST_ADDRESS_COST</span></span><a class="headerlink" href="#ethereum.berlin.eth_types.TX_ACCESS_LIST_ADDRESS_COST" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.gas_price">
-<span class="sig-name descname"><span class="pre">gas_price</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.gas_price" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.gas">
-<span class="sig-name descname"><span class="pre">gas</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.gas" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.to">
-<span class="sig-name descname"><span class="pre">to</span></span><em class="property"> <span class="pre">:Union[ethereum.base_types.Bytes0,</span> <span class="pre">Address]</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.to" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.value">
-<span class="sig-name descname"><span class="pre">value</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.value" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.data">
-<span class="sig-name descname"><span class="pre">data</span></span><em class="property"> <span class="pre">:ethereum.base_types.Bytes</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.data" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.v">
-<span class="sig-name descname"><span class="pre">v</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.v" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.r">
-<span class="sig-name descname"><span class="pre">r</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.r" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.s">
-<span class="sig-name descname"><span class="pre">s</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.s" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<div class="change-added highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TX_ACCESS_LIST_ADDRESS_COST</span> <span class="o">=</span> <span class="mi">2400</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TX_ACCESS_LIST_ADDRESS_COST</span> <span class="o">=</span> <span class="mi">2400</span>
 </pre></div>
 </div>
 </section>
@@ -659,14 +613,60 @@
 </dd></dl>
 
 </section>
-<section class="change-added" id="transaction">
+<section id="transaction">
 <h3>Transaction<a class="headerlink" href="#transaction" title="Permalink to this headline"></a></h3>
-<dl class="py data">
-<dt class="sig sig-object py" id="ethereum.berlin.eth_types.Transaction">
-<span class="sig-name descname"><span class="pre">Transaction</span></span><a class="headerlink" href="#ethereum.berlin.eth_types.Transaction" title="Permalink to this definition"></a></dt>
+<p class="change-removed">Atomic operation performed on the block chain.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction">
+<em class="change-removed property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Transaction</span></span><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction" title="Permalink to this definition"></a></dt>
+<dd class="change-removed"><dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.nonce">
+<span class="sig-name descname"><span class="pre">nonce</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.nonce" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Transaction</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">LegacyTransaction</span><span class="p">,</span> <span class="n">AccessListTransaction</span><span class="p">]</span>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.gas_price">
+<span class="sig-name descname"><span class="pre">gas_price</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.gas_price" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.gas">
+<span class="sig-name descname"><span class="pre">gas</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.gas" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.to">
+<span class="sig-name descname"><span class="pre">to</span></span><em class="property"> <span class="pre">:Union[ethereum.base_types.Bytes0,</span> <span class="pre">Address]</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.to" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.data">
+<span class="sig-name descname"><span class="pre">data</span></span><em class="property"> <span class="pre">:ethereum.base_types.Bytes</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.data" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.v">
+<span class="sig-name descname"><span class="pre">v</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.v" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.r">
+<span class="sig-name descname"><span class="pre">r</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.r" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.muir_glacier.eth_types.Transaction.s">
+<span class="sig-name descname"><span class="pre">s</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.muir_glacier.eth_types.Transaction.s" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="change-added highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Transaction</span> <span class="o">=</span> <span class="n">Union</span><span class="p">[</span><span class="n">LegacyTransaction</span><span class="p">,</span> <span class="n">AccessListTransaction</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>

@@ -44,8 +44,6 @@ keccak
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-
 
 
 

@@ -297,13 +297,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../index.html">Specification</a> &raquo;</li>
-          <li><a href="../../../../index.html">Ethereum Specification</a> &raquo;</li>
-          <li><a href="../../../index.html">Ethereum Dao Hardfork</a> &raquo;</li>
-          <li><a href="../../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
-          <li><a href="../index.html">EVM Instruction Encoding (Opcodes)</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) Bitwise Instructions</li>
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Ethereum Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Ethereum Dao Hardfork</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Ethereum Virtual Machine (EVM)</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">EVM Instruction Encoding (Opcodes)</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) Bitwise Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/autoapi/ethereum/dao_fork/vm/instructions/bitwise/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -381,12 +381,6 @@ result back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.StackUnderflowError" title="ethereum.dao_fork.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.OutOfGasError" title="ethereum.dao_fork.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>GAS_VERY_LOW</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -416,12 +410,6 @@ result back on the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.StackUnderflowError" title="ethereum.dao_fork.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.OutOfGasError" title="ethereum.dao_fork.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>GAS_VERY_LOW</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -453,12 +441,6 @@ result back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.StackUnderflowError" title="ethereum.dao_fork.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.OutOfGasError" title="ethereum.dao_fork.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>GAS_VERY_LOW</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -489,12 +471,6 @@ result back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.StackUnderflowError" title="ethereum.dao_fork.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.OutOfGasError" title="ethereum.dao_fork.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>GAS_VERY_LOW</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -524,12 +500,6 @@ left (most significant) to right (least significant).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.StackUnderflowError" title="ethereum.dao_fork.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.dao_fork.vm.exceptions.OutOfGasError" title="ethereum.dao_fork.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>GAS_VERY_LOW</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>

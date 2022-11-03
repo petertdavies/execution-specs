@@ -297,13 +297,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../index.html">Specification</a> &raquo;</li>
-          <li><a href="../../../../index.html">Ethereum Specification</a> &raquo;</li>
-          <li><a href="../../../index.html">Ethereum Constantinople Hardfork</a> &raquo;</li>
-          <li><a href="../../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
-          <li><a href="../index.html">EVM Instruction Encoding (Opcodes)</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) Arithmetic Instructions</li>
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Ethereum Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Ethereum Constantinople Hardfork</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Ethereum Virtual Machine (EVM)</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">EVM Instruction Encoding (Opcodes)</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) Arithmetic Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/autoapi/ethereum/constantinople/vm/instructions/arithmetic/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -405,12 +405,6 @@ on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>3</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -442,12 +436,6 @@ on the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>3</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -481,12 +469,6 @@ on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -518,12 +500,6 @@ back on the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -559,12 +535,6 @@ result back on the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -604,12 +574,6 @@ back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -645,12 +609,6 @@ result back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -685,12 +643,6 @@ result back on the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>8</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -728,12 +680,6 @@ the result back on the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>8</cite>.</p></li>
-</ul>
-</dd>
 </dl>
 </dd></dl>
 
@@ -769,9 +715,6 @@ the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -810,12 +753,6 @@ fits in N bytes to 32 bytes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.StackUnderflowError" title="ethereum.constantinople.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>2</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.constantinople.vm.exceptions.OutOfGasError" title="ethereum.constantinople.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>5</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>

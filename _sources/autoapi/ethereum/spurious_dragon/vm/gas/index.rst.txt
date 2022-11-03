@@ -639,8 +639,6 @@ charge_gas
    :param evm: The current EVM.
    :param amount: The amount of gas the current operation requires.
 
-   :raises ~ethereum.spurious_dragon.vm.exceptions.OutOfGasError: If `gas_left` is less than `amount`.
-
 
 
 

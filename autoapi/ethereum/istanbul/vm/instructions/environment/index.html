@@ -297,13 +297,13 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../../index.html">Specification</a> &raquo;</li>
-          <li><a href="../../../../index.html">Ethereum Specification</a> &raquo;</li>
-          <li><a href="../../../index.html">Ethereum Istanbul Hardfork</a> &raquo;</li>
-          <li><a href="../../index.html">Ethereum Virtual Machine (EVM)</a> &raquo;</li>
-          <li><a href="../index.html">EVM Instruction Encoding (Opcodes)</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) Environmental Instructions</li>
+      <li><a href="../../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../../index.html">Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Ethereum Specification</a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Ethereum Istanbul Hardfork</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Ethereum Virtual Machine (EVM)</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">EVM Instruction Encoding (Opcodes)</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) Environmental Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../../_sources/autoapi/ethereum/istanbul/vm/instructions/environment/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -428,9 +428,6 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -458,12 +455,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -497,9 +488,6 @@ The origin address can only be an EOA.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -527,9 +515,6 @@ The origin address can only be an EOA.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -559,9 +544,6 @@ The origin address can only be an EOA.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -590,12 +572,6 @@ environment onto the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>3</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -627,9 +603,6 @@ environment onto the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -659,9 +632,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -697,9 +667,6 @@ to store the data.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -729,9 +696,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -767,9 +731,6 @@ to store the data.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -797,12 +758,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -834,9 +789,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>4</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -973,12 +925,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.StackUnderflowError" title="ethereum.istanbul.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.html#ethereum.istanbul.vm.exceptions.OutOfGasError" title="ethereum.istanbul.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>

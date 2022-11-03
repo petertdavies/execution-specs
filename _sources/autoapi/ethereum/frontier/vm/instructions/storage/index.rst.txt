@@ -43,9 +43,6 @@ sload
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.frontier.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.frontier.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `50`.
-
 
 
 
@@ -63,9 +60,6 @@ sstore
    Stores a value at a certain key in the current context's storage.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.frontier.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.frontier.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20000`.
 
 
 

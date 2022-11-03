@@ -115,9 +115,6 @@ pop
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -138,9 +135,6 @@ push_n
    :param num_bytes: The number of immediate bytes to be read from the code and pushed to
                      the stack.
 
-   :raises ~ethereum.homestead.vm.exceptions.StackOverflowError: If `len(stack)` is equals `1024`.
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
-
 
 
 
@@ -160,8 +154,6 @@ dup_n
    :param evm: The current EVM frame.
    :param item_number: The stack item number (0-indexed from top of stack) to be duplicated
                        to the top of stack.
-
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
 
 
 
@@ -187,8 +179,6 @@ swap_n
    :param item_number: The stack item number (0-indexed from top of stack) to be swapped
                        with the top of stack element.
 
-   :raises ~ethereum.homestead.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
-
 
 
 
@@ -207,7 +197,7 @@ push1
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 163-163
+   :lines: 143-143
 
 
 push2
@@ -221,7 +211,7 @@ push2
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 164-164
+   :lines: 144-144
 
 
 push3
@@ -235,7 +225,7 @@ push3
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 165-165
+   :lines: 145-145
 
 
 push4
@@ -249,7 +239,7 @@ push4
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 166-166
+   :lines: 146-146
 
 
 push5
@@ -263,7 +253,7 @@ push5
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 167-167
+   :lines: 147-147
 
 
 push6
@@ -277,7 +267,7 @@ push6
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 168-168
+   :lines: 148-148
 
 
 push7
@@ -291,7 +281,7 @@ push7
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 169-169
+   :lines: 149-149
 
 
 push8
@@ -305,7 +295,7 @@ push8
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 170-170
+   :lines: 150-150
 
 
 push9
@@ -319,7 +309,7 @@ push9
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 171-171
+   :lines: 151-151
 
 
 push10
@@ -333,7 +323,7 @@ push10
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 172-172
+   :lines: 152-152
 
 
 push11
@@ -347,7 +337,7 @@ push11
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 173-173
+   :lines: 153-153
 
 
 push12
@@ -361,7 +351,7 @@ push12
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 174-174
+   :lines: 154-154
 
 
 push13
@@ -375,7 +365,7 @@ push13
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 175-175
+   :lines: 155-155
 
 
 push14
@@ -389,7 +379,7 @@ push14
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 176-176
+   :lines: 156-156
 
 
 push15
@@ -403,7 +393,7 @@ push15
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 177-177
+   :lines: 157-157
 
 
 push16
@@ -417,7 +407,7 @@ push16
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 178-178
+   :lines: 158-158
 
 
 push17
@@ -431,7 +421,7 @@ push17
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 179-179
+   :lines: 159-159
 
 
 push18
@@ -445,7 +435,7 @@ push18
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 180-180
+   :lines: 160-160
 
 
 push19
@@ -459,7 +449,7 @@ push19
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 181-181
+   :lines: 161-161
 
 
 push20
@@ -473,7 +463,7 @@ push20
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 182-182
+   :lines: 162-162
 
 
 push21
@@ -487,7 +477,7 @@ push21
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 183-183
+   :lines: 163-163
 
 
 push22
@@ -501,7 +491,7 @@ push22
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 184-184
+   :lines: 164-164
 
 
 push23
@@ -515,7 +505,7 @@ push23
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 185-185
+   :lines: 165-165
 
 
 push24
@@ -529,7 +519,7 @@ push24
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 186-186
+   :lines: 166-166
 
 
 push25
@@ -543,7 +533,7 @@ push25
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 187-187
+   :lines: 167-167
 
 
 push26
@@ -557,7 +547,7 @@ push26
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 188-188
+   :lines: 168-168
 
 
 push27
@@ -571,7 +561,7 @@ push27
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 189-189
+   :lines: 169-169
 
 
 push28
@@ -585,7 +575,7 @@ push28
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 190-190
+   :lines: 170-170
 
 
 push29
@@ -599,7 +589,7 @@ push29
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 191-191
+   :lines: 171-171
 
 
 push30
@@ -613,7 +603,7 @@ push30
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 192-192
+   :lines: 172-172
 
 
 push31
@@ -627,7 +617,7 @@ push31
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 193-193
+   :lines: 173-173
 
 
 push32
@@ -641,7 +631,7 @@ push32
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 194-194
+   :lines: 174-174
 
 
 dup1
@@ -655,7 +645,7 @@ dup1
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 196-196
+   :lines: 176-176
 
 
 dup2
@@ -669,7 +659,7 @@ dup2
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 197-197
+   :lines: 177-177
 
 
 dup3
@@ -683,7 +673,7 @@ dup3
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 198-198
+   :lines: 178-178
 
 
 dup4
@@ -697,7 +687,7 @@ dup4
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 199-199
+   :lines: 179-179
 
 
 dup5
@@ -711,7 +701,7 @@ dup5
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 200-200
+   :lines: 180-180
 
 
 dup6
@@ -725,7 +715,7 @@ dup6
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 201-201
+   :lines: 181-181
 
 
 dup7
@@ -739,7 +729,7 @@ dup7
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 202-202
+   :lines: 182-182
 
 
 dup8
@@ -753,7 +743,7 @@ dup8
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 203-203
+   :lines: 183-183
 
 
 dup9
@@ -767,7 +757,7 @@ dup9
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 204-204
+   :lines: 184-184
 
 
 dup10
@@ -781,7 +771,7 @@ dup10
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 205-205
+   :lines: 185-185
 
 
 dup11
@@ -795,7 +785,7 @@ dup11
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 206-206
+   :lines: 186-186
 
 
 dup12
@@ -809,7 +799,7 @@ dup12
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 207-207
+   :lines: 187-187
 
 
 dup13
@@ -823,7 +813,7 @@ dup13
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 208-208
+   :lines: 188-188
 
 
 dup14
@@ -837,7 +827,7 @@ dup14
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 209-209
+   :lines: 189-189
 
 
 dup15
@@ -851,7 +841,7 @@ dup15
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 210-210
+   :lines: 190-190
 
 
 dup16
@@ -865,7 +855,7 @@ dup16
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 211-211
+   :lines: 191-191
 
 
 swap1
@@ -879,7 +869,7 @@ swap1
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 213-213
+   :lines: 193-193
 
 
 swap2
@@ -893,7 +883,7 @@ swap2
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 214-214
+   :lines: 194-194
 
 
 swap3
@@ -907,7 +897,7 @@ swap3
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 215-215
+   :lines: 195-195
 
 
 swap4
@@ -921,7 +911,7 @@ swap4
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 216-216
+   :lines: 196-196
 
 
 swap5
@@ -935,7 +925,7 @@ swap5
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 217-217
+   :lines: 197-197
 
 
 swap6
@@ -949,7 +939,7 @@ swap6
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 218-218
+   :lines: 198-198
 
 
 swap7
@@ -963,7 +953,7 @@ swap7
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 219-219
+   :lines: 199-199
 
 
 swap8
@@ -977,7 +967,7 @@ swap8
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 220-220
+   :lines: 200-200
 
 
 swap9
@@ -991,7 +981,7 @@ swap9
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 221-221
+   :lines: 201-201
 
 
 swap10
@@ -1005,7 +995,7 @@ swap10
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 222-222
+   :lines: 202-202
 
 
 swap11
@@ -1019,7 +1009,7 @@ swap11
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 223-223
+   :lines: 203-203
 
 
 swap12
@@ -1033,7 +1023,7 @@ swap12
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 224-224
+   :lines: 204-204
 
 
 swap13
@@ -1047,7 +1037,7 @@ swap13
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 225-225
+   :lines: 205-205
 
 
 swap14
@@ -1061,7 +1051,7 @@ swap14
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 226-226
+   :lines: 206-206
 
 
 swap15
@@ -1075,7 +1065,7 @@ swap15
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 227-227
+   :lines: 207-207
 
 
 swap16
@@ -1089,5 +1079,5 @@ swap16
 
 .. undocinclude:: /../src/ethereum/homestead/vm/instructions/stack.py
    :language: python
-   :lines: 228-228
+   :lines: 208-208
 

@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a> &raquo;</li>
-      <li>Ethereum Virtual Machine (EVM) Environmental Instructions</li>
+      <li><a href="../../../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a></li>
+      <li class="breadcrumb-item active">Ethereum Virtual Machine (EVM) Environmental Instructions</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/diffs/spurious_dragon_byzantium/vm/instructions/environment/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -358,9 +358,6 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -388,12 +385,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -427,9 +418,6 @@ The origin address can only be an EOA.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -457,9 +445,6 @@ The origin address can only be an EOA.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -489,9 +474,6 @@ The origin address can only be an EOA.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -520,12 +502,6 @@ environment onto the stack.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>3</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -557,9 +533,6 @@ environment onto the stack.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -589,9 +562,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -627,9 +597,6 @@ to store the data.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -659,9 +626,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>3</cite>.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -697,9 +661,6 @@ to store the data.</p>
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
 </dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>2</cite>.</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -727,12 +688,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><ul class="simple">
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>1</cite>.</p></li>
-<li><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.OutOfGasError" title="ethereum.spurious_dragon.vm.exceptions.OutOfGasError"><strong>OutOfGasError</strong></a> – If <cite>evm.gas_left</cite> is less than <cite>20</cite>.</p></li>
-</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -764,9 +719,6 @@ to store the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference internal" href="../../exceptions/index.pickle#ethereum.spurious_dragon.vm.exceptions.StackUnderflowError" title="ethereum.spurious_dragon.vm.exceptions.StackUnderflowError"><strong>StackUnderflowError</strong></a> – If <cite>len(stack)</cite> is less than <cite>4</cite>.</p>
 </dd>
 </dl>
 </dd></dl>

@@ -53,8 +53,6 @@ address
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -72,9 +70,6 @@ balance
    Pushes the balance of the given account onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
 
 
 
@@ -95,8 +90,6 @@ origin
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -115,8 +108,6 @@ caller
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -134,8 +125,6 @@ callvalue
    Push the value (in wei) sent with the call onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -156,9 +145,6 @@ calldataload
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
-
 
 
 
@@ -176,8 +162,6 @@ calldatasize
    Push the size of input data in current environment onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -200,8 +184,6 @@ calldatacopy
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
-
 
 
 
@@ -219,8 +201,6 @@ codesize
    Push the size of code running in current environment onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -243,8 +223,6 @@ codecopy
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
-
 
 
 
@@ -262,8 +240,6 @@ gasprice
    Push the gas price used in current environment onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -283,9 +259,6 @@ extcodesize
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
-
 
 
 
@@ -303,8 +276,6 @@ extcodecopy
    Copy a portion of an account's code to memory.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `4`.
 
 
 

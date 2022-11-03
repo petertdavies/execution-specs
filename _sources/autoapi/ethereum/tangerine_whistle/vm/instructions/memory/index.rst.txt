@@ -46,10 +46,6 @@ mstore
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than
-       `3` + gas needed to extend memeory.
-
 
 
 
@@ -70,10 +66,6 @@ mstore8
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than
-       `3` + gas needed to extend memory.
-
 
 
 
@@ -92,10 +84,6 @@ mload
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than
-       `3` + gas needed to extend memory.
-
 
 
 
@@ -113,8 +101,6 @@ msize
    Push the size of active memory in bytes onto the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.tangerine_whistle.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`
 
 
 

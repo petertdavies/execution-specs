@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a> &raquo;</li>
-      <li>Ethereum Specification</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a></li>
+      <li class="breadcrumb-item active">Ethereum Specification</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/tangerine_whistle_spurious_dragon/spec/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -1210,13 +1210,13 @@ with these two values and therefore the sender address can be retrieved.</p>
     return Address(keccak256(public_key)[12:32])
 </pre>
 </section>
-<section id="signing-hash">
-<h3><span class="change-replaced">signing_hash</span><span class="change-replacement">signing_hash_pre155</span><a class="headerlink" href="#signing-hash" title="Permalink to this headline"></a></h3>
+<section class="change-replaced" id="signing-hash">
+<h3>signing_hash<a class="headerlink" href="#signing-hash" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.tangerine_whistle.spec.signing_hash">
-<span class="sig-name descname change-replaced"><span class="pre">signing_hash</span></span><span class="sig-name descname change-replacement"><span class="pre">signing_hash_pre155</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.spec.signing_hash" title="Permalink to this definition"></a></dt>
-<dd><p>Compute the hash of a transaction used in <span class="change-replaced">the</span><span class="change-replacement">a legacy (pre EIP 155)</span> signature.</p>
-<p class="change-removed">The values that are used to compute the signing hash set the rules for a
+<span class="sig-name descname"><span class="pre">signing_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.tangerine_whistle.spec.signing_hash" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the hash of a transaction used in the signature.</p>
+<p>The values that are used to compute the signing hash set the rules for a
 transaction. For example, signing over the gas sets a limit for the
 amount of money that is allowed to be pulled out of the sender’s account.</p>
 <dl class="field-list simple">
@@ -1232,22 +1232,58 @@ amount of money that is allowed to be pulled out of the sender’s account.</p>
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def <span class="change-replaced">signing_hash(tx:</span><span class="change-replacement">signing_hash_pre155(tx:</span> Transaction) -&gt; Hash32:
-    return keccak256(
-        rlp.encode(
-            (
-                tx.nonce,
-                tx.gas_price,
-                tx.gas,
-                tx.to,
-                tx.value,
-                tx.data,
-            )
-        )
-    )
-</pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span>
+        <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">gas_price</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">gas</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">to</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section class="change-added" id="signing-hash-155">
+<section class="change-replacement" id="signing-hash-pre155">
+<h3>signing_hash_pre155<a class="headerlink" href="#signing-hash-pre155" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.signing_hash_pre155">
+<span class="sig-name descname"><span class="pre">signing_hash_pre155</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.spec.signing_hash_pre155" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the hash of a transaction used in a legacy (pre EIP 155) signature.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>tx</strong> – Transaction of interest.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>hash</strong> – Hash of the transaction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><cite>ethereum.eth_types.Hash32</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash_pre155</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span>
+        <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">gas_price</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">gas</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">to</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                <span class="n">tx</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section class="change-replacement" id="signing-hash-155">
 <h3>signing_hash_155<a class="headerlink" href="#signing-hash-155" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.signing_hash_155">

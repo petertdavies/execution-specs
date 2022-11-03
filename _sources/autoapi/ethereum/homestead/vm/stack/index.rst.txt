@@ -45,8 +45,6 @@ pop
    :returns: **value** -- The top element on the stack.
    :rtype: `U256`
 
-   :raises ~ethereum.homestead.vm.exceptions.StackUnderflowError: If `stack` is empty.
-
 
 
 
@@ -65,8 +63,6 @@ push
 
    :param stack: EVM stack.
    :param value: Item to be pushed onto `stack`.
-
-   :raises ~ethereum.homestead.vm.exceptions.StackOverflowError: If `len(stack)` is `1024`.
 
 
 

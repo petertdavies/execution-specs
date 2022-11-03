@@ -47,9 +47,6 @@ block_hash
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `20`.
-
 
 
 
@@ -71,9 +68,6 @@ coinbase
    executing transaction/call resides.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.constantinople.vm.exceptions.StackOverflowError: If `len(stack)` is equal to `1024`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -97,9 +91,6 @@ timestamp
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.exceptions.StackOverflowError: If `len(stack)` is equal to `1024`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -120,9 +111,6 @@ number
    executing transaction/call resides.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.constantinople.vm.exceptions.StackOverflowError: If `len(stack)` is equal to `1024`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 
@@ -145,9 +133,6 @@ difficulty
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.constantinople.vm.exceptions.StackOverflowError: If `len(stack)` is equal to `1024`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
-
 
 
 
@@ -168,9 +153,6 @@ gas_limit
    executing transaction/call resides.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.constantinople.vm.exceptions.StackOverflowError: If `len(stack)` is equal to `1024`.
-   :raises ~ethereum.constantinople.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `2`.
 
 
 

@@ -46,9 +46,6 @@ bitwise_and
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.byzantium.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
-
 
 
 
@@ -67,9 +64,6 @@ bitwise_or
    result back on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.byzantium.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -90,9 +84,6 @@ bitwise_xor
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.byzantium.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
-
 
 
 
@@ -111,9 +102,6 @@ bitwise_not
    result back on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `1`.
-   :raises ~ethereum.byzantium.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 
@@ -134,9 +122,6 @@ get_byte
    left (most significant) to right (least significant).
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.byzantium.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.byzantium.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `GAS_VERY_LOW`.
 
 
 

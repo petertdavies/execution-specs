@@ -238,10 +238,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../index.html">Comparisons</a> &raquo;</li>
-          <li><a href="../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a> &raquo;</li>
-      <li>Ethereum Specification</li>
+      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Comparisons</a></li>
+          <li class="breadcrumb-item"><a href="../../spurious_dragon_byzantium.html">Spurious Dragon → Byzantium</a></li>
+      <li class="breadcrumb-item active">Ethereum Specification</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/diffs/spurious_dragon_byzantium/spec/index.pickle64.txt" rel="nofollow"> View page source</a>
       </li>
@@ -470,30 +470,14 @@
 </pre></div>
 </div>
 </section>
-<section id="blockchain">
-<h3><span class="change-replaced">BlockChain</span><span class="change-replacement">BOMB_DELAY_BLOCKS</span><a class="headerlink" href="#blockchain" title="Permalink to this headline"></a></h3>
-<p class="change-removed">History and current state of the block chain.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain">
-<em class="change-removed property"><span class="pre">class</span> </em><span class="sig-name descname change-replaced"><span class="pre">BlockChain</span></span><span class="sig-name descname change-replacement"><span class="pre">BOMB_DELAY_BLOCKS</span></span><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain" title="Permalink to this definition"></a></dt>
-<dd class="change-removed"><dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.blocks">
-<span class="sig-name descname"><span class="pre">blocks</span></span><em class="property"> <span class="pre">:List[ethereum.spurious_dragon.eth_types.Block]</span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.blocks" title="Permalink to this definition"></a></dt>
+<section class="change-added" id="bomb-delay-blocks">
+<h3>BOMB_DELAY_BLOCKS<a class="headerlink" href="#bomb-delay-blocks" title="Permalink to this headline"></a></h3>
+<dl class="py data">
+<dt class="sig sig-object py" id="ethereum.byzantium.spec.BOMB_DELAY_BLOCKS">
+<span class="sig-name descname"><span class="pre">BOMB_DELAY_BLOCKS</span></span><a class="headerlink" href="#ethereum.byzantium.spec.BOMB_DELAY_BLOCKS" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.state">
-<span class="sig-name descname"><span class="pre">state</span></span><em class="property"> <span class="pre">:ethereum.spurious_dragon.state.State</span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.state" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.chain_id">
-<span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint64</span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.chain_id" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<div class="change-added highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BOMB_DELAY_BLOCKS</span> <span class="o">=</span> <span class="mi">3000000</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BOMB_DELAY_BLOCKS</span> <span class="o">=</span> <span class="mi">3000000</span>
 </pre></div>
 </div>
 </section>
@@ -508,25 +492,25 @@
 </pre></div>
 </div>
 </section>
-<section class="change-added" id="blockchain">
+<section id="blockchain">
 <h3>BlockChain<a class="headerlink" href="#blockchain" title="Permalink to this headline"></a></h3>
 <p>History and current state of the block chain.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="ethereum.byzantium.spec.BlockChain">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BlockChain</span></span><a class="headerlink" href="#ethereum.byzantium.spec.BlockChain" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">BlockChain</span></span><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain" title="Permalink to this definition"></a></dt>
 <dd><dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.byzantium.spec.BlockChain.blocks">
-<span class="sig-name descname"><span class="pre">blocks</span></span><em class="property"> <span class="pre">:List[ethereum.byzantium.eth_types.Block]</span></em><a class="headerlink" href="#ethereum.byzantium.spec.BlockChain.blocks" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.blocks">
+<span class="sig-name descname"><span class="pre">blocks</span></span><em class="property"> <span class="change-replaced"><span class="pre">:List[ethereum.spurious_dragon.eth_types.Block]</span></span><span class="change-replacement"><span class="pre">:List[ethereum.byzantium.eth_types.Block]</span></span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.blocks" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.byzantium.spec.BlockChain.state">
-<span class="sig-name descname"><span class="pre">state</span></span><em class="property"> <span class="pre">:ethereum.byzantium.state.State</span></em><a class="headerlink" href="#ethereum.byzantium.spec.BlockChain.state" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.state">
+<span class="sig-name descname"><span class="pre">state</span></span><em class="property"> <span class="change-replaced"><span class="pre">:ethereum.spurious_dragon.state.State</span></span><span class="change-replacement"><span class="pre">:ethereum.byzantium.state.State</span></span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.state" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.byzantium.spec.BlockChain.chain_id">
-<span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint64</span></em><a class="headerlink" href="#ethereum.byzantium.spec.BlockChain.chain_id" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.BlockChain.chain_id">
+<span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint64</span></em><a class="headerlink" href="#ethereum.spurious_dragon.spec.BlockChain.chain_id" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
