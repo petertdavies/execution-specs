@@ -17,3 +17,4 @@ Comparisons
    berlin_london.rst
    london_arrow_glacier.rst
    arrow_glacier_gray_glacier.rst
+   gray_glacier_paris.rst

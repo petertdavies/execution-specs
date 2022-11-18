@@ -37,6 +37,7 @@ Subpackages
    london/index.rst
    arrow_glacier/index.rst
    gray_glacier/index.rst
+   paris/index.rst
    crypto/index.rst
    utils/index.rst
 
