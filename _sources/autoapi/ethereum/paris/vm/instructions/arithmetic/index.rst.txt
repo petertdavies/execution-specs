@@ -13,6 +13,8 @@ Introduction
 Implementations of the EVM Arithmetic instructions.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -52,9 +54,6 @@ add
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
-
 
 
 
@@ -73,9 +72,6 @@ sub
    on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `3`.
 
 
 
@@ -96,9 +92,6 @@ mul
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
-
 
 
 
@@ -117,9 +110,6 @@ div
    back on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
 
 
 
@@ -140,9 +130,6 @@ sdiv
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
-
 
 
 
@@ -161,9 +148,6 @@ mod
    back on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
 
 
 
@@ -184,9 +168,6 @@ smod
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
-
 
 
 
@@ -205,9 +186,6 @@ addmod
    result back on the stack.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `8`.
 
 
 
@@ -228,9 +206,6 @@ mulmod
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `3`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `8`.
-
 
 
 
@@ -250,8 +225,6 @@ exp
 
    :param evm: The current EVM frame.
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-
 
 
 
@@ -270,9 +243,6 @@ signextend
    fits in N bytes to 32 bytes.
 
    :param evm: The current EVM frame.
-
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `len(stack)` is less than `2`.
-   :raises ~ethereum.paris.vm.exceptions.OutOfGasError: If `evm.gas_left` is less than `5`.
 
 
 

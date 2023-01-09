@@ -13,6 +13,8 @@ Introduction
 A straightforward interpreter that executes EVM code.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -48,7 +50,6 @@ Attributes
 
    ethereum.paris.vm.interpreter.STACK_DEPTH_LIMIT
    ethereum.paris.vm.interpreter.MAX_CODE_SIZE
-   ethereum.paris.vm.interpreter.RIPEMD160_ADDRESS
 
 
 Module Details
@@ -65,7 +66,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/paris/vm/interpreter.py
    :language: python
-   :lines: 50-50
+   :lines: 52-52
 
 
 MAX_CODE_SIZE
@@ -79,21 +80,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/paris/vm/interpreter.py
    :language: python
-   :lines: 51-51
-
-
-RIPEMD160_ADDRESS
-~~~~~~~~~~~~~~~~~
-
-
-
-.. py:data:: RIPEMD160_ADDRESS
-   
-   
-
-.. undocinclude:: /../src/ethereum/paris/vm/interpreter.py
-   :language: python
-   :lines: 52-52
+   :lines: 53-53
 
 
 MessageCallOutput

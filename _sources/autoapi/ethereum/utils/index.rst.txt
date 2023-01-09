@@ -13,16 +13,18 @@ Introduction
 Utility functions used in this specification.
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+.. only:: stage1
 
-   byte/index.rst
-   ensure/index.rst
-   hexadecimal/index.rst
-   numeric/index.rst
-   safe_arithmetic/index.rst
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+
+      byte/index.rst
+      ensure/index.rst
+      hexadecimal/index.rst
+      numeric/index.rst
+      safe_arithmetic/index.rst
 
 

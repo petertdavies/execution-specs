@@ -13,6 +13,8 @@ Introduction
 Implementation of the ALT_BN128 precompiled contracts.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

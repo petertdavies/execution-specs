@@ -6,27 +6,29 @@ Ethereum Homestead Hardfork
 The second Ethereum hardfork.
 
 
-Subpackages
------------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 3
+.. only:: stage1
 
-   utils/index.rst
-   vm/index.rst
+   Subpackages
+   -----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 3
+
+      utils/index.rst
+      vm/index.rst
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
 
-   bloom/index.rst
-   eth_types/index.rst
-   spec/index.rst
-   state/index.rst
-   trie/index.rst
+      bloom/index.rst
+      eth_types/index.rst
+      spec/index.rst
+      state/index.rst
+      trie/index.rst
 
 
 Package Contents

@@ -13,6 +13,8 @@ Introduction
 Entry point for the Ethereum specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

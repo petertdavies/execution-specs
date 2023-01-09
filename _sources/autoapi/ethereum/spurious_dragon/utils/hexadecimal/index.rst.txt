@@ -14,6 +14,8 @@ Hexadecimal utility functions used in this specification, specific to
 Spurious Dragon types.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

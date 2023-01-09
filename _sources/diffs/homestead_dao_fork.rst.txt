@@ -5,7 +5,6 @@ Homestead → Dao Fork
 .. toctree::
    :maxdepth: 1
 
-   homestead_dao_fork/bloom/index.pickle64
    homestead_dao_fork/dao/index.pickle64
    homestead_dao_fork/index.pickle64
    homestead_dao_fork/spec/index.pickle64

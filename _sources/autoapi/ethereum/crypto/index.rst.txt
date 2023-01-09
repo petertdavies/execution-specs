@@ -13,16 +13,18 @@ Introduction
 Cryptographic primatives used in Ethereum.
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+.. only:: stage1
 
-   alt_bn128/index.rst
-   blake2/index.rst
-   elliptic_curve/index.rst
-   finite_field/index.rst
-   hash/index.rst
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+
+      alt_bn128/index.rst
+      blake2/index.rst
+      elliptic_curve/index.rst
+      finite_field/index.rst
+      hash/index.rst
 
 

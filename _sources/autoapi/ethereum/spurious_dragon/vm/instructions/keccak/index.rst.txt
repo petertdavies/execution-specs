@@ -13,6 +13,8 @@ Introduction
 Implementations of the EVM keccak instructions.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

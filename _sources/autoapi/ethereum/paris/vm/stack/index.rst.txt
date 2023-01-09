@@ -13,6 +13,8 @@ Introduction
 Implementation of the stack operators for the EVM.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -45,8 +47,6 @@ pop
    :returns: **value** -- The top element on the stack.
    :rtype: `U256`
 
-   :raises ~ethereum.paris.vm.exceptions.StackUnderflowError: If `stack` is empty.
-
 
 
 
@@ -65,8 +65,6 @@ push
 
    :param stack: EVM stack.
    :param value: Item to be pushed onto `stack`.
-
-   :raises ~ethereum.paris.vm.exceptions.StackOverflowError: If `len(stack)` is `1024`.
 
 
 

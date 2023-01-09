@@ -4,6 +4,8 @@ The alt_bn128 curve
 ^^^^^^^^^^^^^^^^^^^
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

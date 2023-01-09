@@ -13,14 +13,16 @@ Introduction
 Utility functions used in this constantinople version of specification.
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+.. only:: stage1
 
-   address/index.rst
-   hexadecimal/index.rst
-   message/index.rst
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+
+      address/index.rst
+      hexadecimal/index.rst
+      message/index.rst
 
 

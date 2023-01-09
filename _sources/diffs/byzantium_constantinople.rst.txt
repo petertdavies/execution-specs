@@ -14,4 +14,3 @@ Byzantium → Constantinople
    byzantium_constantinople/vm/instructions/index.pickle64
    byzantium_constantinople/vm/instructions/system/index.pickle64
    byzantium_constantinople/vm/interpreter/index.pickle64
-   byzantium_constantinople/vm/precompiled_contracts/modexp/index.pickle64

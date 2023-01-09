@@ -13,6 +13,8 @@ Introduction
 Exceptions which cause the EVM to halt exceptionally.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

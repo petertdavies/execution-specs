@@ -13,6 +13,8 @@ Introduction
 Hexadecimal strings specific utility functions used in this specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -18,40 +18,42 @@ This package contains a reference implementation, written as simply as
 possible, to aid in defining the behavior of Ethereum clients.
 
 
-Subpackages
------------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 3
+.. only:: stage1
 
-   frontier/index.rst
-   homestead/index.rst
-   dao_fork/index.rst
-   tangerine_whistle/index.rst
-   spurious_dragon/index.rst
-   byzantium/index.rst
-   constantinople/index.rst
-   istanbul/index.rst
-   muir_glacier/index.rst
-   berlin/index.rst
-   london/index.rst
-   arrow_glacier/index.rst
-   gray_glacier/index.rst
-   paris/index.rst
-   crypto/index.rst
-   utils/index.rst
+   Subpackages
+   -----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 3
+
+      frontier/index.rst
+      homestead/index.rst
+      dao_fork/index.rst
+      tangerine_whistle/index.rst
+      spurious_dragon/index.rst
+      byzantium/index.rst
+      constantinople/index.rst
+      istanbul/index.rst
+      muir_glacier/index.rst
+      berlin/index.rst
+      london/index.rst
+      arrow_glacier/index.rst
+      gray_glacier/index.rst
+      paris/index.rst
+      crypto/index.rst
+      utils/index.rst
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
 
-   base_types/index.rst
-   ethash/index.rst
-   exceptions/index.rst
-   rlp/index.rst
+      base_types/index.rst
+      ethash/index.rst
+      exceptions/index.rst
+      rlp/index.rst
 
 
 Package Contents

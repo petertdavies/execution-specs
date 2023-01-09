@@ -13,6 +13,8 @@ Introduction
 Implementation of the `MODEXP` precompiled contract.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

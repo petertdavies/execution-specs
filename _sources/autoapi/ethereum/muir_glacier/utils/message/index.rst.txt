@@ -14,6 +14,8 @@ Message specific functions used in this muir_glacier version of
 specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

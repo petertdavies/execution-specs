@@ -13,8 +13,66 @@ Introduction
 Mapping of precompiled contracts their implementations.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
+
+
+ECRECOVER_ADDRESS
+~~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: ECRECOVER_ADDRESS
+   
+   
+
+.. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py
+   :language: python
+   :lines: 23-23
+
+
+SHA256_ADDRESS
+~~~~~~~~~~~~~~
+
+
+
+.. py:data:: SHA256_ADDRESS
+   
+   
+
+.. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py
+   :language: python
+   :lines: 24-24
+
+
+RIPEMD160_ADDRESS
+~~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: RIPEMD160_ADDRESS
+   
+   
+
+.. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py
+   :language: python
+   :lines: 25-25
+
+
+IDENTITY_ADDRESS
+~~~~~~~~~~~~~~~~
+
+
+
+.. py:data:: IDENTITY_ADDRESS
+   
+   
+
+.. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py
+   :language: python
+   :lines: 26-26
 
 
 PRE_COMPILED_CONTRACTS
@@ -28,5 +86,5 @@ PRE_COMPILED_CONTRACTS
 
 .. undocinclude:: /../src/ethereum/frontier/vm/precompiled_contracts/mapping.py
    :language: python
-   :lines: 23-28
+   :lines: 28-33
 

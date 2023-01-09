@@ -13,6 +13,8 @@ Introduction
 Functions that simplify checking assertions and raising exceptions.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

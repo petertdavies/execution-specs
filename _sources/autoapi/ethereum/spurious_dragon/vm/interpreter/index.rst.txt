@@ -13,6 +13,8 @@ Introduction
 A straightforward interpreter that executes EVM code.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -48,7 +50,6 @@ Attributes
 
    ethereum.spurious_dragon.vm.interpreter.STACK_DEPTH_LIMIT
    ethereum.spurious_dragon.vm.interpreter.MAX_CODE_SIZE
-   ethereum.spurious_dragon.vm.interpreter.RIPEMD160_ADDRESS
 
 
 Module Details
@@ -65,7 +66,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
-   :lines: 47-47
+   :lines: 49-49
 
 
 MAX_CODE_SIZE
@@ -79,21 +80,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
    :language: python
-   :lines: 48-48
-
-
-RIPEMD160_ADDRESS
-~~~~~~~~~~~~~~~~~
-
-
-
-.. py:data:: RIPEMD160_ADDRESS
-   
-   
-
-.. undocinclude:: /../src/ethereum/spurious_dragon/vm/interpreter.py
-   :language: python
-   :lines: 49-49
+   :lines: 50-50
 
 
 MessageCallOutput

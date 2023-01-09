@@ -13,6 +13,8 @@ Introduction
 Implementation of the `Blake2` precompiled contract.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -13,6 +13,8 @@ Introduction
 Implementation of the stack operators for the EVM.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

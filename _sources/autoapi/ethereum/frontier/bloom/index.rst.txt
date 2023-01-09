@@ -17,6 +17,8 @@ for efficient searching of logs by address and/or topic, by rapidly
 eliminating blocks and reciepts from their search.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

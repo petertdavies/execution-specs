@@ -13,6 +13,8 @@ Introduction
 The Ethereum specification exception classes.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

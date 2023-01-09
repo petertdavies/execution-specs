@@ -4,6 +4,8 @@ The Blake2 Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -14,28 +14,30 @@ The abstract computer which runs the code stored in an
 `eth1spec.eth_types.Account`.
 
 
-Subpackages
------------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 3
+.. only:: stage1
 
-   instructions/index.rst
-   precompiled_contracts/index.rst
+   Subpackages
+   -----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 3
+
+      instructions/index.rst
+      precompiled_contracts/index.rst
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
 
-   exceptions/index.rst
-   gas/index.rst
-   interpreter/index.rst
-   memory/index.rst
-   runtime/index.rst
-   stack/index.rst
+      exceptions/index.rst
+      gas/index.rst
+      interpreter/index.rst
+      memory/index.rst
+      runtime/index.rst
+      stack/index.rst
 
 
 Package Contents

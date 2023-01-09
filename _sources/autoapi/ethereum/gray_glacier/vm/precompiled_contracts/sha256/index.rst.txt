@@ -13,6 +13,8 @@ Introduction
 Implementation of the `SHA256` precompiled contract.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

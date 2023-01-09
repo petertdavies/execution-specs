@@ -13,6 +13,8 @@ Introduction
 Implementations of the EVM logging instructions.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

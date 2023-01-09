@@ -14,24 +14,26 @@ Machine readable representations of EVM instructions, and a mapping to their
 implementations.
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+.. only:: stage1
 
-   arithmetic/index.rst
-   bitwise/index.rst
-   block/index.rst
-   comparison/index.rst
-   control_flow/index.rst
-   environment/index.rst
-   keccak/index.rst
-   log/index.rst
-   memory/index.rst
-   stack/index.rst
-   storage/index.rst
-   system/index.rst
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+
+      arithmetic/index.rst
+      bitwise/index.rst
+      block/index.rst
+      comparison/index.rst
+      control_flow/index.rst
+      environment/index.rst
+      keccak/index.rst
+      log/index.rst
+      memory/index.rst
+      stack/index.rst
+      storage/index.rst
+      system/index.rst
 
 
 Package Contents

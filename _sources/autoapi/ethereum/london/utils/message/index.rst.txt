@@ -14,6 +14,8 @@ Message specific functions used in this london version of
 specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -14,6 +14,8 @@ Message specific functions used in this tangerine whistle version of
 specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -13,6 +13,8 @@ Introduction
 Integer and array types which are used by—but not unique to—Ethereum.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

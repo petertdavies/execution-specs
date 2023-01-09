@@ -13,6 +13,8 @@ Introduction
 Implementation of the `MODEXP` precompiled contract.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -60,7 +62,7 @@ modexp
 .. function:: modexp(evm: ethereum.byzantium.vm.Evm) -> None
    :noindexentry:
 
-   Calculates `(base ** exp) % modulus` for arbitary sized `base`, `exp` and.
+   Calculates `(base**exp) % modulus` for arbitary sized `base`, `exp` and.
    `modulus`. The return value is the same length as the modulus.
 
 

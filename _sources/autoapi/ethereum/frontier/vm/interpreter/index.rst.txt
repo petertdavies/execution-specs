@@ -13,6 +13,8 @@ Introduction
 A straightforward interpreter that executes EVM code.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

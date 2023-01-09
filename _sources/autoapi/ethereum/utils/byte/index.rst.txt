@@ -13,6 +13,8 @@ Introduction
 Byte specific utility functions used in this specification.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

@@ -16,6 +16,8 @@ collection of accounts (The Dao and all its children) to a recovery contract.
 The recovery contract was previously created using normal contract deployment.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

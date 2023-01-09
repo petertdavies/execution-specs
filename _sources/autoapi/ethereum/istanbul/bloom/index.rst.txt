@@ -17,6 +17,8 @@ for efficient searching of logs by address and/or topic, by rapidly
 eliminating blocks and reciepts from their search.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 
@@ -44,6 +46,10 @@ add_to_bloom
 
    Add a bloom entry to the bloom filter (`bloom`).
 
+   The number of hash functions used is 3. They are calculated by taking the
+   least significant 11 bits from the first 3 16-bit words of the
+   `keccak_256()` hash of `bloom_entry`.
+
    :param bloom: The bloom filter.
    :param bloom_entry: An entry which is to be added to bloom filter.
 
@@ -62,6 +68,8 @@ logs_bloom
    :noindexentry:
 
    Obtain the logs bloom from a list of log entries.
+
+   The address and each topic of a log are added to the bloom filter.
 
    :param logs: List of logs for which the logs bloom is to be obtained.
 

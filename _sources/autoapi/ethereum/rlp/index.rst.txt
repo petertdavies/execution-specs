@@ -15,6 +15,8 @@ Introduction
 Defines the serialization and deserialization format used throughout Ethereum.
 
 
+.. only:: stage1
+
 Module Contents
 ---------------
 

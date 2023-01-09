@@ -14,16 +14,18 @@ Addresses of precompiled contracts and mappings to their
 implementations.
 
 
-Submodules
-----------
-.. toctree::
-   :titlesonly:
-   :maxdepth: 1
+.. only:: stage1
 
-   ecrecover/index.rst
-   identity/index.rst
-   mapping/index.rst
-   ripemd160/index.rst
-   sha256/index.rst
+   Submodules
+   ----------
+   .. toctree::
+      :titlesonly:
+      :maxdepth: 1
+
+      ecrecover/index.rst
+      identity/index.rst
+      mapping/index.rst
+      ripemd160/index.rst
+      sha256/index.rst
 
 
