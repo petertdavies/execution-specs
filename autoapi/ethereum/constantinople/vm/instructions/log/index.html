@@ -430,10 +430,19 @@ corresponding to the memory is not accessible.</p>
         <span class="n">topics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_LOG</span> <span class="o">+</span> <span class="n">GAS_LOG_DATA</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="n">GAS_LOG_TOPIC</span> <span class="o">*</span> <span class="n">num_topics</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span>
+        <span class="n">evm</span><span class="p">,</span>
+        <span class="n">GAS_LOG</span>
+        <span class="o">+</span> <span class="n">GAS_LOG_DATA</span> <span class="o">*</span> <span class="n">size</span>
+        <span class="o">+</span> <span class="n">GAS_LOG_TOPIC</span> <span class="o">*</span> <span class="n">num_topics</span>
+        <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">ensure</span><span class="p">(</span><span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">is_static</span><span class="p">,</span> <span class="n">WriteInStaticContext</span><span class="p">)</span>
     <span class="n">log_entry</span> <span class="o">=</span> <span class="n">Log</span><span class="p">(</span>
         <span class="n">address</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>

@@ -18,6 +18,15 @@ EVM gas constants and calculators.
 Module Contents
 ---------------
 
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.constantinople.vm.gas.ExtendMemory
+   ethereum.constantinople.vm.gas.MessageCallGas
+
+
 
 Functions
 ~~~~~~~~~
@@ -28,8 +37,7 @@ Functions
    ethereum.constantinople.vm.gas.charge_gas
    ethereum.constantinople.vm.gas.calculate_memory_gas_cost
    ethereum.constantinople.vm.gas.calculate_gas_extend_memory
-   ethereum.constantinople.vm.gas.calculate_call_gas_cost
-   ethereum.constantinople.vm.gas.calculate_message_call_gas_stipend
+   ethereum.constantinople.vm.gas.calculate_message_call_gas
    ethereum.constantinople.vm.gas.max_message_call_gas
 
 
@@ -96,7 +104,7 @@ GAS_JUMPDEST
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 20-20
+   :lines: 23-23
 
 
 GAS_BASE
@@ -110,7 +118,7 @@ GAS_BASE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 21-21
+   :lines: 24-24
 
 
 GAS_VERY_LOW
@@ -124,7 +132,7 @@ GAS_VERY_LOW
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 22-22
+   :lines: 25-25
 
 
 GAS_SLOAD
@@ -138,7 +146,7 @@ GAS_SLOAD
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 23-23
+   :lines: 26-26
 
 
 GAS_STORAGE_SET
@@ -152,7 +160,7 @@ GAS_STORAGE_SET
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 24-24
+   :lines: 27-27
 
 
 GAS_STORAGE_UPDATE
@@ -166,7 +174,7 @@ GAS_STORAGE_UPDATE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 25-25
+   :lines: 28-28
 
 
 GAS_STORAGE_CLEAR_REFUND
@@ -180,7 +188,7 @@ GAS_STORAGE_CLEAR_REFUND
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 26-26
+   :lines: 29-29
 
 
 GAS_LOW
@@ -194,7 +202,7 @@ GAS_LOW
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 27-27
+   :lines: 30-30
 
 
 GAS_MID
@@ -208,7 +216,7 @@ GAS_MID
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 28-28
+   :lines: 31-31
 
 
 GAS_HIGH
@@ -222,7 +230,7 @@ GAS_HIGH
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 29-29
+   :lines: 32-32
 
 
 GAS_EXPONENTIATION
@@ -236,7 +244,7 @@ GAS_EXPONENTIATION
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 30-30
+   :lines: 33-33
 
 
 GAS_EXPONENTIATION_PER_BYTE
@@ -250,7 +258,7 @@ GAS_EXPONENTIATION_PER_BYTE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 31-31
+   :lines: 34-34
 
 
 GAS_MEMORY
@@ -264,7 +272,7 @@ GAS_MEMORY
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 32-32
+   :lines: 35-35
 
 
 GAS_KECCAK256
@@ -278,7 +286,7 @@ GAS_KECCAK256
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 33-33
+   :lines: 36-36
 
 
 GAS_KECCAK256_WORD
@@ -292,7 +300,7 @@ GAS_KECCAK256_WORD
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 34-34
+   :lines: 37-37
 
 
 GAS_COPY
@@ -306,7 +314,7 @@ GAS_COPY
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 35-35
+   :lines: 38-38
 
 
 GAS_BLOCK_HASH
@@ -320,7 +328,7 @@ GAS_BLOCK_HASH
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 36-36
+   :lines: 39-39
 
 
 GAS_EXTERNAL
@@ -334,7 +342,7 @@ GAS_EXTERNAL
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 37-37
+   :lines: 40-40
 
 
 GAS_BALANCE
@@ -348,7 +356,7 @@ GAS_BALANCE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 38-38
+   :lines: 41-41
 
 
 GAS_LOG
@@ -362,7 +370,7 @@ GAS_LOG
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 39-39
+   :lines: 42-42
 
 
 GAS_LOG_DATA
@@ -376,7 +384,7 @@ GAS_LOG_DATA
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 40-40
+   :lines: 43-43
 
 
 GAS_LOG_TOPIC
@@ -390,7 +398,7 @@ GAS_LOG_TOPIC
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 41-41
+   :lines: 44-44
 
 
 GAS_CREATE
@@ -404,7 +412,7 @@ GAS_CREATE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 42-42
+   :lines: 45-45
 
 
 GAS_CODE_DEPOSIT
@@ -418,7 +426,7 @@ GAS_CODE_DEPOSIT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 43-43
+   :lines: 46-46
 
 
 GAS_ZERO
@@ -432,7 +440,7 @@ GAS_ZERO
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 44-44
+   :lines: 47-47
 
 
 GAS_CALL
@@ -446,7 +454,7 @@ GAS_CALL
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 45-45
+   :lines: 48-48
 
 
 GAS_NEW_ACCOUNT
@@ -460,7 +468,7 @@ GAS_NEW_ACCOUNT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 46-46
+   :lines: 49-49
 
 
 GAS_CALL_VALUE
@@ -474,7 +482,7 @@ GAS_CALL_VALUE
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 47-47
+   :lines: 50-50
 
 
 GAS_CALL_STIPEND
@@ -488,7 +496,7 @@ GAS_CALL_STIPEND
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 48-48
+   :lines: 51-51
 
 
 GAS_SELF_DESTRUCT
@@ -502,7 +510,7 @@ GAS_SELF_DESTRUCT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 49-49
+   :lines: 52-52
 
 
 GAS_SELF_DESTRUCT_NEW_ACCOUNT
@@ -516,7 +524,7 @@ GAS_SELF_DESTRUCT_NEW_ACCOUNT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 50-50
+   :lines: 53-53
 
 
 REFUND_SELF_DESTRUCT
@@ -530,7 +538,7 @@ REFUND_SELF_DESTRUCT
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 51-51
+   :lines: 54-54
 
 
 GAS_ECRECOVER
@@ -544,7 +552,7 @@ GAS_ECRECOVER
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 52-52
+   :lines: 55-55
 
 
 GAS_SHA256
@@ -558,7 +566,7 @@ GAS_SHA256
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 53-53
+   :lines: 56-56
 
 
 GAS_SHA256_WORD
@@ -572,7 +580,7 @@ GAS_SHA256_WORD
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 54-54
+   :lines: 57-57
 
 
 GAS_RIPEMD160
@@ -586,7 +594,7 @@ GAS_RIPEMD160
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 55-55
+   :lines: 58-58
 
 
 GAS_RIPEMD160_WORD
@@ -600,7 +608,7 @@ GAS_RIPEMD160_WORD
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 56-56
+   :lines: 59-59
 
 
 GAS_IDENTITY
@@ -614,7 +622,7 @@ GAS_IDENTITY
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 57-57
+   :lines: 60-60
 
 
 GAS_IDENTITY_WORD
@@ -628,7 +636,7 @@ GAS_IDENTITY_WORD
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 58-58
+   :lines: 61-61
 
 
 GAS_RETURN_DATA_COPY
@@ -642,7 +650,7 @@ GAS_RETURN_DATA_COPY
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 59-59
+   :lines: 62-62
 
 
 GAS_CODE_HASH
@@ -656,7 +664,69 @@ GAS_CODE_HASH
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :lines: 60-60
+   :lines: 63-63
+
+
+ExtendMemory
+~~~~~~~~~~~~
+
+
+Define the parameters for memory extension in opcodes
+
+`cost`: `ethereum.base_types.Uint`
+    The gas required to perform the extension
+`expand_by`: `ethereum.base_types.Uint`
+    The size by which the memory will be extended
+
+
+.. class:: ExtendMemory
+
+   
+
+   .. py:attribute:: cost
+         :annotation: :ethereum.base_types.Uint
+
+      
+
+   
+
+   .. py:attribute:: expand_by
+         :annotation: :ethereum.base_types.Uint
+
+      
+
+
+
+MessageCallGas
+~~~~~~~~~~~~~~
+
+
+Define the gas cost and stipend for executing the call opcodes.
+
+`cost`: `ethereum.base_types.Uint`
+    The non-refundable portion of gas reserved for executing the
+    call opcode.
+`stipend`: `ethereum.base_types.Uint`
+    The portion of gas available to sub-calls that is refundable
+    if not consumed
+
+
+.. class:: MessageCallGas
+
+   
+
+   .. py:attribute:: cost
+         :annotation: :ethereum.base_types.Uint
+
+      
+
+   
+
+   .. py:attribute:: stipend
+         :annotation: :ethereum.base_types.Uint
+
+      
+
 
 
 charge_gas
@@ -705,19 +775,17 @@ calculate_gas_extend_memory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_gas_extend_memory(memory: bytearray, start_position: ethereum.base_types.U256, size: ethereum.base_types.U256) -> ethereum.base_types.Uint
+.. function:: calculate_gas_extend_memory(memory: bytearray, extensions: List[Tuple[ethereum.base_types.U256, ethereum.base_types.U256]]) -> ExtendMemory
    :noindexentry:
 
    Calculates the gas amount to extend memory
 
    :param memory: Memory contents of the EVM.
-   :param start_position: Starting pointer to the memory.
-   :param size: Amount of bytes by which the memory needs to be extended.
+   :param extensions: List of extensions to be made to the memory.
+                      Consists of a tuple of start position and size.
 
-   :returns: **to_be_paid** -- returns `0` if size=0 or if the
-             size after extending memory is less than the size before extending
-             else it returns the amount that needs to be paid for extendinng memory.
-   :rtype: `ethereum.base_types.Uint`
+   :returns: **extend_memory**
+   :rtype: `ExtendMemory`
 
 
 
@@ -726,57 +794,34 @@ calculate_gas_extend_memory
    :language: python
    :pyobject: calculate_gas_extend_memory
 
-calculate_call_gas_cost
-~~~~~~~~~~~~~~~~~~~~~~~
+calculate_message_call_gas
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_call_gas_cost(gas: ethereum.base_types.Uint, gas_left: ethereum.base_types.Uint, extra_gas: ethereum.base_types.Uint) -> ethereum.base_types.Uint
+.. function:: calculate_message_call_gas(value: ethereum.base_types.U256, gas: ethereum.base_types.Uint, gas_left: ethereum.base_types.Uint, memory_cost: ethereum.base_types.Uint, extra_gas: ethereum.base_types.Uint, call_stipend: ethereum.base_types.Uint = GAS_CALL_STIPEND) -> MessageCallGas
    :noindexentry:
 
-   Calculates the gas amount for executing Opcodes `CALL` and `CALLCODE`.
-
-   :param gas: The amount of gas provided to the message-call.
-   :param gas_left: The amount of gas left in the current frame.
-   :param extra_gas: The amount of gas needed for transferring value + creating a new
-                     account inside a message call.
-
-   :returns: **call_gas_cost** -- The total gas amount for executing Opcodes `CALL` and `CALLCODE`.
-   :rtype: `ethereum.base_types.Uint`
-
-
-
-
-.. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
-   :language: python
-   :pyobject: calculate_call_gas_cost
-
-calculate_message_call_gas_stipend
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: calculate_message_call_gas_stipend(value: ethereum.base_types.U256, gas: ethereum.base_types.Uint, gas_left: ethereum.base_types.Uint, extra_gas: ethereum.base_types.Uint, call_stipend: ethereum.base_types.Uint = GAS_CALL_STIPEND) -> ethereum.base_types.Uint
-   :noindexentry:
-
-   Calculates the gas stipend for making the message call
-   with the given value.
+   Calculates the MessageCallGas (cost and stipend) for
+   executing call Opcodes.
 
    :param value: The amount of `ETH` that needs to be transferred.
    :param gas: The amount of gas provided to the message-call.
    :param gas_left: The amount of gas left in the current frame.
+   :param memory_cost: The amount needed to extend the memory in the current frame.
    :param extra_gas: The amount of gas needed for transferring value + creating a new
                      account inside a message call.
    :param call_stipend: The amount of stipend provided to a message call to execute code while
                         transferring value(ETH).
 
-   :returns: **message_call_gas_stipend** -- The gas stipend for making the message-call.
-   :rtype: `ethereum.base_types.Uint`
+   :returns: **message_call_gas**
+   :rtype: `MessageCallGas`
 
 
 
 
 .. undocinclude:: /../src/ethereum/constantinople/vm/gas.py
    :language: python
-   :pyobject: calculate_message_call_gas_stipend
+   :pyobject: calculate_message_call_gas
 
 max_message_call_gas
 ~~~~~~~~~~~~~~~~~~~~

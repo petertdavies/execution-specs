@@ -586,10 +586,13 @@ to store the data.</p>
     <span class="c1"># GAS</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
     <span class="n">copy_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COPY</span> <span class="o">*</span> <span class="n">words</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">buffer_read</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">memory_write</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
@@ -650,10 +653,13 @@ to store the data.</p>
     <span class="c1"># GAS</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
     <span class="n">copy_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COPY</span> <span class="o">*</span> <span class="n">words</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">buffer_read</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">code_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">memory_write</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
 
@@ -744,10 +750,13 @@ to store the data.</p>
     <span class="c1"># GAS</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
     <span class="n">copy_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COPY</span> <span class="o">*</span> <span class="n">words</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_EXTERNAL</span> <span class="o">+</span> <span class="n">copy_gas_cost</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_EXTERNAL</span> <span class="o">+</span> <span class="n">copy_gas_cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span><span class="o">.</span><span class="n">code</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">buffer_read</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">code_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">memory_write</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
@@ -807,8 +816,10 @@ to store the data.</p>
     <span class="c1"># GAS</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
     <span class="n">copy_gas_cost</span> <span class="o">=</span> <span class="n">GAS_RETURN_DATA_COPY</span> <span class="o">*</span> <span class="n">words</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_VERY_LOW</span> <span class="o">+</span> <span class="n">copy_gas_cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
     <span class="n">ensure</span><span class="p">(</span>
@@ -816,6 +827,7 @@ to store the data.</p>
         <span class="n">OutOfBoundsRead</span><span class="p">,</span>
     <span class="p">)</span>
 
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span><span class="p">[</span>
         <span class="n">return_data_start_position</span> <span class="p">:</span> <span class="n">return_data_start_position</span> <span class="o">+</span> <span class="n">size</span>
     <span class="p">]</span>

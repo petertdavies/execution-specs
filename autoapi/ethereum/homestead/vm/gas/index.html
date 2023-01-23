@@ -335,54 +335,56 @@
 <li><p><a class="reference internal" href="#introduction" id="id1">Introduction</a></p></li>
 <li><p><a class="reference internal" href="#module-contents" id="id2">Module Contents</a></p>
 <ul>
-<li><p><a class="reference internal" href="#functions" id="id3">Functions</a></p></li>
-<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id3">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id5">Attributes</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#module-details" id="id5">Module Details</a></p>
+<li><p><a class="reference internal" href="#module-details" id="id6">Module Details</a></p>
 <ul>
-<li><p><a class="reference internal" href="#gas-jumpdest" id="id6">GAS_JUMPDEST</a></p></li>
-<li><p><a class="reference internal" href="#gas-base" id="id7">GAS_BASE</a></p></li>
-<li><p><a class="reference internal" href="#gas-very-low" id="id8">GAS_VERY_LOW</a></p></li>
-<li><p><a class="reference internal" href="#gas-sload" id="id9">GAS_SLOAD</a></p></li>
-<li><p><a class="reference internal" href="#gas-storage-set" id="id10">GAS_STORAGE_SET</a></p></li>
-<li><p><a class="reference internal" href="#gas-storage-update" id="id11">GAS_STORAGE_UPDATE</a></p></li>
-<li><p><a class="reference internal" href="#gas-storage-clear-refund" id="id12">GAS_STORAGE_CLEAR_REFUND</a></p></li>
-<li><p><a class="reference internal" href="#gas-low" id="id13">GAS_LOW</a></p></li>
-<li><p><a class="reference internal" href="#gas-mid" id="id14">GAS_MID</a></p></li>
-<li><p><a class="reference internal" href="#gas-high" id="id15">GAS_HIGH</a></p></li>
-<li><p><a class="reference internal" href="#gas-exponentiation" id="id16">GAS_EXPONENTIATION</a></p></li>
-<li><p><a class="reference internal" href="#gas-exponentiation-per-byte" id="id17">GAS_EXPONENTIATION_PER_BYTE</a></p></li>
-<li><p><a class="reference internal" href="#gas-memory" id="id18">GAS_MEMORY</a></p></li>
-<li><p><a class="reference internal" href="#gas-keccak256" id="id19">GAS_KECCAK256</a></p></li>
-<li><p><a class="reference internal" href="#gas-keccak256-word" id="id20">GAS_KECCAK256_WORD</a></p></li>
-<li><p><a class="reference internal" href="#gas-copy" id="id21">GAS_COPY</a></p></li>
-<li><p><a class="reference internal" href="#gas-block-hash" id="id22">GAS_BLOCK_HASH</a></p></li>
-<li><p><a class="reference internal" href="#gas-external" id="id23">GAS_EXTERNAL</a></p></li>
-<li><p><a class="reference internal" href="#gas-balance" id="id24">GAS_BALANCE</a></p></li>
-<li><p><a class="reference internal" href="#gas-log" id="id25">GAS_LOG</a></p></li>
-<li><p><a class="reference internal" href="#gas-log-data" id="id26">GAS_LOG_DATA</a></p></li>
-<li><p><a class="reference internal" href="#gas-log-topic" id="id27">GAS_LOG_TOPIC</a></p></li>
-<li><p><a class="reference internal" href="#gas-create" id="id28">GAS_CREATE</a></p></li>
-<li><p><a class="reference internal" href="#gas-code-deposit" id="id29">GAS_CODE_DEPOSIT</a></p></li>
-<li><p><a class="reference internal" href="#gas-zero" id="id30">GAS_ZERO</a></p></li>
-<li><p><a class="reference internal" href="#gas-call" id="id31">GAS_CALL</a></p></li>
-<li><p><a class="reference internal" href="#gas-new-account" id="id32">GAS_NEW_ACCOUNT</a></p></li>
-<li><p><a class="reference internal" href="#gas-call-value" id="id33">GAS_CALL_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#gas-call-stipend" id="id34">GAS_CALL_STIPEND</a></p></li>
-<li><p><a class="reference internal" href="#refund-self-destruct" id="id35">REFUND_SELF_DESTRUCT</a></p></li>
-<li><p><a class="reference internal" href="#gas-ecrecover" id="id36">GAS_ECRECOVER</a></p></li>
-<li><p><a class="reference internal" href="#gas-sha256" id="id37">GAS_SHA256</a></p></li>
-<li><p><a class="reference internal" href="#gas-sha256-word" id="id38">GAS_SHA256_WORD</a></p></li>
-<li><p><a class="reference internal" href="#gas-ripemd160" id="id39">GAS_RIPEMD160</a></p></li>
-<li><p><a class="reference internal" href="#gas-ripemd160-word" id="id40">GAS_RIPEMD160_WORD</a></p></li>
-<li><p><a class="reference internal" href="#gas-identity" id="id41">GAS_IDENTITY</a></p></li>
-<li><p><a class="reference internal" href="#gas-identity-word" id="id42">GAS_IDENTITY_WORD</a></p></li>
-<li><p><a class="reference internal" href="#charge-gas" id="id43">charge_gas</a></p></li>
-<li><p><a class="reference internal" href="#calculate-memory-gas-cost" id="id44">calculate_memory_gas_cost</a></p></li>
-<li><p><a class="reference internal" href="#calculate-gas-extend-memory" id="id45">calculate_gas_extend_memory</a></p></li>
-<li><p><a class="reference internal" href="#calculate-call-gas-cost" id="id46">calculate_call_gas_cost</a></p></li>
-<li><p><a class="reference internal" href="#calculate-message-call-gas-stipend" id="id47">calculate_message_call_gas_stipend</a></p></li>
+<li><p><a class="reference internal" href="#gas-jumpdest" id="id7">GAS_JUMPDEST</a></p></li>
+<li><p><a class="reference internal" href="#gas-base" id="id8">GAS_BASE</a></p></li>
+<li><p><a class="reference internal" href="#gas-very-low" id="id9">GAS_VERY_LOW</a></p></li>
+<li><p><a class="reference internal" href="#gas-sload" id="id10">GAS_SLOAD</a></p></li>
+<li><p><a class="reference internal" href="#gas-storage-set" id="id11">GAS_STORAGE_SET</a></p></li>
+<li><p><a class="reference internal" href="#gas-storage-update" id="id12">GAS_STORAGE_UPDATE</a></p></li>
+<li><p><a class="reference internal" href="#gas-storage-clear-refund" id="id13">GAS_STORAGE_CLEAR_REFUND</a></p></li>
+<li><p><a class="reference internal" href="#gas-low" id="id14">GAS_LOW</a></p></li>
+<li><p><a class="reference internal" href="#gas-mid" id="id15">GAS_MID</a></p></li>
+<li><p><a class="reference internal" href="#gas-high" id="id16">GAS_HIGH</a></p></li>
+<li><p><a class="reference internal" href="#gas-exponentiation" id="id17">GAS_EXPONENTIATION</a></p></li>
+<li><p><a class="reference internal" href="#gas-exponentiation-per-byte" id="id18">GAS_EXPONENTIATION_PER_BYTE</a></p></li>
+<li><p><a class="reference internal" href="#gas-memory" id="id19">GAS_MEMORY</a></p></li>
+<li><p><a class="reference internal" href="#gas-keccak256" id="id20">GAS_KECCAK256</a></p></li>
+<li><p><a class="reference internal" href="#gas-keccak256-word" id="id21">GAS_KECCAK256_WORD</a></p></li>
+<li><p><a class="reference internal" href="#gas-copy" id="id22">GAS_COPY</a></p></li>
+<li><p><a class="reference internal" href="#gas-block-hash" id="id23">GAS_BLOCK_HASH</a></p></li>
+<li><p><a class="reference internal" href="#gas-external" id="id24">GAS_EXTERNAL</a></p></li>
+<li><p><a class="reference internal" href="#gas-balance" id="id25">GAS_BALANCE</a></p></li>
+<li><p><a class="reference internal" href="#gas-log" id="id26">GAS_LOG</a></p></li>
+<li><p><a class="reference internal" href="#gas-log-data" id="id27">GAS_LOG_DATA</a></p></li>
+<li><p><a class="reference internal" href="#gas-log-topic" id="id28">GAS_LOG_TOPIC</a></p></li>
+<li><p><a class="reference internal" href="#gas-create" id="id29">GAS_CREATE</a></p></li>
+<li><p><a class="reference internal" href="#gas-code-deposit" id="id30">GAS_CODE_DEPOSIT</a></p></li>
+<li><p><a class="reference internal" href="#gas-zero" id="id31">GAS_ZERO</a></p></li>
+<li><p><a class="reference internal" href="#gas-call" id="id32">GAS_CALL</a></p></li>
+<li><p><a class="reference internal" href="#gas-new-account" id="id33">GAS_NEW_ACCOUNT</a></p></li>
+<li><p><a class="reference internal" href="#gas-call-value" id="id34">GAS_CALL_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#gas-call-stipend" id="id35">GAS_CALL_STIPEND</a></p></li>
+<li><p><a class="reference internal" href="#refund-self-destruct" id="id36">REFUND_SELF_DESTRUCT</a></p></li>
+<li><p><a class="reference internal" href="#gas-ecrecover" id="id37">GAS_ECRECOVER</a></p></li>
+<li><p><a class="reference internal" href="#gas-sha256" id="id38">GAS_SHA256</a></p></li>
+<li><p><a class="reference internal" href="#gas-sha256-word" id="id39">GAS_SHA256_WORD</a></p></li>
+<li><p><a class="reference internal" href="#gas-ripemd160" id="id40">GAS_RIPEMD160</a></p></li>
+<li><p><a class="reference internal" href="#gas-ripemd160-word" id="id41">GAS_RIPEMD160_WORD</a></p></li>
+<li><p><a class="reference internal" href="#gas-identity" id="id42">GAS_IDENTITY</a></p></li>
+<li><p><a class="reference internal" href="#gas-identity-word" id="id43">GAS_IDENTITY_WORD</a></p></li>
+<li><p><a class="reference internal" href="#extendmemory" id="id44">ExtendMemory</a></p></li>
+<li><p><a class="reference internal" href="#messagecallgas" id="id45">MessageCallGas</a></p></li>
+<li><p><a class="reference internal" href="#charge-gas" id="id46">charge_gas</a></p></li>
+<li><p><a class="reference internal" href="#calculate-memory-gas-cost" id="id47">calculate_memory_gas_cost</a></p></li>
+<li><p><a class="reference internal" href="#calculate-gas-extend-memory" id="id48">calculate_gas_extend_memory</a></p></li>
+<li><p><a class="reference internal" href="#calculate-message-call-gas" id="id49">calculate_message_call_gas</a></p></li>
 </ul>
 </li>
 </ul>
@@ -393,6 +395,23 @@
 </section>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.ExtendMemory" title="ethereum.homestead.vm.gas.ExtendMemory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ExtendMemory</span></code></a></p></td>
+<td><p>Define the parameters for memory extension in opcodes</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.MessageCallGas" title="ethereum.homestead.vm.gas.MessageCallGas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MessageCallGas</span></code></a></p></td>
+<td><p>Define the gas cost and stipend for executing the call opcodes.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="functions">
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline"></a></h3>
 <table class="longtable docutils align-default">
@@ -410,11 +429,8 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.calculate_gas_extend_memory" title="ethereum.homestead.vm.gas.calculate_gas_extend_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_gas_extend_memory</span></code></a></p></td>
 <td><p>Calculates the gas amount to extend memory</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.calculate_call_gas_cost" title="ethereum.homestead.vm.gas.calculate_call_gas_cost"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_call_gas_cost</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.calculate_message_call_gas" title="ethereum.homestead.vm.gas.calculate_message_call_gas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_message_call_gas</span></code></a></p></td>
 <td><p>Calculates the gas amount for executing Opcodes <cite>CALL</cite> and <cite>CALLCODE</cite>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.homestead.vm.gas.calculate_message_call_gas_stipend" title="ethereum.homestead.vm.gas.calculate_message_call_gas_stipend"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_message_call_gas_stipend</span></code></a></p></td>
-<td><p>Calculates the gas stipend for making the message call</p></td>
 </tr>
 </tbody>
 </table>
@@ -951,6 +967,58 @@
 </pre></div>
 </div>
 </section>
+<section id="extendmemory">
+<h3>ExtendMemory<a class="headerlink" href="#extendmemory" title="Permalink to this headline"></a></h3>
+<p>Define the parameters for memory extension in opcodes</p>
+<dl class="simple">
+<dt><cite>cost</cite>: <cite>ethereum.base_types.Uint</cite></dt><dd><p>The gas required to perform the extension</p>
+</dd>
+<dt><cite>expand_by</cite>: <cite>ethereum.base_types.Uint</cite></dt><dd><p>The size by which the memory will be extended</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.ExtendMemory">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ExtendMemory</span></span><a class="headerlink" href="#ethereum.homestead.vm.gas.ExtendMemory" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.ExtendMemory.cost">
+<span class="sig-name descname"><span class="pre">cost</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.homestead.vm.gas.ExtendMemory.cost" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.ExtendMemory.expand_by">
+<span class="sig-name descname"><span class="pre">expand_by</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.homestead.vm.gas.ExtendMemory.expand_by" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="messagecallgas">
+<h3>MessageCallGas<a class="headerlink" href="#messagecallgas" title="Permalink to this headline"></a></h3>
+<p>Define the gas cost and stipend for executing the call opcodes.</p>
+<dl class="simple">
+<dt><cite>cost</cite>: <cite>ethereum.base_types.Uint</cite></dt><dd><p>The non-refundable portion of gas reserved for executing the
+call opcode.</p>
+</dd>
+<dt><cite>stipend</cite>: <cite>ethereum.base_types.Uint</cite></dt><dd><p>The portion of gas available to sub-calls that is refundable
+if not consumed</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.MessageCallGas">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MessageCallGas</span></span><a class="headerlink" href="#ethereum.homestead.vm.gas.MessageCallGas" title="Permalink to this definition"></a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.MessageCallGas.cost">
+<span class="sig-name descname"><span class="pre">cost</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.homestead.vm.gas.MessageCallGas.cost" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.MessageCallGas.stipend">
+<span class="sig-name descname"><span class="pre">stipend</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.homestead.vm.gas.MessageCallGas.stipend" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="charge-gas">
 <h3>charge_gas<a class="headerlink" href="#charge-gas" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -1012,49 +1080,55 @@ such that the allocated size is at least as big as the given size.</p>
 <h3>calculate_gas_extend_memory<a class="headerlink" href="#calculate-gas-extend-memory" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.gas.calculate_gas_extend_memory">
-<span class="sig-name descname"><span class="pre">calculate_gas_extend_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.homestead.vm.gas.calculate_gas_extend_memory" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">calculate_gas_extend_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytearray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensions</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.homestead.vm.gas.ExtendMemory" title="ethereum.homestead.vm.gas.ExtendMemory"><span class="pre">ExtendMemory</span></a><a class="headerlink" href="#ethereum.homestead.vm.gas.calculate_gas_extend_memory" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the gas amount to extend memory</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>memory</strong> – Memory contents of the EVM.</p></li>
-<li><p><strong>start_position</strong> – Starting pointer to the memory.</p></li>
-<li><p><strong>size</strong> – Amount of bytes by which the memory needs to be extended.</p></li>
+<li><p><strong>extensions</strong> – List of extensions to be made to the memory.
+Consists of a tuple of start position and size.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>to_be_paid</strong> – returns <cite>0</cite> if size=0 or if the
-size after extending memory is less than the size before extending
-else it returns the amount that needs to be paid for extendinng memory.</p>
+<dd class="field-even"><p><strong>extend_memory</strong></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>ethereum.base_types.Uint</cite></p>
+<dd class="field-odd"><p><cite>ExtendMemory</cite></p>
 </dd>
 </dl>
 </dd></dl>
 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_gas_extend_memory</span><span class="p">(</span>
-    <span class="n">memory</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">,</span> <span class="n">start_position</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">U256</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">memory_size</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">memory</span><span class="p">))</span>
-    <span class="n">before_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">memory_size</span><span class="p">)</span>
-    <span class="n">after_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">start_position</span><span class="p">)</span> <span class="o">+</span> <span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">after_size</span> <span class="o">&lt;=</span> <span class="n">before_size</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">already_paid</span> <span class="o">=</span> <span class="n">calculate_memory_gas_cost</span><span class="p">(</span><span class="n">before_size</span><span class="p">)</span>
-    <span class="n">total_cost</span> <span class="o">=</span> <span class="n">calculate_memory_gas_cost</span><span class="p">(</span><span class="n">after_size</span><span class="p">)</span>
-    <span class="n">to_be_paid</span> <span class="o">=</span> <span class="n">total_cost</span> <span class="o">-</span> <span class="n">already_paid</span>
-    <span class="k">return</span> <span class="n">to_be_paid</span>
+    <span class="n">memory</span><span class="p">:</span> <span class="nb">bytearray</span><span class="p">,</span> <span class="n">extensions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">U256</span><span class="p">,</span> <span class="n">U256</span><span class="p">]]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ExtendMemory</span><span class="p">:</span>
+    <span class="n">size_to_extend</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">to_be_paid</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">current_size</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">memory</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">start_position</span><span class="p">,</span> <span class="n">size</span> <span class="ow">in</span> <span class="n">extensions</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">before_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">current_size</span><span class="p">)</span>
+        <span class="n">after_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">start_position</span><span class="p">)</span> <span class="o">+</span> <span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">after_size</span> <span class="o">&lt;=</span> <span class="n">before_size</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">size_to_extend</span> <span class="o">+=</span> <span class="n">after_size</span> <span class="o">-</span> <span class="n">before_size</span>
+        <span class="n">already_paid</span> <span class="o">=</span> <span class="n">calculate_memory_gas_cost</span><span class="p">(</span><span class="n">before_size</span><span class="p">)</span>
+        <span class="n">total_cost</span> <span class="o">=</span> <span class="n">calculate_memory_gas_cost</span><span class="p">(</span><span class="n">after_size</span><span class="p">)</span>
+        <span class="n">to_be_paid</span> <span class="o">+=</span> <span class="n">total_cost</span> <span class="o">-</span> <span class="n">already_paid</span>
+
+        <span class="n">current_size</span> <span class="o">=</span> <span class="n">after_size</span>
+
+    <span class="k">return</span> <span class="n">ExtendMemory</span><span class="p">(</span><span class="n">to_be_paid</span><span class="p">,</span> <span class="n">size_to_extend</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="calculate-call-gas-cost">
-<h3>calculate_call_gas_cost<a class="headerlink" href="#calculate-call-gas-cost" title="Permalink to this headline"></a></h3>
+<section id="calculate-message-call-gas">
+<h3>calculate_message_call_gas<a class="headerlink" href="#calculate-message-call-gas" title="Permalink to this headline"></a></h3>
 <dl class="py function">
-<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.calculate_call_gas_cost">
-<span class="sig-name descname"><span class="pre">calculate_call_gas_cost</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../state/index.html#ethereum.homestead.state.State" title="ethereum.homestead.state.State"><span class="pre">ethereum.homestead.state.State</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../eth_types/index.html#ethereum.homestead.eth_types.Address" title="ethereum.homestead.eth_types.Address"><span class="pre">ethereum.homestead.eth_types.Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.homestead.vm.gas.calculate_call_gas_cost" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.calculate_message_call_gas">
+<span class="sig-name descname"><span class="pre">calculate_message_call_gas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../state/index.html#ethereum.homestead.state.State" title="ethereum.homestead.state.State"><span class="pre">ethereum.homestead.state.State</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../eth_types/index.html#ethereum.homestead.eth_types.Address" title="ethereum.homestead.eth_types.Address"><span class="pre">ethereum.homestead.eth_types.Address</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.homestead.vm.gas.MessageCallGas" title="ethereum.homestead.vm.gas.MessageCallGas"><span class="pre">MessageCallGas</span></a><a class="headerlink" href="#ethereum.homestead.vm.gas.calculate_message_call_gas" title="Permalink to this definition"></a></dt>
 <dd><p>Calculates the gas amount for executing Opcodes <cite>CALL</cite> and <cite>CALLCODE</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1066,45 +1140,22 @@ else it returns the amount that needs to be paid for extendinng memory.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>call_gas_cost</strong> – The total gas amount for executing Opcodes <cite>CALL</cite> and <cite>CALLCODE</cite>.</p>
+<dd class="field-even"><p><strong>message_call_gas</strong></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>ethereum.base_types.Uint</cite></p>
+<dd class="field-odd"><p><cite>MessageCallGas</cite></p>
 </dd>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_call_gas_cost</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_message_call_gas</span><span class="p">(</span>
     <span class="n">state</span><span class="p">:</span> <span class="n">State</span><span class="p">,</span> <span class="n">gas</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span> <span class="n">to</span><span class="p">:</span> <span class="n">Address</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">U256</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MessageCallGas</span><span class="p">:</span>
     <span class="n">create_gas_cost</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">account_exists</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span> <span class="k">else</span> <span class="n">GAS_NEW_ACCOUNT</span>
     <span class="n">transfer_gas_cost</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">GAS_CALL_VALUE</span>
-    <span class="k">return</span> <span class="n">GAS_CALL</span> <span class="o">+</span> <span class="n">gas</span> <span class="o">+</span> <span class="n">create_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span>
-</pre></div>
-</div>
-</section>
-<section id="calculate-message-call-gas-stipend">
-<h3>calculate_message_call_gas_stipend<a class="headerlink" href="#calculate-message-call-gas-stipend" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.homestead.vm.gas.calculate_message_call_gas_stipend">
-<span class="sig-name descname"><span class="pre">calculate_message_call_gas_stipend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.homestead.vm.gas.calculate_message_call_gas_stipend" title="Permalink to this definition"></a></dt>
-<dd><p>Calculates the gas stipend for making the message call
-with the given value.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> – The amount of <cite>ETH</cite> that needs to be transferred.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>message_call_gas_stipend</strong> – The gas stipend for making the message-call.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>ethereum.base_types.Uint</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_message_call_gas_stipend</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="n">U256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">GAS_CALL_STIPEND</span>
+    <span class="n">cost</span> <span class="o">=</span> <span class="n">GAS_CALL</span> <span class="o">+</span> <span class="n">gas</span> <span class="o">+</span> <span class="n">create_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span>
+    <span class="n">stipend</span> <span class="o">=</span> <span class="n">gas</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">GAS_CALL_STIPEND</span> <span class="o">+</span> <span class="n">gas</span>
+    <span class="k">return</span> <span class="n">MessageCallGas</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">stipend</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

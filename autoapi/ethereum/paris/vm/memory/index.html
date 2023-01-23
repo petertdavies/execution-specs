@@ -340,10 +340,9 @@
 </li>
 <li><p><a class="reference internal" href="#module-details" id="id4">Module Details</a></p>
 <ul>
-<li><p><a class="reference internal" href="#extend-memory" id="id5">extend_memory</a></p></li>
-<li><p><a class="reference internal" href="#memory-write" id="id6">memory_write</a></p></li>
-<li><p><a class="reference internal" href="#memory-read-bytes" id="id7">memory_read_bytes</a></p></li>
-<li><p><a class="reference internal" href="#buffer-read" id="id8">buffer_read</a></p></li>
+<li><p><a class="reference internal" href="#memory-write" id="id5">memory_write</a></p></li>
+<li><p><a class="reference internal" href="#memory-read-bytes" id="id6">memory_read_bytes</a></p></li>
+<li><p><a class="reference internal" href="#buffer-read" id="id7">buffer_read</a></p></li>
 </ul>
 </li>
 </ul>
@@ -362,16 +361,13 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.extend_memory" title="ethereum.paris.vm.memory.extend_memory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">extend_memory</span></code></a></p></td>
-<td><p>Extends the size of the memory and</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.memory_write" title="ethereum.paris.vm.memory.memory_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_write</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.memory_write" title="ethereum.paris.vm.memory.memory_write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_write</span></code></a></p></td>
 <td><p>Writes to memory.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.memory_read_bytes" title="ethereum.paris.vm.memory.memory_read_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_read_bytes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.memory_read_bytes" title="ethereum.paris.vm.memory.memory_read_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_read_bytes</span></code></a></p></td>
 <td><p>Read bytes from memory.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.buffer_read" title="ethereum.paris.vm.memory.buffer_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buffer_read</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.paris.vm.memory.buffer_read" title="ethereum.paris.vm.memory.buffer_read"><code class="xref py py-obj docutils literal notranslate"><span class="pre">buffer_read</span></code></a></p></td>
 <td><p>Read bytes from a buffer. Padding with zeros if neccesary.</p></td>
 </tr>
 </tbody>
@@ -380,40 +376,6 @@
 </section>
 <section id="module-details">
 <h2>Module Details<a class="headerlink" href="#module-details" title="Permalink to this headline"></a></h2>
-<section id="extend-memory">
-<h3>extend_memory<a class="headerlink" href="#extend-memory" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.paris.vm.memory.extend_memory">
-<span class="sig-name descname"><span class="pre">extend_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../index.html#ethereum.paris.vm.Evm" title="ethereum.paris.vm.Evm"><span class="pre">ethereum.paris.vm.Evm</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_position</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../../base_types/index.html#ethereum.base_types.U256" title="ethereum.base_types.U256"><span class="pre">ethereum.base_types.U256</span></a></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">None</span><a class="headerlink" href="#ethereum.paris.vm.memory.extend_memory" title="Permalink to this definition"></a></dt>
-<dd><p>Extends the size of the memory and
-substracts the gas amount to extend memory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>evm</strong> – The current Evm.</p></li>
-<li><p><strong>start_position</strong> – Starting pointer to the memory.</p></li>
-<li><p><strong>size</strong> – Amount of bytes by which the memory needs to be extended.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">,</span> <span class="n">start_position</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="n">U256</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="n">charge_gas</span><span class="p">(</span>
-        <span class="n">evm</span><span class="p">,</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">start_position</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="n">size</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="n">memory_size</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">))</span>
-    <span class="n">before_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">memory_size</span><span class="p">)</span>
-    <span class="n">after_size</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">start_position</span><span class="p">)</span> <span class="o">+</span> <span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">after_size</span> <span class="o">&lt;=</span> <span class="n">before_size</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="n">size_to_extend</span> <span class="o">=</span> <span class="n">after_size</span> <span class="o">-</span> <span class="n">memory_size</span>
-    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">size_to_extend</span>
-</pre></div>
-</div>
-</section>
 <section id="memory-write">
 <h3>memory_write<a class="headerlink" href="#memory-write" title="Permalink to this headline"></a></h3>
 <dl class="py function">

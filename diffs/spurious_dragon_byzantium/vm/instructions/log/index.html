@@ -364,10 +364,19 @@ corresponding to the memory is not accessible.</p>
         topics.append(topic)
 
     # GAS
-    extend_memory(evm, memory_start_index, size)
-    charge_gas(evm, GAS_LOG + GAS_LOG_DATA * size + GAS_LOG_TOPIC * num_topics)
+    extend_memory = calculate_gas_extend_memory(
+        evm.memory, [(memory_start_index, size)]
+    )
+    charge_gas(
+        evm,
+        GAS_LOG
+        + GAS_LOG_DATA * size
+        + GAS_LOG_TOPIC * num_topics
+        + extend_memory.cost,
+    )
 
     # OPERATION
+    evm.memory += b&quot;\x00&quot; * extend_memory.expand_by
     <span class="change-added">ensure(not evm.message.is_static, WriteInStaticContext)
     </span>log_entry = Log(
         address=evm.message.current_target,

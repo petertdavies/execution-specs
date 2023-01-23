@@ -509,10 +509,14 @@
     <span class="n">memory_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_CREATE</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_CREATE</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">contract_address</span> <span class="o">=</span> <span class="n">compute_contract_address</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
         <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">)</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span>
@@ -550,11 +554,17 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">salt</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span><span class="o">.</span><span class="n">to_be_bytes32</span><span class="p">()</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)]</span>
+    <span class="p">)</span>
     <span class="n">call_data_words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">memory_size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_CREATE</span> <span class="o">+</span> <span class="n">GAS_KECCAK256_WORD</span> <span class="o">*</span> <span class="n">call_data_words</span><span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span>
+        <span class="n">evm</span><span class="p">,</span>
+        <span class="n">GAS_CREATE</span> <span class="o">+</span> <span class="n">GAS_KECCAK256_WORD</span> <span class="o">*</span> <span class="n">call_data_words</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">contract_address</span> <span class="o">=</span> <span class="n">compute_create2_contract_address</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
         <span class="n">salt</span><span class="p">,</span>
@@ -589,10 +599,14 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">memory_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_ZERO</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_ZERO</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">memory_read_bytes</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span>
     <span class="p">)</span>
@@ -703,8 +717,13 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">memory_output_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">)</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">to</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="p">:</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_WARM_ACCESS</span>
@@ -718,32 +737,29 @@ depends on the init_code instead of the nonce of sender.</p>
         <span class="k">else</span> <span class="n">GAS_NEW_ACCOUNT</span>
     <span class="p">)</span>
     <span class="n">transfer_gas_cost</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">GAS_CALL_VALUE</span>
-    <span class="n">call_gas_fee</span> <span class="o">=</span> <span class="n">calculate_call_gas_cost</span><span class="p">(</span>
-        <span class="n">gas</span><span class="p">,</span>
-        <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span>
-        <span class="n">access_gas_cost</span> <span class="o">+</span> <span class="n">create_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas_stipend</span><span class="p">(</span>
+    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas</span><span class="p">(</span>
         <span class="n">value</span><span class="p">,</span>
         <span class="n">gas</span><span class="p">,</span>
         <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span>
+        <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
         <span class="n">access_gas_cost</span> <span class="o">+</span> <span class="n">create_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">call_gas_fee</span><span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
     <span class="n">ensure</span><span class="p">(</span><span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">is_static</span> <span class="ow">or</span> <span class="n">value</span> <span class="o">==</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">WriteInStaticContext</span><span class="p">)</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">sender_balance</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
     <span class="p">)</span><span class="o">.</span><span class="n">balance</span>
     <span class="k">if</span> <span class="n">sender_balance</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">message_call_gas</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">generic_call</span><span class="p">(</span>
             <span class="n">evm</span><span class="p">,</span>
-            <span class="n">message_call_gas</span><span class="p">,</span>
+            <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span><span class="p">,</span>
             <span class="n">value</span><span class="p">,</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
             <span class="n">to</span><span class="p">,</span>
@@ -787,8 +803,13 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="c1"># GAS</span>
     <span class="n">to</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
 
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">)</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">code_address</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="p">:</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_WARM_ACCESS</span>
@@ -797,31 +818,28 @@ depends on the init_code instead of the nonce of sender.</p>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COLD_ACCOUNT_ACCESS</span>
 
     <span class="n">transfer_gas_cost</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">GAS_CALL_VALUE</span>
-    <span class="n">call_gas_fee</span> <span class="o">=</span> <span class="n">calculate_call_gas_cost</span><span class="p">(</span>
-        <span class="n">gas</span><span class="p">,</span>
-        <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span>
-        <span class="n">access_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas_stipend</span><span class="p">(</span>
+    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas</span><span class="p">(</span>
         <span class="n">value</span><span class="p">,</span>
         <span class="n">gas</span><span class="p">,</span>
         <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span>
+        <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
         <span class="n">access_gas_cost</span> <span class="o">+</span> <span class="n">transfer_gas_cost</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">call_gas_fee</span><span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">sender_balance</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
     <span class="p">)</span><span class="o">.</span><span class="n">balance</span>
     <span class="k">if</span> <span class="n">sender_balance</span> <span class="o">&lt;</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">message_call_gas</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">generic_call</span><span class="p">(</span>
             <span class="n">evm</span><span class="p">,</span>
-            <span class="n">message_call_gas</span><span class="p">,</span>
+            <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span><span class="p">,</span>
             <span class="n">value</span><span class="p">,</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
             <span class="n">to</span><span class="p">,</span>
@@ -919,8 +937,13 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">memory_output_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">)</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">code_address</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="p">:</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_WARM_ACCESS</span>
@@ -928,18 +951,16 @@ depends on the init_code instead of the nonce of sender.</p>
         <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">code_address</span><span class="p">)</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COLD_ACCOUNT_ACCESS</span>
 
-    <span class="n">call_gas_fee</span> <span class="o">=</span> <span class="n">calculate_call_gas_cost</span><span class="p">(</span>
-        <span class="n">gas</span><span class="p">,</span> <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span> <span class="n">access_gas_cost</span>
+    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas</span><span class="p">(</span>
+        <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">gas</span><span class="p">,</span> <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="n">access_gas_cost</span>
     <span class="p">)</span>
-    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas_stipend</span><span class="p">(</span>
-        <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">gas</span><span class="p">,</span> <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span> <span class="n">access_gas_cost</span>
-    <span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">call_gas_fee</span><span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">generic_call</span><span class="p">(</span>
         <span class="n">evm</span><span class="p">,</span>
-        <span class="n">message_call_gas</span><span class="p">,</span>
+        <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span><span class="p">,</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">caller</span><span class="p">,</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
@@ -980,8 +1001,13 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">memory_output_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">)</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">to</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="p">:</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_WARM_ACCESS</span>
@@ -989,21 +1015,20 @@ depends on the init_code instead of the nonce of sender.</p>
         <span class="n">evm</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
         <span class="n">access_gas_cost</span> <span class="o">=</span> <span class="n">GAS_COLD_ACCOUNT_ACCESS</span>
 
-    <span class="n">call_gas_fee</span> <span class="o">=</span> <span class="n">calculate_call_gas_cost</span><span class="p">(</span>
-        <span class="n">gas</span><span class="p">,</span> <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span> <span class="n">access_gas_cost</span>
-    <span class="p">)</span>
-    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas_stipend</span><span class="p">(</span>
+    <span class="n">message_call_gas</span> <span class="o">=</span> <span class="n">calculate_message_call_gas</span><span class="p">(</span>
         <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
         <span class="n">gas</span><span class="p">,</span>
         <span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">),</span>
+        <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span>
         <span class="n">access_gas_cost</span><span class="p">,</span>
     <span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">call_gas_fee</span><span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">message_call_gas</span><span class="o">.</span><span class="n">cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">generic_call</span><span class="p">(</span>
         <span class="n">evm</span><span class="p">,</span>
-        <span class="n">message_call_gas</span><span class="p">,</span>
+        <span class="n">message_call_gas</span><span class="o">.</span><span class="n">stipend</span><span class="p">,</span>
         <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
         <span class="n">to</span><span class="p">,</span>
@@ -1037,9 +1062,14 @@ and also has the ability to return a reason
     <span class="n">size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">memory_read_bytes</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
     <span class="k">raise</span> <span class="n">Revert</span>

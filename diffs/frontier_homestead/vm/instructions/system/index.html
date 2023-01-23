@@ -351,13 +351,17 @@
     memory_size = pop(evm.stack)
 
     # GAS
-    extend_memory(evm, memory_start_position, memory_size)
-    charge_gas(evm, GAS_CREATE)
+    extend_memory = calculate_gas_extend_memory(
+        evm.memory, [(memory_start_position, memory_size)]
+    )
+
+    charge_gas(evm, GAS_CREATE + extend_memory.cost)
 
     create_message_gas = evm.gas_left
     evm.gas_left = U256(0)
 
     # OPERATION
+    evm.memory += b&quot;\x00&quot; * extend_memory.expand_by
     sender_address = evm.message.current_target
     sender = get_account(evm.env.state, sender_address)
 
@@ -430,10 +434,14 @@
     <span class="n">memory_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_ZERO</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span><span class="p">)]</span>
+    <span class="p">)</span>
+
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_ZERO</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="n">memory_read_bytes</span><span class="p">(</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_position</span><span class="p">,</span> <span class="n">memory_size</span>
     <span class="p">)</span>
@@ -532,23 +540,30 @@
     memory_output_size = pop(evm.stack)
 
     # GAS
-    extend_memory(evm, memory_input_start_position, memory_input_size)
-    extend_memory(evm, memory_output_start_position, memory_output_size)
-    call_gas_fee = calculate_call_gas_cost(evm.env.state, gas, to, value)
-    charge_gas(evm, call_gas_fee)
+    extend_memory = calculate_gas_extend_memory(
+        evm.memory,
+        [
+            (memory_input_start_position, memory_input_size),
+            (memory_output_start_position, memory_output_size),
+        ],
+    )
+    message_call_gas = calculate_message_call_gas(
+        evm.env.state, gas, to, value
+    )
+    charge_gas(evm, message_call_gas.cost + extend_memory.cost)
 
     # OPERATION
+    evm.memory += b&quot;\x00&quot; * extend_memory.expand_by
     sender_balance = get_account(
         evm.env.state, evm.message.current_target
     ).balance
-    message_call_gas = gas + calculate_message_call_gas_stipend(value)
     if sender_balance &lt; value:
         push(evm.stack, U256(0))
-        evm.gas_left += message_call_gas
+        evm.gas_left += message_call_gas.stipend
     else:
         generic_call(
             evm,
-            message_call_gas,
+            message_call_gas.stipend,
             value,
             evm.message.current_target,
             to,
@@ -590,23 +605,30 @@
     # GAS
     to = evm.message.current_target
 
-    extend_memory(evm, memory_input_start_position, memory_input_size)
-    extend_memory(evm, memory_output_start_position, memory_output_size)
-    call_gas_fee = calculate_call_gas_cost(evm.env.state, gas, to, value)
-    charge_gas(evm, call_gas_fee)
+    extend_memory = calculate_gas_extend_memory(
+        evm.memory,
+        [
+            (memory_input_start_position, memory_input_size),
+            (memory_output_start_position, memory_output_size),
+        ],
+    )
+    message_call_gas = calculate_message_call_gas(
+        evm.env.state, gas, to, value
+    )
+    charge_gas(evm, message_call_gas.cost + extend_memory.cost)
 
     # OPERATION
+    evm.memory += b&quot;\x00&quot; * extend_memory.expand_by
     sender_balance = get_account(
         evm.env.state, evm.message.current_target
     ).balance
-    message_call_gas = gas + calculate_message_call_gas_stipend(value)
     if sender_balance &lt; value:
         push(evm.stack, U256(0))
-        evm.gas_left += message_call_gas
+        evm.gas_left += message_call_gas.stipend
     else:
         generic_call(
             evm,
-            message_call_gas,
+            message_call_gas.stipend,
             value,
             evm.message.current_target,
             to,
@@ -690,11 +712,17 @@
     <span class="n">memory_output_size</span> <span class="o">=</span> <span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
 
     <span class="c1"># GAS</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">)</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_CALL</span> <span class="o">+</span> <span class="n">gas</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="p">(</span><span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">memory_output_start_position</span><span class="p">,</span> <span class="n">memory_output_size</span><span class="p">),</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_CALL</span> <span class="o">+</span> <span class="n">gas</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">generic_call</span><span class="p">(</span>
         <span class="n">evm</span><span class="p">,</span>
         <span class="n">gas</span><span class="p">,</span>

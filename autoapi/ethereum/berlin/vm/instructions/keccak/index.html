@@ -392,10 +392,13 @@ access the data’s memory location.</p>
     <span class="c1"># GAS</span>
     <span class="n">words</span> <span class="o">=</span> <span class="n">ceil32</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">size</span><span class="p">))</span> <span class="o">//</span> <span class="mi">32</span>
     <span class="n">word_gas_cost</span> <span class="o">=</span> <span class="n">GAS_KECCAK256_WORD</span> <span class="o">*</span> <span class="n">words</span>
-    <span class="n">extend_memory</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
-    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_KECCAK256</span> <span class="o">+</span> <span class="n">word_gas_cost</span><span class="p">)</span>
+    <span class="n">extend_memory</span> <span class="o">=</span> <span class="n">calculate_gas_extend_memory</span><span class="p">(</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="p">[(</span><span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_KECCAK256</span> <span class="o">+</span> <span class="n">word_gas_cost</span> <span class="o">+</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">memory</span> <span class="o">+=</span> <span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span> <span class="o">*</span> <span class="n">extend_memory</span><span class="o">.</span><span class="n">expand_by</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">memory_read_bytes</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_start_index</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="nb">hash</span> <span class="o">=</span> <span class="n">keccak256</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
