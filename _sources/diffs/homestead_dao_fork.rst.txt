@@ -8,3 +8,6 @@ Homestead → Dao Fork
    homestead_dao_fork/dao/index.pickle64
    homestead_dao_fork/index.pickle64
    homestead_dao_fork/spec/index.pickle64
+   homestead_dao_fork/vm/index.pickle64
+   homestead_dao_fork/vm/instructions/system/index.pickle64
+   homestead_dao_fork/vm/interpreter/index.pickle64

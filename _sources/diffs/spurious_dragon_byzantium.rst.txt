@@ -19,5 +19,6 @@ Spurious Dragon → Byzantium
    spurious_dragon_byzantium/vm/instructions/system/index.pickle64
    spurious_dragon_byzantium/vm/interpreter/index.pickle64
    spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.pickle64
+   spurious_dragon_byzantium/vm/precompiled_contracts/index.pickle64
    spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.pickle64
    spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.pickle64

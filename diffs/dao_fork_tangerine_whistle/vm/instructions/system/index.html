@@ -22,8 +22,8 @@
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Tangerine Whistle → Spurious Dragon" href="../../../../tangerine_whistle_spurious_dragon.html" />
-    <link rel="prev" title="Ethereum Virtual Machine (EVM) Gas" href="../../gas/index.html" /> 
+    <link rel="next" title="Ethereum Virtual Machine (EVM) Interpreter" href="../../interpreter/index.html" />
+    <link rel="prev" title="Ethereum Virtual Machine (EVM)" href="../../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +74,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/arrow_glacier/index.html">Ethereum Arrow Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/gray_glacier/index.html">Ethereum Gray Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/paris/index.html">Ethereum Paris Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/shanghai/index.html">Ethereum Shanghai Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -105,6 +106,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul class="current">
@@ -112,7 +116,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../spec/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
@@ -140,6 +146,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
 </ul>
@@ -172,6 +179,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../constantinople_istanbul/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">Ethereum Virtual Machine (EVM) Blake2 PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../constantinople_istanbul/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 </ul>
 </li>
@@ -199,22 +207,17 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/eth_types/index.html">Ethereum Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/index.html">Ethereum <span class="change-replaced">Berlin</span><span class="change-replacement">London</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/spec/index.html">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/state/index.html">State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../london_arrow_glacier.html">London → Arrow Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/index.html">Ethereum <span class="change-replaced">London</span><span class="change-replacement">Arrow Glacier</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/spec/index.html">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/state/index.html">State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../london_arrow_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -230,6 +233,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../gray_glacier_paris/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../gray_glacier_paris/vm/instructions/block/index.html">Ethereum Virtual Machine (EVM) Block Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../gray_glacier_paris/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../gray_glacier_paris/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../paris_shanghai.html">Paris → Shanghai</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/index.html">Ethereum <span class="change-replaced">Paris</span><span class="change-replacement">Shanghai</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/state/index.html">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/trie/index.html">State Trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/vm/instructions/stack/index.html">Ethereum Virtual Machine (EVM) Stack Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../paris_shanghai/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -376,18 +392,25 @@
         or evm.message.depth + 1 &gt; STACK_DEPTH_LIMIT
     ):
         push(evm.stack, U256(0))
-        </span>evm.gas_left <span class="change-added">+= create_message_gas
+        </span>evm.gas_left <span class="change-removed">= U256(0)
+
+    # OPERATION
+    evm.memory </span>+= <span class="change-replaced">b&quot;\x00&quot; * extend_memory.expand_by
+    sender_address</span><span class="change-replacement">create_message_gas
     elif account_has_code_or_nonce(evm.env.state, contract_address):
         increment_nonce(evm.env.state, evm.message.current_target)
         push(evm.stack, U256(0))
     else:
-        call_data </span>=<span class="change-added"> memory_read_bytes(
+        call_data</span> = <span class="change-replaced">evm.message.current_target
+    sender</span><span class="change-replacement">memory_read_bytes(
             evm.memory, memory_start_position, memory_size
         )
 
         increment_nonce(evm.env.state, evm.message.current_target)
 
-        child_message = Message(
+        child_message</span> = <span class="change-replaced">get_account(evm.env.state, sender_address)
+
+    contract_address</span><span class="change-replacement">Message(
             caller=evm.message.current_target,
             target=Bytes0(),
             gas=U256(create_message_gas),
@@ -399,33 +422,25 @@
             code_address=None,
             should_transfer_value=True,
         )
-        child_evm = process_create_message(child_message, evm.env)
-        evm.children.append(child_evm)
-        if child_evm.has_erred:
+        child_evm</span> = <span class="change-replaced">compute_contract_address(
+        evm.message.current_target,
+        get_account(evm.env.state, evm.message.current_target).nonce,
+    )</span><span class="change-replacement">process_create_message(child_message, evm.env)</span>
+
+    if <span class="change-replaced">(
+        sender.balance &lt; endowment
+        or sender.nonce == Uint(2**64 - 1)
+        or evm.message.depth +</span><span class="change-replacement">child_evm.has_erred:
+            incorporate_child_on_error(evm, child_evm)
             push(evm.stack, U256(0))
         else:
-            evm.logs += child_evm.logs
+            incorporate_child_on_success(evm, child_evm)
             push(
                 evm.stack, U256.from_be_bytes(child_evm.message.current_target)
             )
-        evm.gas_left += child_evm.gas_left
-        child_evm.gas_left =</span> U256(0)
 
-    # <span class="change-replaced">OPERATION
-    evm.memory</span><span class="change-replacement">PROGRAM COUNTER
-    evm.pc</span> +=<span class="change-removed"> b&quot;\x00&quot; * extend_memory.expand_by
-    sender_address = evm.message.current_target
-    sender = get_account(evm.env.state, sender_address)
-
-    contract_address = compute_contract_address(
-        evm.message.current_target,
-        get_account(evm.env.state, evm.message.current_target).nonce,
-    )
-
-    if (
-        sender.balance &lt; endowment
-        or sender.nonce == Uint(2**64 - 1)
-        or evm.message.depth +</span> 1 <span class="change-removed">&gt; STACK_DEPTH_LIMIT
+    # PROGRAM COUNTER
+    evm.pc +=</span> 1 <span class="change-removed">&gt; STACK_DEPTH_LIMIT
     ):
         push(evm.stack, U256(0))
         evm.gas_left += create_message_gas
@@ -513,61 +528,61 @@
 <dd><p>Perform the core logic of the <cite>CALL*</cite> family of opcodes.</p>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generic_call</span><span class="p">(</span>
-    <span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">,</span>
-    <span class="n">gas</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
-    <span class="n">value</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
-    <span class="n">caller</span><span class="p">:</span> <span class="n">Address</span><span class="p">,</span>
-    <span class="n">to</span><span class="p">:</span> <span class="n">Address</span><span class="p">,</span>
-    <span class="n">code_address</span><span class="p">:</span> <span class="n">Address</span><span class="p">,</span>
-    <span class="n">should_transfer_value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
-    <span class="n">memory_input_start_position</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
-    <span class="n">memory_input_size</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
-    <span class="n">memory_output_start_position</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
-    <span class="n">memory_output_size</span><span class="p">:</span> <span class="n">U256</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">...vm.interpreter</span> <span class="kn">import</span> <span class="n">STACK_DEPTH_LIMIT</span><span class="p">,</span> <span class="n">process_message</span>
+<pre class="literal-block">def generic_call(
+    evm: Evm,
+    gas: Uint,
+    value: U256,
+    caller: Address,
+    to: Address,
+    code_address: Address,
+    should_transfer_value: bool,
+    memory_input_start_position: U256,
+    memory_input_size: U256,
+    memory_output_start_position: U256,
+    memory_output_size: U256,
+) -&gt; None:
+    from ...vm.interpreter import STACK_DEPTH_LIMIT, process_message
 
-    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">STACK_DEPTH_LIMIT</span><span class="p">:</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">gas</span>
-        <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-        <span class="k">return</span>
+    if evm.message.depth + 1 &gt; STACK_DEPTH_LIMIT:
+        evm.gas_left += gas
+        push(evm.stack, U256(0))
+        return
 
-    <span class="n">call_data</span> <span class="o">=</span> <span class="n">memory_read_bytes</span><span class="p">(</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span> <span class="n">memory_input_start_position</span><span class="p">,</span> <span class="n">memory_input_size</span>
-    <span class="p">)</span>
-    <span class="n">code</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">code_address</span><span class="p">)</span><span class="o">.</span><span class="n">code</span>
-    <span class="n">child_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span>
-        <span class="n">caller</span><span class="o">=</span><span class="n">caller</span><span class="p">,</span>
-        <span class="n">target</span><span class="o">=</span><span class="n">to</span><span class="p">,</span>
-        <span class="n">gas</span><span class="o">=</span><span class="n">U256</span><span class="p">(</span><span class="n">gas</span><span class="p">),</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
-        <span class="n">data</span><span class="o">=</span><span class="n">call_data</span><span class="p">,</span>
-        <span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span>
-        <span class="n">current_target</span><span class="o">=</span><span class="n">to</span><span class="p">,</span>
-        <span class="n">depth</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">depth</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="n">code_address</span><span class="o">=</span><span class="n">code_address</span><span class="p">,</span>
-        <span class="n">should_transfer_value</span><span class="o">=</span><span class="n">should_transfer_value</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">child_evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">child_message</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="p">)</span>
-    <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child_evm</span><span class="p">)</span>
+    call_data = memory_read_bytes(
+        evm.memory, memory_input_start_position, memory_input_size
+    )
+    code = get_account(evm.env.state, code_address).code
+    child_message = Message(
+        caller=caller,
+        target=to,
+        gas=U256(gas),
+        value=value,
+        data=call_data,
+        code=code,
+        current_target=to,
+        depth=evm.message.depth + 1,
+        code_address=code_address,
+        should_transfer_value=should_transfer_value,
+    )
+    child_evm = process_message(child_message, evm.env)
+    <span class="change-removed">evm.children.append(child_evm)
 
-    <span class="k">if</span> <span class="n">child_evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">logs</span> <span class="o">+=</span> <span class="n">child_evm</span><span class="o">.</span><span class="n">logs</span>
-        <span class="n">push</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    </span>if child_evm.has_erred:
+        <span class="change-added">incorporate_child_on_error(evm, child_evm)
+        </span>push(evm.stack, U256(0))
+    else:
+        <span class="change-replaced">evm.logs += child_evm.logs</span><span class="change-replacement">incorporate_child_on_success(evm, child_evm)</span>
+        push(evm.stack, U256(1))
 
-    <span class="n">actual_output_size</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">memory_output_size</span><span class="p">,</span> <span class="n">U256</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">child_evm</span><span class="o">.</span><span class="n">output</span><span class="p">)))</span>
-    <span class="n">memory_write</span><span class="p">(</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span>
-        <span class="n">memory_output_start_position</span><span class="p">,</span>
-        <span class="n">child_evm</span><span class="o">.</span><span class="n">output</span><span class="p">[:</span><span class="n">actual_output_size</span><span class="p">],</span>
-    <span class="p">)</span>
-    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+=</span> <span class="n">child_evm</span><span class="o">.</span><span class="n">gas_left</span>
-    <span class="n">child_evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
+    actual_output_size = min(memory_output_size, U256(len(child_evm.output)))
+    memory_write(
+        evm.memory,
+        memory_output_start_position,
+        child_evm.output[:actual_output_size],
+    )
+    <span class="change-removed">evm.gas_left += child_evm.gas_left
+    child_evm.gas_left = U256(0)
+</span></pre>
 </section>
 <section id="call">
 <h3>call<a class="headerlink" href="#call" title="Permalink to this headline"></a></h3>
@@ -887,8 +902,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../../gas/index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM) Gas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../../../tangerine_whistle_spurious_dragon.html" class="btn btn-neutral float-right" title="Tangerine Whistle → Spurious Dragon" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../interpreter/index.html" class="btn btn-neutral float-right" title="Ethereum Virtual Machine (EVM) Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

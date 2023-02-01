@@ -82,7 +82,7 @@ BLOCK_REWARD
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 59-59
+   :lines: 58-58
 
 
 GAS_LIMIT_ADJUSTMENT_FACTOR
@@ -96,7 +96,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 60-60
+   :lines: 59-59
 
 
 GAS_LIMIT_MINIMUM
@@ -110,7 +110,7 @@ GAS_LIMIT_MINIMUM
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 61-61
+   :lines: 60-60
 
 
 MINIMUM_DIFFICULTY
@@ -124,7 +124,7 @@ MINIMUM_DIFFICULTY
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 62-62
+   :lines: 61-61
 
 
 MAX_OMMER_DEPTH
@@ -138,7 +138,7 @@ MAX_OMMER_DEPTH
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 63-63
+   :lines: 62-62
 
 
 BOMB_DELAY_BLOCKS
@@ -152,7 +152,7 @@ BOMB_DELAY_BLOCKS
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 64-64
+   :lines: 63-63
 
 
 EMPTY_OMMER_HASH
@@ -166,7 +166,7 @@ EMPTY_OMMER_HASH
 
 .. undocinclude:: /../src/ethereum/byzantium/spec.py
    :language: python
-   :lines: 65-65
+   :lines: 64-64
 
 
 BlockChain

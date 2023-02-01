@@ -22,7 +22,7 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="State" href="../state/index.html" />
+    <link rel="next" title="Ethereum Virtual Machine (EVM) Interpreter" href="../vm/interpreter/index.html" />
     <link rel="prev" title="Ethereum LondonArrow Glacier Hardfork" href="../index.html" /> 
 </head>
 
@@ -74,6 +74,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/arrow_glacier/index.html">Ethereum Arrow Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/gray_glacier/index.html">Ethereum Gray Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/paris/index.html">Ethereum Paris Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/shanghai/index.html">Ethereum Shanghai Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -105,6 +106,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
@@ -112,7 +116,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/spec/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
@@ -140,6 +146,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
 </ul>
@@ -172,6 +179,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">Ethereum Virtual Machine (EVM) Blake2 PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 </ul>
 </li>
@@ -199,22 +207,17 @@
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/eth_types/index.html">Ethereum Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/index.html">Ethereum <span class="change-replaced">Berlin</span><span class="change-replacement">London</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/spec/index.html">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/state/index.html">State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../london_arrow_glacier.html">London → Arrow Glacier</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../index.html">Ethereum <span class="change-replaced">London</span><span class="change-replacement">Arrow Glacier</span> Hardfork</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../state/index.html">State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -230,6 +233,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../gray_glacier_paris/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gray_glacier_paris/vm/instructions/block/index.html">Ethereum Virtual Machine (EVM) Block Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gray_glacier_paris/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gray_glacier_paris/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../paris_shanghai.html">Paris → Shanghai</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/index.html">Ethereum <span class="change-replaced">Paris</span><span class="change-replacement">Shanghai</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/state/index.html">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/trie/index.html">State Trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/vm/instructions/stack/index.html">Ethereum Virtual Machine (EVM) Stack Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../paris_shanghai/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -1194,93 +1210,91 @@ execution.</p>
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def process_transaction(
-    env: vm.Environment, tx: Transaction
-) -&gt; Tuple[U256, Tuple[Log, ...], bool]:
-    ensure(validate_transaction(tx), InvalidBlock)
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_transaction</span><span class="p">(</span>
+    <span class="n">env</span><span class="p">:</span> <span class="n">vm</span><span class="o">.</span><span class="n">Environment</span><span class="p">,</span> <span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">U256</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Log</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span> <span class="nb">bool</span><span class="p">]:</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">validate_transaction</span><span class="p">(</span><span class="n">tx</span><span class="p">),</span> <span class="n">InvalidBlock</span><span class="p">)</span>
 
-    sender = env.origin
-    sender_account = get_account(env.state, sender)
+    <span class="n">sender</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">origin</span>
+    <span class="n">sender_account</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
 
-    if isinstance(tx, FeeMarketTransaction):
-        gas_fee = tx.gas * tx.max_fee_per_gas
-    else:
-        gas_fee = tx.gas * tx.gas_price
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">FeeMarketTransaction</span><span class="p">):</span>
+        <span class="n">gas_fee</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">*</span> <span class="n">tx</span><span class="o">.</span><span class="n">max_fee_per_gas</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">gas_fee</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">*</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas_price</span>
 
-    ensure(sender_account.nonce == tx.nonce, InvalidBlock)
-    ensure(sender_account.balance &gt;= gas_fee + tx.value, InvalidBlock)
-    ensure(sender_account.code == bytearray(), InvalidBlock)
+    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">nonce</span> <span class="o">==</span> <span class="n">tx</span><span class="o">.</span><span class="n">nonce</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">&gt;=</span> <span class="n">gas_fee</span> <span class="o">+</span> <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">sender_account</span><span class="o">.</span><span class="n">code</span> <span class="o">==</span> <span class="nb">bytearray</span><span class="p">(),</span> <span class="n">InvalidBlock</span><span class="p">)</span>
 
-    effective_gas_fee = tx.gas * env.gas_price
+    <span class="n">effective_gas_fee</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">gas_price</span>
 
-    gas = tx.gas - calculate_intrinsic_cost(tx)
-    increment_nonce(env.state, sender)
+    <span class="n">gas</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">calculate_intrinsic_cost</span><span class="p">(</span><span class="n">tx</span><span class="p">)</span>
+    <span class="n">increment_nonce</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span>
 
-    sender_balance_after_gas_fee = sender_account.balance - effective_gas_fee
-    set_account_balance(env.state, sender, sender_balance_after_gas_fee)
+    <span class="n">sender_balance_after_gas_fee</span> <span class="o">=</span> <span class="n">sender_account</span><span class="o">.</span><span class="n">balance</span> <span class="o">-</span> <span class="n">effective_gas_fee</span>
+    <span class="n">set_account_balance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">sender_balance_after_gas_fee</span><span class="p">)</span>
 
-    preaccessed_addresses = set()
-    preaccessed_storage_keys = set()
-    if isinstance(tx, (AccessListTransaction, FeeMarketTransaction)):
-        for (address, keys) in tx.access_list:
-            preaccessed_addresses.add(address)
-            for key in keys:
-                preaccessed_storage_keys.add((address, key))
+    <span class="n">preaccessed_addresses</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">preaccessed_storage_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="p">(</span><span class="n">AccessListTransaction</span><span class="p">,</span> <span class="n">FeeMarketTransaction</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">keys</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tx</span><span class="o">.</span><span class="n">access_list</span><span class="p">:</span>
+            <span class="n">preaccessed_addresses</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+                <span class="n">preaccessed_storage_keys</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">address</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
 
-    message = prepare_message(
-        sender,
-        tx.to,
-        tx.value,
-        tx.data,
-        gas,
-        env,
-        preaccessed_addresses=frozenset(preaccessed_addresses),
-        preaccessed_storage_keys=frozenset(preaccessed_storage_keys),
-    )
+    <span class="n">message</span> <span class="o">=</span> <span class="n">prepare_message</span><span class="p">(</span>
+        <span class="n">sender</span><span class="p">,</span>
+        <span class="n">tx</span><span class="o">.</span><span class="n">to</span><span class="p">,</span>
+        <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">tx</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+        <span class="n">gas</span><span class="p">,</span>
+        <span class="n">env</span><span class="p">,</span>
+        <span class="n">preaccessed_addresses</span><span class="o">=</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">preaccessed_addresses</span><span class="p">),</span>
+        <span class="n">preaccessed_storage_keys</span><span class="o">=</span><span class="nb">frozenset</span><span class="p">(</span><span class="n">preaccessed_storage_keys</span><span class="p">),</span>
+    <span class="p">)</span>
 
-    output = process_message_call(message, env)
+    <span class="n">output</span> <span class="o">=</span> <span class="n">process_message_call</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
 
-    gas_used = tx.gas - output.gas_left
-    gas_refund = min(gas_used // 5, output.refund_counter)
-    gas_refund_amount = (output.gas_left + gas_refund) * env.gas_price
+    <span class="n">gas_used</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">gas_left</span>
+    <span class="n">gas_refund</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">gas_used</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">refund_counter</span><span class="p">)</span>
+    <span class="n">gas_refund_amount</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">+</span> <span class="n">gas_refund</span><span class="p">)</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">gas_price</span>
 
-    # For non-1559 transactions env.gas_price == tx.gas_price
-    priority_fee_per_gas = env.gas_price - env.base_fee_per_gas
-    transaction_fee = (
-        tx.gas - output.gas_left - gas_refund
-    ) * priority_fee_per_gas
+    <span class="c1"># For non-1559 transactions env.gas_price == tx.gas_price</span>
+    <span class="n">priority_fee_per_gas</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">gas_price</span> <span class="o">-</span> <span class="n">env</span><span class="o">.</span><span class="n">base_fee_per_gas</span>
+    <span class="n">transaction_fee</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">output</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">-</span> <span class="n">gas_refund</span>
+    <span class="p">)</span> <span class="o">*</span> <span class="n">priority_fee_per_gas</span>
 
-    total_gas_used = gas_used - gas_refund
+    <span class="n">total_gas_used</span> <span class="o">=</span> <span class="n">gas_used</span> <span class="o">-</span> <span class="n">gas_refund</span>
 
-    # refund gas
-    sender_balance_after_refund = (
-        get_account(env.state, sender).balance + gas_refund_amount
-    )
-    set_account_balance(env.state, sender, sender_balance_after_refund)
+    <span class="c1"># refund gas</span>
+    <span class="n">sender_balance_after_refund</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">get_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span> <span class="o">+</span> <span class="n">gas_refund_amount</span>
+    <span class="p">)</span>
+    <span class="n">set_account_balance</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">sender_balance_after_refund</span><span class="p">)</span>
 
-    # transfer miner fees
-    coinbase_balance_after_mining_fee = (
-        get_account(env.state, env.coinbase).balance + transaction_fee
-    )
-    if coinbase_balance_after_mining_fee != 0:
-        set_account_balance(
-            env.state, env.coinbase, coinbase_balance_after_mining_fee
-        )
-    elif <span class="change-replaced">account_exists_and_is_empty(env.state,</span><span class="change-replacement">is_account_empty(env.state,</span> env.coinbase):
-        destroy_account(env.state, env.coinbase)
+    <span class="c1"># transfer miner fees</span>
+    <span class="n">coinbase_balance_after_mining_fee</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">get_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">coinbase</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span> <span class="o">+</span> <span class="n">transaction_fee</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">coinbase_balance_after_mining_fee</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">set_account_balance</span><span class="p">(</span>
+            <span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">coinbase</span><span class="p">,</span> <span class="n">coinbase_balance_after_mining_fee</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">account_exists_and_is_empty</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">coinbase</span><span class="p">):</span>
+        <span class="n">destroy_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">coinbase</span><span class="p">)</span>
 
-    for address in output.accounts_to_delete:
-        destroy_account(env.state, address)
+    <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="p">:</span>
+        <span class="n">destroy_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
 
-    for address in output.touched_accounts:
-        <span class="change-added">should_delete = account_exists(
-            env.state, address
-        ) and is_account_empty(env.state, address)
-        </span>if <span class="change-replaced">account_exists_and_is_empty(env.state, address):</span><span class="change-replacement">should_delete:</span>
-            destroy_account(env.state, address)
+    <span class="k">for</span> <span class="n">address</span> <span class="ow">in</span> <span class="n">output</span><span class="o">.</span><span class="n">touched_accounts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">account_exists_and_is_empty</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">address</span><span class="p">):</span>
+            <span class="n">destroy_account</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">address</span><span class="p">)</span>
 
-    return total_gas_used, output.logs, output.has_erred
-</pre>
+    <span class="k">return</span> <span class="n">total_gas_used</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">logs</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">has_erred</span>
+</pre></div>
+</div>
 </section>
 <section id="validate-transaction">
 <h3>validate_transaction<a class="headerlink" href="#validate-transaction" title="Permalink to this headline"></a></h3>
@@ -1735,7 +1749,7 @@ difficulty and the <code class="docutils literal notranslate"><span class="pre">
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../index.html" class="btn btn-neutral float-left" title="Ethereum LondonArrow Glacier Hardfork" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../state/index.html" class="btn btn-neutral float-right" title="State" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../vm/interpreter/index.html" class="btn btn-neutral float-right" title="Ethereum Virtual Machine (EVM) Interpreter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

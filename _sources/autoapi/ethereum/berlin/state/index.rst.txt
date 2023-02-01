@@ -54,6 +54,7 @@ Functions
    ethereum.berlin.state.account_exists
    ethereum.berlin.state.account_has_code_or_nonce
    ethereum.berlin.state.is_account_empty
+   ethereum.berlin.state.account_exists_and_is_empty
    ethereum.berlin.state.is_account_alive
    ethereum.berlin.state.modify_state
    ethereum.berlin.state.move_ether
@@ -465,6 +466,30 @@ is_account_empty
 .. undocinclude:: /../src/ethereum/berlin/state.py
    :language: python
    :pyobject: is_account_empty
+
+account_exists_and_is_empty
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. function:: account_exists_and_is_empty(state: State, address: ethereum.berlin.eth_types.Address) -> bool
+   :noindexentry:
+
+   Checks if an account exists and has zero nonce, empty code and zero
+   balance.
+
+   :param state: The state
+   :param address: Address of the account that needs to be checked.
+
+   :returns: **exists_and_is_empty** -- True if an account exists and has zero nonce, empty code and zero
+             balance, False otherwise.
+   :rtype: `bool`
+
+
+
+
+.. undocinclude:: /../src/ethereum/berlin/state.py
+   :language: python
+   :pyobject: account_exists_and_is_empty
 
 is_account_alive
 ~~~~~~~~~~~~~~~~

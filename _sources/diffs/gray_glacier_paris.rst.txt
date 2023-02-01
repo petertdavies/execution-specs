@@ -11,3 +11,4 @@ Gray Glacier → Paris
    gray_glacier_paris/vm/index.pickle64
    gray_glacier_paris/vm/instructions/block/index.pickle64
    gray_glacier_paris/vm/instructions/index.pickle64
+   gray_glacier_paris/vm/interpreter/index.pickle64

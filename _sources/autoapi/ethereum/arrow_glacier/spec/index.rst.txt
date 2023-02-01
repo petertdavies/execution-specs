@@ -87,7 +87,7 @@ BLOCK_REWARD
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 66-66
+   :lines: 65-65
 
 
 BASE_FEE_MAX_CHANGE_DENOMINATOR
@@ -101,7 +101,7 @@ BASE_FEE_MAX_CHANGE_DENOMINATOR
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 67-67
+   :lines: 66-66
 
 
 ELASTICITY_MULTIPLIER
@@ -115,7 +115,7 @@ ELASTICITY_MULTIPLIER
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 68-68
+   :lines: 67-67
 
 
 GAS_LIMIT_ADJUSTMENT_FACTOR
@@ -129,7 +129,7 @@ GAS_LIMIT_ADJUSTMENT_FACTOR
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 69-69
+   :lines: 68-68
 
 
 GAS_LIMIT_MINIMUM
@@ -143,7 +143,7 @@ GAS_LIMIT_MINIMUM
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 70-70
+   :lines: 69-69
 
 
 MINIMUM_DIFFICULTY
@@ -157,7 +157,7 @@ MINIMUM_DIFFICULTY
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 71-71
+   :lines: 70-70
 
 
 INITIAL_BASE_FEE
@@ -171,7 +171,7 @@ INITIAL_BASE_FEE
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 72-72
+   :lines: 71-71
 
 
 MAX_OMMER_DEPTH
@@ -185,7 +185,7 @@ MAX_OMMER_DEPTH
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 73-73
+   :lines: 72-72
 
 
 BOMB_DELAY_BLOCKS
@@ -199,7 +199,7 @@ BOMB_DELAY_BLOCKS
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 74-74
+   :lines: 73-73
 
 
 EMPTY_OMMER_HASH
@@ -213,7 +213,7 @@ EMPTY_OMMER_HASH
 
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
-   :lines: 75-75
+   :lines: 74-74
 
 
 BlockChain

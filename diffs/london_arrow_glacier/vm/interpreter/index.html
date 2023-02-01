@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="Arrow Glacier → Gray Glacier" href="../../../arrow_glacier_gray_glacier.html" />
-    <link rel="prev" title="Ethereum Virtual Machine (EVM) System Instructions" href="../instructions/system/index.html" /> 
+    <link rel="prev" title="Ethereum Specification" href="../../spec/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -74,6 +74,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/arrow_glacier/index.html">Ethereum Arrow Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/gray_glacier/index.html">Ethereum Gray Glacier Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/paris/index.html">Ethereum Paris Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/shanghai/index.html">Ethereum Shanghai Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/crypto/index.html">Cryptographic Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/utils/index.html">Utility Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
@@ -105,6 +106,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../dao_fork_tangerine_whistle.html">Dao Fork → Tangerine Whistle</a><ul>
@@ -112,7 +116,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/spec/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tangerine_whistle_spurious_dragon.html">Tangerine Whistle → Spurious Dragon</a><ul>
@@ -140,6 +146,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../spurious_dragon_byzantium/vm/precompiled_contracts/modexp/index.html">Ethereum Virtual Machine (EVM) MODEXP PRECOMPILED CONTRACT</a></li>
 </ul>
@@ -172,6 +179,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../constantinople_istanbul/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../constantinople_istanbul/vm/precompiled_contracts/alt_bn128/index.html">Ethereum Virtual Machine (EVM) ALT_BN128 CONTRACTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../constantinople_istanbul/vm/precompiled_contracts/blake2f/index.html">Ethereum Virtual Machine (EVM) Blake2 PRECOMPILED CONTRACT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../constantinople_istanbul/vm/precompiled_contracts/index.html">Precompiled Contract Addresses</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../constantinople_istanbul/vm/precompiled_contracts/mapping/index.html">Precompiled Contract Addresses</a></li>
 </ul>
 </li>
@@ -199,22 +207,17 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/eth_types/index.html">Ethereum Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/index.html">Ethereum <span class="change-replaced">Berlin</span><span class="change-replacement">London</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/spec/index.html">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/state/index.html">State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/exceptions/index.html">Ethereum Virtual Machine (EVM) Exceptions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="../../../london_arrow_glacier.html">London → Arrow Glacier</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../../index.html">Ethereum <span class="change-replaced">London</span><span class="change-replacement">Arrow Glacier</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../spec/index.html">Ethereum Specification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../state/index.html">State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -230,6 +233,19 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../gray_glacier_paris/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../gray_glacier_paris/vm/instructions/block/index.html">Ethereum Virtual Machine (EVM) Block Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../gray_glacier_paris/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../gray_glacier_paris/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../paris_shanghai.html">Paris → Shanghai</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/eth_types/index.html">Ethereum Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/index.html">Ethereum <span class="change-replaced">Paris</span><span class="change-replacement">Shanghai</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/spec/index.html">Ethereum Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/state/index.html">State</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/trie/index.html">State Trie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/vm/instructions/stack/index.html">Ethereum Virtual Machine (EVM) Stack Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../paris_shanghai/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 </ul>
 </li>
 </ul>
@@ -284,9 +300,6 @@
 <li><p><a class="reference internal" href="#process-create-message" id="id11">process_create_message</a></p></li>
 <li><p><a class="reference internal" href="#process-message" id="id12">process_message</a></p></li>
 <li><p><a class="reference internal" href="#execute-code" id="id13">execute_code</a></p></li>
-<li class="change-added"><p><a class="reference internal" href="#collect-touched-accounts" id="id14">collect_touched_accounts</a></p></li>
-<li class="change-added"><p><a class="reference internal" href="#collect-accounts-to-delete" id="id15">collect_accounts_to_delete</a></p></li>
-<li class="change-added"><p><a class="reference internal" href="#calculate-gas-refund" id="id16">calculate_gas_refund</a></p></li>
 </ul>
 </li>
 </ul>
@@ -330,15 +343,6 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.london.vm.interpreter.execute_code" title="ethereum.london.vm.interpreter.execute_code"><code class="xref py py-obj docutils literal notranslate"><span class="pre">execute_code</span></code></a></p></td>
 <td><p>Executes bytecode present in the <cite>message</cite>.</p></td>
-</tr>
-<tr class="change-added row-odd"><td><p><a class="reference internal" href="#ethereum.arrow_glacier.vm.interpreter.collect_touched_accounts" title="ethereum.arrow_glacier.vm.interpreter.collect_touched_accounts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_touched_accounts</span></code></a></p></td>
-<td><p>Collect all of the accounts that <em>may</em> need to be deleted based on</p></td>
-</tr>
-<tr class="change-added row-even"><td><p><a class="reference internal" href="#ethereum.arrow_glacier.vm.interpreter.collect_accounts_to_delete" title="ethereum.arrow_glacier.vm.interpreter.collect_accounts_to_delete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collect_accounts_to_delete</span></code></a></p></td>
-<td><p>Collects all the accounts that were marked for deletion by the</p></td>
-</tr>
-<tr class="change-added row-odd"><td><p><a class="reference internal" href="#ethereum.arrow_glacier.vm.interpreter.calculate_gas_refund" title="ethereum.arrow_glacier.vm.interpreter.calculate_gas_refund"><code class="xref py py-obj docutils literal notranslate"><span class="pre">calculate_gas_refund</span></code></a></p></td>
-<td><p>Adds up the gas that was refunded in each execution frame during the</p></td>
 </tr>
 </tbody>
 </table>
@@ -414,7 +418,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.london.vm.interpreter.MessageCallOutput.logs">
-<span class="sig-name descname"><span class="pre">logs</span></span><em class="property"> <span class="change-replaced"><span class="pre">:Tuple[ethereum.london.eth_types.Log,</span> <span class="pre">Ellipsis]</span></span><span class="change-replacement"><span class="pre">:Union[Tuple[],</span> <span class="pre">Tuple[ethereum.arrow_glacier.eth_types.Log,</span> <span class="pre">Ellipsis]]</span></span></em><a class="headerlink" href="#ethereum.london.vm.interpreter.MessageCallOutput.logs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">logs</span></span><em class="property"> <span class="change-replaced"><span class="pre">:Tuple[ethereum.london.eth_types.Log,</span></span><span class="change-replacement"><span class="pre">:Tuple[ethereum.arrow_glacier.eth_types.Log,</span></span> <span class="pre">Ellipsis]</span></em><a class="headerlink" href="#ethereum.london.vm.interpreter.MessageCallOutput.logs" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -458,50 +462,45 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def process_message_call(
-    message: Message, env: Environment
-) -&gt; MessageCallOutput:
-    if message.target == Bytes0(b&quot;&quot;):
-        is_collision = account_has_code_or_nonce(
-            env.state, message.current_target
-        )
-        if is_collision:
-            return MessageCallOutput(
-                U256(0), U256(0), tuple(), set(), set(), True
-            )
-        else:
-            evm = process_create_message(message, env)
-    else:
-        evm = process_message(message, env)
-        <span class="change-added">accounts_to_delete = collect_accounts_to_delete(evm)
-    refund_counter = U256(calculate_gas_refund(evm))
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_message_call</span><span class="p">(</span>
+    <span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MessageCallOutput</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">Bytes0</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="n">is_collision</span> <span class="o">=</span> <span class="n">account_has_code_or_nonce</span><span class="p">(</span>
+            <span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_collision</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
+                <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="kc">True</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">evm</span> <span class="o">=</span> <span class="n">process_create_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">account_exists_and_is_empty</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">Address</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">target</span><span class="p">)):</span>
+            <span class="n">evm</span><span class="o">.</span><span class="n">touched_accounts</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Address</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">target</span><span class="p">))</span>
 
-    return MessageCallOutput(
-        gas_left=evm.gas_left,
-        refund_counter=refund_counter,
-        logs=evm.logs </span>if <span class="change-replaced">account_exists_and_is_empty(env.state, Address(message.target)):
-            evm.touched_accounts.add(Address(message.target))
+    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
+        <span class="n">logs</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Log</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+        <span class="n">accounts_to_delete</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">touched_accounts</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">refund_counter</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">logs</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">logs</span>
+        <span class="n">accounts_to_delete</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span>
+        <span class="n">touched_accounts</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">touched_accounts</span>
+        <span class="n">refund_counter</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">refund_counter</span><span class="p">)</span>
 
-    if evm.has_erred:
-        logs: Tuple[Log, ...] = ()
-        accounts_to_delete = set()
-        touched_accounts = set()
-        refund_counter = U256(0)
-    else:
-        logs = evm.logs
-        accounts_to_delete = evm.accounts_to_delete
-        touched_accounts = evm.touched_accounts
-        refund_counter = U256(evm.refund_counter)
-
-    return MessageCallOutput(
-        gas_left=evm.gas_left,
-        refund_counter=refund_counter,
-        logs=logs,</span><span class="change-replacement">not evm.has_erred else (),</span>
-        accounts_to_delete=accounts_to_delete,
-        <span class="change-replaced">touched_accounts=touched_accounts,</span><span class="change-replacement">touched_accounts=collect_touched_accounts(evm),</span>
-        has_erred=evm.has_erred,
-    )
-</pre>
+    <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
+        <span class="n">gas_left</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span>
+        <span class="n">refund_counter</span><span class="o">=</span><span class="n">refund_counter</span><span class="p">,</span>
+        <span class="n">logs</span><span class="o">=</span><span class="n">logs</span><span class="p">,</span>
+        <span class="n">accounts_to_delete</span><span class="o">=</span><span class="n">accounts_to_delete</span><span class="p">,</span>
+        <span class="n">touched_accounts</span><span class="o">=</span><span class="n">touched_accounts</span><span class="p">,</span>
+        <span class="n">has_erred</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
 </section>
 <section id="process-create-message">
 <h3>process_create_message<a class="headerlink" href="#process-create-message" title="Permalink to this headline"></a></h3>
@@ -627,182 +626,54 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
 </dl>
 </dd></dl>
 
-<pre class="literal-block">def execute_code(message: Message, env: Environment) -&gt; Evm:
-    code = message.code
-    valid_jump_destinations = get_valid_jump_destinations(code)
-    evm = Evm(
-        pc=Uint(0),
-        stack=[],
-        memory=bytearray(),
-        code=code,
-        gas_left=message.gas,
-        env=env,
-        valid_jump_destinations=valid_jump_destinations,
-        logs=(),
-        refund_counter=0,
-        running=True,
-        message=message,
-        output=b&quot;&quot;,
-        <span class="change-replaced">accounts_to_delete=set(),
-        touched_accounts=set(),</span><span class="change-replacement">accounts_to_delete=dict(),</span>
-        has_erred=False,
-        <span class="change-added">children=[],
-        </span>return_data=b&quot;&quot;,
-        error=None,
-        accessed_addresses=message.accessed_addresses,
-        accessed_storage_keys=message.accessed_storage_keys,
-    )
-    try:
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">execute_code</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evm</span><span class="p">:</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">code</span>
+    <span class="n">valid_jump_destinations</span> <span class="o">=</span> <span class="n">get_valid_jump_destinations</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+    <span class="n">evm</span> <span class="o">=</span> <span class="n">Evm</span><span class="p">(</span>
+        <span class="n">pc</span><span class="o">=</span><span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">stack</span><span class="o">=</span><span class="p">[],</span>
+        <span class="n">memory</span><span class="o">=</span><span class="nb">bytearray</span><span class="p">(),</span>
+        <span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span>
+        <span class="n">gas_left</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">gas</span><span class="p">,</span>
+        <span class="n">env</span><span class="o">=</span><span class="n">env</span><span class="p">,</span>
+        <span class="n">valid_jump_destinations</span><span class="o">=</span><span class="n">valid_jump_destinations</span><span class="p">,</span>
+        <span class="n">logs</span><span class="o">=</span><span class="p">(),</span>
+        <span class="n">refund_counter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">running</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">message</span><span class="o">=</span><span class="n">message</span><span class="p">,</span>
+        <span class="n">output</span><span class="o">=</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">accounts_to_delete</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+        <span class="n">touched_accounts</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+        <span class="n">has_erred</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">return_data</span><span class="o">=</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="n">error</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">accessed_addresses</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">accessed_addresses</span><span class="p">,</span>
+        <span class="n">accessed_storage_keys</span><span class="o">=</span><span class="n">message</span><span class="o">.</span><span class="n">accessed_storage_keys</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
 
-        if evm.message.code_address in PRE_COMPILED_CONTRACTS:
-            evm_trace(evm, evm.message.code_address)
-            PRE_COMPILED_CONTRACTS[evm.message.code_address](evm)
-            return evm
+        <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span> <span class="ow">in</span> <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">:</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">)</span>
+            <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">evm</span>
 
-        while evm.running and evm.pc &lt; len(evm.code):
-            try:
-                op = Ops(evm.code[evm.pc])
-            except ValueError:
-                raise InvalidOpcode(evm.code[evm.pc])
+        <span class="k">while</span> <span class="n">evm</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">op</span> <span class="o">=</span> <span class="n">Ops</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">pc</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">InvalidOpcode</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">pc</span><span class="p">])</span>
 
-            evm_trace(evm, op)
-            op_implementation[op](evm)
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+            <span class="n">op_implementation</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
 
-    except ExceptionalHalt:
-        evm.gas_left = U256(0)
-        evm.output = b&quot;&quot;
-        evm.has_erred = True
-    except Revert as e:
-        evm.error = e
-        evm.has_erred = True
-    return evm
-</pre>
-</section>
-<section class="change-added" id="collect-touched-accounts">
-<h3>collect_touched_accounts<a class="headerlink" href="#collect-touched-accounts" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.arrow_glacier.vm.interpreter.collect_touched_accounts">
-<span class="sig-name descname"><span class="pre">collect_touched_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ancestor_had_error</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.arrow_glacier.vm.interpreter.collect_touched_accounts" title="Permalink to this definition"></a></dt>
-<dd><p>Collect all of the accounts that <em>may</em> need to be deleted based on
-<a class="reference external" href="https://eips.ethereum.org/EIPS/eip-161">EIP-161</a>.
-Checking whether they <em>do</em> need to be deleted happens in the caller.
-See also: <a class="reference external" href="https://github.com/ethereum/EIPs/issues/716">https://github.com/ethereum/EIPs/issues/716</a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>evm</strong> – The current EVM frame.</p></li>
-<li><p><strong>ancestor_had_error</strong> – True if the ancestors of the evm object erred else False</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>touched_accounts</strong> – returns all the accounts that were touched and may need to be deleted.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>typing.Iterable</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_touched_accounts</span><span class="p">(</span>
-    <span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">,</span> <span class="n">ancestor_had_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Address</span><span class="p">]:</span>
-    <span class="c1"># collect the coinbase account if it was touched via zero-fee transfer</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">caller</span> <span class="o">==</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">origin</span><span class="p">)</span> <span class="ow">and</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">gas_price</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">coinbase</span>
-
-    <span class="c1"># collect those explicitly marked for deletion</span>
-    <span class="c1"># (&quot;beneficiary&quot; is of SELFDESTRUCT)</span>
-    <span class="k">for</span> <span class="n">beneficiary</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="o">.</span><span class="n">values</span><span class="p">())):</span>
-        <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">:</span>
-            <span class="c1"># Special case to account for geth+parity bug</span>
-            <span class="c1"># https://github.com/ethereum/EIPs/issues/716</span>
-            <span class="k">if</span> <span class="n">beneficiary</span> <span class="o">==</span> <span class="n">RIPEMD160_ADDRESS</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">beneficiary</span>
-            <span class="k">continue</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">beneficiary</span>
-
-    <span class="c1"># collect account directly addressed</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">Bytes0</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">:</span>
-            <span class="c1"># collect RIPEMD160 precompile even if ancestor evm had error.</span>
-            <span class="c1"># otherwise, skip collection from children of erred-out evm objects</span>
-            <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="n">RIPEMD160_ADDRESS</span><span class="p">:</span>
-                <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">yield</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">target</span>
-
-    <span class="c1"># recurse into nested computations</span>
-    <span class="c1"># (even erred ones, since looking for RIPEMD160)</span>
-    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">:</span>
-        <span class="k">yield from</span> <span class="n">collect_touched_accounts</span><span class="p">(</span>
-            <span class="n">child</span><span class="p">,</span> <span class="n">ancestor_had_error</span><span class="o">=</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="ow">or</span> <span class="n">ancestor_had_error</span><span class="p">)</span>
-        <span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section class="change-added" id="collect-accounts-to-delete">
-<h3>collect_accounts_to_delete<a class="headerlink" href="#collect-accounts-to-delete" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.arrow_glacier.vm.interpreter.collect_accounts_to_delete">
-<span class="sig-name descname"><span class="pre">collect_accounts_to_delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.arrow_glacier.vm.interpreter.collect_accounts_to_delete" title="Permalink to this definition"></a></dt>
-<dd><p>Collects all the accounts that were marked for deletion by the
-<cite>SELFDESTRUCT</cite> opcode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>accounts_to_delete</strong> – returns all the accounts need marked for deletion by the
-<cite>SELFDESTRUCT</cite> opcode.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>set</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collect_accounts_to_delete</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Address</span><span class="p">]:</span>
-    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">set</span><span class="p">(</span>
-            <span class="n">chain</span><span class="p">(</span>
-                <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span>
-                <span class="o">*</span><span class="p">(</span><span class="n">collect_accounts_to_delete</span><span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span><span class="p">),</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section class="change-added" id="calculate-gas-refund">
-<h3>calculate_gas_refund<a class="headerlink" href="#calculate-gas-refund" title="Permalink to this headline"></a></h3>
-<dl class="py function">
-<dt class="sig sig-object py" id="ethereum.arrow_glacier.vm.interpreter.calculate_gas_refund">
-<span class="sig-name descname"><span class="pre">calculate_gas_refund</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.arrow_glacier.vm.interpreter.calculate_gas_refund" title="Permalink to this definition"></a></dt>
-<dd><p>Adds up the gas that was refunded in each execution frame during the
-message call.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>evm</strong> – The current EVM frame.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>gas_refund</strong> – returns the total gas that needs to be refunded after executing the
-message call.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>ethereum.base_types.U256</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_gas_refund</span><span class="p">(</span><span class="n">evm</span><span class="p">:</span> <span class="n">Evm</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">evm</span><span class="o">.</span><span class="n">refund_counter</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span>
-            <span class="n">calculate_gas_refund</span><span class="p">(</span><span class="n">child_evm</span><span class="p">)</span> <span class="k">for</span> <span class="n">child_evm</span> <span class="ow">in</span> <span class="n">evm</span><span class="o">.</span><span class="n">children</span>
-        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="n">Revert</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">e</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">evm</span>
 </pre></div>
 </div>
 </section>
@@ -813,7 +684,7 @@ message call.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../instructions/system/index.html" class="btn btn-neutral float-left" title="Ethereum Virtual Machine (EVM) System Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../spec/index.html" class="btn btn-neutral float-left" title="Ethereum Specification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="../../../arrow_glacier_gray_glacier.html" class="btn btn-neutral float-right" title="Arrow Glacier → Gray Glacier" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

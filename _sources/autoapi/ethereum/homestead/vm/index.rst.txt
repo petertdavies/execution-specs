@@ -327,11 +327,4 @@ The internal state of the virtual machine.
 
       
 
-   
-
-   .. py:attribute:: children
-         :annotation: :List[Evm]
-
-      
-
 

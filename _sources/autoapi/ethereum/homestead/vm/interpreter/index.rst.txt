@@ -37,8 +37,6 @@ Functions
    ethereum.homestead.vm.interpreter.process_create_message
    ethereum.homestead.vm.interpreter.process_message
    ethereum.homestead.vm.interpreter.execute_code
-   ethereum.homestead.vm.interpreter.collect_accounts_to_delete
-   ethereum.homestead.vm.interpreter.calculate_gas_refund
 
 
 
@@ -64,7 +62,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/homestead/vm/interpreter.py
    :language: python
-   :lines: 39-39
+   :lines: 38-38
 
 
 MessageCallOutput
@@ -101,7 +99,7 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Union[Tuple[], Tuple[ethereum.homestead.eth_types.Log, Ellipsis]]
+         :annotation: :Tuple[ethereum.homestead.eth_types.Log, Ellipsis]
 
       
 
@@ -209,49 +207,3 @@ execute_code
 .. undocinclude:: /../src/ethereum/homestead/vm/interpreter.py
    :language: python
    :pyobject: execute_code
-
-collect_accounts_to_delete
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: collect_accounts_to_delete(evm: ethereum.homestead.vm.Evm) -> Set[ethereum.homestead.eth_types.Address]
-   :noindexentry:
-
-   Collects all the accounts that were marked for deletion by the
-   `SELFDESTRUCT` opcode.
-
-   :param evm: The current EVM frame.
-
-   :returns: **accounts_to_delete** -- returns all the accounts need marked for deletion by the
-             `SELFDESTRUCT` opcode.
-   :rtype: `set`
-
-
-
-
-.. undocinclude:: /../src/ethereum/homestead/vm/interpreter.py
-   :language: python
-   :pyobject: collect_accounts_to_delete
-
-calculate_gas_refund
-~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: calculate_gas_refund(evm: ethereum.homestead.vm.Evm) -> ethereum.base_types.U256
-   :noindexentry:
-
-   Adds up the gas that was refunded in each execution frame during the
-   message call.
-
-   :param evm: The current EVM frame.
-
-   :returns: **gas_refund** -- returns the total gas that needs to be refunded after executing the
-             message call.
-   :rtype: `ethereum.base_types.U256`
-
-
-
-
-.. undocinclude:: /../src/ethereum/homestead/vm/interpreter.py
-   :language: python
-   :pyobject: calculate_gas_refund

@@ -54,6 +54,7 @@ Functions
    ethereum.istanbul.state.account_exists
    ethereum.istanbul.state.account_has_code_or_nonce
    ethereum.istanbul.state.is_account_empty
+   ethereum.istanbul.state.account_exists_and_is_empty
    ethereum.istanbul.state.is_account_alive
    ethereum.istanbul.state.modify_state
    ethereum.istanbul.state.move_ether
@@ -465,6 +466,30 @@ is_account_empty
 .. undocinclude:: /../src/ethereum/istanbul/state.py
    :language: python
    :pyobject: is_account_empty
+
+account_exists_and_is_empty
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. function:: account_exists_and_is_empty(state: State, address: ethereum.istanbul.eth_types.Address) -> bool
+   :noindexentry:
+
+   Checks if an account exists and has zero nonce, empty code and zero
+   balance.
+
+   :param state: The state
+   :param address: Address of the account that needs to be checked.
+
+   :returns: **exists_and_is_empty** -- True if an account exists and has zero nonce, empty code and zero
+             balance, False otherwise.
+   :rtype: `bool`
+
+
+
+
+.. undocinclude:: /../src/ethereum/istanbul/state.py
+   :language: python
+   :pyobject: account_exists_and_is_empty
 
 is_account_alive
 ~~~~~~~~~~~~~~~~

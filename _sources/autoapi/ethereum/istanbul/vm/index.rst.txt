@@ -330,7 +330,14 @@ The internal state of the virtual machine.
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Dict[ethereum.istanbul.eth_types.Address, ethereum.istanbul.eth_types.Address]
+         :annotation: :Set[ethereum.istanbul.eth_types.Address]
+
+      
+
+   
+
+   .. py:attribute:: touched_accounts
+         :annotation: :Set[ethereum.istanbul.eth_types.Address]
 
       
 
@@ -338,13 +345,6 @@ The internal state of the virtual machine.
 
    .. py:attribute:: has_erred
          :annotation: :bool
-
-      
-
-   
-
-   .. py:attribute:: children
-         :annotation: :List[Evm]
 
       
 

@@ -37,9 +37,6 @@ Functions
    ethereum.gray_glacier.vm.interpreter.process_create_message
    ethereum.gray_glacier.vm.interpreter.process_message
    ethereum.gray_glacier.vm.interpreter.execute_code
-   ethereum.gray_glacier.vm.interpreter.collect_touched_accounts
-   ethereum.gray_glacier.vm.interpreter.collect_accounts_to_delete
-   ethereum.gray_glacier.vm.interpreter.calculate_gas_refund
 
 
 
@@ -66,7 +63,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
    :language: python
-   :lines: 52-52
+   :lines: 49-49
 
 
 MAX_CODE_SIZE
@@ -80,7 +77,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
    :language: python
-   :lines: 53-53
+   :lines: 50-50
 
 
 MessageCallOutput
@@ -118,7 +115,7 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Union[Tuple[], Tuple[ethereum.gray_glacier.eth_types.Log, Ellipsis]]
+         :annotation: :Tuple[ethereum.gray_glacier.eth_types.Log, Ellipsis]
 
       
 
@@ -181,7 +178,7 @@ process_create_message
    :param env: External items required for EVM execution.
 
    :returns: **evm** -- Items containing execution specific objects.
-   :rtype: :py:class:`~ethereum.gray_glacier.vm.Evm`
+   :rtype: :py:class:`~ethereum.london.vm.Evm`
 
 
 
@@ -203,7 +200,7 @@ process_message
    :param env: External items required for EVM execution.
 
    :returns: **evm** -- Items containing execution specific objects
-   :rtype: :py:class:`~ethereum.gray_glacier.vm.Evm`
+   :rtype: :py:class:`~ethereum.london.vm.Evm`
 
 
 
@@ -233,74 +230,3 @@ execute_code
 .. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
    :language: python
    :pyobject: execute_code
-
-collect_touched_accounts
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: collect_touched_accounts(evm: ethereum.gray_glacier.vm.Evm, ancestor_had_error: bool = False) -> Iterable[ethereum.gray_glacier.eth_types.Address]
-   :noindexentry:
-
-   Collect all of the accounts that *may* need to be deleted based on
-   `EIP-161 <https://eips.ethereum.org/EIPS/eip-161>`_.
-   Checking whether they *do* need to be deleted happens in the caller.
-   See also: https://github.com/ethereum/EIPs/issues/716
-
-   :param evm: The current EVM frame.
-   :param ancestor_had_error: True if the ancestors of the evm object erred else False
-
-   :returns: **touched_accounts** -- returns all the accounts that were touched and may need to be deleted.
-   :rtype: `typing.Iterable`
-
-
-
-
-.. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
-   :language: python
-   :pyobject: collect_touched_accounts
-
-collect_accounts_to_delete
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: collect_accounts_to_delete(evm: ethereum.gray_glacier.vm.Evm) -> Set[ethereum.gray_glacier.eth_types.Address]
-   :noindexentry:
-
-   Collects all the accounts that were marked for deletion by the
-   `SELFDESTRUCT` opcode.
-
-   :param evm: The current EVM frame.
-
-   :returns: **accounts_to_delete** -- returns all the accounts need marked for deletion by the
-             `SELFDESTRUCT` opcode.
-   :rtype: `set`
-
-
-
-
-.. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
-   :language: python
-   :pyobject: collect_accounts_to_delete
-
-calculate_gas_refund
-~~~~~~~~~~~~~~~~~~~~
-
-
-.. function:: calculate_gas_refund(evm: ethereum.gray_glacier.vm.Evm) -> int
-   :noindexentry:
-
-   Adds up the gas that was refunded in each execution frame during the
-   message call.
-
-   :param evm: The current EVM frame.
-
-   :returns: **gas_refund** -- returns the total gas that needs to be refunded after executing the
-             message call.
-   :rtype: `ethereum.base_types.U256`
-
-
-
-
-.. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
-   :language: python
-   :pyobject: calculate_gas_refund

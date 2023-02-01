@@ -7,7 +7,4 @@ London → Arrow Glacier
 
    london_arrow_glacier/index.pickle64
    london_arrow_glacier/spec/index.pickle64
-   london_arrow_glacier/state/index.pickle64
-   london_arrow_glacier/vm/index.pickle64
-   london_arrow_glacier/vm/instructions/system/index.pickle64
    london_arrow_glacier/vm/interpreter/index.pickle64

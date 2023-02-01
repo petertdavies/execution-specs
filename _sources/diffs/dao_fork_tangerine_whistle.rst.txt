@@ -9,4 +9,6 @@ Dao Fork → Tangerine Whistle
    dao_fork_tangerine_whistle/index.pickle64
    dao_fork_tangerine_whistle/spec/index.pickle64
    dao_fork_tangerine_whistle/vm/gas/index.pickle64
+   dao_fork_tangerine_whistle/vm/index.pickle64
    dao_fork_tangerine_whistle/vm/instructions/system/index.pickle64
+   dao_fork_tangerine_whistle/vm/interpreter/index.pickle64

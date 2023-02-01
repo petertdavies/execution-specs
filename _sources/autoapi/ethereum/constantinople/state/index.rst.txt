@@ -54,6 +54,7 @@ Functions
    ethereum.constantinople.state.account_exists
    ethereum.constantinople.state.account_has_code_or_nonce
    ethereum.constantinople.state.is_account_empty
+   ethereum.constantinople.state.account_exists_and_is_empty
    ethereum.constantinople.state.is_account_alive
    ethereum.constantinople.state.modify_state
    ethereum.constantinople.state.move_ether
@@ -464,6 +465,30 @@ is_account_empty
 .. undocinclude:: /../src/ethereum/constantinople/state.py
    :language: python
    :pyobject: is_account_empty
+
+account_exists_and_is_empty
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. function:: account_exists_and_is_empty(state: State, address: ethereum.constantinople.eth_types.Address) -> bool
+   :noindexentry:
+
+   Checks if an account exists and has zero nonce, empty code and zero
+   balance.
+
+   :param state: The state
+   :param address: Address of the account that needs to be checked.
+
+   :returns: **exists_and_is_empty** -- True if an account exists and has zero nonce, empty code and zero
+             balance, False otherwise.
+   :rtype: `bool`
+
+
+
+
+.. undocinclude:: /../src/ethereum/constantinople/state.py
+   :language: python
+   :pyobject: account_exists_and_is_empty
 
 is_account_alive
 ~~~~~~~~~~~~~~~~
