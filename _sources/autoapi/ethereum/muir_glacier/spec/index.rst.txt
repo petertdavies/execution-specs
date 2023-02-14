@@ -195,7 +195,7 @@ History and current state of the block chain.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 
@@ -368,7 +368,7 @@ apply_body
 ~~~~~~~~~~
 
 
-.. function:: apply_body(state: ethereum.muir_glacier.state.State, block_hashes: List[ethereum.muir_glacier.eth_types.Hash32], coinbase: ethereum.muir_glacier.eth_types.Address, block_number: ethereum.base_types.Uint, block_gas_limit: ethereum.base_types.Uint, block_time: ethereum.base_types.U256, block_difficulty: ethereum.base_types.Uint, transactions: Tuple[ethereum.muir_glacier.eth_types.Transaction, Ellipsis], ommers: Tuple[ethereum.muir_glacier.eth_types.Header, Ellipsis], chain_id: ethereum.base_types.Uint64) -> Tuple[ethereum.base_types.Uint, ethereum.muir_glacier.eth_types.Root, ethereum.muir_glacier.eth_types.Root, ethereum.muir_glacier.eth_types.Bloom, ethereum.muir_glacier.state.State]
+.. function:: apply_body(state: ethereum.muir_glacier.state.State, block_hashes: List[ethereum.muir_glacier.eth_types.Hash32], coinbase: ethereum.muir_glacier.eth_types.Address, block_number: ethereum.base_types.Uint, block_gas_limit: ethereum.base_types.Uint, block_time: ethereum.base_types.U256, block_difficulty: ethereum.base_types.Uint, transactions: Tuple[ethereum.muir_glacier.eth_types.Transaction, Ellipsis], ommers: Tuple[ethereum.muir_glacier.eth_types.Header, Ellipsis], chain_id: ethereum.base_types.U64) -> Tuple[ethereum.base_types.Uint, ethereum.muir_glacier.eth_types.Root, ethereum.muir_glacier.eth_types.Root, ethereum.muir_glacier.eth_types.Bloom, ethereum.muir_glacier.state.State]
    :noindexentry:
 
    Executes a block.
@@ -565,7 +565,7 @@ recover_sender
 ~~~~~~~~~~~~~~
 
 
-.. function:: recover_sender(chain_id: ethereum.base_types.Uint64, tx: ethereum.muir_glacier.eth_types.Transaction) -> ethereum.muir_glacier.eth_types.Address
+.. function:: recover_sender(chain_id: ethereum.base_types.U64, tx: ethereum.muir_glacier.eth_types.Transaction) -> ethereum.muir_glacier.eth_types.Address
    :noindexentry:
 
    Extracts the sender address from a transaction.

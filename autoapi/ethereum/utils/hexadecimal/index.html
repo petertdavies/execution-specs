@@ -42,11 +42,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> Ethereum Specification
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Ethereum Specification
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -261,7 +265,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">Specification</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Ethereum Specification</a></li>
           <li class="breadcrumb-item"><a href="../index.html">Utility Functions</a></li>
@@ -341,7 +345,7 @@
 <td><p>Convert hex string to Uint.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.utils.hexadecimal.hex_to_u64" title="ethereum.utils.hexadecimal.hex_to_u64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hex_to_u64</span></code></a></p></td>
-<td><p>Convert hex string to Uint64.</p></td>
+<td><p>Convert hex string to U64.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.utils.hexadecimal.hex_to_u256" title="ethereum.utils.hexadecimal.hex_to_u256"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hex_to_u256</span></code></a></p></td>
 <td><p>Convert hex string to U256.</p></td>
@@ -554,23 +558,23 @@ passed hex string if it isn’t prefixed with 0x.</p>
 <h3>hex_to_u64<a class="headerlink" href="#hex-to-u64" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.utils.hexadecimal.hex_to_u64">
-<span class="sig-name descname"><span class="pre">hex_to_u64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint64" title="ethereum.base_types.Uint64"><span class="pre">ethereum.base_types.Uint64</span></a><a class="headerlink" href="#ethereum.utils.hexadecimal.hex_to_u64" title="Permalink to this definition"></a></dt>
-<dd><p>Convert hex string to Uint64.</p>
+<span class="sig-name descname"><span class="pre">hex_to_u64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hex_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U64" title="ethereum.base_types.U64"><span class="pre">ethereum.base_types.U64</span></a><a class="headerlink" href="#ethereum.utils.hexadecimal.hex_to_u64" title="Permalink to this definition"></a></dt>
+<dd><p>Convert hex string to U64.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>hex_string</strong> – The hexadecimal string to be converted to U256.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>converted</strong> – The Uint64 integer obtained from the given hexadecimal string.</p>
+<dd class="field-even"><p><strong>converted</strong> – The U64 integer obtained from the given hexadecimal string.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>Uint64</cite></p>
+<dd class="field-odd"><p><cite>U64</cite></p>
 </dd>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hex_to_u64</span><span class="p">(</span><span class="n">hex_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Uint64</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">Uint64</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">remove_hex_prefix</span><span class="p">(</span><span class="n">hex_string</span><span class="p">),</span> <span class="mi">16</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hex_to_u64</span><span class="p">(</span><span class="n">hex_string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">U64</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">U64</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">remove_hex_prefix</span><span class="p">(</span><span class="n">hex_string</span><span class="p">),</span> <span class="mi">16</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>

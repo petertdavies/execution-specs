@@ -166,7 +166,7 @@ History and current state of the block chain.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 

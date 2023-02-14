@@ -42,11 +42,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> Ethereum Specification
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Ethereum Specification
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -261,7 +265,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">Specification</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Ethereum Specification</a></li>
           <li class="breadcrumb-item"><a href="../index.html">Utility Functions</a></li>
@@ -322,13 +326,13 @@
 <td><p>Checks if <cite>number</cite> is a prime number.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.utils.numeric.le_bytes_to_uint32_sequence" title="ethereum.utils.numeric.le_bytes_to_uint32_sequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le_bytes_to_uint32_sequence</span></code></a></p></td>
-<td><p>Convert little endian byte stream <cite>data</cite> to a little endian Uint32</p></td>
+<td><p>Convert little endian byte stream <cite>data</cite> to a little endian U32</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.utils.numeric.le_uint32_sequence_to_bytes" title="ethereum.utils.numeric.le_uint32_sequence_to_bytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le_uint32_sequence_to_bytes</span></code></a></p></td>
-<td><p>Obtain little endian byte stream from a little endian Uint32 sequence</p></td>
+<td><p>Obtain little endian byte stream from a little endian U32 sequence</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.utils.numeric.le_uint32_sequence_to_uint" title="ethereum.utils.numeric.le_uint32_sequence_to_uint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le_uint32_sequence_to_uint</span></code></a></p></td>
-<td><p>Obtain Uint from a Uint32 sequence assuming that this sequence is little</p></td>
+<td><p>Obtain Uint from a U32 sequence assuming that this sequence is little</p></td>
 </tr>
 </tbody>
 </table>
@@ -434,29 +438,29 @@ that is greater than <cite>value</cite>.</p>
 <h3>le_bytes_to_uint32_sequence<a class="headerlink" href="#le-bytes-to-uint32-sequence" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.utils.numeric.le_bytes_to_uint32_sequence">
-<span class="sig-name descname"><span class="pre">le_bytes_to_uint32_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint32" title="ethereum.base_types.Uint32"><span class="pre">ethereum.base_types.Uint32</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Ellipsis</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#ethereum.utils.numeric.le_bytes_to_uint32_sequence" title="Permalink to this definition"></a></dt>
-<dd><p>Convert little endian byte stream <cite>data</cite> to a little endian Uint32
-sequence i.e., the first Uint32 number of the sequence is the least
-significant Uint32 number.</p>
+<span class="sig-name descname"><span class="pre">le_bytes_to_uint32_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U32" title="ethereum.base_types.U32"><span class="pre">ethereum.base_types.U32</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Ellipsis</span><span class="p"><span class="pre">]</span></span><a class="headerlink" href="#ethereum.utils.numeric.le_bytes_to_uint32_sequence" title="Permalink to this definition"></a></dt>
+<dd><p>Convert little endian byte stream <cite>data</cite> to a little endian U32
+sequence i.e., the first U32 number of the sequence is the least
+significant U32 number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>data</strong> – The byte stream (little endian) which is to be converted to a Uint32
+<dd class="field-odd"><p><strong>data</strong> – The byte stream (little endian) which is to be converted to a U32
 stream.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>uint32_sequence</strong> – Sequence of Uint32 numbers obtained from the little endian byte
+<dd class="field-even"><p><strong>uint32_sequence</strong> – Sequence of U32 numbers obtained from the little endian byte
 stream.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>Tuple[Uint32, …]</cite></p>
+<dd class="field-odd"><p><cite>Tuple[U32, …]</cite></p>
 </dd>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_bytes_to_uint32_sequence</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Uint32</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_bytes_to_uint32_sequence</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">U32</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
     <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">4</span><span class="p">):</span>
-        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Uint32</span><span class="o">.</span><span class="n">from_le_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]))</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">U32</span><span class="o">.</span><span class="n">from_le_bytes</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]))</span>
 
     <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
 </pre></div>
@@ -466,24 +470,24 @@ stream.</p>
 <h3>le_uint32_sequence_to_bytes<a class="headerlink" href="#le-uint32-sequence-to-bytes" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.utils.numeric.le_uint32_sequence_to_bytes">
-<span class="sig-name descname"><span class="pre">le_uint32_sequence_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint32" title="ethereum.base_types.Uint32"><span class="pre">ethereum.base_types.Uint32</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bytes</span><a class="headerlink" href="#ethereum.utils.numeric.le_uint32_sequence_to_bytes" title="Permalink to this definition"></a></dt>
-<dd><p>Obtain little endian byte stream from a little endian Uint32 sequence
-i.e., the first Uint32 number of the sequence is the least significant
-Uint32 number.</p>
+<span class="sig-name descname"><span class="pre">le_uint32_sequence_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U32" title="ethereum.base_types.U32"><span class="pre">ethereum.base_types.U32</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <span class="pre">bytes</span><a class="headerlink" href="#ethereum.utils.numeric.le_uint32_sequence_to_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain little endian byte stream from a little endian U32 sequence
+i.e., the first U32 number of the sequence is the least significant
+U32 number.</p>
 <p>Note - In this conversion, the most significant byte (byte at the end of
 the little endian stream) may have leading zeroes. This function doesn’t
 take care of removing these leading zeroes as shown in below example.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">le_uint32_sequence_to_bytes</span><span class="p">([</span><span class="n">Uint32</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">le_uint32_sequence_to_bytes</span><span class="p">([</span><span class="n">U32</span><span class="p">(</span><span class="mi">8</span><span class="p">)])</span>
 <span class="go">b&#39;\x08\x00\x00\x00&#39;</span>
 </pre></div>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sequence</strong> – The Uint32 stream (little endian) which is to be converted to a
+<dd class="field-odd"><p><strong>sequence</strong> – The U32 stream (little endian) which is to be converted to a
 little endian byte stream.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>result</strong> – The byte stream obtained from the little endian Uint32 stream.</p>
+<dd class="field-even"><p><strong>result</strong> – The byte stream obtained from the little endian U32 stream.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><cite>bytes</cite></p>
@@ -491,7 +495,7 @@ little endian byte stream.</p>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_uint32_sequence_to_bytes</span><span class="p">(</span><span class="n">sequence</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Uint32</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_uint32_sequence_to_bytes</span><span class="p">(</span><span class="n">sequence</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">U32</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bytes</span><span class="p">:</span>
     <span class="n">result_bytes</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
         <span class="n">result_bytes</span> <span class="o">+=</span> <span class="n">item</span><span class="o">.</span><span class="n">to_le_bytes4</span><span class="p">()</span>
@@ -504,17 +508,17 @@ little endian byte stream.</p>
 <h3>le_uint32_sequence_to_uint<a class="headerlink" href="#le-uint32-sequence-to-uint" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.utils.numeric.le_uint32_sequence_to_uint">
-<span class="sig-name descname"><span class="pre">le_uint32_sequence_to_uint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint32" title="ethereum.base_types.Uint32"><span class="pre">ethereum.base_types.Uint32</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.utils.numeric.le_uint32_sequence_to_uint" title="Permalink to this definition"></a></dt>
-<dd><p>Obtain Uint from a Uint32 sequence assuming that this sequence is little
-endian i.e., the first Uint32 number of the sequence is the least
-significant Uint32 number.</p>
+<span class="sig-name descname"><span class="pre">le_uint32_sequence_to_uint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U32" title="ethereum.base_types.U32"><span class="pre">ethereum.base_types.U32</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a><a class="headerlink" href="#ethereum.utils.numeric.le_uint32_sequence_to_uint" title="Permalink to this definition"></a></dt>
+<dd><p>Obtain Uint from a U32 sequence assuming that this sequence is little
+endian i.e., the first U32 number of the sequence is the least
+significant U32 number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sequence</strong> – The Uint32 stream (little endian) which is to be converted to a Uint.</p>
+<dd class="field-odd"><p><strong>sequence</strong> – The U32 stream (little endian) which is to be converted to a Uint.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>value</strong> – The Uint number obtained from the conversion of the little endian
-Uint32 stream.</p>
+U32 stream.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><cite>Uint</cite></p>
@@ -522,7 +526,7 @@ Uint32 stream.</p>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_uint32_sequence_to_uint</span><span class="p">(</span><span class="n">sequence</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Uint32</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">le_uint32_sequence_to_uint</span><span class="p">(</span><span class="n">sequence</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">U32</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Uint</span><span class="p">:</span>
     <span class="n">sequence_as_bytes</span> <span class="o">=</span> <span class="n">le_uint32_sequence_to_bytes</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Uint</span><span class="o">.</span><span class="n">from_le_bytes</span><span class="p">(</span><span class="n">sequence_as_bytes</span><span class="p">)</span>
 </pre></div>

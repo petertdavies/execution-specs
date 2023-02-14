@@ -57,11 +57,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../../index.html" class="icon icon-home"> Ethereum Specification
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Ethereum Specification
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -276,7 +280,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../../index.html">Specification</a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Ethereum Specification</a></li>
           <li class="breadcrumb-item"><a href="../index.html">Ethereum Frontier Hardfork</a></li>
@@ -358,7 +362,7 @@ the fields of the genesis block.</p>
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">GenesisConfiguration</span></span><a class="headerlink" href="#ethereum.frontier.genesis.GenesisConfiguration" title="Permalink to this definition"></a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.frontier.genesis.GenesisConfiguration.chain_id">
-<span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint64</span></em><a class="headerlink" href="#ethereum.frontier.genesis.GenesisConfiguration.chain_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">chain_id</span></span><em class="property"> <span class="pre">:ethereum.base_types.U64</span></em><a class="headerlink" href="#ethereum.frontier.genesis.GenesisConfiguration.chain_id" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -427,7 +431,7 @@ and the pre-sale allocation data.</p>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">GenesisConfiguration</span><span class="p">(</span>
-        <span class="n">chain_id</span><span class="o">=</span><span class="n">Uint64</span><span class="p">(</span><span class="n">genesis_data</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">][</span><span class="s2">&quot;chainId&quot;</span><span class="p">]),</span>
+        <span class="n">chain_id</span><span class="o">=</span><span class="n">U64</span><span class="p">(</span><span class="n">genesis_data</span><span class="p">[</span><span class="s2">&quot;config&quot;</span><span class="p">][</span><span class="s2">&quot;chainId&quot;</span><span class="p">]),</span>
         <span class="n">difficulty</span><span class="o">=</span><span class="n">hex_to_uint</span><span class="p">(</span><span class="n">genesis_data</span><span class="p">[</span><span class="s2">&quot;difficulty&quot;</span><span class="p">]),</span>
         <span class="n">extra_data</span><span class="o">=</span><span class="n">hex_to_bytes</span><span class="p">(</span><span class="n">genesis_data</span><span class="p">[</span><span class="s2">&quot;extraData&quot;</span><span class="p">]),</span>
         <span class="n">gas_limit</span><span class="o">=</span><span class="n">hex_to_uint</span><span class="p">(</span><span class="n">genesis_data</span><span class="p">[</span><span class="s2">&quot;gasLimit&quot;</span><span class="p">]),</span>

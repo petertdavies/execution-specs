@@ -214,15 +214,15 @@ hex_to_u64
 ~~~~~~~~~~
 
 
-.. function:: hex_to_u64(hex_string: str) -> ethereum.base_types.Uint64
+.. function:: hex_to_u64(hex_string: str) -> ethereum.base_types.U64
    :noindexentry:
 
-   Convert hex string to Uint64.
+   Convert hex string to U64.
 
    :param hex_string: The hexadecimal string to be converted to U256.
 
-   :returns: **converted** -- The Uint64 integer obtained from the given hexadecimal string.
-   :rtype: `Uint64`
+   :returns: **converted** -- The U64 integer obtained from the given hexadecimal string.
+   :rtype: `U64`
 
 
 

@@ -280,7 +280,7 @@ The transaction type added in EIP-2930 to support access lists.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 
@@ -368,7 +368,7 @@ The transaction type added in EIP-1559.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 
@@ -574,14 +574,14 @@ Withdrawals that have been validated on the consensus layer.
    
 
    .. py:attribute:: index
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 
    
 
    .. py:attribute:: validator_index
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 

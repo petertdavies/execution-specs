@@ -291,7 +291,7 @@ generate_cache
 ~~~~~~~~~~~~~~
 
 
-.. function:: generate_cache(block_number: ethereum.base_types.Uint) -> Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis]
+.. function:: generate_cache(block_number: ethereum.base_types.Uint) -> Tuple[Tuple[ethereum.base_types.U32, Ellipsis], Ellipsis]
    :noindexentry:
 
    Generate the cache for the block identified by `block_number`. This cache
@@ -300,7 +300,7 @@ generate_cache
    :param block_number: The number of the block of interest.
 
    :returns: **cache** -- The cache generated for the passed in block.
-   :rtype: `Tuple[Tuple[Uint32, ...], ...]`
+   :rtype: `Tuple[Tuple[U32, ...], ...]`
 
 
 
@@ -313,7 +313,7 @@ fnv
 ~~~
 
 
-.. function:: fnv(a: Union[ethereum.base_types.Uint, ethereum.base_types.Uint32], b: Union[ethereum.base_types.Uint, ethereum.base_types.Uint32]) -> ethereum.base_types.Uint32
+.. function:: fnv(a: Union[ethereum.base_types.Uint, ethereum.base_types.U32], b: Union[ethereum.base_types.Uint, ethereum.base_types.U32]) -> ethereum.base_types.U32
    :noindexentry:
 
    FNV algorithm is inspired by the FNV hash, which in some cases is used
@@ -327,7 +327,7 @@ fnv
    :param b: The second data point.
 
    :returns: **modified_mix_integers** -- The result of performing fnv on the passed in data points.
-   :rtype: `Uint32`
+   :rtype: `U32`
 
 
 
@@ -340,17 +340,17 @@ fnv_hash
 ~~~~~~~~
 
 
-.. function:: fnv_hash(mix_integers: Tuple[ethereum.base_types.Uint32, Ellipsis], data: Tuple[ethereum.base_types.Uint32, Ellipsis]) -> Tuple[ethereum.base_types.Uint32, Ellipsis]
+.. function:: fnv_hash(mix_integers: Tuple[ethereum.base_types.U32, Ellipsis], data: Tuple[ethereum.base_types.U32, Ellipsis]) -> Tuple[ethereum.base_types.U32, Ellipsis]
    :noindexentry:
 
    FNV Hash mixes in data into mix using the ethash fnv method.
 
-   :param mix_integers: Mix data in the form of a sequence of Uint32.
-   :param data: The data (sequence of Uint32) to be hashed into the mix.
+   :param mix_integers: Mix data in the form of a sequence of U32.
+   :param data: The data (sequence of U32) to be hashed into the mix.
 
    :returns: **modified_mix_integers** -- The result of performing the fnv hash on the mix and the passed in
              data.
-   :rtype: `Tuple[Uint32, ...]`
+   :rtype: `Tuple[U32, ...]`
 
 
 
@@ -363,7 +363,7 @@ generate_dataset_item
 ~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: generate_dataset_item(cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], index: ethereum.base_types.Uint) -> ethereum.crypto.hash.Hash64
+.. function:: generate_dataset_item(cache: Tuple[Tuple[ethereum.base_types.U32, Ellipsis], Ellipsis], index: ethereum.base_types.Uint) -> ethereum.crypto.hash.Hash64
    :noindexentry:
 
    Generate a particular dataset item 0-indexed by `index` using `cache`.
@@ -412,7 +412,7 @@ hashimoto
 ~~~~~~~~~
 
 
-.. function:: hashimoto(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, dataset_size: ethereum.base_types.Uint, fetch_dataset_item: Callable[[ethereum.base_types.Uint], Tuple[ethereum.base_types.Uint32, Ellipsis]]) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
+.. function:: hashimoto(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, dataset_size: ethereum.base_types.Uint, fetch_dataset_item: Callable[[ethereum.base_types.Uint], Tuple[ethereum.base_types.U32, Ellipsis]]) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
    :noindexentry:
 
    Obtain the mix digest and the final value for a header, by aggregating
@@ -439,7 +439,7 @@ hashimoto_light
 ~~~~~~~~~~~~~~~
 
 
-.. function:: hashimoto_light(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, cache: Tuple[Tuple[ethereum.base_types.Uint32, Ellipsis], Ellipsis], dataset_size: ethereum.base_types.Uint) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
+.. function:: hashimoto_light(header_hash: ethereum.crypto.hash.Hash32, nonce: ethereum.base_types.Bytes8, cache: Tuple[Tuple[ethereum.base_types.U32, Ellipsis], Ellipsis], dataset_size: ethereum.base_types.Uint) -> Tuple[bytes, ethereum.crypto.hash.Hash32]
    :noindexentry:
 
    Run the hashimoto algorithm by generating dataset item using the cache

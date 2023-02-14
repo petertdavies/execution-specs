@@ -140,7 +140,7 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 

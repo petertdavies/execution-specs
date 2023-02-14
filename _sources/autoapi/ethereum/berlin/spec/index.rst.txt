@@ -196,7 +196,7 @@ History and current state of the block chain.
    
 
    .. py:attribute:: chain_id
-         :annotation: :ethereum.base_types.Uint64
+         :annotation: :ethereum.base_types.U64
 
       
 
@@ -369,7 +369,7 @@ apply_body
 ~~~~~~~~~~
 
 
-.. function:: apply_body(state: ethereum.berlin.state.State, block_hashes: List[ethereum.berlin.eth_types.Hash32], coinbase: ethereum.berlin.eth_types.Address, block_number: ethereum.base_types.Uint, block_gas_limit: ethereum.base_types.Uint, block_time: ethereum.base_types.U256, block_difficulty: ethereum.base_types.Uint, transactions: Tuple[Union[ethereum.berlin.eth_types.LegacyTransaction, ethereum.base_types.Bytes], Ellipsis], ommers: Tuple[ethereum.berlin.eth_types.Header, Ellipsis], chain_id: ethereum.base_types.Uint64) -> Tuple[ethereum.base_types.Uint, ethereum.berlin.eth_types.Root, ethereum.berlin.eth_types.Root, ethereum.berlin.eth_types.Bloom, ethereum.berlin.state.State]
+.. function:: apply_body(state: ethereum.berlin.state.State, block_hashes: List[ethereum.berlin.eth_types.Hash32], coinbase: ethereum.berlin.eth_types.Address, block_number: ethereum.base_types.Uint, block_gas_limit: ethereum.base_types.Uint, block_time: ethereum.base_types.U256, block_difficulty: ethereum.base_types.Uint, transactions: Tuple[Union[ethereum.berlin.eth_types.LegacyTransaction, ethereum.base_types.Bytes], Ellipsis], ommers: Tuple[ethereum.berlin.eth_types.Header, Ellipsis], chain_id: ethereum.base_types.U64) -> Tuple[ethereum.base_types.Uint, ethereum.berlin.eth_types.Root, ethereum.berlin.eth_types.Root, ethereum.berlin.eth_types.Bloom, ethereum.berlin.state.State]
    :noindexentry:
 
    Executes a block.
@@ -566,7 +566,7 @@ recover_sender
 ~~~~~~~~~~~~~~
 
 
-.. function:: recover_sender(chain_id: ethereum.base_types.Uint64, tx: ethereum.berlin.eth_types.Transaction) -> ethereum.berlin.eth_types.Address
+.. function:: recover_sender(chain_id: ethereum.base_types.U64, tx: ethereum.berlin.eth_types.Transaction) -> ethereum.berlin.eth_types.Address
    :noindexentry:
 
    Extracts the sender address from a transaction.

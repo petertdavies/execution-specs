@@ -26,8 +26,8 @@ Classes
    ethereum.base_types.Uint
    ethereum.base_types.FixedUInt
    ethereum.base_types.U256
-   ethereum.base_types.Uint32
-   ethereum.base_types.Uint64
+   ethereum.base_types.U32
+   ethereum.base_types.U64
    ethereum.base_types.FixedBytes
    ethereum.base_types.Bytes0
    ethereum.base_types.Bytes4
@@ -59,9 +59,9 @@ Attributes
 .. autoapisummary::
 
    ethereum.base_types.U8_MAX_VALUE
-   ethereum.base_types.UINT32_MAX_VALUE
-   ethereum.base_types.UINT32_CEIL_VALUE
-   ethereum.base_types.UINT64_MAX_VALUE
+   ethereum.base_types.U32_MAX_VALUE
+   ethereum.base_types.U32_CEIL_VALUE
+   ethereum.base_types.U64_MAX_VALUE
    ethereum.base_types.U255_MAX_VALUE
    ethereum.base_types.U255_CEIL_VALUE
    ethereum.base_types.U256_MAX_VALUE
@@ -89,12 +89,12 @@ U8_MAX_VALUE
    :lines: 20-20
 
 
-UINT32_MAX_VALUE
-~~~~~~~~~~~~~~~~
+U32_MAX_VALUE
+~~~~~~~~~~~~~
 
 
 
-.. py:data:: UINT32_MAX_VALUE
+.. py:data:: U32_MAX_VALUE
    
    
 
@@ -103,12 +103,12 @@ UINT32_MAX_VALUE
    :lines: 21-21
 
 
-UINT32_CEIL_VALUE
-~~~~~~~~~~~~~~~~~
+U32_CEIL_VALUE
+~~~~~~~~~~~~~~
 
 
 
-.. py:data:: UINT32_CEIL_VALUE
+.. py:data:: U32_CEIL_VALUE
    
    
 
@@ -117,12 +117,12 @@ UINT32_CEIL_VALUE
    :lines: 22-22
 
 
-UINT64_MAX_VALUE
-~~~~~~~~~~~~~~~~
+U64_MAX_VALUE
+~~~~~~~~~~~~~
 
 
 
-.. py:data:: UINT64_MAX_VALUE
+.. py:data:: U64_MAX_VALUE
    
    
 
@@ -646,15 +646,15 @@ MAX_VALUE
    :lines: 733-733
 
 
-Uint32
-~~~~~~
+U32
+~~~
 
 
 Unsigned positive integer, which can represent `0` to `2 ** 32 - 1`,
 inclusive.
 
 
-.. class:: Uint32(value: int)
+.. class:: U32(value: int)
 
 
    Bases: :py:obj:`FixedUInt`
@@ -662,7 +662,7 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-         :annotation: :ClassVar[Uint32]
+         :annotation: :ClassVar[U32]
 
       
 
@@ -673,7 +673,7 @@ inclusive.
 
       
 
-   .. py:method:: from_le_bytes(buffer: Bytes) -> Uint32
+   .. py:method:: from_le_bytes(buffer: Bytes) -> U32
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
@@ -705,7 +705,7 @@ MAX_VALUE
 
 
 
-.. py:data:: Uint32.MAX_VALUE
+.. py:data:: U32.MAX_VALUE
    :noindex:
 
    
@@ -714,15 +714,15 @@ MAX_VALUE
    :lines: 785-785
 
 
-Uint64
-~~~~~~
+U64
+~~~
 
 
 Unsigned positive integer, which can represent `0` to `2 ** 64 - 1`,
 inclusive.
 
 
-.. class:: Uint64(value: int)
+.. class:: U64(value: int)
 
 
    Bases: :py:obj:`FixedUInt`
@@ -730,7 +730,7 @@ inclusive.
    
 
    .. py:attribute:: MAX_VALUE
-         :annotation: :ClassVar[Uint64]
+         :annotation: :ClassVar[U64]
 
       
 
@@ -741,7 +741,7 @@ inclusive.
 
       
 
-   .. py:method:: from_le_bytes(buffer: Bytes) -> Uint64
+   .. py:method:: from_le_bytes(buffer: Bytes) -> U64
       :classmethod:
 
       Converts a sequence of bytes into an arbitrarily sized unsigned integer
@@ -775,7 +775,7 @@ inclusive.
       :rtype: `Bytes`
 
 
-   .. py:method:: from_be_bytes(buffer: Bytes) -> Uint64
+   .. py:method:: from_be_bytes(buffer: Bytes) -> U64
       :classmethod:
 
       Converts a sequence of bytes into an unsigned 64 bit integer from its
@@ -784,7 +784,7 @@ inclusive.
       :param buffer: Bytes to decode.
 
       :returns: **self** -- Unsigned integer decoded from `buffer`.
-      :rtype: `Uint64`
+      :rtype: `U64`
 
 
 
@@ -794,7 +794,7 @@ MAX_VALUE
 
 
 
-.. py:data:: Uint64.MAX_VALUE
+.. py:data:: U64.MAX_VALUE
    :noindex:
 
    

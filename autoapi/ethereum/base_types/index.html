@@ -113,11 +113,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> Ethereum Specification
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            Ethereum Specification
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -332,7 +336,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a></li>
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../index.html">Specification</a></li>
           <li class="breadcrumb-item"><a href="../index.html">Ethereum Specification</a></li>
       <li class="breadcrumb-item active">Numeric &amp; Array Types</li>
@@ -361,9 +365,9 @@
 <li><p><a class="reference internal" href="#module-details" id="id8">Module Details</a></p>
 <ul>
 <li><p><a class="reference internal" href="#u8-max-value" id="id9">U8_MAX_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint32-max-value" id="id10">UINT32_MAX_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint32-ceil-value" id="id11">UINT32_CEIL_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint64-max-value" id="id12">UINT64_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u32-max-value" id="id10">U32_MAX_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u32-ceil-value" id="id11">U32_CEIL_VALUE</a></p></li>
+<li><p><a class="reference internal" href="#u64-max-value" id="id12">U64_MAX_VALUE</a></p></li>
 <li><p><a class="reference internal" href="#u255-max-value" id="id13">U255_MAX_VALUE</a></p></li>
 <li><p><a class="reference internal" href="#u255-ceil-value" id="id14">U255_CEIL_VALUE</a></p></li>
 <li><p><a class="reference internal" href="#u256-max-value" id="id15">U256_MAX_VALUE</a></p></li>
@@ -373,9 +377,9 @@
 <li><p><a class="reference internal" href="#fixeduint" id="id19">FixedUInt</a></p></li>
 <li><p><a class="reference internal" href="#u256" id="id20">U256</a></p></li>
 <li><p><a class="reference internal" href="#max-value" id="id21">MAX_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint32" id="id22">Uint32</a></p></li>
+<li><p><a class="reference internal" href="#u32" id="id22">U32</a></p></li>
 <li><p><a class="reference internal" href="#id1" id="id23">MAX_VALUE</a></p></li>
-<li><p><a class="reference internal" href="#uint64" id="id24">Uint64</a></p></li>
+<li><p><a class="reference internal" href="#u64" id="id24">U64</a></p></li>
 <li><p><a class="reference internal" href="#id2" id="id25">MAX_VALUE</a></p></li>
 <li><p><a class="reference internal" href="#b" id="id26">B</a></p></li>
 <li><p><a class="reference internal" href="#fixedbytes" id="id27">FixedBytes</a></p></li>
@@ -420,10 +424,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U256" title="ethereum.base_types.U256"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U256</span></code></a></p></td>
 <td><p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 256 - 1</cite>,</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.Uint32" title="ethereum.base_types.Uint32"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Uint32</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.U32" title="ethereum.base_types.U32"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U32</span></code></a></p></td>
 <td><p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 32 - 1</cite>,</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.Uint64" title="ethereum.base_types.Uint64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Uint64</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U64" title="ethereum.base_types.U64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U64</span></code></a></p></td>
 <td><p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 64 - 1</cite>,</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.FixedBytes" title="ethereum.base_types.FixedBytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FixedBytes</span></code></a></p></td>
@@ -490,13 +494,13 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U8_MAX_VALUE" title="ethereum.base_types.U8_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U8_MAX_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.UINT32_MAX_VALUE" title="ethereum.base_types.UINT32_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT32_MAX_VALUE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.U32_MAX_VALUE" title="ethereum.base_types.U32_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U32_MAX_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.UINT32_CEIL_VALUE" title="ethereum.base_types.UINT32_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT32_CEIL_VALUE</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U32_CEIL_VALUE" title="ethereum.base_types.U32_CEIL_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U32_CEIL_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.UINT64_MAX_VALUE" title="ethereum.base_types.UINT64_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UINT64_MAX_VALUE</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.base_types.U64_MAX_VALUE" title="ethereum.base_types.U64_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U64_MAX_VALUE</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.base_types.U255_MAX_VALUE" title="ethereum.base_types.U255_MAX_VALUE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">U255_MAX_VALUE</span></code></a></p></td>
@@ -540,36 +544,36 @@
 </pre></div>
 </div>
 </section>
-<section id="uint32-max-value">
-<h3>UINT32_MAX_VALUE<a class="headerlink" href="#uint32-max-value" title="Permalink to this headline"></a></h3>
+<section id="u32-max-value">
+<h3>U32_MAX_VALUE<a class="headerlink" href="#u32-max-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.base_types.UINT32_MAX_VALUE">
-<span class="sig-name descname"><span class="pre">UINT32_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT32_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">U32_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U32_MAX_VALUE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UINT32_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U32_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </section>
-<section id="uint32-ceil-value">
-<h3>UINT32_CEIL_VALUE<a class="headerlink" href="#uint32-ceil-value" title="Permalink to this headline"></a></h3>
+<section id="u32-ceil-value">
+<h3>U32_CEIL_VALUE<a class="headerlink" href="#u32-ceil-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.base_types.UINT32_CEIL_VALUE">
-<span class="sig-name descname"><span class="pre">UINT32_CEIL_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT32_CEIL_VALUE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32_CEIL_VALUE">
+<span class="sig-name descname"><span class="pre">U32_CEIL_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U32_CEIL_VALUE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UINT32_CEIL_VALUE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U32_CEIL_VALUE</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span>
 </pre></div>
 </div>
 </section>
-<section id="uint64-max-value">
-<h3>UINT64_MAX_VALUE<a class="headerlink" href="#uint64-max-value" title="Permalink to this headline"></a></h3>
+<section id="u64-max-value">
+<h3>U64_MAX_VALUE<a class="headerlink" href="#u64-max-value" title="Permalink to this headline"></a></h3>
 <dl class="py data">
-<dt class="sig sig-object py" id="ethereum.base_types.UINT64_MAX_VALUE">
-<span class="sig-name descname"><span class="pre">UINT64_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.UINT64_MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64_MAX_VALUE">
+<span class="sig-name descname"><span class="pre">U64_MAX_VALUE</span></span><a class="headerlink" href="#ethereum.base_types.U64_MAX_VALUE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">UINT64_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U64_MAX_VALUE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">64</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </section>
@@ -1169,34 +1173,34 @@ representation, omitting leading zero bytes.
 </pre></div>
 </div>
 </section>
-<section id="uint32">
-<h3>Uint32<a class="headerlink" href="#uint32" title="Permalink to this headline"></a></h3>
+<section id="u32">
+<h3>U32<a class="headerlink" href="#u32" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 32 - 1</cite>,
 inclusive.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Uint32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.base_types.Uint32" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">U32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.base_types.U32" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ethereum.base_types.FixedUInt" title="ethereum.base_types.FixedUInt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FixedUInt</span></code></a></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32.MAX_VALUE">
-<span class="sig-name descname"><span class="pre">MAX_VALUE</span></span><em class="property"> <span class="pre">:ClassVar[Uint32]</span></em><a class="headerlink" href="#ethereum.base_types.Uint32.MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32.MAX_VALUE">
+<span class="sig-name descname"><span class="pre">MAX_VALUE</span></span><em class="property"> <span class="pre">:ClassVar[U32]</span></em><a class="headerlink" href="#ethereum.base_types.U32.MAX_VALUE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32.__slots__">
-<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#ethereum.base_types.Uint32.__slots__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#ethereum.base_types.U32.__slots__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32.from_le_bytes">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_le_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Uint32" title="ethereum.base_types.Uint32"><span class="pre">Uint32</span></a><a class="headerlink" href="#ethereum.base_types.Uint32.from_le_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32.from_le_bytes">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_le_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.U32" title="ethereum.base_types.U32"><span class="pre">U32</span></a><a class="headerlink" href="#ethereum.base_types.U32.from_le_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts a sequence of bytes into an arbitrarily sized unsigned integer
 from its little endian representation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32.to_le_bytes4">
-<span class="sig-name descname"><span class="pre">to_le_bytes4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes4" title="ethereum.base_types.Bytes4"><span class="pre">Bytes4</span></a><a class="headerlink" href="#ethereum.base_types.Uint32.to_le_bytes4" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32.to_le_bytes4">
+<span class="sig-name descname"><span class="pre">to_le_bytes4</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes4" title="ethereum.base_types.Bytes4"><span class="pre">Bytes4</span></a><a class="headerlink" href="#ethereum.base_types.U32.to_le_bytes4" title="Permalink to this definition"></a></dt>
 <dd><p>Converts this fixed sized unsigned integer into its little endian
 representation, with exactly 4 bytes.</p>
 <dl class="field-list simple">
@@ -1210,8 +1214,8 @@ representation, with exactly 4 bytes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint32.to_le_bytes">
-<span class="sig-name descname"><span class="pre">to_le_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.Uint32.to_le_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U32.to_le_bytes">
+<span class="sig-name descname"><span class="pre">to_le_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.U32.to_le_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts this fixed sized unsigned integer into its little endian
 representation, in the fewest bytes possible.</p>
 <dl class="field-list simple">
@@ -1231,41 +1235,41 @@ representation, in the fewest bytes possible.</p>
 <h3>MAX_VALUE<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Uint32.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
+<span class="sig-prename descclassname"><span class="pre">U32.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Uint32</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">Uint32</span><span class="p">,</span> <span class="n">UINT32_MAX_VALUE</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U32</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">U32</span><span class="p">,</span> <span class="n">U32_MAX_VALUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="uint64">
-<h3>Uint64<a class="headerlink" href="#uint64" title="Permalink to this headline"></a></h3>
+<section id="u64">
+<h3>U64<a class="headerlink" href="#u64" title="Permalink to this headline"></a></h3>
 <p>Unsigned positive integer, which can represent <cite>0</cite> to <cite>2 ** 64 - 1</cite>,
 inclusive.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Uint64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.base_types.Uint64" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">U64</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.base_types.U64" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="#ethereum.base_types.FixedUInt" title="ethereum.base_types.FixedUInt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FixedUInt</span></code></a></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.MAX_VALUE">
-<span class="sig-name descname"><span class="pre">MAX_VALUE</span></span><em class="property"> <span class="pre">:ClassVar[Uint64]</span></em><a class="headerlink" href="#ethereum.base_types.Uint64.MAX_VALUE" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.MAX_VALUE">
+<span class="sig-name descname"><span class="pre">MAX_VALUE</span></span><em class="property"> <span class="pre">:ClassVar[U64]</span></em><a class="headerlink" href="#ethereum.base_types.U64.MAX_VALUE" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.__slots__">
-<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#ethereum.base_types.Uint64.__slots__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.__slots__">
+<span class="sig-name descname"><span class="pre">__slots__</span></span><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#ethereum.base_types.U64.__slots__" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.from_le_bytes">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_le_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Uint64" title="ethereum.base_types.Uint64"><span class="pre">Uint64</span></a><a class="headerlink" href="#ethereum.base_types.Uint64.from_le_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.from_le_bytes">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_le_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.U64" title="ethereum.base_types.U64"><span class="pre">U64</span></a><a class="headerlink" href="#ethereum.base_types.U64.from_le_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts a sequence of bytes into an arbitrarily sized unsigned integer
 from its little endian representation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.to_le_bytes8">
-<span class="sig-name descname"><span class="pre">to_le_bytes8</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes8" title="ethereum.base_types.Bytes8"><span class="pre">Bytes8</span></a><a class="headerlink" href="#ethereum.base_types.Uint64.to_le_bytes8" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.to_le_bytes8">
+<span class="sig-name descname"><span class="pre">to_le_bytes8</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes8" title="ethereum.base_types.Bytes8"><span class="pre">Bytes8</span></a><a class="headerlink" href="#ethereum.base_types.U64.to_le_bytes8" title="Permalink to this definition"></a></dt>
 <dd><p>Converts this fixed sized unsigned integer into its little endian
 representation, with exactly 8 bytes.</p>
 <dl class="field-list simple">
@@ -1279,8 +1283,8 @@ representation, with exactly 8 bytes.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.to_le_bytes">
-<span class="sig-name descname"><span class="pre">to_le_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.Uint64.to_le_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.to_le_bytes">
+<span class="sig-name descname"><span class="pre">to_le_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.U64.to_le_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts this fixed sized unsigned integer into its little endian
 representation, in the fewest bytes possible.</p>
 <dl class="field-list simple">
@@ -1294,8 +1298,8 @@ representation, in the fewest bytes possible.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.to_be_bytes">
-<span class="sig-name descname"><span class="pre">to_be_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.Uint64.to_be_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.to_be_bytes">
+<span class="sig-name descname"><span class="pre">to_be_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.U64.to_be_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts this unsigned 64 bit integer into its big endian
 representation.</p>
 <dl class="field-list simple">
@@ -1309,8 +1313,8 @@ representation.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.Uint64.from_be_bytes">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_be_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Uint64" title="ethereum.base_types.Uint64"><span class="pre">Uint64</span></a><a class="headerlink" href="#ethereum.base_types.Uint64.from_be_bytes" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ethereum.base_types.U64.from_be_bytes">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_be_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.U64" title="ethereum.base_types.U64"><span class="pre">U64</span></a><a class="headerlink" href="#ethereum.base_types.U64.from_be_bytes" title="Permalink to this definition"></a></dt>
 <dd><p>Converts a sequence of bytes into an unsigned 64 bit integer from its
 big endian representation.</p>
 <dl class="field-list simple">
@@ -1321,7 +1325,7 @@ big endian representation.</p>
 <dd class="field-even"><p><strong>self</strong> – Unsigned integer decoded from <cite>buffer</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><cite>Uint64</cite></p>
+<dd class="field-odd"><p><cite>U64</cite></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1333,10 +1337,10 @@ big endian representation.</p>
 <h3>MAX_VALUE<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <dl class="py data">
 <dt class="sig sig-object py">
-<span class="sig-prename descclassname"><span class="pre">Uint64.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
+<span class="sig-prename descclassname"><span class="pre">U64.</span></span><span class="sig-name descname"><span class="pre">MAX_VALUE</span></span></dt>
 <dd></dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Uint64</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">Uint64</span><span class="p">,</span> <span class="n">UINT64_MAX_VALUE</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">U64</span><span class="o">.</span><span class="n">MAX_VALUE</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="n">U64</span><span class="p">,</span> <span class="n">U64_MAX_VALUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
