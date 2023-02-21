@@ -39,6 +39,8 @@ Functions
    ethereum.spurious_dragon.spec.validate_header
    ethereum.spurious_dragon.spec.generate_header_hash_for_pow
    ethereum.spurious_dragon.spec.validate_proof_of_work
+   ethereum.spurious_dragon.spec.check_transaction
+   ethereum.spurious_dragon.spec.make_receipt
    ethereum.spurious_dragon.spec.apply_body
    ethereum.spurious_dragon.spec.validate_ommers
    ethereum.spurious_dragon.spec.pay_rewards
@@ -333,6 +335,56 @@ validate_proof_of_work
 .. undocinclude:: /../src/ethereum/spurious_dragon/spec.py
    :language: python
    :pyobject: validate_proof_of_work
+
+check_transaction
+~~~~~~~~~~~~~~~~~
+
+
+.. function:: check_transaction(tx: ethereum.spurious_dragon.eth_types.Transaction, gas_available: ethereum.base_types.Uint, chain_id: ethereum.base_types.U64) -> ethereum.spurious_dragon.eth_types.Address
+   :noindexentry:
+
+   Check if the transaction is includable in the block.
+
+   :param tx: The transaction.
+   :param gas_available: The gas remaining in the block.
+   :param chain_id: The ID of the current chain.
+
+   :returns: The sender of the transaction.
+   :rtype: sender_address
+
+   :raises InvalidBlock :: If the transaction is not includable.
+
+
+
+
+.. undocinclude:: /../src/ethereum/spurious_dragon/spec.py
+   :language: python
+   :pyobject: check_transaction
+
+make_receipt
+~~~~~~~~~~~~
+
+
+.. function:: make_receipt(tx: ethereum.spurious_dragon.eth_types.Transaction, post_state: ethereum.base_types.Bytes32, cumulative_gas_used: ethereum.base_types.Uint, logs: Tuple[ethereum.spurious_dragon.eth_types.Log, Ellipsis]) -> ethereum.spurious_dragon.eth_types.Receipt
+   :noindexentry:
+
+   Make the receipt for a transaction that was executed.
+
+   :param tx: The executed transaction.
+   :param post_state: The state root immediately after this transaction.
+   :param cumulative_gas_used: The total gas used so far in the block after the transaction was
+                               executed.
+   :param logs: The logs produced by the transaction.
+
+   :returns: The receipt for the transaction.
+   :rtype: receipt
+
+
+
+
+.. undocinclude:: /../src/ethereum/spurious_dragon/spec.py
+   :language: python
+   :pyobject: make_receipt
 
 apply_body
 ~~~~~~~~~~

@@ -379,18 +379,20 @@
 <li><p><a class="reference internal" href="#validate-header" id="id18">validate_header</a></p></li>
 <li><p><a class="reference internal" href="#generate-header-hash-for-pow" id="id19">generate_header_hash_for_pow</a></p></li>
 <li><p><a class="reference internal" href="#validate-proof-of-work" id="id20">validate_proof_of_work</a></p></li>
-<li><p><a class="reference internal" href="#apply-body" id="id21">apply_body</a></p></li>
-<li><p><a class="reference internal" href="#validate-ommers" id="id22">validate_ommers</a></p></li>
-<li><p><a class="reference internal" href="#pay-rewards" id="id23">pay_rewards</a></p></li>
-<li><p><a class="reference internal" href="#process-transaction" id="id24">process_transaction</a></p></li>
-<li><p><a class="reference internal" href="#validate-transaction" id="id25">validate_transaction</a></p></li>
-<li><p><a class="reference internal" href="#calculate-intrinsic-cost" id="id26">calculate_intrinsic_cost</a></p></li>
-<li><p><a class="reference internal" href="#recover-sender" id="id27">recover_sender</a></p></li>
-<li><p><a class="reference internal" href="#signing-hash-pre155" id="id28">signing_hash_pre155</a></p></li>
-<li><p><a class="reference internal" href="#signing-hash-155" id="id29">signing_hash_155</a></p></li>
-<li><p><a class="reference internal" href="#compute-header-hash" id="id30">compute_header_hash</a></p></li>
-<li><p><a class="reference internal" href="#check-gas-limit" id="id31">check_gas_limit</a></p></li>
-<li><p><a class="reference internal" href="#calculate-block-difficulty" id="id32">calculate_block_difficulty</a></p></li>
+<li><p><a class="reference internal" href="#check-transaction" id="id21">check_transaction</a></p></li>
+<li><p><a class="reference internal" href="#make-receipt" id="id22">make_receipt</a></p></li>
+<li><p><a class="reference internal" href="#apply-body" id="id23">apply_body</a></p></li>
+<li><p><a class="reference internal" href="#validate-ommers" id="id24">validate_ommers</a></p></li>
+<li><p><a class="reference internal" href="#pay-rewards" id="id25">pay_rewards</a></p></li>
+<li><p><a class="reference internal" href="#process-transaction" id="id26">process_transaction</a></p></li>
+<li><p><a class="reference internal" href="#validate-transaction" id="id27">validate_transaction</a></p></li>
+<li><p><a class="reference internal" href="#calculate-intrinsic-cost" id="id28">calculate_intrinsic_cost</a></p></li>
+<li><p><a class="reference internal" href="#recover-sender" id="id29">recover_sender</a></p></li>
+<li><p><a class="reference internal" href="#signing-hash-pre155" id="id30">signing_hash_pre155</a></p></li>
+<li><p><a class="reference internal" href="#signing-hash-155" id="id31">signing_hash_155</a></p></li>
+<li><p><a class="reference internal" href="#compute-header-hash" id="id32">compute_header_hash</a></p></li>
+<li><p><a class="reference internal" href="#check-gas-limit" id="id33">check_gas_limit</a></p></li>
+<li><p><a class="reference internal" href="#calculate-block-difficulty" id="id34">calculate_block_difficulty</a></p></li>
 </ul>
 </li>
 </ul>
@@ -440,6 +442,12 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.spec.validate_proof_of_work" title="ethereum.constantinople.spec.validate_proof_of_work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_proof_of_work</span></code></a></p></td>
 <td><p>Validates the Proof of Work constraints.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.spec.check_transaction" title="ethereum.constantinople.spec.check_transaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_transaction</span></code></a></p></td>
+<td><p>Check if the transaction is includable in the block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.constantinople.spec.make_receipt" title="ethereum.constantinople.spec.make_receipt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_receipt</span></code></a></p></td>
+<td><p>Make the receipt for a transaction that was executed.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.constantinople.spec.apply_body" title="ethereum.constantinople.spec.apply_body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_body</span></code></a></p></td>
 <td><p>Executes a block.</p></td>
@@ -880,6 +888,86 @@ on the correct block. The result is the actual hash value of the block.</p>
 </pre></div>
 </div>
 </section>
+<section id="check-transaction">
+<h3>check_transaction<a class="headerlink" href="#check-transaction" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.spec.check_transaction">
+<span class="sig-name descname"><span class="pre">check_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../eth_types/index.html#ethereum.constantinople.eth_types.Transaction" title="ethereum.constantinople.eth_types.Transaction"><span class="pre">ethereum.constantinople.eth_types.Transaction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_available</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.U64" title="ethereum.base_types.U64"><span class="pre">ethereum.base_types.U64</span></a></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../eth_types/index.html#ethereum.constantinople.eth_types.Address" title="ethereum.constantinople.eth_types.Address"><span class="pre">ethereum.constantinople.eth_types.Address</span></a><a class="headerlink" href="#ethereum.constantinople.spec.check_transaction" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the transaction is includable in the block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> – The transaction.</p></li>
+<li><p><strong>gas_available</strong> – The gas remaining in the block.</p></li>
+<li><p><strong>chain_id</strong> – The ID of the current chain.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sender of the transaction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sender_address</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>InvalidBlock :</strong> – If the transaction is not includable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_transaction</span><span class="p">(</span>
+    <span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span>
+    <span class="n">gas_available</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
+    <span class="n">chain_id</span><span class="p">:</span> <span class="n">U64</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Address</span><span class="p">:</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">&lt;=</span> <span class="n">gas_available</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">sender_address</span> <span class="o">=</span> <span class="n">recover_sender</span><span class="p">(</span><span class="n">chain_id</span><span class="p">,</span> <span class="n">tx</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sender_address</span>
+</pre></div>
+</div>
+</section>
+<section id="make-receipt">
+<h3>make_receipt<a class="headerlink" href="#make-receipt" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.constantinople.spec.make_receipt">
+<span class="sig-name descname"><span class="pre">make_receipt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../eth_types/index.html#ethereum.constantinople.eth_types.Transaction" title="ethereum.constantinople.eth_types.Transaction"><span class="pre">ethereum.constantinople.eth_types.Transaction</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_erred</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative_gas_used</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="../../base_types/index.html#ethereum.base_types.Uint" title="ethereum.base_types.Uint"><span class="pre">ethereum.base_types.Uint</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">logs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../eth_types/index.html#ethereum.constantinople.eth_types.Log" title="ethereum.constantinople.eth_types.Log"><span class="pre">ethereum.constantinople.eth_types.Log</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Ellipsis</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="../eth_types/index.html#ethereum.constantinople.eth_types.Receipt" title="ethereum.constantinople.eth_types.Receipt"><span class="pre">ethereum.constantinople.eth_types.Receipt</span></a><a class="headerlink" href="#ethereum.constantinople.spec.make_receipt" title="Permalink to this definition"></a></dt>
+<dd><p>Make the receipt for a transaction that was executed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> – The executed transaction.</p></li>
+<li><p><strong>has_erred</strong> – Whether the top level frame of the transaction exited with an error.</p></li>
+<li><p><strong>cumulative_gas_used</strong> – The total gas used so far in the block after the transaction was
+executed.</p></li>
+<li><p><strong>logs</strong> – The logs produced by the transaction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The receipt for the transaction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>receipt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_receipt</span><span class="p">(</span>
+    <span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span>
+    <span class="n">has_erred</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+    <span class="n">cumulative_gas_used</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
+    <span class="n">logs</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Log</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Receipt</span><span class="p">:</span>
+    <span class="n">receipt</span> <span class="o">=</span> <span class="n">Receipt</span><span class="p">(</span>
+        <span class="n">succeeded</span><span class="o">=</span><span class="ow">not</span> <span class="n">has_erred</span><span class="p">,</span>
+        <span class="n">cumulative_gas_used</span><span class="o">=</span><span class="n">cumulative_gas_used</span><span class="p">,</span>
+        <span class="n">bloom</span><span class="o">=</span><span class="n">logs_bloom</span><span class="p">(</span><span class="n">logs</span><span class="p">),</span>
+        <span class="n">logs</span><span class="o">=</span><span class="n">logs</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">receipt</span>
+</pre></div>
+</div>
+</section>
 <section id="apply-body">
 <h3>apply_body<a class="headerlink" href="#apply-body" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -947,8 +1035,7 @@ block.</p></li>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">tx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">transactions</span><span class="p">):</span>
         <span class="n">trie_set</span><span class="p">(</span><span class="n">transactions_trie</span><span class="p">,</span> <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span> <span class="n">tx</span><span class="p">)</span>
 
-        <span class="n">ensure</span><span class="p">(</span><span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">&lt;=</span> <span class="n">gas_available</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
-        <span class="n">sender_address</span> <span class="o">=</span> <span class="n">recover_sender</span><span class="p">(</span><span class="n">chain_id</span><span class="p">,</span> <span class="n">tx</span><span class="p">)</span>
+        <span class="n">sender_address</span> <span class="o">=</span> <span class="n">check_transaction</span><span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">gas_available</span><span class="p">,</span> <span class="n">chain_id</span><span class="p">)</span>
 
         <span class="n">env</span> <span class="o">=</span> <span class="n">vm</span><span class="o">.</span><span class="n">Environment</span><span class="p">(</span>
             <span class="n">caller</span><span class="o">=</span><span class="n">sender_address</span><span class="p">,</span>
@@ -966,16 +1053,16 @@ block.</p></li>
         <span class="n">gas_used</span><span class="p">,</span> <span class="n">logs</span><span class="p">,</span> <span class="n">has_erred</span> <span class="o">=</span> <span class="n">process_transaction</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">tx</span><span class="p">)</span>
         <span class="n">gas_available</span> <span class="o">-=</span> <span class="n">gas_used</span>
 
+        <span class="n">receipt</span> <span class="o">=</span> <span class="n">make_receipt</span><span class="p">(</span>
+            <span class="n">tx</span><span class="p">,</span> <span class="n">has_erred</span><span class="p">,</span> <span class="p">(</span><span class="n">block_gas_limit</span> <span class="o">-</span> <span class="n">gas_available</span><span class="p">),</span> <span class="n">logs</span>
+        <span class="p">)</span>
+
         <span class="n">trie_set</span><span class="p">(</span>
             <span class="n">receipts_trie</span><span class="p">,</span>
             <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">i</span><span class="p">)),</span>
-            <span class="n">Receipt</span><span class="p">(</span>
-                <span class="n">succeeded</span><span class="o">=</span><span class="ow">not</span> <span class="n">has_erred</span><span class="p">,</span>
-                <span class="n">cumulative_gas_used</span><span class="o">=</span><span class="p">(</span><span class="n">block_gas_limit</span> <span class="o">-</span> <span class="n">gas_available</span><span class="p">),</span>
-                <span class="n">bloom</span><span class="o">=</span><span class="n">logs_bloom</span><span class="p">(</span><span class="n">logs</span><span class="p">),</span>
-                <span class="n">logs</span><span class="o">=</span><span class="n">logs</span><span class="p">,</span>
-            <span class="p">),</span>
+            <span class="n">receipt</span><span class="p">,</span>
         <span class="p">)</span>
+
         <span class="n">block_logs</span> <span class="o">+=</span> <span class="n">logs</span>
 
     <span class="n">pay_rewards</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">block_number</span><span class="p">,</span> <span class="n">coinbase</span><span class="p">,</span> <span class="n">ommers</span><span class="p">)</span>

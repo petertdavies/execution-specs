@@ -39,6 +39,8 @@ Functions
    ethereum.arrow_glacier.spec.validate_header
    ethereum.arrow_glacier.spec.generate_header_hash_for_pow
    ethereum.arrow_glacier.spec.validate_proof_of_work
+   ethereum.arrow_glacier.spec.check_transaction
+   ethereum.arrow_glacier.spec.make_receipt
    ethereum.arrow_glacier.spec.apply_body
    ethereum.arrow_glacier.spec.validate_ommers
    ethereum.arrow_glacier.spec.pay_rewards
@@ -410,6 +412,57 @@ validate_proof_of_work
 .. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
    :language: python
    :pyobject: validate_proof_of_work
+
+check_transaction
+~~~~~~~~~~~~~~~~~
+
+
+.. function:: check_transaction(tx: ethereum.arrow_glacier.eth_types.Transaction, base_fee_per_gas: ethereum.base_types.Uint, gas_available: ethereum.base_types.Uint, chain_id: ethereum.base_types.U64) -> Tuple[ethereum.arrow_glacier.eth_types.Address, ethereum.base_types.U256]
+   :noindexentry:
+
+   Check if the transaction is includable in the block.
+
+   :param tx: The transaction.
+   :param base_fee_per_gas: The block base fee.
+   :param gas_available: The gas remaining in the block.
+   :param chain_id: The ID of the current chain.
+
+   :returns: * *sender_address* -- The sender of the transaction.
+             * *effective_gas_price* -- The price to charge for gas when the transaction is executed.
+
+   :raises InvalidBlock :: If the transaction is not includable.
+
+
+
+
+.. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
+   :language: python
+   :pyobject: check_transaction
+
+make_receipt
+~~~~~~~~~~~~
+
+
+.. function:: make_receipt(tx: ethereum.arrow_glacier.eth_types.Transaction, has_erred: bool, cumulative_gas_used: ethereum.base_types.Uint, logs: Tuple[ethereum.arrow_glacier.eth_types.Log, Ellipsis]) -> Union[ethereum.base_types.Bytes, ethereum.arrow_glacier.eth_types.Receipt]
+   :noindexentry:
+
+   Make the receipt for a transaction that was executed.
+
+   :param tx: The executed transaction.
+   :param has_erred: Whether the top level frame of the transaction exited with an error.
+   :param cumulative_gas_used: The total gas used so far in the block after the transaction was
+                               executed.
+   :param logs: The logs produced by the transaction.
+
+   :returns: The receipt for the transaction.
+   :rtype: receipt
+
+
+
+
+.. undocinclude:: /../src/ethereum/arrow_glacier/spec.py
+   :language: python
+   :pyobject: make_receipt
 
 apply_body
 ~~~~~~~~~~

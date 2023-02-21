@@ -58,7 +58,7 @@ Indicates that RLP decoding failed.
 .. exception:: RLPDecodingError
 
 
-   Bases: :py:obj:`EthereumException`
+   Bases: :py:obj:`InvalidBlock`
 
 
 

@@ -41,6 +41,8 @@ Functions
    ethereum.dao_fork.spec.validate_header
    ethereum.dao_fork.spec.generate_header_hash_for_pow
    ethereum.dao_fork.spec.validate_proof_of_work
+   ethereum.dao_fork.spec.check_transaction
+   ethereum.dao_fork.spec.make_receipt
    ethereum.dao_fork.spec.apply_body
    ethereum.dao_fork.spec.validate_ommers
    ethereum.dao_fork.spec.pay_rewards
@@ -341,6 +343,55 @@ validate_proof_of_work
 .. undocinclude:: /../src/ethereum/dao_fork/spec.py
    :language: python
    :pyobject: validate_proof_of_work
+
+check_transaction
+~~~~~~~~~~~~~~~~~
+
+
+.. function:: check_transaction(tx: ethereum.dao_fork.eth_types.Transaction, gas_available: ethereum.base_types.Uint) -> ethereum.dao_fork.eth_types.Address
+   :noindexentry:
+
+   Check if the transaction is includable in the block.
+
+   :param tx: The transaction.
+   :param gas_available: The gas remaining in the block.
+
+   :returns: The sender of the transaction.
+   :rtype: sender_address
+
+   :raises InvalidBlock :: If the transaction is not includable.
+
+
+
+
+.. undocinclude:: /../src/ethereum/dao_fork/spec.py
+   :language: python
+   :pyobject: check_transaction
+
+make_receipt
+~~~~~~~~~~~~
+
+
+.. function:: make_receipt(tx: ethereum.dao_fork.eth_types.Transaction, post_state: ethereum.base_types.Bytes32, cumulative_gas_used: ethereum.base_types.Uint, logs: Tuple[ethereum.dao_fork.eth_types.Log, Ellipsis]) -> ethereum.dao_fork.eth_types.Receipt
+   :noindexentry:
+
+   Make the receipt for a transaction that was executed.
+
+   :param tx: The executed transaction.
+   :param post_state: The state root immediately after this transaction.
+   :param cumulative_gas_used: The total gas used so far in the block after the transaction was
+                               executed.
+   :param logs: The logs produced by the transaction.
+
+   :returns: The receipt for the transaction.
+   :rtype: receipt
+
+
+
+
+.. undocinclude:: /../src/ethereum/dao_fork/spec.py
+   :language: python
+   :pyobject: make_receipt
 
 apply_body
 ~~~~~~~~~~

@@ -1081,6 +1081,21 @@ directly, but rather to be subclassed.</p>
 <dd><p>Return self&gt;&gt;value.</p>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="ethereum.base_types.FixedUInt.to_be_bytes">
+<span class="sig-name descname"><span class="pre">to_be_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.FixedUInt.to_be_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>Converts this unsigned integer into its big endian representation,
+omitting leading zero bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>big_endian</strong> – Big endian (most significant bits first) representation.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><cite>Bytes</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -1140,15 +1155,6 @@ from its big endian representation.
 representation with exactly 32 bytes.
 :returns: <strong>big_endian</strong> – Big endian (most significant bits first) representation.
 :rtype: <cite>Bytes32</cite></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.U256.to_be_bytes">
-<span class="sig-name descname"><span class="pre">to_be_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.U256.to_be_bytes" title="Permalink to this definition"></a></dt>
-<dd><p>Converts this 256-bit unsigned integer into its big endian
-representation, omitting leading zero bytes.
-:returns: <strong>big_endian</strong> – Big endian (most significant bits first) representation.
-:rtype: <cite>Bytes</cite></p>
 </dd></dl>
 
 <dl class="py method">
@@ -1290,21 +1296,6 @@ representation, in the fewest bytes possible.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p><strong>little_endian</strong> – Little endian (most significant bits last) representation.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><cite>Bytes</cite></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ethereum.base_types.U64.to_be_bytes">
-<span class="sig-name descname"><span class="pre">to_be_bytes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#ethereum.base_types.Bytes" title="ethereum.base_types.Bytes"><span class="pre">Bytes</span></a><a class="headerlink" href="#ethereum.base_types.U64.to_be_bytes" title="Permalink to this definition"></a></dt>
-<dd><p>Converts this unsigned 64 bit integer into its big endian
-representation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><strong>big_endian</strong> – Big endian (most significant bits first) representation.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p><cite>Bytes</cite></p>

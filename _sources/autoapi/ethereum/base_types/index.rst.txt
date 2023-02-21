@@ -557,6 +557,15 @@ directly, but rather to be subclassed.
       Return self>>value.
 
 
+   .. py:method:: to_be_bytes() -> Bytes
+
+      Converts this unsigned integer into its big endian representation,
+      omitting leading zero bytes.
+
+      :returns: **big_endian** -- Big endian (most significant bits first) representation.
+      :rtype: `Bytes`
+
+
 
 
 U256
@@ -615,14 +624,6 @@ inclusive.
       :rtype: `Bytes32`
 
 
-   .. py:method:: to_be_bytes() -> Bytes
-
-      Converts this 256-bit unsigned integer into its big endian
-      representation, omitting leading zero bytes.
-      :returns: **big_endian** -- Big endian (most significant bits first) representation.
-      :rtype: `Bytes`
-
-
    .. py:method:: to_signed() -> int
 
       Converts this 256-bit unsigned integer into a signed integer.
@@ -643,7 +644,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 733-733
+   :lines: 734-734
 
 
 U32
@@ -711,7 +712,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 785-785
+   :lines: 786-786
 
 
 U64
@@ -766,15 +767,6 @@ inclusive.
       :rtype: `Bytes`
 
 
-   .. py:method:: to_be_bytes() -> Bytes
-
-      Converts this unsigned 64 bit integer into its big endian
-      representation.
-
-      :returns: **big_endian** -- Big endian (most significant bits first) representation.
-      :rtype: `Bytes`
-
-
    .. py:method:: from_be_bytes(buffer: Bytes) -> U64
       :classmethod:
 
@@ -800,7 +792,7 @@ MAX_VALUE
    
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 871-871
+   :lines: 858-858
 
 
 B
@@ -814,7 +806,7 @@ B
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 875-875
+   :lines: 862-862
 
 
 FixedBytes
@@ -1004,7 +996,7 @@ Bytes
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 956-956
+   :lines: 943-943
 
 
 _setattr_function
@@ -1080,7 +1072,7 @@ S
 
 .. undocinclude:: /../src/ethereum/base_types.py
    :language: python
-   :lines: 998-998
+   :lines: 985-985
 
 
 modify

@@ -311,18 +311,20 @@
 <li><p><a class="reference internal" href="#validate-header" id="id16">validate_header</a></p></li>
 <li><p><a class="reference internal" href="#generate-header-hash-for-pow" id="id17">generate_header_hash_for_pow</a></p></li>
 <li><p><a class="reference internal" href="#validate-proof-of-work" id="id18">validate_proof_of_work</a></p></li>
-<li><p><a class="reference internal" href="#apply-body" id="id19">apply_body</a></p></li>
-<li><p><a class="reference internal" href="#validate-ommers" id="id20">validate_ommers</a></p></li>
-<li><p><a class="reference internal" href="#pay-rewards" id="id21">pay_rewards</a></p></li>
-<li><p><a class="reference internal" href="#process-transaction" id="id22">process_transaction</a></p></li>
-<li><p><a class="reference internal" href="#validate-transaction" id="id23">validate_transaction</a></p></li>
-<li><p><a class="reference internal" href="#calculate-intrinsic-cost" id="id24">calculate_intrinsic_cost</a></p></li>
-<li><p><a class="reference internal" href="#recover-sender" id="id25">recover_sender</a></p></li>
-<li><p><a class="reference internal" href="#signing-hash-pre155" id="id26">signing_hash_pre155</a></p></li>
-<li><p><a class="reference internal" href="#signing-hash-155" id="id27">signing_hash_155</a></p></li>
-<li><p><a class="reference internal" href="#compute-header-hash" id="id28">compute_header_hash</a></p></li>
-<li><p><a class="reference internal" href="#check-gas-limit" id="id29">check_gas_limit</a></p></li>
-<li><p><a class="reference internal" href="#calculate-block-difficulty" id="id30">calculate_block_difficulty</a></p></li>
+<li><p><a class="reference internal" href="#check-transaction" id="id19">check_transaction</a></p></li>
+<li><p><a class="reference internal" href="#make-receipt" id="id20">make_receipt</a></p></li>
+<li><p><a class="reference internal" href="#apply-body" id="id21">apply_body</a></p></li>
+<li><p><a class="reference internal" href="#validate-ommers" id="id22">validate_ommers</a></p></li>
+<li><p><a class="reference internal" href="#pay-rewards" id="id23">pay_rewards</a></p></li>
+<li><p><a class="reference internal" href="#process-transaction" id="id24">process_transaction</a></p></li>
+<li><p><a class="reference internal" href="#validate-transaction" id="id25">validate_transaction</a></p></li>
+<li><p><a class="reference internal" href="#calculate-intrinsic-cost" id="id26">calculate_intrinsic_cost</a></p></li>
+<li><p><a class="reference internal" href="#recover-sender" id="id27">recover_sender</a></p></li>
+<li><p><a class="reference internal" href="#signing-hash-pre155" id="id28">signing_hash_pre155</a></p></li>
+<li><p><a class="reference internal" href="#signing-hash-155" id="id29">signing_hash_155</a></p></li>
+<li><p><a class="reference internal" href="#compute-header-hash" id="id30">compute_header_hash</a></p></li>
+<li><p><a class="reference internal" href="#check-gas-limit" id="id31">check_gas_limit</a></p></li>
+<li><p><a class="reference internal" href="#calculate-block-difficulty" id="id32">calculate_block_difficulty</a></p></li>
 </ul>
 </li>
 </ul>
@@ -372,6 +374,12 @@
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.spec.validate_proof_of_work" title="ethereum.spurious_dragon.spec.validate_proof_of_work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_proof_of_work</span></code></a></p></td>
 <td><p>Validates the Proof of Work constraints.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.spec.check_transaction" title="ethereum.spurious_dragon.spec.check_transaction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_transaction</span></code></a></p></td>
+<td><p>Check if the transaction is includable in the block.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.spec.make_receipt" title="ethereum.spurious_dragon.spec.make_receipt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">make_receipt</span></code></a></p></td>
+<td><p>Make the receipt for a transaction that was executed.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ethereum.spurious_dragon.spec.apply_body" title="ethereum.spurious_dragon.spec.apply_body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply_body</span></code></a></p></td>
 <td><p>Executes a block.</p></td>
@@ -810,6 +818,85 @@ on the correct block. The result is the actual hash value of the block.</p>
 </pre></div>
 </div>
 </section>
+<section id="check-transaction">
+<h3>check_transaction<a class="headerlink" href="#check-transaction" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.check_transaction">
+<span class="sig-name descname"><span class="pre">check_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gas_available</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.spec.check_transaction" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the transaction is includable in the block.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> – The transaction.</p></li>
+<li><p><strong>gas_available</strong> – The gas remaining in the block.</p></li>
+<li><p><strong>chain_id</strong> – The ID of the current chain.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The sender of the transaction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>sender_address</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>InvalidBlock :</strong> – If the transaction is not includable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_transaction</span><span class="p">(</span>
+    <span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span>
+    <span class="n">gas_available</span><span class="p">:</span> <span class="n">Uint</span><span class="p">,</span>
+    <span class="n">chain_id</span><span class="p">:</span> <span class="n">U64</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Address</span><span class="p">:</span>
+    <span class="n">ensure</span><span class="p">(</span><span class="n">tx</span><span class="o">.</span><span class="n">gas</span> <span class="o">&lt;=</span> <span class="n">gas_available</span><span class="p">,</span> <span class="n">InvalidBlock</span><span class="p">)</span>
+    <span class="n">sender_address</span> <span class="o">=</span> <span class="n">recover_sender</span><span class="p">(</span><span class="n">chain_id</span><span class="p">,</span> <span class="n">tx</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sender_address</span>
+</pre></div>
+</div>
+</section>
+<section id="make-receipt">
+<h3>make_receipt<a class="headerlink" href="#make-receipt" title="Permalink to this headline"></a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="ethereum.spurious_dragon.spec.make_receipt">
+<span class="sig-name descname"><span class="pre">make_receipt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_erred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cumulative_gas_used</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.spec.make_receipt" title="Permalink to this definition"></a></dt>
+<dd><p>Make the receipt for a transaction that was executed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> – The executed transaction.</p></li>
+<li><p><strong class="change-replaced">post_state</strong><strong class="change-replacement">has_erred</strong> – <span class="change-replaced">The state root immediately after this transaction.</span><span class="change-replacement">Whether the top level frame of the transaction exited with an error.</span></p></li>
+<li><p><strong>cumulative_gas_used</strong> – The total gas used so far in the block after the transaction was
+executed.</p></li>
+<li><p><strong>logs</strong> – The logs produced by the transaction.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The receipt for the transaction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>receipt</p>
+</dd>
+</dl>
+</dd></dl>
+
+<pre class="literal-block">def make_receipt(
+    tx: Transaction,
+    <span class="change-replaced">post_state: Bytes32,</span><span class="change-replacement">has_erred: bool,</span>
+    cumulative_gas_used: Uint,
+    logs: Tuple[Log, ...],
+) -&gt; Receipt:
+    receipt = Receipt(
+        <span class="change-replaced">post_state=post_state,</span><span class="change-replacement">succeeded=not has_erred,</span>
+        cumulative_gas_used=cumulative_gas_used,
+        bloom=logs_bloom(logs),
+        logs=logs,
+    )
+
+    return receipt
+</pre>
+</section>
 <section id="apply-body">
 <h3>apply_body<a class="headerlink" href="#apply-body" title="Permalink to this headline"></a></h3>
 <dl class="py function">
@@ -877,8 +964,7 @@ block.</p></li>
     for i, tx in enumerate(transactions):
         trie_set(transactions_trie, rlp.encode(Uint(i)), tx)
 
-        ensure(tx.gas &lt;= gas_available, InvalidBlock)
-        sender_address = recover_sender(chain_id, tx)
+        sender_address = check_transaction(tx, gas_available, chain_id)
 
         env = vm.Environment(
             caller=sender_address,
@@ -896,31 +982,32 @@ block.</p></li>
         gas_used, <span class="change-added">logs, has_erred = process_transaction(env, tx)
         gas_available -= gas_used
 
+        receipt = make_receipt(
+            tx, has_erred, (block_gas_limit - gas_available), </span>logs <span class="change-added">)
+
         trie_set(
             receipts_trie,
             rlp.encode(Uint(i)),
-            Receipt(
-                succeeded=not has_erred,
-                cumulative_gas_used=(block_gas_limit - gas_available),
-                bloom=logs_bloom(logs),
-                logs=logs,
-            ),
+            receipt,
         )
-        block_logs += </span>logs <span class="change-added">pay_rewards(state, block_number, coinbase, ommers)
+
+        block_logs += logs
+
+    pay_rewards(state, block_number, coinbase, ommers)
 
     gas_remaining </span>= <span class="change-replaced">process_transaction(env, tx)</span><span class="change-replacement">block_gas_limit -</span>
         gas_available <span class="change-removed">-= gas_used
 
+        receipt = make_receipt(
+            tx, state_root(state), (block_gas_limit - gas_available), logs
+        )
+
         trie_set(
             receipts_trie,
             rlp.encode(Uint(i)),
-            Receipt(
-                post_state=state_root(state),
-                cumulative_gas_used=(block_gas_limit - gas_available),
-                bloom=logs_bloom(logs),
-                logs=logs,
-            ),
+            receipt,
         )
+
         block_logs += logs
 
     pay_rewards(state, block_number, coinbase, ommers)

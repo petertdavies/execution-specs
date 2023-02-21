@@ -228,7 +228,7 @@ _decode_to
 
    :param cls: The type to decode to.
    :type cls: `Type[T]`
-   :param raw_rlp: A decode rlp structure.
+   :param raw_rlp: A decoded rlp structure.
 
    :returns: **decoded_data** -- Object decoded from `encoded_data`.
    :rtype: `T`
