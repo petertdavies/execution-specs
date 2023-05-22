@@ -11,7 +11,7 @@ Introduction
 ------------
 
 The abstract computer which runs the code stored in an
-`eth1spec.eth_types.Account`.
+`.fork_types.Account`.
 
 
 .. only:: stage1
@@ -70,7 +70,7 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: caller
-         :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.fork_types.Address
 
       
 
@@ -84,14 +84,14 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: origin
-         :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.fork_types.Address
 
       
 
    
 
    .. py:attribute:: coinbase
-         :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.fork_types.Address
 
       
 
@@ -151,21 +151,21 @@ Items that are used by contract creation or message call.
    
 
    .. py:attribute:: caller
-         :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.fork_types.Address
 
       
 
    
 
    .. py:attribute:: target
-         :annotation: :Union[ethereum.base_types.Bytes0, ethereum.byzantium.eth_types.Address]
+         :annotation: :Union[ethereum.base_types.Bytes0, ethereum.byzantium.fork_types.Address]
 
       
 
    
 
    .. py:attribute:: current_target
-         :annotation: :ethereum.byzantium.eth_types.Address
+         :annotation: :ethereum.byzantium.fork_types.Address
 
       
 
@@ -193,7 +193,7 @@ Items that are used by contract creation or message call.
    
 
    .. py:attribute:: code_address
-         :annotation: :Optional[ethereum.byzantium.eth_types.Address]
+         :annotation: :Optional[ethereum.byzantium.fork_types.Address]
 
       
 
@@ -288,7 +288,7 @@ The internal state of the virtual machine.
    
 
    .. py:attribute:: logs
-         :annotation: :Tuple[ethereum.byzantium.eth_types.Log, Ellipsis]
+         :annotation: :Tuple[ethereum.byzantium.fork_types.Log, Ellipsis]
 
       
 
@@ -323,14 +323,14 @@ The internal state of the virtual machine.
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.byzantium.eth_types.Address]
+         :annotation: :Set[ethereum.byzantium.fork_types.Address]
 
       
 
    
 
    .. py:attribute:: touched_accounts
-         :annotation: :Set[ethereum.byzantium.eth_types.Address]
+         :annotation: :Set[ethereum.byzantium.fork_types.Address]
 
       
 

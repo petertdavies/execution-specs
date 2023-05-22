@@ -5,9 +5,9 @@ Muir Glacier → Berlin
 .. toctree::
    :maxdepth: 1
 
-   muir_glacier_berlin/eth_types/index.pickle64
+   muir_glacier_berlin/fork/index.pickle64
+   muir_glacier_berlin/fork_types/index.pickle64
    muir_glacier_berlin/index.pickle64
-   muir_glacier_berlin/spec/index.pickle64
    muir_glacier_berlin/trie/index.pickle64
    muir_glacier_berlin/utils/message/index.pickle64
    muir_glacier_berlin/vm/gas/index.pickle64

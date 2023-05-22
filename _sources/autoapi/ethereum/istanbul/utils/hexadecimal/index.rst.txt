@@ -39,7 +39,7 @@ hex_to_root
 ~~~~~~~~~~~
 
 
-.. function:: hex_to_root(hex_string: str) -> ethereum.istanbul.eth_types.Root
+.. function:: hex_to_root(hex_string: str) -> ethereum.istanbul.fork_types.Root
    :noindexentry:
 
    Convert hex string to trie root.
@@ -60,7 +60,7 @@ hex_to_bloom
 ~~~~~~~~~~~~
 
 
-.. function:: hex_to_bloom(hex_string: str) -> ethereum.istanbul.eth_types.Bloom
+.. function:: hex_to_bloom(hex_string: str) -> ethereum.istanbul.fork_types.Bloom
    :noindexentry:
 
    Convert hex string to bloom.
@@ -81,7 +81,7 @@ hex_to_address
 ~~~~~~~~~~~~~~
 
 
-.. function:: hex_to_address(hex_string: str) -> ethereum.istanbul.eth_types.Address
+.. function:: hex_to_address(hex_string: str) -> ethereum.istanbul.fork_types.Address
    :noindexentry:
 
    Convert hex string to Address (20 bytes).

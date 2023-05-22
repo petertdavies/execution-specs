@@ -11,7 +11,7 @@ Introduction
 ------------
 
 The state trie is the structure responsible for storing
-`eth1spec.eth_types.Account` objects.
+`.fork_types.Account` objects.
 
 
 .. only:: stage1
@@ -444,7 +444,7 @@ _prepare_trie
 ~~~~~~~~~~~~~
 
 
-.. function:: _prepare_trie(trie: Trie[K, V], get_storage_root: Callable[[ethereum.spurious_dragon.eth_types.Address], ethereum.spurious_dragon.eth_types.Root] = None) -> Mapping[ethereum.base_types.Bytes, ethereum.base_types.Bytes]
+.. function:: _prepare_trie(trie: Trie[K, V], get_storage_root: Callable[[ethereum.spurious_dragon.fork_types.Address], ethereum.spurious_dragon.fork_types.Root] = None) -> Mapping[ethereum.base_types.Bytes, ethereum.base_types.Bytes]
    :noindexentry:
 
    Prepares the trie for root calculation. Removes values that are empty,
@@ -455,7 +455,7 @@ _prepare_trie
                             `Account` objects.
 
    :returns: **out** -- Object with keys mapped to nibble-byte form.
-   :rtype: `Mapping[eth1spec.base_types.Bytes, Node]`
+   :rtype: `Mapping[ethereum.base_types.Bytes, Node]`
 
 
 
@@ -468,7 +468,7 @@ root
 ~~~~
 
 
-.. function:: root(trie: Trie[K, V], get_storage_root: Callable[[ethereum.spurious_dragon.eth_types.Address], ethereum.spurious_dragon.eth_types.Root] = None) -> ethereum.spurious_dragon.eth_types.Root
+.. function:: root(trie: Trie[K, V], get_storage_root: Callable[[ethereum.spurious_dragon.fork_types.Address], ethereum.spurious_dragon.fork_types.Root] = None) -> ethereum.spurious_dragon.fork_types.Root
    :noindexentry:
 
    Computes the root of a modified merkle patricia trie (MPT).
@@ -478,7 +478,7 @@ root
                             `Account` objects.
 
    :returns: **root** -- MPT root of the underlying key-value pairs.
-   :rtype: `eth1spec.eth_types.Root`
+   :rtype: `.fork_types.Root`
 
 
 
@@ -503,7 +503,7 @@ patricialize
    :param level: Current trie level.
 
    :returns: **node** -- Root node of `obj`.
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 

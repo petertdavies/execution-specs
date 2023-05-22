@@ -99,14 +99,14 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Tuple[ethereum.frontier.eth_types.Log, Ellipsis]
+         :annotation: :Tuple[ethereum.frontier.fork_types.Log, Ellipsis]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.frontier.eth_types.Address]
+         :annotation: :Set[ethereum.frontier.fork_types.Address]
 
       
 

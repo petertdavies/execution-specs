@@ -5,8 +5,8 @@ Byzantium → Constantinople
 .. toctree::
    :maxdepth: 1
 
+   byzantium_constantinople/fork/index.pickle64
    byzantium_constantinople/index.pickle64
-   byzantium_constantinople/spec/index.pickle64
    byzantium_constantinople/utils/address/index.pickle64
    byzantium_constantinople/vm/gas/index.pickle64
    byzantium_constantinople/vm/instructions/bitwise/index.pickle64

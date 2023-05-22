@@ -101,14 +101,14 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Union[Tuple[], Tuple[ethereum.dao_fork.eth_types.Log, Ellipsis]]
+         :annotation: :Union[Tuple[], Tuple[ethereum.dao_fork.fork_types.Log, Ellipsis]]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.dao_fork.eth_types.Address]
+         :annotation: :Set[ethereum.dao_fork.fork_types.Address]
 
       
 
@@ -214,7 +214,7 @@ collect_accounts_to_delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: collect_accounts_to_delete(evm: ethereum.dao_fork.vm.Evm) -> Set[ethereum.dao_fork.eth_types.Address]
+.. function:: collect_accounts_to_delete(evm: ethereum.dao_fork.vm.Evm) -> Set[ethereum.dao_fork.fork_types.Address]
    :noindexentry:
 
    Collects all the accounts that were marked for deletion by the

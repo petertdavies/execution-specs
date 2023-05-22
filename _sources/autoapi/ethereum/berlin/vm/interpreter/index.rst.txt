@@ -115,21 +115,21 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Tuple[ethereum.berlin.eth_types.Log, Ellipsis]
+         :annotation: :Tuple[ethereum.berlin.fork_types.Log, Ellipsis]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.berlin.eth_types.Address]
+         :annotation: :Set[ethereum.berlin.fork_types.Address]
 
       
 
    
 
    .. py:attribute:: touched_accounts
-         :annotation: :Iterable[ethereum.berlin.eth_types.Address]
+         :annotation: :Iterable[ethereum.berlin.fork_types.Address]
 
       
 

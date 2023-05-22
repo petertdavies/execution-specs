@@ -22,6 +22,28 @@ Module Contents
 ---------------
 
 
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+   :nosignatures:
+
+   ethereum.dao_fork.dao.apply_dao
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.dao_fork.dao.DAO_ACCOUNTS
+   ethereum.dao_fork.dao.DAO_RECOVERY
+
+
+Module Details
+---------------
+
 DAO_ACCOUNTS
 ~~~~~~~~~~~~
 
@@ -33,7 +55,7 @@ DAO_ACCOUNTS
 
 .. undocinclude:: /../src/ethereum/dao_fork/dao.py
    :language: python
-   :lines: 20-140
+   :lines: 21-141
 
 
 DAO_RECOVERY
@@ -47,5 +69,23 @@ DAO_RECOVERY
 
 .. undocinclude:: /../src/ethereum/dao_fork/dao.py
    :language: python
-   :lines: 142-142
+   :lines: 143-143
 
+
+apply_dao
+~~~~~~~~~
+
+
+.. function:: apply_dao(state: ethereum.dao_fork.state.State) -> None
+   :noindexentry:
+
+   Apply the dao fork to the state.
+
+   :param state: State before applying the DAO Fork.
+
+
+
+
+.. undocinclude:: /../src/ethereum/dao_fork/dao.py
+   :language: python
+   :pyobject: apply_dao

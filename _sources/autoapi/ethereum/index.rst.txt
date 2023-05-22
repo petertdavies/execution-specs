@@ -54,6 +54,7 @@ possible, to aid in defining the behavior of Ethereum clients.
       base_types/index.rst
       ethash/index.rst
       exceptions/index.rst
+      genesis/index.rst
       rlp/index.rst
 
 

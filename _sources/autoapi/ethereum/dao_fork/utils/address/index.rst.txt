@@ -37,7 +37,7 @@ to_address
 ~~~~~~~~~~
 
 
-.. function:: to_address(data: Union[ethereum.base_types.Uint, ethereum.base_types.U256]) -> ethereum.dao_fork.eth_types.Address
+.. function:: to_address(data: Union[ethereum.base_types.Uint, ethereum.base_types.U256]) -> ethereum.dao_fork.fork_types.Address
    :noindexentry:
 
    Convert a Uint or U256 value to a valid address (20 bytes).
@@ -58,7 +58,7 @@ compute_contract_address
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: compute_contract_address(address: ethereum.dao_fork.eth_types.Address, nonce: ethereum.base_types.Uint) -> ethereum.dao_fork.eth_types.Address
+.. function:: compute_contract_address(address: ethereum.dao_fork.fork_types.Address, nonce: ethereum.base_types.Uint) -> ethereum.dao_fork.fork_types.Address
    :noindexentry:
 
    Computes address of the new account that needs to be created.
@@ -68,7 +68,7 @@ compute_contract_address
                  account.
 
    :returns: **address** -- The computed address of the new account.
-   :rtype: `ethereum.dao_fork.eth_types.Address`
+   :rtype: `ethereum.dao_fork.fork_types.Address`
 
 
 

@@ -77,7 +77,7 @@ generic_call
 ~~~~~~~~~~~~
 
 
-.. function:: generic_call(evm: ethereum.frontier.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.frontier.eth_types.Address, to: ethereum.frontier.eth_types.Address, code_address: ethereum.frontier.eth_types.Address, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
+.. function:: generic_call(evm: ethereum.frontier.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.frontier.fork_types.Address, to: ethereum.frontier.fork_types.Address, code_address: ethereum.frontier.fork_types.Address, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
    :noindexentry:
 
    Perform the core logic of the `CALL*` family of opcodes.

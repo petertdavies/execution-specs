@@ -115,21 +115,21 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Union[Tuple[], Tuple[ethereum.paris.eth_types.Log, Ellipsis]]
+         :annotation: :Union[Tuple[], Tuple[ethereum.paris.fork_types.Log, Ellipsis]]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.paris.eth_types.Address]
+         :annotation: :Set[ethereum.paris.fork_types.Address]
 
       
 
    
 
    .. py:attribute:: touched_accounts
-         :annotation: :Iterable[ethereum.paris.eth_types.Address]
+         :annotation: :Iterable[ethereum.paris.fork_types.Address]
 
       
 

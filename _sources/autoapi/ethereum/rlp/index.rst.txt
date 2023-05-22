@@ -81,7 +81,7 @@ encode
                     objects.
 
    :returns: **encoded** -- The RLP encoded bytes representing `raw_data`.
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 
@@ -102,7 +102,7 @@ encode_bytes
    :param raw_bytes: Bytes to encode with RLP.
 
    :returns: **encoded** -- The RLP encoded bytes representing `raw_bytes`.
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 
@@ -123,7 +123,7 @@ encode_sequence
    :param raw_sequence: Sequence of RLP encodable objects.
 
    :returns: **encoded** -- The RLP encoded bytes representing `raw_sequence`.
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 
@@ -146,7 +146,7 @@ get_joined_encodings
 
    :returns: **joined_encodings** -- The concatenated RLP encoded bytes for each item in sequence
              raw_sequence.
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 
@@ -253,7 +253,7 @@ decode_to_bytes
    :param encoded_bytes: RLP encoded byte stream.
 
    :returns: **decoded** -- RLP decoded Bytes data
-   :rtype: `eth1spec.base_types.Bytes`
+   :rtype: `ethereum.base_types.Bytes`
 
 
 

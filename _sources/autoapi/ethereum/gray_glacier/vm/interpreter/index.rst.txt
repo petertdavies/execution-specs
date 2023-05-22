@@ -115,21 +115,21 @@ Contains the following:
    
 
    .. py:attribute:: logs
-         :annotation: :Tuple[ethereum.gray_glacier.eth_types.Log, Ellipsis]
+         :annotation: :Tuple[ethereum.gray_glacier.fork_types.Log, Ellipsis]
 
       
 
    
 
    .. py:attribute:: accounts_to_delete
-         :annotation: :Set[ethereum.gray_glacier.eth_types.Address]
+         :annotation: :Set[ethereum.gray_glacier.fork_types.Address]
 
       
 
    
 
    .. py:attribute:: touched_accounts
-         :annotation: :Iterable[ethereum.gray_glacier.eth_types.Address]
+         :annotation: :Iterable[ethereum.gray_glacier.fork_types.Address]
 
       
 

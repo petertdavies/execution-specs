@@ -737,7 +737,7 @@ calculate_message_call_gas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: calculate_message_call_gas(state: ethereum.dao_fork.state.State, gas: ethereum.base_types.Uint, to: ethereum.dao_fork.eth_types.Address, value: ethereum.base_types.U256) -> MessageCallGas
+.. function:: calculate_message_call_gas(state: ethereum.dao_fork.state.State, gas: ethereum.base_types.Uint, to: ethereum.dao_fork.fork_types.Address, value: ethereum.base_types.U256) -> MessageCallGas
    :noindexentry:
 
    Calculates the gas amount for executing Opcodes `CALL` and `CALLCODE`.

@@ -46,7 +46,7 @@ generic_create
 ~~~~~~~~~~~~~~
 
 
-.. function:: generic_create(evm: ethereum.paris.vm.Evm, endowment: ethereum.base_types.U256, contract_address: ethereum.paris.eth_types.Address, memory_start_position: ethereum.base_types.U256, memory_size: ethereum.base_types.U256) -> None
+.. function:: generic_create(evm: ethereum.paris.vm.Evm, endowment: ethereum.base_types.U256, contract_address: ethereum.paris.fork_types.Address, memory_start_position: ethereum.base_types.U256, memory_size: ethereum.base_types.U256) -> None
    :noindexentry:
 
    Core logic used by the `CREATE*` family of opcodes.
@@ -119,7 +119,7 @@ generic_call
 ~~~~~~~~~~~~
 
 
-.. function:: generic_call(evm: ethereum.paris.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.paris.eth_types.Address, to: ethereum.paris.eth_types.Address, code_address: ethereum.paris.eth_types.Address, should_transfer_value: bool, is_staticcall: bool, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
+.. function:: generic_call(evm: ethereum.paris.vm.Evm, gas: ethereum.base_types.Uint, value: ethereum.base_types.U256, caller: ethereum.paris.fork_types.Address, to: ethereum.paris.fork_types.Address, code_address: ethereum.paris.fork_types.Address, should_transfer_value: bool, is_staticcall: bool, memory_input_start_position: ethereum.base_types.U256, memory_input_size: ethereum.base_types.U256, memory_output_start_position: ethereum.base_types.U256, memory_output_size: ethereum.base_types.U256) -> None
    :noindexentry:
 
    Perform the core logic of the `CALL*` family of opcodes.

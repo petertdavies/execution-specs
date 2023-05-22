@@ -64,7 +64,7 @@ logs_bloom
 ~~~~~~~~~~
 
 
-.. function:: logs_bloom(logs: Tuple[ethereum.istanbul.eth_types.Log, Ellipsis]) -> ethereum.istanbul.eth_types.Bloom
+.. function:: logs_bloom(logs: Tuple[ethereum.istanbul.fork_types.Log, Ellipsis]) -> ethereum.istanbul.fork_types.Bloom
    :noindexentry:
 
    Obtain the logs bloom from a list of log entries.

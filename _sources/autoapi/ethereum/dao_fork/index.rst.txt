@@ -26,8 +26,8 @@ The third Ethereum hardfork.
 
       bloom/index.rst
       dao/index.rst
-      eth_types/index.rst
-      spec/index.rst
+      fork/index.rst
+      fork_types/index.rst
       state/index.rst
       trie/index.rst
 

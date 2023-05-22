@@ -64,7 +64,7 @@ logs_bloom
 ~~~~~~~~~~
 
 
-.. function:: logs_bloom(logs: Tuple[ethereum.tangerine_whistle.eth_types.Log, Ellipsis]) -> ethereum.tangerine_whistle.eth_types.Bloom
+.. function:: logs_bloom(logs: Tuple[ethereum.tangerine_whistle.fork_types.Log, Ellipsis]) -> ethereum.tangerine_whistle.fork_types.Bloom
    :noindexentry:
 
    Obtain the logs bloom from a list of log entries.

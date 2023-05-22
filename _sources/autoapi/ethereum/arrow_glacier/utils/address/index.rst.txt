@@ -39,7 +39,7 @@ to_address
 ~~~~~~~~~~
 
 
-.. function:: to_address(data: Union[ethereum.base_types.Uint, ethereum.base_types.U256]) -> ethereum.arrow_glacier.eth_types.Address
+.. function:: to_address(data: Union[ethereum.base_types.Uint, ethereum.base_types.U256]) -> ethereum.arrow_glacier.fork_types.Address
    :noindexentry:
 
    Convert a Uint or U256 value to a valid address (20 bytes).
@@ -60,7 +60,7 @@ compute_contract_address
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: compute_contract_address(address: ethereum.arrow_glacier.eth_types.Address, nonce: ethereum.base_types.Uint) -> ethereum.arrow_glacier.eth_types.Address
+.. function:: compute_contract_address(address: ethereum.arrow_glacier.fork_types.Address, nonce: ethereum.base_types.Uint) -> ethereum.arrow_glacier.fork_types.Address
    :noindexentry:
 
    Computes address of the new account that needs to be created.
@@ -83,7 +83,7 @@ compute_create2_contract_address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: compute_create2_contract_address(address: ethereum.arrow_glacier.eth_types.Address, salt: ethereum.base_types.Bytes32, call_data: bytearray) -> ethereum.arrow_glacier.eth_types.Address
+.. function:: compute_create2_contract_address(address: ethereum.arrow_glacier.fork_types.Address, salt: ethereum.base_types.Bytes32, call_data: bytearray) -> ethereum.arrow_glacier.fork_types.Address
    :noindexentry:
 
    Computes address of the new account that needs to be created, which is
@@ -94,7 +94,7 @@ compute_create2_contract_address
    :param call_data: The code of the new account which is to be created.
 
    :returns: **address** -- The computed address of the new account.
-   :rtype: `ethereum.arrow_glacier.eth_types.Address`
+   :rtype: `ethereum.arrow_glacier.fork_types.Address`
 
 
 

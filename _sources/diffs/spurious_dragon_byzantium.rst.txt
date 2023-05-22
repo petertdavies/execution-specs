@@ -5,9 +5,9 @@ Spurious Dragon → Byzantium
 .. toctree::
    :maxdepth: 1
 
-   spurious_dragon_byzantium/eth_types/index.pickle64
+   spurious_dragon_byzantium/fork/index.pickle64
+   spurious_dragon_byzantium/fork_types/index.pickle64
    spurious_dragon_byzantium/index.pickle64
-   spurious_dragon_byzantium/spec/index.pickle64
    spurious_dragon_byzantium/utils/message/index.pickle64
    spurious_dragon_byzantium/vm/exceptions/index.pickle64
    spurious_dragon_byzantium/vm/gas/index.pickle64

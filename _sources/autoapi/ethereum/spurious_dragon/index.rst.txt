@@ -25,8 +25,8 @@ The fifth Ethereum hardfork.
       :maxdepth: 1
 
       bloom/index.rst
-      eth_types/index.rst
-      spec/index.rst
+      fork/index.rst
+      fork_types/index.rst
       state/index.rst
       trie/index.rst
 

@@ -5,9 +5,9 @@ Constantinople → Istanbul
 .. toctree::
    :maxdepth: 1
 
-   constantinople_istanbul/eth_types/index.pickle64
+   constantinople_istanbul/fork/index.pickle64
+   constantinople_istanbul/fork_types/index.pickle64
    constantinople_istanbul/index.pickle64
-   constantinople_istanbul/spec/index.pickle64
    constantinople_istanbul/state/index.pickle64
    constantinople_istanbul/utils/address/index.pickle64
    constantinople_istanbul/vm/exceptions/index.pickle64
