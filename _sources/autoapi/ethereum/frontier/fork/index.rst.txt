@@ -491,7 +491,7 @@ process_transaction
 ~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: process_transaction(env: ethereum.frontier.vm.Environment, tx: ethereum.frontier.fork_types.Transaction) -> Tuple[ethereum.base_types.U256, Tuple[ethereum.frontier.fork_types.Log, Ellipsis]]
+.. function:: process_transaction(env: ethereum.frontier.vm.Environment, tx: ethereum.frontier.fork_types.Transaction) -> Tuple[ethereum.base_types.Uint, Tuple[ethereum.frontier.fork_types.Log, Ellipsis]]
    :noindexentry:
 
    Execute a transaction against the provided environment.

@@ -491,7 +491,7 @@ process_transaction
 ~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: process_transaction(env: ethereum.homestead.vm.Environment, tx: ethereum.homestead.fork_types.Transaction) -> Tuple[ethereum.base_types.U256, Tuple[ethereum.homestead.fork_types.Log, Ellipsis]]
+.. function:: process_transaction(env: ethereum.homestead.vm.Environment, tx: ethereum.homestead.fork_types.Transaction) -> Tuple[ethereum.base_types.Uint, Tuple[ethereum.homestead.fork_types.Log, Ellipsis]]
    :noindexentry:
 
    Execute a transaction against the provided environment.

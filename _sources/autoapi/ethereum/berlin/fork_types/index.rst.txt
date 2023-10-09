@@ -211,14 +211,14 @@ Atomic operation performed on the block chain.
    
 
    .. py:attribute:: gas_price
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: gas
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
@@ -292,14 +292,14 @@ The transaction type added in EIP-2930 to support access lists.
    
 
    .. py:attribute:: gas_price
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: gas
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
@@ -333,7 +333,7 @@ The transaction type added in EIP-2930 to support access lists.
 
    
 
-   .. py:attribute:: v
+   .. py:attribute:: y_parity
          :annotation: :ethereum.base_types.U256
 
       

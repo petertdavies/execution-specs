@@ -47,6 +47,7 @@ Functions
    ethereum.gray_glacier.state.set_account
    ethereum.gray_glacier.state.destroy_account
    ethereum.gray_glacier.state.destroy_storage
+   ethereum.gray_glacier.state.mark_account_created
    ethereum.gray_glacier.state.get_storage
    ethereum.gray_glacier.state.set_storage
    ethereum.gray_glacier.state.storage_root
@@ -97,6 +98,13 @@ Contains all information that is preserved between transactions.
 
    .. py:attribute:: _snapshots
          :annotation: :List[Tuple[ethereum.gray_glacier.trie.Trie[ethereum.gray_glacier.fork_types.Address, Optional[ethereum.gray_glacier.fork_types.Account]], Dict[ethereum.gray_glacier.fork_types.Address, ethereum.gray_glacier.trie.Trie[ethereum.base_types.Bytes, ethereum.base_types.U256]]]]
+
+      
+
+   
+
+   .. py:attribute:: _created_accounts
+         :annotation: :Set[ethereum.gray_glacier.fork_types.Address]
 
       
 
@@ -302,6 +310,33 @@ destroy_storage
 .. undocinclude:: /../src/ethereum/gray_glacier/state.py
    :language: python
    :pyobject: destroy_storage
+
+mark_account_created
+~~~~~~~~~~~~~~~~~~~~
+
+
+.. function:: mark_account_created(state: State, address: ethereum.gray_glacier.fork_types.Address) -> None
+   :noindexentry:
+
+   Mark an account as having been created in the current transaction.
+   This information is used by `get_storage_original()` to handle an obscure
+   edgecase.
+
+   The marker is not removed even if the account creation reverts. Since the
+   account cannot have had code prior to its creation and can't call
+   `get_storage_original()`, this is harmless.
+
+   :param state: The state
+   :type state: `State`
+   :param address: Address of the account that has been created.
+   :type address: `Address`
+
+
+
+
+.. undocinclude:: /../src/ethereum/gray_glacier/state.py
+   :language: python
+   :pyobject: mark_account_created
 
 get_storage
 ~~~~~~~~~~~

@@ -63,7 +63,7 @@ STACK_DEPTH_LIMIT
 
 .. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
    :language: python
-   :lines: 49-49
+   :lines: 59-59
 
 
 MAX_CODE_SIZE
@@ -77,7 +77,7 @@ MAX_CODE_SIZE
 
 .. undocinclude:: /../src/ethereum/gray_glacier/vm/interpreter.py
    :language: python
-   :lines: 50-50
+   :lines: 60-60
 
 
 MessageCallOutput
@@ -101,7 +101,7 @@ Contains the following:
    
 
    .. py:attribute:: gas_left
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 

@@ -500,7 +500,7 @@ process_transaction
 ~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: process_transaction(env: ethereum.dao_fork.vm.Environment, tx: ethereum.dao_fork.fork_types.Transaction) -> Tuple[ethereum.base_types.U256, Tuple[ethereum.dao_fork.fork_types.Log, Ellipsis]]
+.. function:: process_transaction(env: ethereum.dao_fork.vm.Environment, tx: ethereum.dao_fork.fork_types.Transaction) -> Tuple[ethereum.base_types.Uint, Tuple[ethereum.dao_fork.fork_types.Log, Ellipsis]]
    :noindexentry:
 
    Execute a transaction against the provided environment.

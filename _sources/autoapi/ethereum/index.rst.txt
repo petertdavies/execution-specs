@@ -54,8 +54,10 @@ possible, to aid in defining the behavior of Ethereum clients.
       base_types/index.rst
       ethash/index.rst
       exceptions/index.rst
+      fork_criteria/index.rst
       genesis/index.rst
       rlp/index.rst
+      trace/index.rst
 
 
 Package Contents
@@ -73,7 +75,7 @@ __version__
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 22-22
+   :lines: 21-21
 
 
 EVM_RECURSION_LIMIT
@@ -87,5 +89,5 @@ EVM_RECURSION_LIMIT
 
 .. undocinclude:: /../src/ethereum/__init__.py
    :language: python
-   :lines: 27-27
+   :lines: 26-26
 

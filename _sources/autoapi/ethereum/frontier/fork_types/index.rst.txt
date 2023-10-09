@@ -162,14 +162,14 @@ Atomic operation performed on the block chain.
    
 
    .. py:attribute:: gas_price
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
    
 
    .. py:attribute:: gas
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 

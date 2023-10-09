@@ -112,7 +112,7 @@ Items external to the virtual machine itself, provided by the environment.
    
 
    .. py:attribute:: gas_price
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
@@ -141,6 +141,13 @@ Items external to the virtual machine itself, provided by the environment.
 
    .. py:attribute:: chain_id
          :annotation: :ethereum.base_types.U64
+
+      
+
+   
+
+   .. py:attribute:: traces
+         :annotation: :List[dict]
 
       
 
@@ -179,7 +186,7 @@ Items that are used by contract creation or message call.
    
 
    .. py:attribute:: gas
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 
@@ -246,6 +253,13 @@ Items that are used by contract creation or message call.
 
       
 
+   
+
+   .. py:attribute:: parent_evm
+         :annotation: :Optional[Evm]
+
+      
+
 
 
 Evm
@@ -288,7 +302,7 @@ The internal state of the virtual machine.
    
 
    .. py:attribute:: gas_left
-         :annotation: :ethereum.base_types.U256
+         :annotation: :ethereum.base_types.Uint
 
       
 

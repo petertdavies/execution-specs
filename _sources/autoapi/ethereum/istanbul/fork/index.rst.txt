@@ -524,7 +524,7 @@ process_transaction
 ~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: process_transaction(env: ethereum.istanbul.vm.Environment, tx: ethereum.istanbul.fork_types.Transaction) -> Tuple[ethereum.base_types.U256, Tuple[ethereum.istanbul.fork_types.Log, Ellipsis], bool]
+.. function:: process_transaction(env: ethereum.istanbul.vm.Environment, tx: ethereum.istanbul.fork_types.Transaction) -> Tuple[ethereum.base_types.Uint, Tuple[ethereum.istanbul.fork_types.Log, Ellipsis], bool]
    :noindexentry:
 
    Execute a transaction against the provided environment.
@@ -666,12 +666,13 @@ signing_hash_155
 ~~~~~~~~~~~~~~~~
 
 
-.. function:: signing_hash_155(tx: ethereum.istanbul.fork_types.Transaction) -> ethereum.crypto.hash.Hash32
+.. function:: signing_hash_155(tx: ethereum.istanbul.fork_types.Transaction, chain_id: ethereum.base_types.U64) -> ethereum.crypto.hash.Hash32
    :noindexentry:
 
    Compute the hash of a transaction used in a EIP 155 signature.
 
    :param tx: Transaction of interest.
+   :param chain_id: The id of the current chain.
 
    :returns: **hash** -- Hash of the transaction.
    :rtype: `ethereum.crypto.hash.Hash32`

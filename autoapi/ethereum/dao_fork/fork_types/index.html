@@ -151,8 +151,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../base_types/index.html">Numeric &amp; Array Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../ethash/index.html">Ethash Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../fork_criteria/index.html">Fork Criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../genesis/index.html">Genesis Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../trace/index.html">EVM Trace</a></li>
 </ul>
 </li>
 </ul>
@@ -177,8 +179,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -187,7 +187,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
@@ -257,6 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/index.html">Ethereum <span class="change-replaced">Istanbul</span><span class="change-replacement">Muir Glacier</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/istanbul_muir_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../diffs/muir_glacier_berlin.html">Muir Glacier → Berlin</a><ul>
@@ -284,6 +284,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../diffs/berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -563,12 +564,12 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.dao_fork.fork_types.Transaction.gas_price">
-<span class="sig-name descname"><span class="pre">gas_price</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.dao_fork.fork_types.Transaction.gas_price" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gas_price</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.dao_fork.fork_types.Transaction.gas_price" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.dao_fork.fork_types.Transaction.gas">
-<span class="sig-name descname"><span class="pre">gas</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.dao_fork.fork_types.Transaction.gas" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gas</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.dao_fork.fork_types.Transaction.gas" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">

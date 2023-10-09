@@ -151,8 +151,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../base_types/index.html">Numeric &amp; Array Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../ethash/index.html">Ethash Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../fork_criteria/index.html">Fork Criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../genesis/index.html">Genesis Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../trace/index.html">EVM Trace</a></li>
 </ul>
 </li>
 </ul>
@@ -177,8 +179,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -187,7 +187,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
@@ -257,6 +256,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/index.html">Ethereum <span class="change-replaced">Istanbul</span><span class="change-replacement">Muir Glacier</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/istanbul_muir_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../diffs/muir_glacier_berlin.html">Muir Glacier → Berlin</a><ul>
@@ -284,6 +284,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../diffs/berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -467,7 +468,7 @@
 <em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">MessageCallOutput</span></span><a class="headerlink" href="#ethereum.homestead.vm.interpreter.MessageCallOutput" title="Permalink to this definition"></a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ethereum.homestead.vm.interpreter.MessageCallOutput.gas_left">
-<span class="sig-name descname"><span class="pre">gas_left</span></span><em class="property"> <span class="pre">:ethereum.base_types.U256</span></em><a class="headerlink" href="#ethereum.homestead.vm.interpreter.MessageCallOutput.gas_left" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">gas_left</span></span><em class="property"> <span class="pre">:ethereum.base_types.Uint</span></em><a class="headerlink" href="#ethereum.homestead.vm.interpreter.MessageCallOutput.gas_left" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -524,7 +525,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
             <span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
         <span class="p">)</span>
         <span class="k">if</span> <span class="n">is_collision</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span><span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(),</span> <span class="nb">set</span><span class="p">(),</span> <span class="kc">True</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">evm</span> <span class="o">=</span> <span class="n">process_create_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -537,9 +538,12 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     <span class="k">else</span><span class="p">:</span>
         <span class="n">logs</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">logs</span>
         <span class="n">accounts_to_delete</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span>
-        <span class="n">refund_counter</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">refund_counter</span> <span class="o">+</span> <span class="n">REFUND_SELF_DESTRUCT</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span>
-        <span class="p">)</span>
+        <span class="n">refund_counter</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">refund_counter</span>
+
+    <span class="n">tx_end</span> <span class="o">=</span> <span class="n">TransactionEnd</span><span class="p">(</span>
+        <span class="n">message</span><span class="o">.</span><span class="n">gas</span> <span class="o">-</span> <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">output</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span>
+    <span class="p">)</span>
+    <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">tx_end</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">MessageCallOutput</span><span class="p">(</span>
         <span class="n">gas_left</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">,</span>
@@ -577,6 +581,13 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     <span class="c1"># take snapshot of state before processing the message</span>
     <span class="n">begin_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
 
+    <span class="c1"># If the address where the account is being created has storage, it is</span>
+    <span class="c1"># destroyed. This can only happen in the following highly unlikely</span>
+    <span class="c1"># circumstances:</span>
+    <span class="c1"># * The address created by two `CREATE` calls collide.</span>
+    <span class="c1"># * The first `CREATE` left empty code.</span>
+    <span class="n">destroy_storage</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">)</span>
+
     <span class="n">evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span><span class="p">:</span>
         <span class="n">contract_code</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">output</span>
@@ -585,7 +596,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
             <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">contract_code_gas</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
             <span class="n">rollback_transaction</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
-            <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
             <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">set_code</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span> <span class="n">contract_code</span><span class="p">)</span>
@@ -668,6 +679,7 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">execute_code</span><span class="p">(</span><span class="n">message</span><span class="p">:</span> <span class="n">Message</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">Environment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Evm</span><span class="p">:</span>
     <span class="n">code</span> <span class="o">=</span> <span class="n">message</span><span class="o">.</span><span class="n">code</span>
     <span class="n">valid_jump_destinations</span> <span class="o">=</span> <span class="n">get_valid_jump_destinations</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+
     <span class="n">evm</span> <span class="o">=</span> <span class="n">Evm</span><span class="p">(</span>
         <span class="n">pc</span><span class="o">=</span><span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
         <span class="n">stack</span><span class="o">=</span><span class="p">[],</span>
@@ -687,8 +699,9 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
     <span class="k">try</span><span class="p">:</span>
 
         <span class="k">if</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span> <span class="ow">in</span> <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">:</span>
-            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">)</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">PrecompileStart</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">))</span>
             <span class="n">PRE_COMPILED_CONTRACTS</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">code_address</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">PrecompileEnd</span><span class="p">())</span>
             <span class="k">return</span> <span class="n">evm</span>
 
         <span class="k">while</span> <span class="n">evm</span><span class="o">.</span><span class="n">running</span> <span class="ow">and</span> <span class="n">evm</span><span class="o">.</span><span class="n">pc</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">):</span>
@@ -697,11 +710,15 @@ else it executes a call from the <cite>message.caller</cite> to the <cite>messag
             <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
                 <span class="k">raise</span> <span class="n">InvalidOpcode</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">code</span><span class="p">[</span><span class="n">evm</span><span class="o">.</span><span class="n">pc</span><span class="p">])</span>
 
-            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">OpStart</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
             <span class="n">op_implementation</span><span class="p">[</span><span class="n">op</span><span class="p">](</span><span class="n">evm</span><span class="p">)</span>
+            <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">OpEnd</span><span class="p">())</span>
+
+        <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">EvmStop</span><span class="p">(</span><span class="n">Ops</span><span class="o">.</span><span class="n">STOP</span><span class="p">))</span>
 
     <span class="k">except</span> <span class="n">ExceptionalHalt</span><span class="p">:</span>
-        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">U256</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">evm_trace</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">OpException</span><span class="p">())</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">=</span> <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="n">evm</span><span class="o">.</span><span class="n">has_erred</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="n">evm</span>
 </pre></div>

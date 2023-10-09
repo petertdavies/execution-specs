@@ -84,8 +84,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/ethash/index.html">Ethash Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/fork_criteria/index.html">Fork Criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/genesis/index.html">Genesis Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../autoapi/ethereum/trace/index.html">EVM Trace</a></li>
 </ul>
 </li>
 </ul>
@@ -110,8 +112,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -120,7 +120,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
@@ -190,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/index.html">Ethereum <span class="change-replaced">Istanbul</span><span class="change-replacement">Muir Glacier</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../istanbul_muir_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../muir_glacier_berlin.html">Muir Glacier → Berlin</a><ul>
@@ -217,6 +217,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -951,6 +952,7 @@ block.</p></li>
             time=block_time,
             difficulty=block_difficulty,
             state=state,
+            traces=[],
         )
 
         gas_used, logs = process_transaction(env, tx)
@@ -1144,7 +1146,7 @@ execution.</p>
 
 <pre class="literal-block">def process_transaction(
     env: vm.Environment, tx: Transaction
-) -&gt; Tuple[U256, Tuple[Log, ...]]:
+) -&gt; Tuple[Uint, Tuple[Log, ...]]:
     ensure(validate_transaction(tx), InvalidBlock)
 
     sender = env.origin
@@ -1324,7 +1326,7 @@ with these two values and therefore the sender address can be retrieved.</p>
     ensure(0 &lt; r and r &lt; SECP256K1N, InvalidBlock)
     ensure(0 &lt; s and s &lt;= SECP256K1N //</span><span class="change-replacement">35 - chain_id *</span> 2, <span class="change-replaced">InvalidBlock)
 
-    public_key = secp256k1_recover(r, s, v - 27, signing_hash(tx))</span><span class="change-replacement">signing_hash_155(tx)
+    public_key = secp256k1_recover(r, s, v - 27, signing_hash(tx))</span><span class="change-replacement">signing_hash_155(tx, chain_id)
         )</span>
     return Address(keccak256(public_key)[12:32])
 </pre>
@@ -1406,11 +1408,14 @@ amount of money that is allowed to be pulled out of the sender’s account.</p>
 <h3>signing_hash_155<a class="headerlink" href="#signing-hash-155" title="Permalink to this headline"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="ethereum.spurious_dragon.fork.signing_hash_155">
-<span class="sig-name descname"><span class="pre">signing_hash_155</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.fork.signing_hash_155" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">signing_hash_155</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chain_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ethereum.spurious_dragon.fork.signing_hash_155" title="Permalink to this definition"></a></dt>
 <dd><p>Compute the hash of a transaction used in a EIP 155 signature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>tx</strong> – Transaction of interest.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tx</strong> – Transaction of interest.</p></li>
+<li><p><strong>chain_id</strong> – The id of the current chain.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>hash</strong> – Hash of the transaction.</p>
@@ -1421,7 +1426,7 @@ amount of money that is allowed to be pulled out of the sender’s account.</p>
 </dl>
 </dd></dl>
 
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash_155</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">signing_hash_155</span><span class="p">(</span><span class="n">tx</span><span class="p">:</span> <span class="n">Transaction</span><span class="p">,</span> <span class="n">chain_id</span><span class="p">:</span> <span class="n">U64</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Hash32</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">keccak256</span><span class="p">(</span>
         <span class="n">rlp</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
             <span class="p">(</span>
@@ -1431,7 +1436,7 @@ amount of money that is allowed to be pulled out of the sender’s account.</p>
                 <span class="n">tx</span><span class="o">.</span><span class="n">to</span><span class="p">,</span>
                 <span class="n">tx</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
                 <span class="n">tx</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
-                <span class="n">Uint</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">chain_id</span><span class="p">,</span>
                 <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
                 <span class="n">Uint</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
             <span class="p">)</span>

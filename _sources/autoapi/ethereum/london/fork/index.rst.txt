@@ -443,7 +443,7 @@ check_transaction
 ~~~~~~~~~~~~~~~~~
 
 
-.. function:: check_transaction(tx: ethereum.london.fork_types.Transaction, base_fee_per_gas: ethereum.base_types.Uint, gas_available: ethereum.base_types.Uint, chain_id: ethereum.base_types.U64) -> Tuple[ethereum.london.fork_types.Address, ethereum.base_types.U256]
+.. function:: check_transaction(tx: ethereum.london.fork_types.Transaction, base_fee_per_gas: ethereum.base_types.Uint, gas_available: ethereum.base_types.Uint, chain_id: ethereum.base_types.U64) -> Tuple[ethereum.london.fork_types.Address, ethereum.base_types.Uint]
    :noindexentry:
 
    Check if the transaction is includable in the block.
@@ -599,7 +599,7 @@ process_transaction
 ~~~~~~~~~~~~~~~~~~~
 
 
-.. function:: process_transaction(env: ethereum.london.vm.Environment, tx: ethereum.london.fork_types.Transaction) -> Tuple[ethereum.base_types.U256, Tuple[ethereum.london.fork_types.Log, Ellipsis], bool]
+.. function:: process_transaction(env: ethereum.london.vm.Environment, tx: ethereum.london.fork_types.Transaction) -> Tuple[ethereum.base_types.Uint, Tuple[ethereum.london.fork_types.Log, Ellipsis], bool]
    :noindexentry:
 
    Execute a transaction against the provided environment.
@@ -741,12 +741,13 @@ signing_hash_155
 ~~~~~~~~~~~~~~~~
 
 
-.. function:: signing_hash_155(tx: ethereum.london.fork_types.LegacyTransaction) -> ethereum.crypto.hash.Hash32
+.. function:: signing_hash_155(tx: ethereum.london.fork_types.LegacyTransaction, chain_id: ethereum.base_types.U64) -> ethereum.crypto.hash.Hash32
    :noindexentry:
 
    Compute the hash of a transaction used in a EIP 155 signature.
 
    :param tx: Transaction of interest.
+   :param chain_id: The id of the current chain.
 
    :returns: **hash** -- Hash of the transaction.
    :rtype: `ethereum.crypto.hash.Hash32`

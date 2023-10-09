@@ -1,0 +1,237 @@
+.. py:module:: ethereum.trace
+
+.. _trace:
+
+EVM Trace
+^^^^^^^^^
+
+.. contents:: Table of Contents
+    :backlinks: none
+    :local:
+
+Introduction
+------------
+
+Defines the functions required for creating evm traces during execution.
+
+
+.. only:: stage1
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.trace.TransactionStart
+   ethereum.trace.TransactionEnd
+   ethereum.trace.PrecompileStart
+   ethereum.trace.PrecompileEnd
+   ethereum.trace.OpStart
+   ethereum.trace.OpEnd
+   ethereum.trace.OpException
+   ethereum.trace.EvmStop
+   ethereum.trace.GasAndRefund
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+   :nosignatures:
+
+   ethereum.trace.evm_trace
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   ethereum.trace.TraceEvent
+
+
+Module Details
+---------------
+
+TransactionStart
+~~~~~~~~~~~~~~~~
+
+
+Trace event that is triggered at the start of a transaction.
+
+
+.. class:: TransactionStart
+
+
+
+TransactionEnd
+~~~~~~~~~~~~~~
+
+
+Trace event that is triggered at the end of a transaction.
+
+
+.. class:: TransactionEnd
+
+   
+
+   .. py:attribute:: gas_used
+         :annotation: :int
+
+      
+
+   
+
+   .. py:attribute:: output
+         :annotation: :bytes
+
+      
+
+   
+
+   .. py:attribute:: has_erred
+         :annotation: :bool
+
+      
+
+
+
+PrecompileStart
+~~~~~~~~~~~~~~~
+
+
+Trace event that is triggered before executing a precompile.
+
+
+.. class:: PrecompileStart
+
+   
+
+   .. py:attribute:: address
+         :annotation: :bytes
+
+      
+
+
+
+PrecompileEnd
+~~~~~~~~~~~~~
+
+
+Trace event that is triggered after executing a precompile.
+
+
+.. class:: PrecompileEnd
+
+
+
+OpStart
+~~~~~~~
+
+
+Trace event that is triggered before executing an opcode.
+
+
+.. class:: OpStart
+
+   
+
+   .. py:attribute:: op
+         :annotation: :enum.Enum
+
+      
+
+
+
+OpEnd
+~~~~~
+
+
+Trace event that is triggered after executing an opcode.
+
+
+.. class:: OpEnd
+
+
+
+OpException
+~~~~~~~~~~~
+
+
+Trace event that is triggered when an opcode raises an exception.
+
+
+.. class:: OpException
+
+
+
+EvmStop
+~~~~~~~
+
+
+Trace event that is triggered when the EVM stops.
+
+
+.. class:: EvmStop
+
+   
+
+   .. py:attribute:: op
+         :annotation: :enum.Enum
+
+      
+
+
+
+GasAndRefund
+~~~~~~~~~~~~
+
+
+Trace event that is triggered when gas is deducted.
+
+
+.. class:: GasAndRefund
+
+   
+
+   .. py:attribute:: gas_cost
+         :annotation: :int
+
+      
+
+
+
+TraceEvent
+~~~~~~~~~~
+
+
+
+.. py:data:: TraceEvent
+   
+   
+
+.. undocinclude:: /../src/ethereum/trace.py
+   :language: python
+   :lines: 87-97
+
+
+evm_trace
+~~~~~~~~~
+
+
+.. function:: evm_trace(evm: object, event: TraceEvent, trace_memory: bool = False, trace_stack: bool = True, trace_return_data: bool = False) -> None
+   :noindexentry:
+
+   Create a trace of the event.
+
+
+
+
+.. undocinclude:: /../src/ethereum/trace.py
+   :language: python
+   :pyobject: evm_trace

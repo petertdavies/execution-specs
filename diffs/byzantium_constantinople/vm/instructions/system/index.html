@@ -84,8 +84,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/base_types/index.html">Numeric &amp; Array Types</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/ethash/index.html">Ethash Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/exceptions/index.html">Exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/fork_criteria/index.html">Fork Criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/genesis/index.html">Genesis Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/rlp/index.html">Recursive Length Prefix (RLP) Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../autoapi/ethereum/trace/index.html">EVM Trace</a></li>
 </ul>
 </li>
 </ul>
@@ -110,8 +112,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/dao/index.html">Dao Fork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/index.html">Ethereum <span class="change-replaced">Homestead</span><span class="change-replacement">Dao</span> Hardfork</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../homestead_dao_fork/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -120,7 +120,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/index.html">Ethereum <span class="change-replaced">Dao</span><span class="change-replacement">Tangerine Whistle</span> Hardfork</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/gas/index.html">Ethereum Virtual Machine (EVM) Gas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../dao_fork_tangerine_whistle/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
@@ -190,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../istanbul_muir_glacier.html">Istanbul → Muir Glacier</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/fork/index.html">Ethereum Specification</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/index.html">Ethereum <span class="change-replaced">Istanbul</span><span class="change-replacement">Muir Glacier</span> Hardfork</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../istanbul_muir_glacier/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../muir_glacier_berlin.html">Muir Glacier → Berlin</a><ul>
@@ -217,6 +217,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/index.html">Ethereum Virtual Machine (EVM)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/environment/index.html">Ethereum Virtual Machine (EVM) Environmental Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/index.html">EVM Instruction Encoding (Opcodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/instructions/system/index.html">Ethereum Virtual Machine (EVM) System Instructions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../berlin_london/vm/interpreter/index.html">Ethereum Virtual Machine (EVM) Interpreter</a></li>
 </ul>
 </li>
@@ -385,7 +386,7 @@
     <span class="kn">from</span> <span class="nn">...vm.interpreter</span> <span class="kn">import</span> <span class="n">STACK_DEPTH_LIMIT</span><span class="p">,</span> <span class="n">process_create_message</span>
 
     <span class="n">create_message_gas</span> <span class="o">=</span> <span class="n">max_message_call_gas</span><span class="p">(</span><span class="n">Uint</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span><span class="p">))</span>
-    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">-=</span> <span class="n">U256</span><span class="p">(</span><span class="n">create_message_gas</span><span class="p">)</span>
+    <span class="n">evm</span><span class="o">.</span><span class="n">gas_left</span> <span class="o">-=</span> <span class="n">create_message_gas</span>
 
     <span class="n">ensure</span><span class="p">(</span><span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">is_static</span><span class="p">,</span> <span class="n">WriteInStaticContext</span><span class="p">)</span>
     <span class="n">evm</span><span class="o">.</span><span class="n">return_data</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span>
@@ -416,7 +417,7 @@
     <span class="n">child_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span>
         <span class="n">caller</span><span class="o">=</span><span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">,</span>
         <span class="n">target</span><span class="o">=</span><span class="n">Bytes0</span><span class="p">(),</span>
-        <span class="n">gas</span><span class="o">=</span><span class="n">U256</span><span class="p">(</span><span class="n">create_message_gas</span><span class="p">),</span>
+        <span class="n">gas</span><span class="o">=</span><span class="n">create_message_gas</span><span class="p">,</span>
         <span class="n">value</span><span class="o">=</span><span class="n">endowment</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
         <span class="n">code</span><span class="o">=</span><span class="n">call_data</span><span class="p">,</span>
@@ -425,6 +426,7 @@
         <span class="n">code_address</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
         <span class="n">should_transfer_value</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">is_static</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">parent_evm</span><span class="o">=</span><span class="n">evm</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">child_evm</span> <span class="o">=</span> <span class="n">process_create_message</span><span class="p">(</span><span class="n">child_message</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="p">)</span>
 
@@ -486,7 +488,7 @@
     charge_gas(evm, GAS_CREATE + extend_memory.cost)
 
     create_message_gas = max_message_call_gas(Uint(evm.gas_left))
-    evm.gas_left -= U256(create_message_gas)
+    evm.gas_left -= create_message_gas
 
     # OPERATION
     ensure(not evm.message.is_static, WriteInStaticContext)
@@ -522,7 +524,7 @@
         child_message = Message(
             caller=evm.message.current_target,
             target=Bytes0(),
-            gas=U256(create_message_gas),
+            gas=create_message_gas,
             value=endowment,
             data=b&quot;&quot;,
             code=call_data,
@@ -531,6 +533,7 @@
             code_address=None,
             should_transfer_value=True,
             is_static=False,
+            parent_evm=evm,
         )
         child_evm = process_create_message(child_message, evm.env)
 
@@ -674,7 +677,7 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">child_message</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span>
         <span class="n">caller</span><span class="o">=</span><span class="n">caller</span><span class="p">,</span>
         <span class="n">target</span><span class="o">=</span><span class="n">to</span><span class="p">,</span>
-        <span class="n">gas</span><span class="o">=</span><span class="n">U256</span><span class="p">(</span><span class="n">gas</span><span class="p">),</span>
+        <span class="n">gas</span><span class="o">=</span><span class="n">gas</span><span class="p">,</span>
         <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
         <span class="n">data</span><span class="o">=</span><span class="n">call_data</span><span class="p">,</span>
         <span class="n">code</span><span class="o">=</span><span class="n">code</span><span class="p">,</span>
@@ -683,6 +686,7 @@ depends on the init_code instead of the nonce of sender.</p>
         <span class="n">code_address</span><span class="o">=</span><span class="n">code_address</span><span class="p">,</span>
         <span class="n">should_transfer_value</span><span class="o">=</span><span class="n">should_transfer_value</span><span class="p">,</span>
         <span class="n">is_static</span><span class="o">=</span><span class="kc">True</span> <span class="k">if</span> <span class="n">is_staticcall</span> <span class="k">else</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">is_static</span><span class="p">,</span>
+        <span class="n">parent_evm</span><span class="o">=</span><span class="n">evm</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">child_evm</span> <span class="o">=</span> <span class="n">process_message</span><span class="p">(</span><span class="n">child_message</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="p">)</span>
 
@@ -872,18 +876,29 @@ depends on the init_code instead of the nonce of sender.</p>
     <span class="n">beneficiary</span> <span class="o">=</span> <span class="n">to_address</span><span class="p">(</span><span class="n">pop</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">stack</span><span class="p">))</span>
 
     <span class="c1"># GAS</span>
+    <span class="n">gas_cost</span> <span class="o">=</span> <span class="n">GAS_SELF_DESTRUCT</span>
     <span class="k">if</span> <span class="p">(</span>
         <span class="ow">not</span> <span class="n">is_account_alive</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">beneficiary</span><span class="p">)</span>
         <span class="ow">and</span> <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span> <span class="o">!=</span> <span class="mi">0</span>
     <span class="p">):</span>
-        <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_SELF_DESTRUCT</span> <span class="o">+</span> <span class="n">GAS_SELF_DESTRUCT_NEW_ACCOUNT</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">GAS_SELF_DESTRUCT</span><span class="p">)</span>
+        <span class="n">gas_cost</span> <span class="o">+=</span> <span class="n">GAS_SELF_DESTRUCT_NEW_ACCOUNT</span>
+
+    <span class="n">originator</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
+
+    <span class="n">refunded_accounts</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">accounts_to_delete</span>
+    <span class="n">parent_evm</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">parent_evm</span>
+    <span class="k">while</span> <span class="n">parent_evm</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">refunded_accounts</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">parent_evm</span><span class="o">.</span><span class="n">accounts_to_delete</span><span class="p">)</span>
+        <span class="n">parent_evm</span> <span class="o">=</span> <span class="n">parent_evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">parent_evm</span>
+
+    <span class="k">if</span> <span class="n">originator</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">refunded_accounts</span><span class="p">:</span>
+        <span class="n">evm</span><span class="o">.</span><span class="n">refund_counter</span> <span class="o">+=</span> <span class="n">REFUND_SELF_DESTRUCT</span>
+
+    <span class="n">charge_gas</span><span class="p">(</span><span class="n">evm</span><span class="p">,</span> <span class="n">gas_cost</span><span class="p">)</span>
 
     <span class="c1"># OPERATION</span>
     <span class="n">ensure</span><span class="p">(</span><span class="ow">not</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">is_static</span><span class="p">,</span> <span class="n">WriteInStaticContext</span><span class="p">)</span>
 
-    <span class="n">originator</span> <span class="o">=</span> <span class="n">evm</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">current_target</span>
     <span class="n">beneficiary_balance</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">beneficiary</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span>
     <span class="n">originator_balance</span> <span class="o">=</span> <span class="n">get_account</span><span class="p">(</span><span class="n">evm</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">originator</span><span class="p">)</span><span class="o">.</span><span class="n">balance</span>
 

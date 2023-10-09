@@ -37,7 +37,7 @@ prepare_message
 ~~~~~~~~~~~~~~~
 
 
-.. function:: prepare_message(caller: ethereum.tangerine_whistle.fork_types.Address, target: Union[ethereum.base_types.Bytes0, ethereum.tangerine_whistle.fork_types.Address], value: ethereum.base_types.U256, data: ethereum.base_types.Bytes, gas: ethereum.base_types.U256, env: ethereum.tangerine_whistle.vm.Environment, code_address: Optional[ethereum.tangerine_whistle.fork_types.Address] = None, should_transfer_value: bool = True) -> ethereum.tangerine_whistle.vm.Message
+.. function:: prepare_message(caller: ethereum.tangerine_whistle.fork_types.Address, target: Union[ethereum.base_types.Bytes0, ethereum.tangerine_whistle.fork_types.Address], value: ethereum.base_types.U256, data: ethereum.base_types.Bytes, gas: ethereum.base_types.Uint, env: ethereum.tangerine_whistle.vm.Environment, code_address: Optional[ethereum.tangerine_whistle.fork_types.Address] = None, should_transfer_value: bool = True) -> ethereum.tangerine_whistle.vm.Message
    :noindexentry:
 
    Execute a transaction against the provided environment.
