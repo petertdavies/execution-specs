@@ -724,4 +724,4 @@ def pay(evm: Evm) -> None:
     move_ether(evm, evm.message.current_target, to, value)
 
     # PROGRAM COUNTER
-    pass
+    evm.pc += 1
