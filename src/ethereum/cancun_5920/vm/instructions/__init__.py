@@ -212,6 +212,7 @@ class Ops(enum.Enum):
     REVERT = 0xFD
     SELFDESTRUCT = 0xFF
     CREATE2 = 0xF5
+    PAY = 0xF9
 
 
 op_implementation: Dict[Ops, Callable] = {
@@ -363,4 +364,5 @@ op_implementation: Dict[Ops, Callable] = {
     Ops.STATICCALL: system_instructions.staticcall,
     Ops.REVERT: system_instructions.revert,
     Ops.CREATE2: system_instructions.create2,
+    Ops.PAY: system_instructions.pay,
 }

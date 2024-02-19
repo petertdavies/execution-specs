@@ -689,3 +689,39 @@ def revert(evm: Evm) -> None:
 
     # PROGRAM COUNTER
     pass
+
+
+def pay(evm: Evm) -> None:
+    """
+    Send ether to other account, without executing its code.
+
+    Parameters
+    ----------
+    evm :
+        The current EVM frame.
+    """
+    # STACK
+    to = pop(evm.stack)
+    value = pop(evm.stack)
+
+    # GAS
+    if to in evm.accessed_addresses:
+        access_gas_cost = GAS_WARM_ACCESS
+    else:
+        evm.accessed_addresses.add(to)
+        access_gas_cost = GAS_COLD_ACCOUNT_ACCESS
+
+    create_gas_cost = (
+        Uint(0)
+        if is_account_alive(evm.env.state, to) or value == 0
+        else GAS_NEW_ACCOUNT
+    )
+    transfer_gas_cost = Uint(0) if value == 0 else GAS_CALL_VALUE
+
+    charge_gas(evm, access_gas_cost + create_gas_cost + transfer_gas_cost)
+
+    # OPERATION
+    move_ether(evm, evm.message.current_target, to, value)
+
+    # PROGRAM COUNTER
+    pass
