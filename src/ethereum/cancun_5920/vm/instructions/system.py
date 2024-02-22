@@ -701,7 +701,7 @@ def pay(evm: Evm) -> None:
         The current EVM frame.
     """
     # STACK
-    to = pop(evm.stack)
+    to = to_address(pop(evm.stack))
     value = pop(evm.stack)
 
     # GAS
@@ -721,7 +721,7 @@ def pay(evm: Evm) -> None:
     charge_gas(evm, access_gas_cost + create_gas_cost + transfer_gas_cost)
 
     # OPERATION
-    move_ether(evm, evm.message.current_target, to, value)
+    move_ether(evm.env.state, evm.message.current_target, to, value)
 
     # PROGRAM COUNTER
     evm.pc += 1
