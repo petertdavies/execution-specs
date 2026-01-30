@@ -252,6 +252,8 @@ def state_transition(chain: BlockChain, block: Block) -> None:
             storage_reads=set(),
             account_writes={},
             storage_writes={},
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
         block_gas_limit=block.header.gas_limit,
         block_hashes=get_last_256_block_hashes(chain),
@@ -671,6 +673,8 @@ def process_system_transaction(
             account_writes={},
             storage_writes={},
             created_accounts=set(),
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
     )
 
@@ -704,6 +708,8 @@ def process_system_transaction(
             account_writes={},
             storage_writes={},
             created_accounts=set(),
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
         transient_storage={},
     )
@@ -956,6 +962,8 @@ def process_transaction(
         account_writes={},
         storage_writes={},
         created_accounts=set(),
+        bytecode_accesses=set(),
+        ancestor_accesses=set(),
     )
 
     # EIP-7928: Create a transaction-level StateChanges frame
