@@ -20,7 +20,7 @@ from ethereum.utils.numeric import ceil32
 # track_address_access removed - now using state_changes.track_address()
 from ...fork_types import EMPTY_ACCOUNT
 from ...state_tracker import track_address
-from ...state_tracking import get_account
+from ...state_tracking import get_account, track_bytecode_access
 from ...utils.address import to_address_masked
 from ...vm.memory import buffer_read, memory_write
 from .. import Evm
@@ -356,6 +356,7 @@ def extcodesize(evm: Evm) -> None:
 
     # OPERATION
     code = get_account(evm.state_tracking, address).code
+    track_bytecode_access(evm.state_tracking, code)
     track_address(evm.state_changes, address)
 
     codesize = U256(len(code))
@@ -402,6 +403,7 @@ def extcodecopy(evm: Evm) -> None:
     # OPERATION
     evm.memory += b"\x00" * extend_memory.expand_by
     code = get_account(evm.state_tracking, address).code
+    track_bytecode_access(evm.state_tracking, code)
     track_address(evm.state_changes, address)
 
     value = buffer_read(code, code_start_index, size)
