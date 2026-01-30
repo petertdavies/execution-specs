@@ -50,6 +50,7 @@ from ..state_tracking import (
     mark_account_created,
     move_ether,
     set_code,
+    track_bytecode_access,
 )
 from ..vm import Message
 from ..vm.eoa_delegation import get_delegated_code_address, set_delegation
@@ -141,6 +142,7 @@ def process_message_call(message: Message) -> MessageCallOutput:
             message.disable_precompiles = True
             message.accessed_addresses.add(delegated_address)
             message.code = get_account(state_tracking, delegated_address).code
+            track_bytecode_access(message.state_tracking, message.code)
             message.code_address = delegated_address
             track_address(message.block_env.state_changes, delegated_address)
 

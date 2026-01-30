@@ -23,6 +23,7 @@ from ..state_tracking import (
     get_account,
     increment_nonce,
     set_authority_code,
+    track_bytecode_access,
 )
 from ..utils.hexadecimal import hex_to_address
 from ..vm.gas import GAS_COLD_ACCOUNT_ACCESS, GAS_WARM_ACCESS
@@ -145,6 +146,7 @@ def calculate_delegation_cost(
     """
     state = evm.state_tracking
     code = get_account(state, address).code
+    track_bytecode_access(evm.state_tracking, code)
     track_address(evm.state_changes, address)
 
     if not is_valid_delegation(code):
