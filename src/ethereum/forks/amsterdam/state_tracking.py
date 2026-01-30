@@ -7,7 +7,7 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from ethereum_types.bytes import Bytes, Bytes32
 from ethereum_types.frozen import modify
-from ethereum_types.numeric import U256, Uint
+from ethereum_types.numeric import U64, U256, Uint
 
 from . import state as state_
 from .fork_types import EMPTY_ACCOUNT, Account, Address
@@ -35,6 +35,12 @@ class BlockStateTracking:
         Address, Dict[Bytes32, List[Tuple[BlockAccessIndex, U256]]]
     ]
 
+    # Witness: all bytecodes accessed during block execution
+    bytecode_accesses: Set[Bytes]
+
+    # Witness: all ancestor block numbers accessed during block execution
+    ancestor_accesses: Set[U64]
+
 
 @dataclass
 class TxStateTracking:
@@ -51,6 +57,10 @@ class TxStateTracking:
     storage_writes: Dict[Address, Dict[Bytes32, U256]]
 
     created_accounts: Set[Address]
+
+    bytecode_accesses: Set[Bytes]
+
+    ancestor_accesses: Set[U64]
 
 
 # get_account_optional
@@ -163,6 +173,10 @@ def incorporate_tx_state_into_parent(tx_state: TxStateTracking) -> None:
         for key, value in items.items():
             set_storage(parent, address, key, value)
 
+    # Merge witness tracking
+    parent.bytecode_accesses |= tx_state.bytecode_accesses
+    parent.ancestor_accesses |= tx_state.ancestor_accesses
+
 
 def write_block_state_changes(block_state: BlockStateTracking) -> None:
     """
@@ -193,6 +207,8 @@ def copy_tx_state_tracking(tx_state: TxStateTracking) -> TxStateTracking:
         account_writes=tx_state.account_writes.copy(),
         storage_writes=new_storage_writes,
         created_accounts=tx_state.created_accounts.copy(),
+        bytecode_accesses=tx_state.bytecode_accesses.copy(),
+        ancestor_accesses=tx_state.ancestor_accesses.copy(),
     )
 
 
@@ -518,3 +534,43 @@ def get_storage_original(
         return U256(0)
 
     return get_storage(state.parent, address, key)
+
+
+def track_bytecode_access(
+    state: TxStateTracking | BlockStateTracking,
+    code: Bytes,
+) -> None:
+    """
+    Record that bytecode was accessed during execution.
+
+    Parameters
+    ----------
+    state :
+        The state tracking object.
+    code :
+        The bytecode that was accessed.
+
+    """
+    state.bytecode_accesses.add(code)
+
+
+def track_ancestor_access(
+    state: TxStateTracking | BlockStateTracking,
+    block_number: U64,
+) -> None:
+    """
+    Record that an ancestor block was accessed.
+
+    Called by:
+    - BLOCKHASH opcode (when returning valid hash)
+    - System contracts reading parent headers (EIP-2935)
+
+    Parameters
+    ----------
+    state :
+        The state tracking object.
+    block_number :
+        The block number that was accessed.
+
+    """
+    state.ancestor_accesses.add(block_number)
