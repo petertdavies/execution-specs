@@ -32,6 +32,7 @@ from ...state_tracking import (
     is_account_alive,
     move_ether,
     set_account_balance,
+    track_bytecode_access,
 )
 from ...utils.address import (
     compute_contract_address,
@@ -458,6 +459,7 @@ def call(evm: Evm) -> None:
             evm.accessed_addresses.add(code_address)
 
     code = get_account(state, code_address).code
+    track_bytecode_access(evm.state_tracking, code)
 
     message_call_gas = calculate_message_call_gas(
         value,
@@ -561,6 +563,7 @@ def callcode(evm: Evm) -> None:
             evm.accessed_addresses.add(code_address)
 
     code = get_account(state, code_address).code
+    track_bytecode_access(evm.state_tracking, code)
 
     message_call_gas = calculate_message_call_gas(
         value,
@@ -757,6 +760,7 @@ def delegatecall(evm: Evm) -> None:
             evm.accessed_addresses.add(code_address)
 
     code = get_account(state, code_address).code
+    track_bytecode_access(evm.state_tracking, code)
 
     message_call_gas = calculate_message_call_gas(
         U256(0),
@@ -847,6 +851,7 @@ def staticcall(evm: Evm) -> None:
             evm.accessed_addresses.add(code_address)
 
     code = get_account(state, code_address).code
+    track_bytecode_access(evm.state_tracking, code)
 
     message_call_gas = calculate_message_call_gas(
         U256(0),
