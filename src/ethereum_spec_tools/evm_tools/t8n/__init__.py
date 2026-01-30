@@ -321,6 +321,8 @@ class T8N(Load):
             storage_reads=set(),
             account_writes={},
             storage_writes={},
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         )
 
         return block_environment(**kw_arguments)
@@ -396,6 +398,11 @@ class T8N(Load):
                 block_env=block_env,
                 target_address=self.fork.HISTORY_STORAGE_ADDRESS,
                 data=block_env.block_hashes[-1],  # The parent hash
+            )
+            # Track parent block access for witness generation
+            self.fork._module("state_tracking").track_ancestor_access(
+                block_env.state_tracking,
+                U64(block_env.number - Uint(1)),
             )
 
         if self.fork.has_beacon_roots_address:
