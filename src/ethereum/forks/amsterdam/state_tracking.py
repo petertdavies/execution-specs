@@ -35,10 +35,8 @@ class BlockStateTracking:
         Address, Dict[Bytes32, List[Tuple[BlockAccessIndex, U256]]]
     ]
 
-    # Witness: all bytecodes accessed during block execution
     bytecode_accesses: Set[Bytes]
 
-    # Witness: all ancestor block numbers accessed during block execution
     ancestor_accesses: Set[U64]
 
 
@@ -172,8 +170,6 @@ def incorporate_tx_state_into_parent(tx_state: TxStateTracking) -> None:
     for address, items in tx_state.storage_writes.items():
         for key, value in items.items():
             set_storage(parent, address, key, value)
-
-    # Merge witness tracking
     parent.bytecode_accesses |= tx_state.bytecode_accesses
     parent.ancestor_accesses |= tx_state.ancestor_accesses
 
