@@ -79,6 +79,8 @@ from .state_tracking import (
     increment_nonce,
     modify_state,
     set_account_balance,
+    track_ancestor_access,
+    track_bytecode_access,
     write_block_state_changes,
 )
 from .transactions import (
@@ -252,6 +254,8 @@ def state_transition(chain: BlockChain, block: Block) -> None:
             storage_reads=set(),
             account_writes={},
             storage_writes={},
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
         block_gas_limit=block.header.gas_limit,
         block_hashes=get_last_256_block_hashes(chain),
@@ -671,6 +675,8 @@ def process_system_transaction(
             account_writes={},
             storage_writes={},
             created_accounts=set(),
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
     )
 
@@ -704,6 +710,8 @@ def process_system_transaction(
             account_writes={},
             storage_writes={},
             created_accounts=set(),
+            bytecode_accesses=set(),
+            ancestor_accesses=set(),
         ),
         transient_storage={},
     )
@@ -746,6 +754,7 @@ def process_checked_system_transaction(
     system_contract_code = get_account(
         block_env.state_tracking, target_address
     ).code
+    track_bytecode_access(block_env.state_tracking, system_contract_code)
 
     if len(system_contract_code) == 0:
         raise InvalidBlock(
@@ -796,6 +805,7 @@ def process_unchecked_system_transaction(
     system_contract_code = get_account(
         block_env.state_tracking, target_address
     ).code
+    track_bytecode_access(block_env.state_tracking, system_contract_code)
     return process_system_transaction(
         block_env,
         target_address,
@@ -850,6 +860,11 @@ def apply_body(
         block_env=block_env,
         target_address=HISTORY_STORAGE_ADDRESS,
         data=block_env.block_hashes[-1],  # The parent hash
+    )
+    # Track parent block access for witness generation
+    track_ancestor_access(
+        block_env.state_tracking,
+        U64(block_env.number - Uint(1)),
     )
 
     for i, tx in enumerate(map(decode_transaction, transactions)):
@@ -956,6 +971,8 @@ def process_transaction(
         account_writes={},
         storage_writes={},
         created_accounts=set(),
+        bytecode_accesses=set(),
+        ancestor_accesses=set(),
     )
 
     # EIP-7928: Create a transaction-level StateChanges frame

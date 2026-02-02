@@ -11,8 +11,9 @@ Introduction
 Implementations of the EVM block instructions.
 """
 
-from ethereum_types.numeric import U256, Uint
+from ethereum_types.numeric import U64, U256, Uint
 
+from ...state_tracking import track_ancestor_access
 from .. import Evm
 from ..gas import GAS_BASE, GAS_BLOCK_HASH, charge_gas
 from ..stack import pop, push
@@ -57,6 +58,7 @@ def block_hash(evm: Evm) -> None:
         current_block_hash = evm.message.block_env.block_hashes[
             -(current_block_number - block_number)
         ]
+        track_ancestor_access(evm.state_tracking, U64(block_number))
 
     push(evm.stack, U256.from_be_bytes(current_block_hash))
 
